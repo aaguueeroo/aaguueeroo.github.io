@@ -2,6 +2,7 @@ import { Box, Container, Typography, Button } from "@mui/material";
 import { Theme, useTheme } from "@mui/material/styles";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import EmailIcon from "@mui/icons-material/Email";
+import PrimaryButton from "../../../components/PrimaryButton";
 
 const useStyles = (theme: Theme) => ({
   section: {
@@ -9,17 +10,38 @@ const useStyles = (theme: Theme) => ({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    padding: "160px 0px",
+    padding: {
+      xs: "96px 16px 96px 16px",
+      sm: "160px 32px 160px 32px",
+      md: "220px 64px 220px 64px"
+    },
     gap: "44px",
     width: "100%",
     alignSelf: "stretch",
+    boxSizing: "border-box"
   },
   buttonsContainer: {
     display: "flex",
-    flexDirection: "row",
-    gap: "24px",
+    flexDirection: {
+      xs: "column",
+      md: "row"
+    },
+    gap: {
+      xs: "16px",
+      md: "24px"
+    },
     justifyContent: "center",
     alignItems: "center",
+    width: "100%"
+  },
+  buttonShared: {
+    minHeight: "56px",
+    fontSize: "1.25rem",
+    boxSizing: "border-box",
+    width: {
+      xs: "100%",
+      sm: "auto"
+    }
   },
   primaryButton: {
     padding: '8px 32px',
@@ -80,21 +102,21 @@ export function LetsGetInTouchSection() {
       </Typography>
 
       <Box sx={{...classes.buttonsContainer}}>
-        <Button
-          variant="contained"
-          sx={{...classes.primaryButton}}
-          endIcon={<ArrowForwardIcon />}
-        >
-          Get a free budget
-        </Button>
-
-        <Button
-          variant="outlined"
-          sx={{...classes.secondaryButton}}
-          endIcon={<EmailIcon />}
-        >
-          Contact me
-        </Button>
+        <Box sx={{ width: { xs: '100%', md: 'auto' } }}>
+          <Button
+            variant="outlined"
+            sx={{...classes.secondaryButton}}
+            endIcon={<EmailIcon />}
+            style={{ minHeight: 56, width: '100%' }}
+          >
+            Contact me
+          </Button>
+        </Box>
+        <Box sx={{ width: { xs: '100%', md: 'auto' } }}>
+          <PrimaryButton showArrow style={{ minHeight: 56, width: '100%' }}>
+            Get a free budget
+          </PrimaryButton>
+        </Box>
       </Box>
     </Container>
   );

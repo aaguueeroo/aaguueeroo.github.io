@@ -1,43 +1,57 @@
-import { Box, Button, Theme, Typography } from "@mui/material";
+import { Box, Theme, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import PrimaryButton from "../../../components/PrimaryButton";
 
 const useStyles = (theme: Theme) => ({
-  section: {},
+  section: {
+    width: "100%",
+    display: "flex",
+    justifyContent: "center"
+  },
   box: {
     padding: "128px 128px",
     display: "flex",
     height: "30vh",
     flexDirection: "column",
-    alignItems: "center",
+    alignItems: "flex-start",
     justifyContent: "center",
-    gap: "24px",
+    gap: "32px",
+    width: "100%",
     maxWidth: "1440px",
-    alignSelf: "center",
-    backgroundImage: "url('https://picsum.photos/seed/picsum/200/300')",
+    position: "relative",
+    overflow: "hidden"
+  },
+  backgroundImage: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundImage: "url('https://picsum.photos/seed/picsum/2000/1200')",
     backgroundSize: "cover",
     backgroundPosition: "center",
-  },
-  button: {
-    padding: '8px 32px',
-    color: 'white',
-    fontWeight: 'bold',
-    lineHeight: 1.2,
-    '& .MuiSvgIcon-root': {
-      fontSize: '2.5rem',
-      color: theme.palette.primary.main,
-    },
-    gap: 4,
-    bgcolor: theme.palette.secondary.main,
-    transition: 'all 0.3s ease-in-out',
-    '&:hover': {
-      transform: 'scale(1.05)',
-      bgcolor: theme.palette.primary.main,
-      '& .MuiSvgIcon-root': {
-        color: theme.palette.secondary.main
-      }
+    backgroundAttachment: "fixed",
+    transform: "scale(1.1)",
+    "&::before": {
+      content: '""',
+      position: "absolute",
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundColor: "rgba(0, 0, 0, 0.4)",
+      zIndex: 1
     }
   },
+  content: {
+    position: "relative",
+    zIndex: 2,
+    color: "white",
+    display: "flex",
+    flexDirection: "column",
+    gap: "32px",
+    alignItems: "flex-start"
+  }
 });
 
 const PortfolioSection = () => {
@@ -45,17 +59,18 @@ const PortfolioSection = () => {
   const classes = useStyles(theme);
 
   return (
-    <Box sx={{ ...classes.box }}>
-      <Typography variant="h1" textAlign={"start"}>
-        Get to know my work
-      </Typography>
-      <Button
-        variant="contained"
-        endIcon={<ArrowForwardIcon />}
-        sx={{ ...classes.button }}
-      >
-        See projects
-      </Button>
+    <Box sx={{ ...classes.section }}>
+      <Box sx={{ ...classes.box }}>
+        <Box sx={{ ...classes.backgroundImage }} />
+        <Box sx={{ ...classes.content }}>
+          <Typography variant="h1" textAlign={"start"}>
+            Get to know my work
+          </Typography>
+          <PrimaryButton>
+            See projects
+          </PrimaryButton>
+        </Box>
+      </Box>
     </Box>
   );
 };

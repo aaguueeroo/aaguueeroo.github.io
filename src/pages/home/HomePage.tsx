@@ -15,10 +15,12 @@ const useStyles = makeStyles(() => ({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
+    overflow: "hidden",
+    maxWidth: "1200px",
+    margin: "0 auto",
   },
   wrapper: {
     width: "100%",
-    maxWidth: "2000px",
   },
   verticalHeight: {
     height: "100vh",

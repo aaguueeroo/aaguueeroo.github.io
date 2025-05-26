@@ -1,82 +1,99 @@
 import { Theme, useTheme } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import { Button } from "@mui/material";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import { makeStyles } from "@mui/styles";
- 
-const useStyles = makeStyles((theme: Theme) => ({
-  heroWrapper: {
-    flex: 1,
-    flexGrow: 1,
-    width: "100%",
-    padding: "0",
-    margin: "0",
-    overflow: "hidden",
-  },
-  heroBackground: {
-    width: "100%",
-    height: "100%",
-    padding: "0",
-    margin: "0",
-    position: "absolute",
-    backgroundImage: "url('src/assets/images/hero.png')",
-    backgroundAttachment: "fixed",
-    backgroundPosition: "center",
-    backgroundSize: "cover",
-    zIndex: 1,
-    overflow: "hidden",
-  },
-  column: {
-    flex: 1,
-    position: "relative",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "flex-start",
-    zIndex: 2,
-  },
-  title: {
-    color: theme.palette.secondary.main,
-    fontWeight: 700,
-    textAlign: "left",
-  },
-  subtitle: {
-    color: theme.palette.secondary.main,
-    fontWeight: 700,
-    textAlign: "left",
-  },
-  titleEmphasis: {
-    color: theme.palette.primary.main,
-    fontWeight: 700,
-    textAlign: "left",
-  },
-  
-}));
+import heroImage from "../../../assets/images/hero.png";
+import PrimaryButton from "../../../components/PrimaryButton";
 
 const HeroSection = () => {
   const theme = useTheme();
-  const classes = useStyles(theme);
 
   return (
-    <Box className={classes.heroWrapper}>
-      <Box className={classes.heroBackground} />
-      <Box className={classes.column}>
-        <Typography variant="h1" className={classes.title} gutterBottom>
+    <Box
+      sx={{
+        width: "100%",
+        height: "100vh",
+        position: "relative",
+        display: "flex",
+        alignItems: "center",
+        overflow: "hidden",
+        marginTop: "-70px",
+        paddingTop: "70px",
+      }}
+    >
+      <Box
+        sx={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundImage: `url(${heroImage})`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          width: "100%",
+          height: "100%",
+          transform: "scale(1.1)",
+        }}
+      />
+      <Box
+        sx={{
+          position: "relative",
+          zIndex: 2,
+          padding: theme.spacing(12),
+          paddingRight: {
+            xs: theme.spacing(12),
+            sm: theme.spacing(24),
+            md: theme.spacing(48),
+            lg: theme.spacing(100),
+          },
+          width: "100%",
+        }}
+      >
+        <Typography
+          variant="h1"
+          sx={{
+            color: theme.palette.secondary.main,
+            fontWeight: 700,
+            fontSize: {
+              xs: '2.5rem',
+              sm: '3.5rem',
+              md: '4rem',
+              lg: '5rem'
+            },
+            lineHeight: 1.2,
+            textShadow: "2px 2px 4px rgba(0, 0, 0, 0.2)",
+          }}
+          gutterBottom
+        >
           Get a premium app{" "}
-          <span className={classes.titleEmphasis}>fast and easy</span>
+          <span
+            style={{
+              color: theme.palette.primary.main,
+              fontWeight: 700,
+              textShadow: "2px 2px 4px rgba(0, 0, 0, 0.2)",
+            }}
+          >
+            fast and easy
+          </span>
         </Typography>
-        <Typography variant="body1" className={classes.subtitle} gutterBottom>
-          Share your vision, values and personality --I'll turn them into an app
+        <Typography
+          variant="body1"
+          sx={{
+            color: theme.palette.secondary.main,
+            fontWeight: 400,
+            marginTop: theme.spacing(2),
+            marginBottom: theme.spacing(4),
+            textShadow: "1px 1px 2px rgba(0, 0, 0, 0.2)",
+          }}
+          gutterBottom
+        >
+          Share your vision, values and personality. I'll turn them into an app
           that truly represents you.
         </Typography>
-        <Button
-          variant="contained"
-          color="secondary"
-          endIcon={<ArrowForwardIcon color="primary" />}
-        >
+        <PrimaryButton>
           Get a budget for free
-        </Button>
+        </PrimaryButton>
       </Box>
     </Box>
   );
