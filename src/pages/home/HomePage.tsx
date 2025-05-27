@@ -1,7 +1,6 @@
 import Navbar from "../../components/Navbar";
 import { Footer } from "../../components/Footer";
 import WhoAmISection from "./components/WhoAmISection";
-import PortfolioSection from "./components/PortfolioSection";
 import { WhatDoIOfferSection } from "./components/WhatDoIOfferSection";
 import { LetsGetInTouchSection } from "./components/LetsGetInTouchSection";
 import { makeStyles } from "@mui/styles";
