@@ -1,4 +1,4 @@
-import { Card, CardProps, useTheme } from "@mui/material";
+import { Card, CardProps } from "@mui/material";
 import { ReactNode } from "react";
 import { Spacings, Radiuses } from "../theme/constants";
 
@@ -20,8 +20,6 @@ const MyCard = ({
   size,
   ...props
 }: MyCardProps) => {
-  const theme = useTheme();
-
   const sizeStyles: Record<
     "large" | "medium" | "small",
     { padding: number; gap: number }

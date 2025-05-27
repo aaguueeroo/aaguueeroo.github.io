@@ -1,4 +1,4 @@
-import { Container, Typography, Card, useTheme, Box, List, ListItem, ListItemIcon, ListItemText } from "@mui/material";
+import { Typography, Card, useTheme, Box, ListItem, ListItemIcon, ListItemText } from "@mui/material";
 import { Theme } from "@mui/material/styles";
 import CodeIcon from '@mui/icons-material/Code';
 import PaletteIcon from '@mui/icons-material/Palette';

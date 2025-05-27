@@ -1,4 +1,4 @@
-import { Button, ButtonProps, Theme, useTheme } from "@mui/material";
+import { Button, ButtonProps, useTheme } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { keyframes } from "@mui/system";
 import { Box } from "@mui/material";

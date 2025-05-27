@@ -1,6 +1,5 @@
 import { Box, Container, Typography, Button } from "@mui/material";
 import { Theme, useTheme } from "@mui/material/styles";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import EmailIcon from "@mui/icons-material/Email";
 import PrimaryButton from "../../../components/PrimaryButton";
 

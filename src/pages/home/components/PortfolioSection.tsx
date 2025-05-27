@@ -1,8 +1,7 @@
-import { Box, Theme, Typography } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
+import { Box, Typography } from "@mui/material";
 import PrimaryButton from "../../../components/PrimaryButton";
 
-const useStyles = (theme: Theme) => ({
+const useStyles = () => ({
   section: {
     width: "100%",
     display: "flex",
@@ -55,8 +54,7 @@ const useStyles = (theme: Theme) => ({
 });
 
 const PortfolioSection = () => {
-  const theme = useTheme();
-  const classes = useStyles(theme);
+  const classes = useStyles();
 
   return (
     <Box sx={{ ...classes.section }}>

@@ -5,9 +5,9 @@ import Menu from "./menu/Menu";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { makeStyles } from "@mui/styles";
-import { Theme, useTheme } from "@mui/material/styles";
+import { useTheme } from "@mui/material/styles";
 
-const useStyles = makeStyles((theme: Theme) => ({
+const useStyles = makeStyles(() => ({
   iconButton: {
     "& .MuiSvgIcon-root": {
       fontSize: "4rem",

@@ -1,12 +1,10 @@
-import { Box, Card, Container, Typography } from "@mui/material";
+import { Box, Card, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import whatDoIOfferTopImage from "../../../assets/images/what_do_i_offer_top.png";
 import whatDoIOfferLeftImage from "../../../assets/images/what_do_i_offer_left.png";
 import whatDoIOfferRightImage from "../../../assets/images/what_do_i_offer_right.png";
 
-import { Theme } from "@mui/material/styles";
-
-const useStyles = (theme: Theme) => ({
+const useStyles = () => ({
   section: {
     padding: "180px 0px 120px 0px",
     display: "flex",
@@ -129,7 +127,7 @@ const useStyles = (theme: Theme) => ({
 
 export function WhatDoIOfferSection() {
   const theme = useTheme();
-  const classes = useStyles(theme);
+  const classes = useStyles();
 
   return (
     <Box sx={{ 
