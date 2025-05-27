@@ -187,12 +187,13 @@ export function WhatDoIOfferSection() {
               <Typography variant="h6" sx={{ 
                 fontSize: { xs: '1.5rem', sm: '2.2rem', md: '3.5rem' }, fontWeight: 600, lineHeight: 1.3 
               }}>
-                Get all your app developed without delays.
+                The full app package, without the hassle.
               </Typography>
               <Typography variant="body1" sx={{ 
                 fontSize: { xs: '1.1rem', sm: '1.5rem', md: '2.5rem' }, opacity: 0.8 
               }}>
-                Comprehensive web and mobile solutions.
+                One person, all the skills. I deliver complete, polished apps —design, frontend, 
+                backend, and everything in between— without delays or miscommunication.
               </Typography>
             </Box>
           </Card>
@@ -200,12 +201,10 @@ export function WhatDoIOfferSection() {
           <Box sx={{ ...classes.cardsRow }}>
             <Card sx={{ ...classes.card }}>
               <Typography variant="subtitle2" textAlign={"start"}>
-                Technical Consulting
+                Cohesive experience
               </Typography>
               <Typography variant="body2" textAlign={"start"}>
-                Expert advice on technology choices, architecture, and best
-                practices for your projects. Helping you make informed decisions
-                for your technical solutions.
+                From design to code, everything works together. The visuals, interactions, and flow are aligned to feel natural and intuitive. I turn your ideas into a smooth experience that reflects your identity and keeps users engaged.
               </Typography>
               <Box sx={{ ...classes.leftCardImage }}>
                 <img 
@@ -226,12 +225,10 @@ export function WhatDoIOfferSection() {
 
             <Card sx={{ ...classes.card }}>
               <Typography variant="subtitle2" textAlign={"start"}>
-                UI/UX Design
+                Polished results
               </Typography>
               <Typography variant="body2" textAlign={"start"}>
-                Creating intuitive and beautiful user interfaces. Focus on user
-                experience and modern design principles to make your application
-                stand out.
+              I deliver complete, high-quality apps that are ready for real users. With attention to detail across all layers —design, frontend and backend— you get a product that looks great, performs well, and stands out for its reliability and finish.
               </Typography>
               <Box sx={{ ...classes.cardImage }}>
                 <img 
