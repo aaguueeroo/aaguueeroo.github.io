@@ -152,7 +152,7 @@ export function Footer() {
         </Box>
 
         <Typography variant="body2" sx={{ ...classes.copyright }}>
-          © 2025 All rights reserved
+          © 2025 Julia Agüero Fraguas. All rights reserved.
         </Typography>
       </Box>
     </Box>
