@@ -16,38 +16,41 @@ const HeroSection = () => {
         display: "flex",
         alignItems: "center",
         overflow: "hidden",
-        marginTop: "-70px",
-        paddingTop: "70px",
       }}
     >
       <Box
         sx={{
           position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
+          inset: 0,
           backgroundImage: `url(${heroImage})`,
           backgroundPosition: "center",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           width: "100%",
           height: "100%",
-          transform: "scale(1.1)",
+          transform: "scale(1.21)",
         }}
       />
       <Box
         sx={{
           position: "relative",
           zIndex: 2,
-          padding: theme.spacing(12),
-          paddingRight: {
-            xs: theme.spacing(12),
-            sm: theme.spacing(24),
-            md: theme.spacing(48),
-            lg: theme.spacing(100),
-          },
+          px: 3,
+          py: 3,
           width: "100%",
+          "@media (min-width:400px)": {
+            px: 4,
+            py: 3,
+          },
+          "@media (min-width:450px) and (max-width:735px)": {
+            px: '80px',
+            py: '20px',
+          },
+          "@media (min-width:735px)": {
+            pl: '10vw',
+            pr: '35vw',
+            py: '10vw',
+          },
         }}
       >
         <Typography
@@ -92,7 +95,8 @@ const HeroSection = () => {
           that truly represents you.
         </Typography>
         <PrimaryButton>
-          Get a budget for free
+          <span style={{ display: 'none' }} className="show-xs">Get budget</span>
+          <span className="hide-xs">Get your budget for free</span>
         </PrimaryButton>
       </Box>
     </Box>

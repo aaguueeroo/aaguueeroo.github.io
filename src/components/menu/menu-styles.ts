@@ -17,7 +17,7 @@ const useStyles = (theme: Theme) => ({
     minWidth: "0",
     padding: "48px 128px",
     width: "100%",
-    maxWidth: "2000px",
+    maxWidth: "1920px",
     display: "flex",
     flexDirection: "column",
   },

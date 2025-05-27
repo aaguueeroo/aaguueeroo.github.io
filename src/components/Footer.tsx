@@ -8,7 +8,7 @@ import {
 import { Theme, useTheme } from "@mui/material/styles";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import TwitterIcon from "@mui/icons-material/Twitter";
+import TwitterIcon from "@mui/icons-material/X";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 const useStyles = (theme: Theme) => ({
@@ -17,8 +17,16 @@ const useStyles = (theme: Theme) => ({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    padding: "96px 160px 32px",
-    gap: "48px",
+    padding: {
+      xs: "32px 32px 32px 32px",   // much smaller on mobile
+      sm: "48px 48px 48px 48px", // moderate on tablet
+      md: "96px 160px 32px",     // original on desktop
+    },
+    gap: {
+      xs: "16px",
+      sm: "32px",
+      md: "48px"
+    },
     backgroundColor: theme.palette.grey[200], // This should match your #DEE2E6
     alignSelf: "stretch",
   },
@@ -27,7 +35,7 @@ const useStyles = (theme: Theme) => ({
     flexDirection: "column",
     gap: "48px",
     width: "100%",
-    maxWidth: "1440px",
+    maxWidth: "1920px",
   },
   socialRow: {
     display: "flex",
@@ -106,21 +114,21 @@ export function Footer() {
           </Typography>
           <Box sx={{ ...classes.socialIcons }}>
             <IconButton
-              href="https://github.com"
+              href="https://github.com/aaguueeroo"
               target="_blank"
               sx={{ ...classes.icon }}
             >
               <GitHubIcon />
             </IconButton>
             <IconButton
-              href="https://twitter.com"
+              href="https://x.com/aaguueeroo"
               target="_blank"
               sx={{ ...classes.icon }}
             >
               <TwitterIcon />
             </IconButton>
             <IconButton
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/julia-aguero-fraguas/"
               target="_blank"
               sx={{ ...classes.icon }}
             >

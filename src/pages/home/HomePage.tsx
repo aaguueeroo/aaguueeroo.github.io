@@ -16,7 +16,7 @@ const useStyles = makeStyles(() => ({
     justifyContent: "center",
     alignItems: "center",
     overflow: "hidden",
-    maxWidth: "1200px",
+    maxWidth: "1920px",
     margin: "0 auto",
   },
   wrapper: {
@@ -44,7 +44,7 @@ const HomePage = () => {
             <HeroSection />
           </Box>
           <WhoAmISection />
-          <PortfolioSection />
+          {/* <PortfolioSection /> */}
           <WhatDoIOfferSection />
           <LetsGetInTouchSection />
           <Footer />

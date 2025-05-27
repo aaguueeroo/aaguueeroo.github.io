@@ -7,12 +7,17 @@ import whoAmIImage from "../../../assets/images/who_am_i.png";
 
 const useStyles = (theme: Theme) => ({
   section: {
-    padding: "96px 96px",
+    padding: {
+      xs: "64px 16px",
+      sm: "96px 32px",
+      md: "160px 96px"
+    },
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
     gap: "24px",
+    margin: 0
   },
   mainCard: {
     height: "auto",
@@ -186,12 +191,15 @@ const WhoAmISection = () => {
   return (
     <Box sx={{ 
       padding: {
-        xs: "32px",
-        sm: "48px",
-        md: "96px"
+        xs: "64px 16px",
+        sm: "96px 32px",
+        md: "160px 96px"
       },
       width: "100%",
-      boxSizing: "border-box"
+      maxWidth: "1200px",
+      mx: "auto",
+      boxSizing: "border-box",
+      mb: { xs: 6, sm: 8, md: 12 }
     }}>
       <Box sx={{
         display: "flex",

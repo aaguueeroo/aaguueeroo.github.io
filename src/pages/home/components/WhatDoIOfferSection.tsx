@@ -6,7 +6,11 @@ import whatDoIOfferRightImage from "../../../assets/images/what_do_i_offer_right
 
 const useStyles = () => ({
   section: {
-    padding: "180px 0px 120px 0px",
+    padding: {
+      xs: "0px 16px",
+      sm: "96px 32px",
+      md: "0px 96px"
+    },
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -16,9 +20,10 @@ const useStyles = () => ({
   mainCardContainer: {
     display: "flex",
     flexDirection: "column",
-    gap: "40px",
+    gap: { xs: "20px", sm: "40px", md: "40px"},
     alignItems: "stretch",
     width: "100%",
+    padding: 0
   },
   mainCard: {
     minHeight: 300,
@@ -54,10 +59,13 @@ const useStyles = () => ({
     gap: "16px",
     flex: 1,
     justifyContent: "center",
-    padding: "100px",
+    padding: {
+      xs: "24px",
+      sm: "48px",
+      md: "96px"
+    },
     color: "black",
-    maxWidth: "calc(100% - 33.33%)",
-    margin: "0 auto"
+    margin: "0"
   },
   cardsRow: {
     display: "flex",
@@ -65,7 +73,7 @@ const useStyles = () => ({
       xs: "column",
       sm: "row"
     },
-    gap: "40px",
+    gap: { xs: "20px", sm: "40px", md: "40px"},
     width: "100%"
   },
   card: {
@@ -99,7 +107,10 @@ const useStyles = () => ({
   cardImage: {
     width: "100%",
     height: "0",
-    paddingBottom: "100%",
+    paddingBottom: {
+      xs: "56.25%", // 16:9 aspect ratio
+      sm: "100%"
+    },
     position: "relative",
     borderRadius: "24px",
     marginTop: "auto",
@@ -108,7 +119,10 @@ const useStyles = () => ({
   leftCardImage: {
     width: "100%",
     height: "0",
-    paddingBottom: "100%",
+    paddingBottom: {
+      xs: "56.25%", // 16:9 aspect ratio
+      sm: "100%"
+    },
     position: "relative",
     borderRadius: "24px",
     marginTop: "auto",
@@ -131,12 +145,10 @@ export function WhatDoIOfferSection() {
 
   return (
     <Box sx={{ 
-      padding: {
-        xs: "32px",
-        sm: "48px",
-        md: "96px"
-      },
+      ...classes.section,
       width: "100%",
+      maxWidth: "1200px",
+      mx: "auto",
       boxSizing: "border-box"
     }}>
       <Box sx={{
@@ -172,10 +184,14 @@ export function WhatDoIOfferSection() {
           <Card sx={{ ...classes.mainCard }}>
             <Box sx={{ ...classes.mainCardBackground }} />
             <Box sx={{ ...classes.mainCardContent }}>
-              <Typography variant="h6" sx={{ fontSize: "3.5rem !important", fontWeight: 600, lineHeight: 1.3 }}>
+              <Typography variant="h6" sx={{ 
+                fontSize: { xs: '1.5rem', sm: '2.2rem', md: '3.5rem' }, fontWeight: 600, lineHeight: 1.3 
+              }}>
                 Get all your app developed without delays.
               </Typography>
-              <Typography variant="body1" sx={{ fontSize: "2.5rem !important", opacity: 0.8 }}>
+              <Typography variant="body1" sx={{ 
+                fontSize: { xs: '1.1rem', sm: '1.5rem', md: '2.5rem' }, opacity: 0.8 
+              }}>
                 Comprehensive web and mobile solutions.
               </Typography>
             </Box>
@@ -202,7 +218,7 @@ export function WhatDoIOfferSection() {
                     width: "100%",
                     height: "100%",
                     objectFit: "cover",
-                    objectPosition: "top left"
+                    objectPosition: "center"
                   }}
                 />
               </Box>

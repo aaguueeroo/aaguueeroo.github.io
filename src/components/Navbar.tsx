@@ -18,7 +18,7 @@ const useStyles = makeStyles(() => ({
     justifyContent: "flex-end",
     height: "100%",
     transition: "background-color 0.3s ease",
-    maxWidth: "1200px",
+    maxWidth: "1920px",
     width: "100%",
     margin: "0 auto",
     padding: "0 16px",
@@ -71,6 +71,7 @@ const Navbar = () => {
         <IconButton
           className={classes.iconButton}
           onClick={() => setIsMenuOpen(true)}
+          sx={{ pr: { xs: 4, sm: 0 } }}
         >
           <MenuIcon />
         </IconButton>

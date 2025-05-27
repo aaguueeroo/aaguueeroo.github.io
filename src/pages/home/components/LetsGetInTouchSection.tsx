@@ -10,9 +10,9 @@ const useStyles = (theme: Theme) => ({
     justifyContent: "center",
     alignItems: "center",
     padding: {
-      xs: "96px 16px 96px 16px",
-      sm: "160px 32px 160px 32px",
-      md: "220px 64px 220px 64px"
+      xs: "120px 16px 140px 16px",
+      sm: "160px 64px",
+      md: "220px 120px"
     },
     gap: "44px",
     width: "100%",
@@ -91,30 +91,54 @@ export function LetsGetInTouchSection() {
   const classes = useStyles(theme);
 
   return (
-    <Container sx={{...classes.section}}>
-      <Typography variant="h1" align="center">
+    <Container sx={{...classes.section, maxWidth: "1200px", width: "100%", mx: "auto"}}>
+      <Typography variant="h1" align="center"
+        sx={{
+          fontSize: { xs: '2.5rem', sm: '3.7rem', md: '4rem', lg: '5rem' },
+          fontWeight: 700,
+          lineHeight: 1.2
+        }}
+      >
         Let's get in touch
       </Typography>
       
-      <Typography variant="body1" align="center">
+      <Typography variant="body1" align="center"
+        sx={{
+          fontSize: { xs: '1.4rem', sm: '1.8rem', md: '2rem' },
+          mt: 2,
+          mb: 4
+        }}
+      >
         Ready to bring your vision to life? Let's create something amazing together.
       </Typography>
 
       <Box sx={{...classes.buttonsContainer}}>
         <Box sx={{ width: { xs: '100%', md: 'auto' } }}>
-          <Button
-            variant="outlined"
-            sx={{...classes.secondaryButton}}
-            endIcon={<EmailIcon />}
-            style={{ minHeight: 56, width: '100%' }}
-          >
-            Contact me
-          </Button>
+          <Box sx={{ width: { xs: '100%', sm: '66%', md: 'auto' }, mx: 'auto' }}>
+            <Button
+              variant="outlined"
+              sx={{
+                ...classes.secondaryButton,
+                px: { xs: 4, sm: 6, md: 8 },
+                width: '100%',
+                minHeight: 56,
+                height: 56,
+                lineHeight: 1,
+                fontSize: '1.25rem',
+                fontFamily: 'Golos Text, sans-serif'
+              }}
+              endIcon={<EmailIcon />}
+            >
+              Contact me
+            </Button>
+          </Box>
         </Box>
         <Box sx={{ width: { xs: '100%', md: 'auto' } }}>
-          <PrimaryButton showArrow style={{ minHeight: 56, width: '100%' }}>
-            Get a free budget
-          </PrimaryButton>
+          <Box sx={{ width: { xs: '100%', sm: '66%', md: 'auto' }, mx: 'auto' }}>
+            <PrimaryButton showArrow style={{ minHeight: 56, height: 56, width: '100%', lineHeight: 1, fontSize: '1.25rem', fontFamily: 'Golos Text, sans-serif' }}>
+              Get a free budget
+            </PrimaryButton>
+          </Box>
         </Box>
       </Box>
     </Container>

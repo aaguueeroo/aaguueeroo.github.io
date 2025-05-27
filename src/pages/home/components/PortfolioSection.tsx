@@ -8,7 +8,11 @@ const useStyles = () => ({
     justifyContent: "center"
   },
   box: {
-    padding: "128px 128px",
+    padding: {
+      xs: "32px 32px",
+      sm: "64px 64px",
+      md: "128px 128px"
+    },
     display: "flex",
     height: "30vh",
     flexDirection: "column",
@@ -16,7 +20,8 @@ const useStyles = () => ({
     justifyContent: "center",
     gap: "32px",
     width: "100%",
-    maxWidth: "1440px",
+    maxWidth: "1200px",
+    mx: "auto",
     position: "relative",
     overflow: "hidden"
   },
@@ -61,7 +66,13 @@ const PortfolioSection = () => {
       <Box sx={{ ...classes.box }}>
         <Box sx={{ ...classes.backgroundImage }} />
         <Box sx={{ ...classes.content }}>
-          <Typography variant="h1" textAlign={"start"}>
+          <Typography variant="h1" textAlign={"start"}
+            sx={{
+              fontSize: { xs: '2rem', sm: '2.5rem', md: '4rem', lg: '5rem' },
+              fontWeight: 700,
+              lineHeight: 1.2
+            }}
+          >
             Get to know my work
           </Typography>
           <PrimaryButton>
