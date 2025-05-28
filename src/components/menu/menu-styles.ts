@@ -15,7 +15,7 @@ const useStyles = (theme: Theme) => ({
   },
   container: {
     minWidth: "0",
-    padding: "48px 128px",
+    padding: "0 32px 32px 32px",
     width: "100%",
     maxWidth: "1920px",
     display: "flex",
@@ -24,9 +24,14 @@ const useStyles = (theme: Theme) => ({
   closeButtonContainer: {
     display: "flex",
     justifyContent: "flex-end",
+    padding: 0,
   },
   closeIcon: {
-    fontSize: "5rem",
+    fontSize: {
+      xs: '2.5rem',
+      sm: '4rem',
+      md: '5rem'
+    },
   },
   list: {
     flex: 1,
@@ -35,40 +40,67 @@ const useStyles = (theme: Theme) => ({
     flexDirection: "column",
     justifyContent: "center",
   },
+  '@keyframes bounceX': {
+    '0%': { transform: 'translateX(0)' },
+    '50%': { transform: 'translateX(-8px)' },
+    '100%': { transform: 'translateX(0)' },
+  },
   listItem: {
     background: "none",
     border: "none",
-    padding: "24px 0",
+    padding: {
+      xs: "12px",
+      sm: "24px",
+      md: "24px"
+    },
     display: "flex",
     justifyContent: "flex-end",
-    gap: 2,
-    alignItems: "flex-end",
+    gap: '16px',
+    alignItems: "center",
     transition: "transform 0.3s ease-in-out",
     "&:hover": {
       background: "none",
-      transform: "translateX(-20px)",
       "& .MuiTypography-root": {
         color: theme.palette.primary.main,
+        transform: "scale(1.05)",
+        transition: "transform 0.3s ease-in-out, color 0.3s ease-in-out",
+      },
+      "& .menu-arrow": {
+        animation: 'bounceX 1s ease-in-out infinite',
       },
     },
   },
   listItemText: {
     transition: "color 0.3s ease-in-out",
-    fontSize: "4.5rem",
-    alignSelf: "flex-end",
+    fontSize: {
+      md: "4.5rem"
+    },
     textAlign: "right",
+    color: "#212529",
   },
   listItemIcon: {
-    fontSize: "4.5rem",
+    fontSize: {
+      xs: "2rem",
+      sm: "3rem",
+      md: "4.5rem"
+    },
     transition: "all 0.3s ease-in-out",
   },
   button: {
     alignSelf: "center",
     padding: "8px 64px",
-    fontSize: "3.2rem !important",
+    fontSize: {
+      xs: "1.2rem !important",
+      sm: "2rem !important",
+      md: "3.2rem !important"
+    },
     lineHeight: 1.2,
     "& .MuiSvgIcon-root": {
-      fontSize: "3.5rem",
+      fontSize: {
+        xs: "1.5rem",
+        sm: "2.5rem",
+        md: "3.5rem"
+      },
       color: theme.palette.primary.main,
     },
     gap: 4,
@@ -77,7 +109,11 @@ const useStyles = (theme: Theme) => ({
     "&:hover": {
       transform: "scale(1.05)",
       bgcolor: theme.palette.primary.main,
-      fontSize: "3.3rem !important",
+      fontSize: {
+        xs: "1.3rem !important",
+        sm: "2.1rem !important",
+        md: "3.3rem !important"
+      },
       "& .MuiSvgIcon-root": {
         color: theme.palette.secondary.main,
       },

@@ -5,13 +5,13 @@ import {
   List,
   ListItem,
   Typography,
-  Button,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { useTheme } from "@mui/material/styles";
 import useStyles from "./menu-styles";
 import { useNavigate } from "react-router-dom";
+import PrimaryButton from "../PrimaryButton";
 
 interface MenuProps {
   isOpen: boolean;
@@ -60,20 +60,20 @@ const Menu = ({ isOpen, onClose }: MenuProps) => {
                 <ArrowForwardIcon
                   color="primary"
                   sx={{ ...classes.listItemIcon }}
+                  className="menu-arrow"
                 />
               </ListItem>
             ))}
           </List>
 
-          <Button
-            variant="contained"
-            color="secondary"
+          <PrimaryButton
+            showArrow
+            responsiveArrow={true}
             sx={{ ...classes.button }}
-            endIcon={<ArrowForwardIcon />}
             size="large"
           >
             Get a budget
-          </Button>
+          </PrimaryButton>
         </Box>
       </Box>
     </Drawer>

@@ -11,9 +11,10 @@ const bounce = keyframes`
 
 interface PrimaryButtonProps extends ButtonProps {
   showArrow?: boolean;
+  responsiveArrow?: boolean;
 }
 
-const PrimaryButton = ({ children, showArrow = true, ...props }: PrimaryButtonProps) => {
+const PrimaryButton = ({ children, showArrow = true, responsiveArrow = false, ...props }: PrimaryButtonProps) => {
   const theme = useTheme();
 
   return (
@@ -30,7 +31,26 @@ const PrimaryButton = ({ children, showArrow = true, ...props }: PrimaryButtonPr
           }}>
             <ArrowForwardIcon 
               color="primary" 
-              sx={{ 
+              sx={responsiveArrow ? {
+                fontSize: {
+                  xs: '1.5rem',
+                  sm: '2.5rem',
+                  md: '3.5rem'
+                },
+                width: {
+                  xs: '1.5rem',
+                  sm: '2.5rem',
+                  md: '3.5rem'
+                },
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                transition: 'all 0.3s ease-in-out',
+                '.MuiButton-root:hover &': {
+                  color: theme.palette.secondary.main,
+                  animation: `${bounce} 1s ease-in-out infinite`,
+                }
+              } : {
                 fontSize: 32,
                 width: 32,
                 display: 'flex',
@@ -41,7 +61,7 @@ const PrimaryButton = ({ children, showArrow = true, ...props }: PrimaryButtonPr
                   color: theme.palette.secondary.main,
                   animation: `${bounce} 1s ease-in-out infinite`,
                 }
-              }} 
+              }}
             />
           </Box>
         ) : null

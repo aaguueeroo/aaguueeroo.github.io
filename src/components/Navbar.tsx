@@ -3,7 +3,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import HomeIcon from "@mui/icons-material/Home";
 import Menu from "./menu/Menu";
 import { useNavigate, useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { makeStyles } from "@mui/styles";
 import { useTheme } from "@mui/material/styles";
 
@@ -15,7 +15,7 @@ const useStyles = makeStyles(() => ({
   },
   navBox: {
     display: "flex",
-    justifyContent: "flex-end",
+    justifyContent: "space-between",
     height: "100%",
     transition: "background-color 0.3s ease",
     maxWidth: "1920px",
@@ -37,41 +37,32 @@ const useStyles = makeStyles(() => ({
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   const classes = useStyles(useTheme());
 
   const isHomePage = location.pathname === "/";
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      setIsScrolled(scrollPosition > 0);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <AppBar 
       position="fixed" 
-      className={`${classes.appBar} ${isScrolled ? classes.scrolled : ""}`}
+      className={classes.appBar}
     >
       <Box className={classes.navBox}>
         {!isHomePage && (
           <IconButton
             className={classes.iconButton}
             onClick={() => navigate("/")}
+            sx={{ pl: { xs: 0, sm: 0 } }}
           >
             <HomeIcon />
           </IconButton>
         )}
+        <Box sx={{ flex: 1 }} />
         <IconButton
           className={classes.iconButton}
           onClick={() => setIsMenuOpen(true)}
-          sx={{ pr: { xs: 4, sm: 0 } }}
+          sx={{ pr: { xs: 4, sm: 4 } }}
         >
           <MenuIcon />
         </IconButton>
