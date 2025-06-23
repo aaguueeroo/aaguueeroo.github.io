@@ -1,27 +1,177 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Julia Agüero - Complete Mobile App Solutions</title>
-    <script type="text/javascript">
-      // Single Page Apps for GitHub Pages
-      // MIT License
-      // https://github.com/rafgraph/spa-github-pages
-      // This script takes the current url and converts the path and query
-      // string into just a query string, and then redirects the browser
-      // to the new url with only a query string and hash fragment.
-      var pathSegmentsToKeep = 0;
-
-      var l = window.location;
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
-      );
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - Julia Agüero</title>
+    <style>
+      body {
+        font-family: 'Golos Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fafafa;
+        color: #333;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .container {
+        text-align: center;
+        max-width: 700px;
+        width: 100%;
+        padding: 2.5rem 3rem;
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        position: relative;
+        z-index: 1;
+      }
+      
+      .emoji {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        opacity: 0.7;
+      }
+      
+      .search-icon {
+        width: 4rem;
+        height: 4rem;
+        margin-bottom: 1rem;
+        opacity: 0.7;
+        color: #CF8B7F;
+      }
+      
+      h1 {
+        font-size: 2.5rem;
+        color: #333;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+      }
+      
+      .subtitle {
+        font-size: 1rem;
+        color: #666;
+        margin-bottom: 1.5rem;
+        line-height: 1.5;
+      }
+      
+      .description {
+        font-size: 0.9rem;
+        color: #888;
+        margin-bottom: 2rem;
+        line-height: 1.5;
+      }
+      
+      .button-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+      }
+      
+      .redirect {
+        font-size: 0.8rem;
+        color: #999;
+        margin-top: 2rem;
+      }
+      
+      .spinner {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        border: 2px solid #f3f3f3;
+        border-top: 2px solid #CF8B7F;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-right: 8px;
+      }
+      
+      .decorative {
+        position: absolute;
+        border-radius: 50%;
+        background: linear-gradient(45deg, rgba(207,139,127,0.1), rgba(207,139,127,0.05));
+        animation: float 6s ease-in-out infinite;
+      }
+      
+      .decorative:nth-child(1) {
+        top: 10%;
+        left: 10%;
+        width: 100px;
+        height: 100px;
+      }
+      
+      .decorative:nth-child(2) {
+        bottom: 15%;
+        right: 15%;
+        width: 60px;
+        height: 60px;
+        animation: float 8s ease-in-out infinite reverse;
+      }
+      
+      .decorative:nth-child(3) {
+        top: 60%;
+        left: 5%;
+        width: 40px;
+        height: 40px;
+        animation: float 7s ease-in-out infinite;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+      }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;600&display=swap" rel="stylesheet">
   </head>
   <body>
+    <!-- Decorative elements -->
+    <div class="decorative"></div>
+    <div class="decorative"></div>
+    <div class="decorative"></div>
+    
+    <div class="container">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+      </svg>
+      <h1>404</h1>
+      <p class="subtitle">Page not found</p>
+      <p class="description">The page you're looking for doesn't exist or has been moved.</p>
+      <div class="button-container">
+        <div class="redirect">
+          <span class="spinner"></span>
+          Redirecting to home page...
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      // Show the 404 message for 3 seconds, then redirect
+      setTimeout(function() {
+        // Single Page Apps for GitHub Pages
+        // MIT License
+        // https://github.com/rafgraph/spa-github-pages
+        // This script takes the current url and converts the path and query
+        // string into just a query string, and then redirects the browser
+        // to the new url with only a query string and hash fragment.
+        var pathSegmentsToKeep = 0;
+
+        var l = window.location;
+        l.replace(
+          l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+          l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+          l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+          (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+          l.hash
+        );
+      }, 3000);
+    </script>
   </body>
 </html> 
