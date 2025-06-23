@@ -69,10 +69,11 @@ const Menu = ({ isOpen, onClose }: MenuProps) => {
           <PrimaryButton
             showArrow
             responsiveArrow={true}
+            onClick={() => navigate('/quote')}
             sx={{ ...classes.button }}
             size="large"
           >
-            Get a budget
+            Get a quote
           </PrimaryButton>
         </Box>
       </Box>

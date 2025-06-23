@@ -20,7 +20,7 @@ const useStyles = () => ({
     justifyContent: "center",
     gap: "32px",
     width: "100%",
-    maxWidth: "1200px",
+    maxWidth: MaxWidths.content,
     mx: "auto",
     position: "relative",
     overflow: "hidden"

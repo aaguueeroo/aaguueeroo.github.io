@@ -6,6 +6,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { makeStyles } from "@mui/styles";
 import { useTheme } from "@mui/material/styles";
+import { MaxWidths } from "../theme/constants";
 
 const useStyles = makeStyles(() => ({
   iconButton: {
@@ -18,7 +19,7 @@ const useStyles = makeStyles(() => ({
     justifyContent: "space-between",
     height: "100%",
     transition: "background-color 0.3s ease",
-    maxWidth: "1920px",
+    maxWidth: MaxWidths.layout,
     width: "100%",
     margin: "0 auto",
     padding: "0 16px",

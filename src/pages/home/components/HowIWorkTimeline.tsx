@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import { Typography, useTheme, Box } from "@mui/material";
-import "../AboutPage.css";
 import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
 import PlaylistAddCheckIcon from '@mui/icons-material/PlaylistAddCheck';
 import BuildCircleIcon from '@mui/icons-material/BuildCircle';
 import LayersIcon from '@mui/icons-material/Layers';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import UpdateIcon from '@mui/icons-material/Update';
-import { MaxWidths, Typography as TypographyConstants } from "../../../theme/constants";
+import { Typography as TypographyConstants } from "../../../theme/constants";
 
 export const HowIWorkTimeline = () => {
   const theme = useTheme();
@@ -59,11 +58,13 @@ export const HowIWorkTimeline = () => {
     <Box
       sx={{
         width: "100%",
-        maxWidth: MaxWidths.content,
+        maxWidth: "1400px",
+        margin: "0 auto 48px auto",
+        background: "#fff",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        mt: { xs: 8, sm: 10, md: 24 },
+        mt: { xs: 8, sm: 10, md: 2 },
       }}
     >
       <Typography 
@@ -76,7 +77,7 @@ export const HowIWorkTimeline = () => {
           marginBottom: 4
         }}
       >
-        How I Work
+        How will we work?
       </Typography>
       <Box
         sx={{
@@ -124,7 +125,7 @@ export const HowIWorkTimeline = () => {
                   <Box
                     sx={{
                       minWidth: "260px",
-                      maxWidth: "420px",
+                      maxWidth: "520px",
                       background: "#fff",
                       boxShadow: "18px 23px 71.5px rgba(0, 0, 0, 0.1)",
                       borderRadius: "20px",
@@ -132,9 +133,10 @@ export const HowIWorkTimeline = () => {
                       display: "flex",
                       flexDirection: "column",
                       zIndex: 2,
-                      transition: "transform 0.35s cubic-bezier(.4,1.5,.6,1)",
+                      transition: "box-shadow 0.25s, transform 0.25s",
                       "&:hover": {
-                        transform: "scale(1.01)",
+                        boxShadow: "0 8px 32px rgba(207, 139, 127, 0.18), 0 1.5px 8px rgba(0,0,0,0.08)",
+                        transform: "translateY(-6px) scale(1.025)",
                       },
                       "@media (max-width: 900px)": {
                         margin: "0 8px",
@@ -244,7 +246,7 @@ export const HowIWorkTimeline = () => {
                   <Box
                     sx={{
                       minWidth: "260px",
-                      maxWidth: "420px",
+                      maxWidth: "520px",
                       background: "#fff",
                       boxShadow: "18px 23px 71.5px rgba(0, 0, 0, 0.1)",
                       borderRadius: "20px",
@@ -252,9 +254,10 @@ export const HowIWorkTimeline = () => {
                       display: "flex",
                       flexDirection: "column",
                       zIndex: 2,
-                      transition: "transform 0.35s cubic-bezier(.4,1.5,.6,1)",
+                      transition: "box-shadow 0.25s, transform 0.25s",
                       "&:hover": {
-                        transform: "scale(1.01)",
+                        boxShadow: "0 8px 32px rgba(207, 139, 127, 0.18), 0 1.5px 8px rgba(0,0,0,0.08)",
+                        transform: "translateY(-6px) scale(1.025)",
                       },
                       "@media (max-width: 900px)": {
                         margin: "0 8px",

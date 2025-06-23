@@ -1,9 +1,11 @@
+import React from 'react';
 import { Typography, Card, useTheme, Box, ListItem, ListItemIcon, ListItemText } from "@mui/material";
 import { Theme } from "@mui/material/styles";
 import CodeIcon from '@mui/icons-material/Code';
 import PaletteIcon from '@mui/icons-material/Palette';
 import GroupIcon from '@mui/icons-material/Group';
 import whoAmIImage from "../../../assets/images/who_am_i.png";
+import { MaxWidths, Typography as TypographyConstants } from '../../../theme/constants';
 
 const useStyles = (theme: Theme) => ({
   section: {
@@ -117,9 +119,9 @@ const useStyles = (theme: Theme) => ({
   },
   smallCard: {
     height: {
-      xs: 160,
-      sm: 180,
-      md: 280
+      xs: 120,
+      sm: 140,
+      md: 180
     },
     backgroundColor: "#fff",
     display: "flex",
@@ -136,14 +138,14 @@ const useStyles = (theme: Theme) => ({
   },
   number: {
     fontSize: {
-      xs: "36px",
-      sm: "42px",
-      md: "48px"
+      xs: "24px",
+      sm: "28px",
+      md: "32px"
     },
     lineHeight: {
-      xs: "44px",
-      sm: "50px",
-      md: "58px"
+      xs: "24px",
+      sm: "28px",
+      md: "32px"
     },
     fontWeight: 700,
     textAlign: "center",
@@ -151,9 +153,9 @@ const useStyles = (theme: Theme) => ({
   },
   label: {
     fontSize: {
-      xs: "24px",
-      sm: "28px",
-      md: "32px"
+      xs: "20px",
+      sm: "24px",
+      md: "28px"
     },
     lineHeight: {
       xs: "30px",
@@ -174,17 +176,17 @@ const WhoAmISection = () => {
     {
       icon: <CodeIcon />,
       title: "Developer",
-      description: "Full-stack development with modern frameworks and technologies."
+      description: "Building robust, maintainable apps with clean architecture and thoughtful code. I focus on performance, structure, and clarity."
     },
     {
       icon: <PaletteIcon />,
       title: "Designer",
-      description: "Creating intuitive and beautiful user interfaces with a focus on UX."
+      description: "Designing user interfaces that are both intuitive and visually consistent. I care about aesthetics while prioritizing usability."
     },
     {
       icon: <GroupIcon />,
       title: "Manager",
-      description: "Leading teams and managing projects through effective communication."
+      description: "Planning projects with clarity and intention. I love bringing structure to ideas and making sure everything runs smoothly."
     }
   ];
 
@@ -193,13 +195,13 @@ const WhoAmISection = () => {
       padding: {
         xs: "64px 16px",
         sm: "96px 32px",
-        md: "160px 96px"
+        md: "80px 96px"
       },
       width: "100%",
-      maxWidth: "1200px",
+      maxWidth: MaxWidths.content,
       mx: "auto",
       boxSizing: "border-box",
-      mb: { xs: 6, sm: 8, md: 12 }
+      mb: { xs: 0, sm: 0, md: 0 }
     }}>
       <Box sx={{
         display: "flex",
@@ -210,19 +212,12 @@ const WhoAmISection = () => {
         boxSizing: "border-box"
       }}>
         <Typography 
-          variant="h1" 
+          variant="h2" 
           align="center" 
           gutterBottom
           sx={{
             color: theme.palette.primary.main,
-            fontWeight: 700,
-            fontSize: {
-              xs: '2.5rem',
-              sm: '3.5rem',
-              md: '4rem',
-              lg: '5rem'
-            },
-            lineHeight: 1.2,
+            ...TypographyConstants.h2,
             width: "100%"
           }}
         >
@@ -279,7 +274,7 @@ const WhoAmISection = () => {
         }}>
           <Card sx={{...classes.smallCard}}>
             <Typography sx={{...classes.number}}>
-              +4
+              +5
             </Typography>
             <Typography sx={{...classes.label}}>
               years experience

@@ -1,4 +1,5 @@
 import { Theme } from "@mui/material/styles";
+import { MaxWidths } from "../../theme/constants";
 
 const useStyles = (theme: Theme) => ({
   drawer: {
@@ -17,7 +18,7 @@ const useStyles = (theme: Theme) => ({
     minWidth: "0",
     padding: "0 32px 32px 32px",
     width: "100%",
-    maxWidth: "1920px",
+    maxWidth: MaxWidths.layout,
     display: "flex",
     flexDirection: "column",
   },

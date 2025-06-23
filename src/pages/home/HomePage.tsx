@@ -3,9 +3,12 @@ import { Footer } from "../../components/Footer";
 import WhoAmISection from "./components/WhoAmISection";
 import { WhatDoIOfferSection } from "./components/WhatDoIOfferSection";
 import { LetsGetInTouchSection } from "./components/LetsGetInTouchSection";
+import { HowIWorkTimeline } from "./components/HowIWorkTimeline";
 import { makeStyles } from "@mui/styles";
 import { Box } from "@mui/material";
 import HeroSection from "./components/HeroSection";
+import { MaxWidths } from "../../theme/constants";
+import { AboutHero } from "./components/AboutHero";
 
 const useStyles = makeStyles(() => ({
   container: {
@@ -15,7 +18,7 @@ const useStyles = makeStyles(() => ({
     justifyContent: "center",
     alignItems: "center",
     overflow: "hidden",
-    maxWidth: "1920px",
+    maxWidth: MaxWidths.layout,
     margin: "0 auto",
   },
   wrapper: {
@@ -42,9 +45,11 @@ const HomePage = () => {
             <Navbar />
             <HeroSection />
           </Box>
-          <WhoAmISection />
-          {/* <PortfolioSection /> */}
+          <AboutHero />
+          {/* <WhoAmISection /> */}
           <WhatDoIOfferSection />
+          {/* <PortfolioSection /> */}
+          {/* <HowIWorkTimeline /> */}
           <LetsGetInTouchSection />
           <Footer />
         </Box>

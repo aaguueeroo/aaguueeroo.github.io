@@ -485,15 +485,14 @@
   justify-content: flex-start;
   font-weight: 500;
   font-size: 20px;
-  box-shadow: none;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
   border: none;
-  transition: box-shadow 0.25s, transform 0.25s;
+  transition: transform 0.35s cubic-bezier(.4,1.5,.6,1);
   padding: 32px;
 }
 
 .beyond-development-cell:hover {
-  box-shadow: 0 8px 32px rgba(207, 139, 127, 0.18), 0 1.5px 8px rgba(0,0,0,0.08);
-  transform: translateY(-6px) scale(1.025);
+  transform: scale(1.01);
 }
 
 .beyond-development-cell.long-horizontal {

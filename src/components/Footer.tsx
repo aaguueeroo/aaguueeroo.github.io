@@ -10,6 +10,8 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import TwitterIcon from "@mui/icons-material/X";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { useNavigate } from "react-router-dom";
+import { MaxWidths } from "../theme/constants";
 
 const useStyles = (theme: Theme) => ({
   footer: {
@@ -35,7 +37,7 @@ const useStyles = (theme: Theme) => ({
     flexDirection: "column",
     gap: "48px",
     width: "100%",
-    maxWidth: "1920px",
+    maxWidth: MaxWidths.layout,
   },
   socialRow: {
     display: "flex",
@@ -104,6 +106,7 @@ const useStyles = (theme: Theme) => ({
 export function Footer() {
   const theme = useTheme();
   const classes = useStyles(theme);
+  const navigate = useNavigate();
 
   return (
     <Box sx={{ ...classes.footer }}>
@@ -140,8 +143,12 @@ export function Footer() {
         <Divider sx={{ ...classes.divider }} />
 
         <Box sx={{ ...classes.buttonsContainer }}>
-          <Button endIcon={<ArrowForwardIcon />} sx={{ ...classes.textButton }}>
-            Get a free budget
+          <Button 
+            endIcon={<ArrowForwardIcon />} 
+            onClick={() => navigate('/quote')}
+            sx={{ ...classes.textButton }}
+          >
+            Get a free quote
           </Button>
           <Button endIcon={<ArrowForwardIcon />} sx={{ ...classes.textButton }}>
             Contact me

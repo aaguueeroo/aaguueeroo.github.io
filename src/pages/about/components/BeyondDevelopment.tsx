@@ -1,4 +1,6 @@
 // Example color palette (rose/white shades)
+import { MaxWidths } from "../../../theme/constants";
+
 const colors = [
   "#FFF6F4", // lightest rose
   "#F6EBE9", // lighter rose
@@ -24,16 +26,16 @@ const containerData = [
   { text: funFacts[0], style: { gridRow: "1 / 2", gridColumn: "1 / 2", background: colors[0] } },
   { text: funFacts[1], style: { gridRow: "1 / 3", gridColumn: "2 / 3", background: colors[1], alignItems: "flex-start", justifyContent: "flex-start" }, type: "long-vertical" },
   { text: funFacts[2], style: { gridRow: "1 / 2", gridColumn: "3 / 4", background: colors[2] } },
-  { text: funFacts[3], style: { gridRow: "1 / 2", gridColumn: "4 / 5", background: colors[3] } },
+  { style: { gridRow: "1 / 2", gridColumn: "4 / 5", backgroundImage: "url('https://picsum.photos/302')", backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" } },
   { text: funFacts[4], style: { gridRow: "2 / 4", gridColumn: "1 / 2", background: colors[4], color: "#fff" } },
   { text: funFacts[5], style: { gridRow: "2 / 4", gridColumn: "3 / 5", background: colors[5], alignItems: "flex-start", justifyContent: "flex-start" }, type: "long-vertical" },
-  { text: funFacts[6], style: { gridRow: "3 / 4", gridColumn: "2 / 3", background: colors[7] } },
+  { style: { gridRow: "3 / 4", gridColumn: "2 / 3", backgroundImage: "url('https://picsum.photos/200')", backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" } },
 ];
 
 export const BeyondDevelopment = () => {
   return (
-    <section style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center", marginBottom: 64 }}>
-      <div style={{ maxWidth: 900, width: "100%", margin: "0 auto" }}>
+    <section style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center", marginBottom: 64, marginTop: 64 }}>
+      <div style={{ maxWidth: MaxWidths.component, width: "100%", margin: "0 auto" }}>
         <h2 style={{
           fontSize: "2.7rem",
           color: "#CF8B7F",

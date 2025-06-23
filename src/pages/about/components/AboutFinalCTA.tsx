@@ -1,7 +1,9 @@
 import { Box, Container, Typography, Button } from "@mui/material";
 import { Theme, useTheme } from "@mui/material/styles";
 import EmailIcon from "@mui/icons-material/Email";
+import { useNavigate } from "react-router-dom";
 import PrimaryButton from "../../../components/PrimaryButton";
+import { MaxWidths } from "../../../theme/constants";
 
 const useStyles = (theme: Theme) => ({
   section: {
@@ -89,9 +91,10 @@ const useStyles = (theme: Theme) => ({
 export function AboutFinalCTA() {
   const theme = useTheme();
   const classes = useStyles(theme);
+  const navigate = useNavigate();
 
   return (
-    <Container sx={{...classes.section, maxWidth: "1200px", width: "100%", mx: "auto"}}>
+    <Container sx={{...classes.section, maxWidth: MaxWidths.content, width: "100%", mx: "auto"}}>
       <Typography variant="h1" align="center"
         sx={{
           fontSize: { xs: '2.5rem', sm: '3.7rem', md: '4rem', lg: '5rem' },
@@ -109,7 +112,7 @@ export function AboutFinalCTA() {
           mb: 4
         }}
       >
-        Give me your app description and get a budget for free, or simply send me an email
+        Give me your app description and get a quote for free, or simply send me an email
       </Typography>
 
       <Box sx={{...classes.buttonsContainer}}>
@@ -135,8 +138,12 @@ export function AboutFinalCTA() {
         </Box>
         <Box sx={{ width: { xs: '100%', md: 'auto' } }}>
           <Box sx={{ width: { xs: '100%', sm: '66%', md: 'auto' }, mx: 'auto' }}>
-            <PrimaryButton showArrow style={{ minHeight: 56, height: 56, width: '100%', lineHeight: 1, fontSize: '1.25rem', fontFamily: 'Golos Text, sans-serif' }}>
-              Get a free budget
+            <PrimaryButton 
+              showArrow 
+              onClick={() => navigate('/quote')}
+              style={{ minHeight: 56, height: 56, width: '100%', lineHeight: 1, fontSize: '1.25rem', fontFamily: 'Golos Text, sans-serif' }}
+            >
+              Get a free quote
             </PrimaryButton>
           </Box>
         </Box>
