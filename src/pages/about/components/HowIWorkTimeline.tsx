@@ -59,7 +59,7 @@ export const HowIWorkTimeline = () => {
     <Box
       sx={{
         width: "100%",
-        maxWidth: MaxWidths.component,
+        maxWidth: MaxWidths.content,
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -76,7 +76,7 @@ export const HowIWorkTimeline = () => {
           marginBottom: 4
         }}
       >
-        How I Work
+        How is the process?
       </Typography>
       <Box
         sx={{
@@ -150,8 +150,8 @@ export const HowIWorkTimeline = () => {
                       <Box>
                         <Box
                           sx={{
+                            ...TypographyConstants.body,
                             fontWeight: 600,
-                            fontSize: "1.1rem",
                             color: theme.palette.secondary.main,
                             marginBottom: "8px",
                           }}
@@ -160,7 +160,7 @@ export const HowIWorkTimeline = () => {
                         </Box>
                         <Box
                           sx={{
-                            fontSize: "1rem",
+                            ...TypographyConstants.body,
                             color: "rgba(0, 0, 0, 0.7)",
                             lineHeight: 1.4,
                           }}
@@ -272,8 +272,8 @@ export const HowIWorkTimeline = () => {
                       <Box>
                         <Box
                           sx={{
+                            ...TypographyConstants.body,
                             fontWeight: 600,
-                            fontSize: "1.1rem",
                             color: theme.palette.secondary.main,
                             marginBottom: "8px",
                           }}
@@ -282,7 +282,7 @@ export const HowIWorkTimeline = () => {
                         </Box>
                         <Box
                           sx={{
-                            fontSize: "1rem",
+                            ...TypographyConstants.body,
                             color: "rgba(0, 0, 0, 0.7)",
                             lineHeight: 1.4,
                           }}

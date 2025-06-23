@@ -1,7 +1,9 @@
 // Example color palette (rose/white shades)
+import { Box } from "@mui/material";
 import { MaxWidths } from "../../../theme/constants";
 import daisiesImage from "../../../assets/images/fun facts/daisies-optimized.jpeg";
 import oreoImage from "../../../assets/images/fun facts/oreo-optimized.png";
+import { Typography as TypographyConstants } from "../../../theme/constants";
 
 const colors = [
   "#FFF6F4", // lightest rose
@@ -37,10 +39,37 @@ const containerData = [
   { text: funFacts[5], style: { gridRow: "3 / 4", gridColumn: "2 / 3", background: colors[5], alignItems: "flex-start", justifyContent: "flex-start" } },
 ];
 
+const useStyles = () => ({
+  section: {
+    padding: {
+      xs: "0px 16px",
+      sm: "96px 32px",
+      md: "0px 96px",
+    },
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: "24px",
+  },
+});
+
 export const BeyondDevelopment = () => {
+  const classes = useStyles();
+
   return (
-    <section style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center", marginBottom: 64, marginTop: 64 }}>
-      <div style={{ maxWidth: MaxWidths.component, width: "100%", margin: "0 auto" }}>
+    <Box
+      sx={{
+        ...classes.section,
+        width: "100%",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        marginBottom: 64,
+        marginTop: 64,
+      }}
+    >
+      <div style={{ maxWidth: MaxWidths.content, width: "100%", margin: "0 auto" }}>
         <h2 style={{
           fontSize: "2.7rem",
           color: "#CF8B7F",
@@ -49,7 +78,7 @@ export const BeyondDevelopment = () => {
           textAlign: "center",
           lineHeight: 1.1,
           fontFamily: "Golos Text, sans-serif",
-        }}>Fun facts about me</h2>
+        }}>Beyond work</h2>
         <div className="beyond-development-grid" style={{ gridTemplateRows: 'repeat(3, 1fr)' }}>
           {containerData.map((item, idx) => {
             if (item.type === "split-image") {
@@ -59,7 +88,15 @@ export const BeyondDevelopment = () => {
                   className="beyond-development-cell"
                   style={{ ...item.style, display: 'flex', flexDirection: 'column', padding: 0, overflow: 'hidden' }}
                 >
-                  <div style={{ padding: 32, flex: '0 0 auto', color: item.style.color }}>
+                  <div style={{ 
+                    padding: 32, 
+                    flex: '0 0 auto', 
+                    color: item.style.color,
+                    fontSize: TypographyConstants.body.fontSize.md,
+                    fontWeight: TypographyConstants.body.fontWeight,
+                    lineHeight: TypographyConstants.body.lineHeight,
+                    fontFamily: TypographyConstants.body.fontFamily
+                  }}>
                     {item.text}
                   </div>
                   <div style={{ width: '100%', flex: '1 1 auto', display: 'flex', alignItems: 'stretch', justifyContent: 'stretch', padding: 0, margin: 0, marginBottom: '-20px' }}>
@@ -75,7 +112,13 @@ export const BeyondDevelopment = () => {
                   className="beyond-development-cell"
                   style={{ ...item.style, position: 'relative' }}
                 >
-                  <div className="bdc-text" style={{ color: item.style.color || undefined }}>
+                  <div className="bdc-text" style={{ 
+                    color: item.style.color || undefined,
+                    fontSize: TypographyConstants.body.fontSize.md,
+                    fontWeight: TypographyConstants.body.fontWeight,
+                    lineHeight: TypographyConstants.body.lineHeight,
+                    fontFamily: TypographyConstants.body.fontFamily
+                  }}>
                     {item.text}
                   </div>
                   <div style={{ 
@@ -87,18 +130,6 @@ export const BeyondDevelopment = () => {
                     padding: 0, 
                     margin: 0 
                   }}>
-                    <img 
-                      src={chocomilkImage} 
-                      alt="Chocomilk" 
-                      style={{ 
-                        width: '100%', 
-                        height: '100%', 
-                        objectFit: 'contain', 
-                        display: 'block', 
-                        padding: 0, 
-                        margin: 0 
-                      }} 
-                    />
                   </div>
                 </div>
               );
@@ -121,7 +152,13 @@ export const BeyondDevelopment = () => {
                       ? "bdc-text"
                       : undefined
                   }
-                  style={{ color: item.style.color || undefined }}
+                  style={{ 
+                    color: item.style.color || undefined,
+                    fontSize: TypographyConstants.body.fontSize.md,
+                    fontWeight: TypographyConstants.body.fontWeight,
+                    lineHeight: TypographyConstants.body.lineHeight,
+                    fontFamily: TypographyConstants.body.fontFamily
+                  }}
                 >
                   {item.text}
                 </div>
@@ -130,6 +167,6 @@ export const BeyondDevelopment = () => {
           })}
         </div>
       </div>
-    </section>
+    </Box>
   );
 };

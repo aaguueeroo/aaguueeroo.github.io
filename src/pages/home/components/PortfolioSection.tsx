@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import PrimaryButton from "../../../components/PrimaryButton";
+import { MaxWidths } from "../../../theme/constants";
 
 const useStyles = () => ({
   section: {

@@ -144,7 +144,6 @@ export function WhatDoIOfferSection() {
   return (
     <Box
       sx={{
-        ...classes.section,
         width: "100%",
         maxWidth: MaxWidths.content,
         mx: "auto",

@@ -1,6 +1,5 @@
-import { Box, Container, Typography, Button } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import { Theme, useTheme } from "@mui/material/styles";
-import EmailIcon from "@mui/icons-material/Email";
 import { useNavigate } from "react-router-dom";
 import PrimaryButton from "../../../components/PrimaryButton";
 import { MaxWidths } from "../../../theme/constants";

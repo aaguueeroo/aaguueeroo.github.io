@@ -1,18 +1,17 @@
-import React from 'react';
-import { Typography, Card, useTheme, Box, ListItem, ListItemIcon, ListItemText } from "@mui/material";
+import { Box, Typography, Card, useTheme, ListItem, ListItemIcon, ListItemText } from "@mui/material";
 import { Theme } from "@mui/material/styles";
+import { MaxWidths, Typography as TypographyConstants } from '../../../theme/constants';
 import CodeIcon from '@mui/icons-material/Code';
 import PaletteIcon from '@mui/icons-material/Palette';
 import GroupIcon from '@mui/icons-material/Group';
 import whoAmIImage from "../../../assets/images/who_am_i.png";
-import { MaxWidths, Typography as TypographyConstants } from '../../../theme/constants';
 
 const useStyles = (theme: Theme) => ({
   section: {
     padding: {
-      xs: "64px 16px",
+      xs: "0px 16px",
       sm: "96px 32px",
-      md: "160px 96px"
+      md: "0px 96px",
     },
     display: "flex",
     flexDirection: "column",
@@ -193,7 +192,7 @@ const WhoAmISection = () => {
   return (
     <Box sx={{ 
       width: "100%",
-      maxWidth: MaxWidths.component,
+      maxWidth: MaxWidths.content,
       mx: "auto",
       boxSizing: "border-box",
       marginTop: 18,
@@ -239,8 +238,8 @@ const WhoAmISection = () => {
                     <Typography 
                       variant="body1"
                       sx={{
+                        ...TypographyConstants.body,
                         fontWeight: 700,
-                        fontSize: "20px !important",
                         marginBottom: "2px",
                       }}>
                       {skill.title}
@@ -248,9 +247,8 @@ const WhoAmISection = () => {
                   }
                   secondary={
                     <Typography 
-                      variant="body2"
                       sx={{
-                        fontSize: "18px !important",
+                        ...TypographyConstants.body,
                         color: "rgba(0, 0, 0, 0.7)",
                         lineHeight: 1.4,
                       }}>
