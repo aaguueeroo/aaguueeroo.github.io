@@ -84,7 +84,7 @@
 /* About Me & Experience Section */
 .about-section {
   width: 100%;
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto 48px auto;
   background: #fff;
   border-radius: 24px;
@@ -426,7 +426,7 @@
 @media (max-width: 900px) {
   .about-section h2,
   .about-main h2 {
-    font-size: 1.7rem !important;
+    font-size: 2.2rem !important;
     margin-bottom: 24px !important;
   }
 }
@@ -434,7 +434,7 @@
 @media (max-width: 600px) {
   .about-section h2,
   .about-main h2 {
-    font-size: 1.3rem !important;
+    font-size: 2.0rem !important;
     margin-bottom: 16px !important;
   }
 }

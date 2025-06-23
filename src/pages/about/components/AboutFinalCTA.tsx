@@ -116,7 +116,7 @@ export function AboutFinalCTA() {
       </Typography>
 
       <Box sx={{...classes.buttonsContainer}}>
-        <Box sx={{ width: { xs: '100%', md: 'auto' } }}>
+        {/* <Box sx={{ width: { xs: '100%', md: 'auto' } }}>
           <Box sx={{ width: { xs: '100%', sm: '66%', md: 'auto' }, mx: 'auto' }}>
             <Button
               variant="outlined"
@@ -135,17 +135,15 @@ export function AboutFinalCTA() {
               Contact me
             </Button>
           </Box>
-        </Box>
-        <Box sx={{ width: { xs: '100%', md: 'auto' } }}>
-          <Box sx={{ width: { xs: '100%', sm: '66%', md: 'auto' }, mx: 'auto' }}>
-            <PrimaryButton 
-              showArrow 
-              onClick={() => navigate('/quote')}
-              style={{ minHeight: 56, height: 56, width: '100%', lineHeight: 1, fontSize: '1.25rem', fontFamily: 'Golos Text, sans-serif' }}
-            >
-              Get a free quote
-            </PrimaryButton>
-          </Box>
+        </Box> */}
+        <Box sx={{ width: 'auto', mx: 'auto' }}>
+          <PrimaryButton 
+            showArrow 
+            onClick={() => navigate('/quote')}
+            style={{ minHeight: 56, height: 56, width: 'auto', lineHeight: 1, fontSize: '1.25rem', fontFamily: 'Golos Text, sans-serif', paddingLeft: '32px', paddingRight: '32px' }}
+          >
+            Get a free quote
+          </PrimaryButton>
         </Box>
       </Box>
     </Container>

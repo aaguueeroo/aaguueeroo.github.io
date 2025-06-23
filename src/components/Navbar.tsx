@@ -1,6 +1,6 @@
 import { AppBar, Box, IconButton } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
-import HomeIcon from "@mui/icons-material/Home";
+import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
+import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import Menu from "./menu/Menu";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useState } from "react";
@@ -56,7 +56,7 @@ const Navbar = () => {
             onClick={() => navigate("/")}
             sx={{ pl: { xs: 0, sm: 0 } }}
           >
-            <HomeIcon />
+            <HomeRoundedIcon />
           </IconButton>
         )}
         <Box sx={{ flex: 1 }} />
@@ -65,7 +65,7 @@ const Navbar = () => {
           onClick={() => setIsMenuOpen(true)}
           sx={{ pr: { xs: 4, sm: 4 } }}
         >
-          <MenuIcon />
+          <MenuRoundedIcon />
         </IconButton>
       </Box>
       <Menu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />

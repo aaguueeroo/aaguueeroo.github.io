@@ -59,7 +59,7 @@ export const HowIWorkTimeline = () => {
     <Box
       sx={{
         width: "100%",
-        maxWidth: MaxWidths.content,
+        maxWidth: MaxWidths.component,
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -119,12 +119,12 @@ export const HowIWorkTimeline = () => {
               }}
             >
               {/* Left column */}
-              <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%" }}>
+              <Box sx={{ display: "flex", justifyContent: "flex-end", alignItems: "center", height: "100%" }}>
                 {!isMobile && idx % 2 === 0 && (
                   <Box
                     sx={{
                       minWidth: "260px",
-                      maxWidth: "420px",
+                      maxWidth: "600px",
                       background: "#fff",
                       boxShadow: "18px 23px 71.5px rgba(0, 0, 0, 0.1)",
                       borderRadius: "20px",
@@ -133,6 +133,7 @@ export const HowIWorkTimeline = () => {
                       flexDirection: "column",
                       zIndex: 2,
                       transition: "transform 0.35s cubic-bezier(.4,1.5,.6,1)",
+                      marginRight: "20px",
                       "&:hover": {
                         transform: "scale(1.01)",
                       },
@@ -140,6 +141,7 @@ export const HowIWorkTimeline = () => {
                         margin: "0 8px",
                         minWidth: 0,
                         maxWidth: "100vw",
+                        marginRight: "8px",
                       },
                     }}
                   >
@@ -239,12 +241,12 @@ export const HowIWorkTimeline = () => {
               </Box>
 
               {/* Right column */}
-              <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%" }}>
+              <Box sx={{ display: "flex", justifyContent: "flex-start", alignItems: "center", height: "100%" }}>
                 {(isMobile || idx % 2 !== 0) && (
                   <Box
                     sx={{
                       minWidth: "260px",
-                      maxWidth: "420px",
+                      maxWidth: "600px",
                       background: "#fff",
                       boxShadow: "18px 23px 71.5px rgba(0, 0, 0, 0.1)",
                       borderRadius: "20px",
@@ -253,6 +255,7 @@ export const HowIWorkTimeline = () => {
                       flexDirection: "column",
                       zIndex: 2,
                       transition: "transform 0.35s cubic-bezier(.4,1.5,.6,1)",
+                      marginLeft: "20px",
                       "&:hover": {
                         transform: "scale(1.01)",
                       },
@@ -260,6 +263,7 @@ export const HowIWorkTimeline = () => {
                         margin: "0 8px",
                         minWidth: 0,
                         maxWidth: "100vw",
+                        marginLeft: "8px",
                       },
                     }}
                   >

@@ -131,7 +131,13 @@ const QuotePage: React.FC = () => {
     setError("");
 
     // Basic validation
-    if (!formData.name || !formData.email || !formData.projectType || !formData.screenCount || formData.platforms.length === 0) {
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.projectType ||
+      !formData.screenCount ||
+      formData.platforms.length === 0
+    ) {
       setError("Please fill in all required fields (marked with *).");
       return;
     }
@@ -145,7 +151,7 @@ const QuotePage: React.FC = () => {
     return (
       <Box
         sx={{
-          maxWidth: MaxWidths.content,
+          maxWidth: MaxWidths.component,
           mx: "auto",
           py: 8,
           px: { xs: 2, sm: 3, md: 4 },
@@ -186,8 +192,8 @@ const QuotePage: React.FC = () => {
               marginBottom: 4,
             }}
           >
-            I'll review your project details and get back to you within 24
-            hours with a personalized quote and next steps.
+            I'll review your project details and get back to you within 24 hours
+            with a personalized quote and next steps.
           </Typography>
           <Button
             variant="contained"
@@ -225,7 +231,7 @@ const QuotePage: React.FC = () => {
       <Box sx={{ flex: 1, pt: "70px" }}>
         <Box
           sx={{
-            maxWidth: MaxWidths.content,
+            maxWidth: MaxWidths.component,
             mx: "auto",
             py: { xs: 8, sm: 12, md: 16, lg: 20 },
             px: { xs: 2, sm: 3, md: 4 },
@@ -250,10 +256,11 @@ const QuotePage: React.FC = () => {
                 textAlign: "left",
               }}
             >
-              I'll provide you with an approximate estimate based on your project
-              details. The more information you share, the more accurate my estimate
-              will be. This is completely free and doesn't bind us in any way - it's
-              just to help you find the best services for your needs.
+              I'll provide you with an approximate estimate based on your
+              project details. The more information you share, the more accurate
+              my estimate will be. This is completely free and doesn't bind us
+              in any way - it's just to help you find the best services for your
+              needs.
             </Typography>
           </Box>
 
@@ -292,7 +299,9 @@ const QuotePage: React.FC = () => {
                       label="Full Name"
                       name="name"
                       value={formData.name}
-                      onChange={(e) => handleInputChange("name", e.target.value)}
+                      onChange={(e) =>
+                        handleInputChange("name", e.target.value)
+                      }
                       fullWidth
                       sx={{
                         "& .MuiInputLabel-root": {
@@ -311,7 +320,9 @@ const QuotePage: React.FC = () => {
                       name="email"
                       type="email"
                       value={formData.email}
-                      onChange={(e) => handleInputChange("email", e.target.value)}
+                      onChange={(e) =>
+                        handleInputChange("email", e.target.value)
+                      }
                       fullWidth
                       sx={{
                         "& .MuiInputLabel-root": {
@@ -328,7 +339,9 @@ const QuotePage: React.FC = () => {
                       label="Company (Optional)"
                       name="company"
                       value={formData.company}
-                      onChange={(e) => handleInputChange("company", e.target.value)}
+                      onChange={(e) =>
+                        handleInputChange("company", e.target.value)
+                      }
                       fullWidth
                       sx={{
                         "& .MuiInputLabel-root": {
@@ -536,7 +549,7 @@ const QuotePage: React.FC = () => {
                               ? "filled"
                               : "outlined"
                           }
-                          sx={{ 
+                          sx={{
                             cursor: "pointer",
                             "& .MuiChip-label": {
                               ...TypographyConstants.bodySmall,
@@ -638,7 +651,7 @@ const QuotePage: React.FC = () => {
                           ? "filled"
                           : "outlined"
                       }
-                      sx={{ 
+                      sx={{
                         cursor: "pointer",
                         "& .MuiChip-label": {
                           ...TypographyConstants.bodySmall,
@@ -647,13 +660,15 @@ const QuotePage: React.FC = () => {
                     />
                   ))}
                 </Box>
-                
+
                 {/* Other Features Text Field */}
                 <TextField
                   label="Other features (optional)"
                   name="otherFeatures"
                   value={formData.otherFeatures}
-                  onChange={(e) => handleInputChange("otherFeatures", e.target.value)}
+                  onChange={(e) =>
+                    handleInputChange("otherFeatures", e.target.value)
+                  }
                   fullWidth
                   placeholder="Add any other features not listed above..."
                   sx={{
@@ -668,7 +683,7 @@ const QuotePage: React.FC = () => {
                     },
                   }}
                 />
-                
+
                 <input
                   type="hidden"
                   name="features"
@@ -720,7 +735,10 @@ const QuotePage: React.FC = () => {
               </Box>
 
               {/* Submit Button */}
-              <Box textAlign="center" sx={{ display: "flex", justifyContent: "center", mt: 12 }}>
+              <Box
+                textAlign="center"
+                sx={{ display: "flex", justifyContent: "center", mt: 12 }}
+              >
                 {error && (
                   <Alert
                     severity="error"
@@ -729,9 +747,9 @@ const QuotePage: React.FC = () => {
                     {error}
                   </Alert>
                 )}
-                <PrimaryButton 
-                  type="submit" 
-                  showArrow={false} 
+                <PrimaryButton
+                  type="submit"
+                  showArrow={false}
                   endIcon={<SendIcon />}
                   sx={{
                     boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
@@ -739,11 +757,11 @@ const QuotePage: React.FC = () => {
                     display: "flex",
                     alignItems: "center",
                     gap: theme.spacing(1),
-                    transition: 'all 0.3s ease',
-                    transform: 'scale(1)',
+                    transition: "all 0.3s ease",
+                    transform: "scale(1)",
                     "&:hover": {
                       boxShadow: "0 6px 8px rgba(0, 0, 0, 0.2)",
-                      transform: 'scale(1.05)',
+                      transform: "scale(1.05)",
                       bgcolor: theme.palette.primary.main,
                     },
                     "& .MuiSvgIcon-root": {
@@ -771,7 +789,10 @@ const QuotePage: React.FC = () => {
                 textAlign: "left",
               }}
             >
-              *The quote is approximate and not a binding contract. The more details that you input -a detailed description, the number of screens, platforms and features, etc.- the more accurate that the quote will be.
+              *The quote is approximate and not a binding contract. The more
+              details that you input -a detailed description, the number of
+              screens, platforms and features, etc.- the more accurate that the
+              quote will be.
             </Typography>
           </Box>
         </Box>

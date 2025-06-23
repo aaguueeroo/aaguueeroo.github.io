@@ -1,5 +1,7 @@
 // Example color palette (rose/white shades)
 import { MaxWidths } from "../../../theme/constants";
+import daisiesImage from "../../../assets/images/fun facts/daisies-optimized.jpeg";
+import oreoImage from "../../../assets/images/fun facts/oreo-optimized.png";
 
 const colors = [
   "#FFF6F4", // lightest rose
@@ -13,23 +15,26 @@ const colors = [
 ];
 
 const funFacts = [
-  "I have a beautiful cat named Oreo.",
-  "My favorite snack is popcorn.",
-  "I love spending time with my extended family.",
-  "Astronomy and the night sky are my deepest passion.",
-  "I love painting with watercolor to relax.",
-  "I probably have more than 500 different markers.",
-  "I love history novels and horror movies.",
+  "I don't drink coffee. Chocomilk is my go-to breakfast. Nothing beats it!",
+  "Nighttime is my favorite part of the day. It's when everything is quiet and I can fully dive into my projects.",
+  "I love the countryside. I grew up surrounded by cows and open fields.",
+  "Astronomy has always fascinated me. The night sky never stops inspiring me.",
+  "My cat Oreo is adorable, and a little pirate. She only has one eye.",
+  "I'm into history novels and horror films."
 ];
 
 const containerData = [
   { text: funFacts[0], style: { gridRow: "1 / 2", gridColumn: "1 / 2", background: colors[0] } },
   { text: funFacts[1], style: { gridRow: "1 / 3", gridColumn: "2 / 3", background: colors[1], alignItems: "flex-start", justifyContent: "flex-start" }, type: "long-vertical" },
   { text: funFacts[2], style: { gridRow: "1 / 2", gridColumn: "3 / 4", background: colors[2] } },
-  { style: { gridRow: "1 / 2", gridColumn: "4 / 5", backgroundImage: "url('https://picsum.photos/302')", backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" } },
-  { text: funFacts[4], style: { gridRow: "2 / 4", gridColumn: "1 / 2", background: colors[4], color: "#fff" } },
-  { text: funFacts[5], style: { gridRow: "2 / 4", gridColumn: "3 / 5", background: colors[5], alignItems: "flex-start", justifyContent: "flex-start" }, type: "long-vertical" },
-  { style: { gridRow: "3 / 4", gridColumn: "2 / 3", backgroundImage: "url('https://picsum.photos/200')", backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" } },
+  { text: funFacts[3], style: { gridRow: "1 / 2", gridColumn: "4 / 5", background: colors[0] } },
+  { 
+    text: funFacts[4], 
+    style: { gridRow: "2 / 4", gridColumn: "1 / 2", background: colors[4], color: "#fff" }, 
+    type: "split-image"
+  },
+  { style: { gridRow: "2 / 4", gridColumn: "3 / 5", backgroundImage: `url(${daisiesImage})`, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" } },
+  { text: funFacts[5], style: { gridRow: "3 / 4", gridColumn: "2 / 3", background: colors[5], alignItems: "flex-start", justifyContent: "flex-start" } },
 ];
 
 export const BeyondDevelopment = () => {
@@ -47,6 +52,57 @@ export const BeyondDevelopment = () => {
         }}>Fun facts about me</h2>
         <div className="beyond-development-grid" style={{ gridTemplateRows: 'repeat(3, 1fr)' }}>
           {containerData.map((item, idx) => {
+            if (item.type === "split-image") {
+              return (
+                <div
+                  key={idx}
+                  className="beyond-development-cell"
+                  style={{ ...item.style, display: 'flex', flexDirection: 'column', padding: 0, overflow: 'hidden' }}
+                >
+                  <div style={{ padding: 32, flex: '0 0 auto', color: item.style.color }}>
+                    {item.text}
+                  </div>
+                  <div style={{ width: '100%', flex: '1 1 auto', display: 'flex', alignItems: 'stretch', justifyContent: 'stretch', padding: 0, margin: 0, marginBottom: '-20px' }}>
+                    <img src={oreoImage} alt="cat" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', padding: 0, margin: 0, borderBottomLeftRadius: 24, borderBottomRightRadius: 24 }} />
+                  </div>
+                </div>
+              );
+            }
+            if (item.type === "markers-with-image") {
+              return (
+                <div
+                  key={idx}
+                  className="beyond-development-cell"
+                  style={{ ...item.style, position: 'relative' }}
+                >
+                  <div className="bdc-text" style={{ color: item.style.color || undefined }}>
+                    {item.text}
+                  </div>
+                  <div style={{ 
+                    position: 'absolute', 
+                    bottom: '20px', 
+                    right: '36px', 
+                    width: '55%', 
+                    height: '55%', 
+                    padding: 0, 
+                    margin: 0 
+                  }}>
+                    <img 
+                      src={chocomilkImage} 
+                      alt="Chocomilk" 
+                      style={{ 
+                        width: '100%', 
+                        height: '100%', 
+                        objectFit: 'contain', 
+                        display: 'block', 
+                        padding: 0, 
+                        margin: 0 
+                      }} 
+                    />
+                  </div>
+                </div>
+              );
+            }
             return (
               <div
                 key={idx}
@@ -76,4 +132,4 @@ export const BeyondDevelopment = () => {
       </div>
     </section>
   );
-}; 
+};

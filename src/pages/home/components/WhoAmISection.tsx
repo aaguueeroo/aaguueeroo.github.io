@@ -192,16 +192,12 @@ const WhoAmISection = () => {
 
   return (
     <Box sx={{ 
-      padding: {
-        xs: "64px 16px",
-        sm: "96px 32px",
-        md: "80px 96px"
-      },
       width: "100%",
-      maxWidth: MaxWidths.content,
+      maxWidth: MaxWidths.component,
       mx: "auto",
       boxSizing: "border-box",
-      mb: { xs: 0, sm: 0, md: 0 }
+      marginTop: 18,
+      marginBottom: 12,
     }}>
       <Box sx={{
         display: "flex",

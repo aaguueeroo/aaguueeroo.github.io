@@ -150,10 +150,14 @@ export function Footer() {
           >
             Get a free quote
           </Button>
-          <Button endIcon={<ArrowForwardIcon />} sx={{ ...classes.textButton }}>
-            Contact me
+          <Button endIcon={<ArrowForwardIcon />} onClick={() => navigate('/about')} sx={{ ...classes.textButton }}>
+            About me
           </Button>
-          <Button endIcon={<ArrowForwardIcon />} sx={{ ...classes.textButton }}>
+          <Button 
+            endIcon={<ArrowForwardIcon />} 
+            onClick={() => navigate('/blog')}
+            sx={{ ...classes.textButton }}
+          >
             See blog
           </Button>
         </Box>

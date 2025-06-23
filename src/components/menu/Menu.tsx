@@ -24,8 +24,8 @@ const Menu = ({ isOpen, onClose }: MenuProps) => {
   const navigate = useNavigate();
 
   const menuItems = [
+    { label: "Home", path: "/" },
     { label: "About me", path: "/about" },
-    { label: "My projects", path: "/projects" },
     { label: "Blog", path: "/blog" },
   ];
 
