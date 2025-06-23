@@ -148,6 +148,11 @@ export function WhatDoIOfferSection() {
         maxWidth: MaxWidths.content,
         mx: "auto",
         boxSizing: "border-box",
+        padding: {
+          xs: "0px 16px",
+          sm: "96px 32px",
+          md: "0px 96px",
+        },
         mt: {
           xs: 10,
           sm: 0,
