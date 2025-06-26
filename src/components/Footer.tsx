@@ -148,7 +148,7 @@ export function Footer() {
             onClick={() => navigate('/quote')}
             sx={{ ...classes.textButton }}
           >
-            Get a free quote
+            Get a quote
           </Button>
           <Button endIcon={<ArrowForwardIcon />} onClick={() => navigate('/about')} sx={{ ...classes.textButton }}>
             About me

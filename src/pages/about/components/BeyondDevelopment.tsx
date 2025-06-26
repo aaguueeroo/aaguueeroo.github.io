@@ -1,5 +1,5 @@
 // Example color palette (rose/white shades)
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { MaxWidths } from "../../../theme/constants";
 import daisiesImage from "../../../assets/images/fun facts/daisies-optimized.jpeg";
 import oreoImage from "../../../assets/images/fun facts/oreo-optimized.png";
@@ -65,8 +65,8 @@ export const BeyondDevelopment = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        marginBottom: 64,
-        marginTop: 64,
+        marginBottom: { xs: 0, sm: 24, md: 32 },
+        marginTop: { xs: 12, sm: 0, md: 28},
       }}
     >
       <div style={{ maxWidth: MaxWidths.content, width: "100%", margin: "0 auto" }}>
@@ -88,20 +88,27 @@ export const BeyondDevelopment = () => {
                   className="beyond-development-cell"
                   style={{ ...item.style, display: 'flex', flexDirection: 'column', padding: 0, overflow: 'hidden' }}
                 >
-                  <div style={{ 
-                    padding: 32, 
+                  <Typography className="bdc-text" sx={{ 
+                    padding: 20, 
                     flex: '0 0 auto', 
                     color: item.style.color,
-                    fontSize: TypographyConstants.body.fontSize.md,
-                    fontWeight: TypographyConstants.body.fontWeight,
-                    lineHeight: TypographyConstants.body.lineHeight,
-                    fontFamily: TypographyConstants.body.fontFamily
+                    ...TypographyConstants.body
                   }}>
                     {item.text}
-                  </div>
-                  <div style={{ width: '100%', flex: '1 1 auto', display: 'flex', alignItems: 'stretch', justifyContent: 'stretch', padding: 0, margin: 0, marginBottom: '-20px' }}>
-                    <img src={oreoImage} alt="cat" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', padding: 0, margin: 0, borderBottomLeftRadius: 24, borderBottomRightRadius: 24 }} />
-                  </div>
+                  </Typography>
+                  <Box sx={{ 
+                    width: '100%', 
+                    flex: '1 1 auto', 
+                    display: 'flex', 
+                    alignItems: 'stretch', 
+                    justifyContent: 'stretch', 
+                    padding: 0, 
+                    margin: 0, 
+                    marginBottom: '-20px',
+                    maxHeight: { xs: '200px', sm: '200px', md: 'none' }
+                  }}>
+                    <img src={oreoImage} alt="cat" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block', padding: 0, margin: 0, borderBottomLeftRadius: 24, borderBottomRightRadius: 24 }} />
+                  </Box>
                 </div>
               );
             }
@@ -112,15 +119,12 @@ export const BeyondDevelopment = () => {
                   className="beyond-development-cell"
                   style={{ ...item.style, position: 'relative' }}
                 >
-                  <div className="bdc-text" style={{ 
+                  <Typography className="bdc-text" sx={{ 
                     color: item.style.color || undefined,
-                    fontSize: TypographyConstants.body.fontSize.md,
-                    fontWeight: TypographyConstants.body.fontWeight,
-                    lineHeight: TypographyConstants.body.lineHeight,
-                    fontFamily: TypographyConstants.body.fontFamily
+                    ...TypographyConstants.body
                   }}>
                     {item.text}
-                  </div>
+                  </Typography>
                   <div style={{ 
                     position: 'absolute', 
                     bottom: '20px', 
@@ -146,22 +150,12 @@ export const BeyondDevelopment = () => {
                 }
                 style={{ ...item.style }}
               >
-                <div
-                  className={
-                    item.type === "long-horizontal" || item.type === "long-vertical"
-                      ? "bdc-text"
-                      : undefined
-                  }
-                  style={{ 
-                    color: item.style.color || undefined,
-                    fontSize: TypographyConstants.body.fontSize.md,
-                    fontWeight: TypographyConstants.body.fontWeight,
-                    lineHeight: TypographyConstants.body.lineHeight,
-                    fontFamily: TypographyConstants.body.fontFamily
-                  }}
-                >
+                <Typography className="bdc-text" sx={{ 
+                  color: item.style.color || undefined,
+                  ...TypographyConstants.body
+                }}>
                   {item.text}
-                </div>
+                </Typography>
               </div>
             );
           })}

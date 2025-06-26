@@ -41,6 +41,7 @@ const HeroSection = () => {
           width: "100%",
           "@media (min-width:400px)": {
             py: 3,
+            px: 3,
           },
           "@media (min-width:450px) and (max-width:735px)": {
             px: '40px',

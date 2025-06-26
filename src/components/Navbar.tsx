@@ -9,11 +9,6 @@ import { useTheme } from "@mui/material/styles";
 import { MaxWidths } from "../theme/constants";
 
 const useStyles = makeStyles(() => ({
-  iconButton: {
-    "& .MuiSvgIcon-root": {
-      fontSize: "4rem",
-    },
-  },
   navBox: {
     display: "flex",
     justifyContent: "space-between",
@@ -21,18 +16,18 @@ const useStyles = makeStyles(() => ({
     transition: "background-color 0.3s ease",
     maxWidth: MaxWidths.layout,
     width: "100%",
-    margin: "0 auto",
-    padding: "0 16px",
   },
   appBar: {
     boxShadow: "none !important",
     elevation: 0,
-    height: "70px",
     backgroundColor: "transparent !important",
     transition: "background-color 0.3s ease",
   },
   scrolled: {
     backgroundColor: "white !important",
+  },
+  iconButton: {
+    // Add empty styles for the iconButton class
   },
 }));
 
@@ -54,7 +49,12 @@ const Navbar = () => {
           <IconButton
             className={classes.iconButton}
             onClick={() => navigate("/")}
-            sx={{ pl: { xs: 0, sm: 0 } }}
+            sx={{ 
+              pl: { xs: 0, sm: 0 },
+              "& .MuiSvgIcon-root": {
+                fontSize: { xs: "3rem", sm: "3rem", md: "4rem" }
+              }
+            }}
           >
             <HomeRoundedIcon />
           </IconButton>
@@ -63,7 +63,12 @@ const Navbar = () => {
         <IconButton
           className={classes.iconButton}
           onClick={() => setIsMenuOpen(true)}
-          sx={{ pr: { xs: 4, sm: 4 } }}
+          sx={{ 
+            pr: { xs: 0, sm: 0 },
+            "& .MuiSvgIcon-root": {
+              fontSize: { xs: "3em", sm: "3rem", md: "4rem" }
+            }
+          }}
         >
           <MenuRoundedIcon />
         </IconButton>

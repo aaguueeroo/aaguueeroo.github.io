@@ -2,7 +2,10 @@ import { Box, Card, Typography } from "@mui/material";
 import whatDoIOfferTopImage from "../../../assets/images/what_do_i_offer_top.png";
 import whatDoIOfferLeftImage from "../../../assets/images/what_do_i_offer_left.png";
 import whatDoIOfferRightImage from "../../../assets/images/what_do_i_offer_right.png";
-import { MaxWidths, Typography as TypographyConstants } from "../../../theme/constants";
+import {
+  MaxWidths,
+  Typography as TypographyConstants,
+} from "../../../theme/constants";
 
 const useStyles = () => ({
   section: {
@@ -108,7 +111,7 @@ const useStyles = () => ({
     height: "0",
     paddingBottom: {
       xs: "56.25%", // 16:9 aspect ratio
-      sm: "60%",    // Reduced from 100% to make it smaller
+      sm: "60%", // Reduced from 100% to make it smaller
     },
     position: "relative",
     borderRadius: "24px",
@@ -120,7 +123,7 @@ const useStyles = () => ({
     height: "0",
     paddingBottom: {
       xs: "56.25%", // 16:9 aspect ratio
-      sm: "60%",    // Reduced from 100% to make it smaller
+      sm: "60%", // Reduced from 100% to make it smaller
     },
     position: "relative",
     borderRadius: "24px",
@@ -177,41 +180,47 @@ export function WhatDoIOfferSection() {
           boxSizing: "border-box",
         }}
       >
-
         <Box sx={{ ...classes.mainCardContainer }}>
-            <Box sx={{ ...classes.mainCardContent }}>
-              <Typography
-                sx={{
-                  ...TypographyConstants.h3
-                }}
-              >
-                Get the full app package, without the hassle.
-              </Typography>
-              <Typography
-                sx={{
-                  ...TypographyConstants.body,
-                  opacity: 0.8,
-                }}
-              >
-                Large teams, despite being preferred by many, often face unnecessary 
-                delays caused by communication layers, meetings, alignment efforts, and 
-                miscommunications. These issues are avoided by solo developers, who handle 
-                all aspects directly and streamline the process.
-              </Typography>
-            </Box>
+          <Box sx={{ ...classes.mainCardContent }}>
+            <Typography
+              sx={{
+                ...TypographyConstants.h3,
+              }}
+            >
+              Get the full app package, without the hassle.
+            </Typography>
+            <Typography
+              sx={{
+                ...TypographyConstants.body,
+                opacity: 0.8,
+              }}
+            >
+              Large teams, despite being preferred by many, often face
+              unnecessary delays caused by communication layers, meetings,
+              alignment efforts, and miscommunications. These issues are avoided
+              by solo developers, who handle all aspects directly and streamline
+              the process.
+            </Typography>
+          </Box>
 
           <Box sx={{ ...classes.cardsRow }}>
             <Card sx={{ ...classes.card }}>
-              <Typography variant="subtitle2" textAlign={"start"}
+              <Typography
+                variant="subtitle2"
+                textAlign={"start"}
                 sx={{
-                  ...TypographyConstants.h4
-                }}>
-                Cohesive experience
+                  ...TypographyConstants.h4,
+                }}
+              >
+                Seamless experience
               </Typography>
-              <Typography variant="body2" textAlign={"start"}
+              <Typography
+                variant="body2"
+                textAlign={"start"}
                 sx={{
-                  ...TypographyConstants.body
-                }}>
+                  ...TypographyConstants.body,
+                }}
+              >
                 From design to code, everything works together. The visuals,
                 interactions, and flow are aligned to feel natural and
                 intuitive. I turn your ideas into a smooth experience that
@@ -235,16 +244,22 @@ export function WhatDoIOfferSection() {
             </Card>
 
             <Card sx={{ ...classes.card }}>
-              <Typography variant="subtitle2" textAlign={"start"}
+              <Typography
+                variant="subtitle2"
+                textAlign={"start"}
                 sx={{
-                  ...TypographyConstants.h4
-                }}>
-                Polished results
+                  ...TypographyConstants.h4,
+                }}
+              >
+                Polished resultss
               </Typography>
-              <Typography variant="body2" textAlign={"start"}
+              <Typography
+                variant="body2"
+                textAlign={"start"}
                 sx={{
-                  ...TypographyConstants.body
-                }}>
+                  ...TypographyConstants.body,
+                }}
+              >
                 I deliver complete, high-quality apps that are ready for real
                 users. With attention to detail across all layers —design,
                 frontend and backend— you get a product that looks great,

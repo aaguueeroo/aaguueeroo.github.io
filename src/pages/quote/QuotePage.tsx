@@ -11,8 +11,11 @@ import {
   Select,
   TextField,
   Typography,
+  Tooltip,
+  IconButton,
 } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
+import InfoIcon from "@mui/icons-material/Info";
 import {
   MaxWidths,
   Typography as TypographyConstants,
@@ -38,6 +41,33 @@ const QuotePage: React.FC = () => {
     otherFeatures: "",
   });
   const [submitted, setSubmitted] = useState(false);
+
+  const textFieldStyles = {
+    "& .MuiInputLabel-root": {
+      ...TypographyConstants.bodySmall,
+    },
+    "& .MuiInputBase-input": {
+      ...TypographyConstants.bodySmall,
+    },
+    "& .MuiInputLabel-root.Mui-focused": {
+      transform: "translate(40px, -9px) scale(0.75)",
+    },
+  };
+
+  const selectStyles = {
+    "& .MuiSelect-select": {
+      ...TypographyConstants.bodySmall,
+    },
+    "& .MuiOutlinedInput-root": {
+      borderRadius: "35px",
+    },
+    "& .MuiMenu-paper": {
+      borderRadius: "35px",
+    },
+    "& .MuiMenuItem-root": {
+      ...TypographyConstants.bodySmall,
+    },
+  };
 
   const projectTypes = [
     "Web Application",
@@ -231,7 +261,7 @@ const QuotePage: React.FC = () => {
             }}
           >
             {/* Header Section */}
-            <Box mb={12}>
+            <Box mb={24} mt={12}>
               <Typography
                 sx={{
                   ...TypographyConstants.h2,
@@ -240,7 +270,7 @@ const QuotePage: React.FC = () => {
                   textAlign: "left",
                 }}
               >
-                Find the best solution for free
+                Explore your best option, commitment-free.
               </Typography>
               <Typography
                 sx={{
@@ -251,7 +281,7 @@ const QuotePage: React.FC = () => {
               >
                 I'll provide you with an approximate estimate based on your
                 project details. The more information you share, the more accurate
-                my estimate will be. This is completely free and doesn't bind us
+                the quote will be. This is completely free and doesn't bind us
                 in any way - it's just to help you find the best services for your
                 needs.
               </Typography>
@@ -260,11 +290,11 @@ const QuotePage: React.FC = () => {
             {/* Form Container */}
             <Box
               sx={{
-                backgroundColor: "#fff",
-                borderRadius: "32px",
-                boxShadow: "18px 23px 71.5px rgba(0, 0, 0, 0.1)",
-                py: { xs: 6, sm: 8, md: 10, lg: 30 },
-                px: { xs: 6, sm: 8, md: 10, lg: 45 },
+                backgroundColor: { xs: "transparent", sm: "#fff" },
+                borderRadius: { xs: 0, sm: "32px" },
+                boxShadow: { xs: "none", sm: "18px 23px 71.5px rgba(0, 0, 0, 0.1)" },
+                py: { xs: 0, sm: 8, md: 10, lg: 15 },
+                px: { xs: 0, sm: 8, md: 10, lg: 20 },
                 mb: 12,
               }}
             >
@@ -294,14 +324,7 @@ const QuotePage: React.FC = () => {
                         value={formData.name}
                         onChange={handleInputChange}
                         fullWidth
-                        sx={{
-                          "& .MuiInputLabel-root": {
-                            ...TypographyConstants.bodySmall,
-                          },
-                          "& .MuiInputBase-input": {
-                            ...TypographyConstants.bodySmall,
-                          },
-                        }}
+                        sx={textFieldStyles}
                       />
                     </Grid>
                     <Grid item xs={12} md={6}>
@@ -313,14 +336,7 @@ const QuotePage: React.FC = () => {
                         value={formData.email}
                         onChange={handleInputChange}
                         fullWidth
-                        sx={{
-                          "& .MuiInputLabel-root": {
-                            ...TypographyConstants.bodySmall,
-                          },
-                          "& .MuiInputBase-input": {
-                            ...TypographyConstants.bodySmall,
-                          },
-                        }}
+                        sx={textFieldStyles}
                       />
                     </Grid>
                     <Grid item xs={12}>
@@ -330,14 +346,7 @@ const QuotePage: React.FC = () => {
                         value={formData.company}
                         onChange={handleInputChange}
                         fullWidth
-                        sx={{
-                          "& .MuiInputLabel-root": {
-                            ...TypographyConstants.bodySmall,
-                          },
-                          "& .MuiInputBase-input": {
-                            ...TypographyConstants.bodySmall,
-                          },
-                        }}
+                        sx={textFieldStyles}
                       />
                     </Grid>
                   </Grid>
@@ -359,7 +368,12 @@ const QuotePage: React.FC = () => {
                   <Grid container spacing={3}>
                     <Grid item xs={12} md={4}>
                       <FormControl fullWidth>
-                        <InputLabel sx={{ ...TypographyConstants.bodySmall }}>
+                        <InputLabel sx={{ 
+                          ...TypographyConstants.bodySmall,
+                          "&.Mui-focused": {
+                            transform: "translate(40px, -9px) scale(0.75)",
+                          },
+                        }}>
                           Project Type *
                         </InputLabel>
                         <Select
@@ -368,30 +382,7 @@ const QuotePage: React.FC = () => {
                           value={formData.projectType}
                           label="Project Type *"
                           onChange={handleSelectChange}
-                          sx={{
-                            "& .MuiSelect-select": {
-                              ...TypographyConstants.bodySmall,
-                            },
-                            "& .MuiOutlinedInput-root": {
-                              borderRadius: "35px",
-                            },
-                            "& .MuiMenu-paper": {
-                              borderRadius: "35px",
-                            },
-                            "& .MuiMenuItem-root": {
-                              ...TypographyConstants.bodySmall,
-                            },
-                          }}
-                          MenuProps={{
-                            PaperProps: {
-                              sx: {
-                                borderRadius: "35px",
-                                "& .MuiMenuItem-root": {
-                                  ...TypographyConstants.bodySmall,
-                                },
-                              },
-                            },
-                          }}
+                          sx={selectStyles}
                         >
                           {projectTypes.map((type) => (
                             <MenuItem key={type} value={type}>
@@ -403,7 +394,12 @@ const QuotePage: React.FC = () => {
                     </Grid>
                     <Grid item xs={12} md={4}>
                       <FormControl fullWidth>
-                        <InputLabel sx={{ ...TypographyConstants.bodySmall }}>
+                        <InputLabel sx={{ 
+                          ...TypographyConstants.bodySmall,
+                          "&.Mui-focused": {
+                            transform: "translate(40px, -9px) scale(0.75)",
+                          },
+                        }}>
                           Budget Range
                         </InputLabel>
                         <Select
@@ -411,30 +407,7 @@ const QuotePage: React.FC = () => {
                           value={formData.budget}
                           label="Budget Range"
                           onChange={handleSelectChange}
-                          sx={{
-                            "& .MuiSelect-select": {
-                              ...TypographyConstants.bodySmall,
-                            },
-                            "& .MuiOutlinedInput-root": {
-                              borderRadius: "35px",
-                            },
-                            "& .MuiMenu-paper": {
-                              borderRadius: "35px",
-                            },
-                            "& .MuiMenuItem-root": {
-                              ...TypographyConstants.bodySmall,
-                            },
-                          }}
-                          MenuProps={{
-                            PaperProps: {
-                              sx: {
-                                borderRadius: "35px",
-                                "& .MuiMenuItem-root": {
-                                  ...TypographyConstants.bodySmall,
-                                },
-                              },
-                            },
-                          }}
+                          sx={selectStyles}
                         >
                           {budgetRanges.map((range) => (
                             <MenuItem key={range} value={range}>
@@ -446,7 +419,12 @@ const QuotePage: React.FC = () => {
                     </Grid>
                     <Grid item xs={12} md={4}>
                       <FormControl fullWidth>
-                        <InputLabel sx={{ ...TypographyConstants.bodySmall }}>
+                        <InputLabel sx={{ 
+                          ...TypographyConstants.bodySmall,
+                          "&.Mui-focused": {
+                            transform: "translate(40px, -9px) scale(0.75)",
+                          },
+                        }}>
                           Timeline
                         </InputLabel>
                         <Select
@@ -454,30 +432,7 @@ const QuotePage: React.FC = () => {
                           value={formData.timeline}
                           label="Timeline"
                           onChange={handleSelectChange}
-                          sx={{
-                            "& .MuiSelect-select": {
-                              ...TypographyConstants.bodySmall,
-                            },
-                            "& .MuiOutlinedInput-root": {
-                              borderRadius: "35px",
-                            },
-                            "& .MuiMenu-paper": {
-                              borderRadius: "35px",
-                            },
-                            "& .MuiMenuItem-root": {
-                              ...TypographyConstants.bodySmall,
-                            },
-                          }}
-                          MenuProps={{
-                            PaperProps: {
-                              sx: {
-                                borderRadius: "35px",
-                                "& .MuiMenuItem-root": {
-                                  ...TypographyConstants.bodySmall,
-                                },
-                              },
-                            },
-                          }}
+                          sx={selectStyles}
                         >
                           {timelineOptions.map((option) => (
                             <MenuItem key={option} value={option}>
@@ -494,15 +449,33 @@ const QuotePage: React.FC = () => {
 
                 {/* Platforms & Screens */}
                 <Box mb={6}>
-                  <Typography
-                    sx={{
-                      ...TypographyConstants.h4,
-                      color: "primary",
-                      marginBottom: 3,
-                    }}
-                  >
-                    Platforms & Screens
-                  </Typography>
+                  <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
+                    <Typography
+                      sx={{
+                        ...TypographyConstants.h4,
+                        color: "primary",
+                      }}
+                    >
+                      Platforms & Screens
+                    </Typography>
+                    <Tooltip 
+                      title="Number of Screens refers to the number of different screens or activities in your app (e.g., login screen, home screen, profile screen, etc.)"
+                      placement="top"
+                      componentsProps={{
+                        tooltip: {
+                          sx: {
+                            borderRadius: '8px',
+                            fontSize: '14px',
+                            maxWidth: '300px',
+                          }
+                        }
+                      }}
+                    >
+                      <IconButton size="small" sx={{ ml: 1, p: 0.5 }}>
+                        <InfoIcon sx={{ fontSize: '18px', color: 'text.secondary' }} />
+                      </IconButton>
+                    </Tooltip>
+                  </Box>
                   <Grid container spacing={3}>
                     <Grid item xs={12} md={8}>
                       <Typography
@@ -535,6 +508,11 @@ const QuotePage: React.FC = () => {
                               "& .MuiChip-label": {
                                 ...TypographyConstants.bodySmall,
                               },
+                              "&:hover": {
+                                backgroundColor: formData.platforms.includes(platform) 
+                                  ? "primary.main" 
+                                  : "transparent",
+                              },
                             }}
                           />
                         ))}
@@ -547,7 +525,12 @@ const QuotePage: React.FC = () => {
                     </Grid>
                     <Grid item xs={12} md={4}>
                       <FormControl fullWidth>
-                        <InputLabel sx={{ ...TypographyConstants.bodySmall }}>
+                        <InputLabel sx={{ 
+                          ...TypographyConstants.bodySmall,
+                          "&.Mui-focused": {
+                            transform: "translate(40px, -9px) scale(0.75)",
+                          },
+                        }}>
                           Number of Screens *
                         </InputLabel>
                         <Select
@@ -556,30 +539,7 @@ const QuotePage: React.FC = () => {
                           value={formData.screenCount}
                           label="Number of Screens *"
                           onChange={handleSelectChange}
-                          sx={{
-                            "& .MuiSelect-select": {
-                              ...TypographyConstants.bodySmall,
-                            },
-                            "& .MuiOutlinedInput-root": {
-                              borderRadius: "35px",
-                            },
-                            "& .MuiMenu-paper": {
-                              borderRadius: "35px",
-                            },
-                            "& .MuiMenuItem-root": {
-                              ...TypographyConstants.bodySmall,
-                            },
-                          }}
-                          MenuProps={{
-                            PaperProps: {
-                              sx: {
-                                borderRadius: "35px",
-                                "& .MuiMenuItem-root": {
-                                  ...TypographyConstants.bodySmall,
-                                },
-                              },
-                            },
-                          }}
+                          sx={selectStyles}
                         >
                           {screenCountOptions.map((option) => (
                             <MenuItem key={option} value={option}>
@@ -635,6 +595,11 @@ const QuotePage: React.FC = () => {
                           "& .MuiChip-label": {
                             ...TypographyConstants.bodySmall,
                           },
+                          "&:hover": {
+                            backgroundColor: formData.features.includes(feature) 
+                              ? "primary.main" 
+                              : "transparent",
+                          },
                         }}
                       />
                     ))}
@@ -649,12 +614,7 @@ const QuotePage: React.FC = () => {
                     fullWidth
                     placeholder="Add any other features not listed above..."
                     sx={{
-                      "& .MuiInputLabel-root": {
-                        ...TypographyConstants.bodySmall,
-                      },
-                      "& .MuiInputBase-input": {
-                        ...TypographyConstants.bodySmall,
-                      },
+                      ...textFieldStyles,
                       "& .MuiOutlinedInput-root": {
                         borderRadius: "35px",
                       },
@@ -696,12 +656,7 @@ const QuotePage: React.FC = () => {
                     fullWidth
                     placeholder="Describe your project goals, target audience, key features, and any specific requirements or preferences you have..."
                     sx={{
-                      "& .MuiInputLabel-root": {
-                        ...TypographyConstants.bodySmall,
-                      },
-                      "& .MuiInputBase-input": {
-                        ...TypographyConstants.bodySmall,
-                      },
+                      ...textFieldStyles,
                       "& .MuiOutlinedInput-root": {
                         borderRadius: "35px",
                       },

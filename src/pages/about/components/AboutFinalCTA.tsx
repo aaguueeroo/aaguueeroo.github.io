@@ -141,7 +141,7 @@ export function AboutFinalCTA() {
             onClick={() => navigate('/quote')}
             style={{ minHeight: 56, height: 56, width: 'auto', lineHeight: 1, fontSize: '1.25rem', fontFamily: 'Golos Text, sans-serif', paddingLeft: '32px', paddingRight: '32px' }}
           >
-            Get a free quote
+            Get a quote
           </PrimaryButton>
         </Box>
       </Box>

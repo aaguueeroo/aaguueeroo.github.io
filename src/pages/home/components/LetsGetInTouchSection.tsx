@@ -157,7 +157,7 @@ export function LetsGetInTouchSection() {
               paddingRight: '32px'
             }}
           >
-            Get a free quote
+            Get a quote
           </PrimaryButton>
         </Box>
       </Box>

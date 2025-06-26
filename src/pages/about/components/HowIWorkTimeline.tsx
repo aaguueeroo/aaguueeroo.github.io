@@ -15,7 +15,7 @@ export const HowIWorkTimeline = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 700);
+      setIsMobile(window.innerWidth <= 610);
     };
     handleResize();
     window.addEventListener("resize", handleResize);
@@ -97,6 +97,9 @@ export const HowIWorkTimeline = () => {
             gap: 0,
             position: "relative",
             zIndex: 2,
+            "@media (max-width: 600px)": {
+              gap: "24px",
+            },
           }}
         >
           {steps.map((step, idx) => (
@@ -113,13 +116,21 @@ export const HowIWorkTimeline = () => {
                   gridTemplateColumns: "1fr 40px 1fr",
                 },
                 "@media (max-width: 600px)": {
-                  gridTemplateColumns: "1fr 24px 1fr",
+                  gridTemplateColumns: "40px 1fr",
                   minHeight: "100px",
                 },
               }}
             >
               {/* Left column */}
-              <Box sx={{ display: "flex", justifyContent: "flex-end", alignItems: "center", height: "100%" }}>
+              <Box sx={{ 
+                display: "flex", 
+                justifyContent: "flex-end", 
+                alignItems: "center", 
+                height: "100%",
+                "@media (max-width: 600px)": {
+                  display: "none",
+                }
+              }}>
                 {!isMobile && idx % 2 === 0 && (
                   <Box
                     sx={{
@@ -186,6 +197,10 @@ export const HowIWorkTimeline = () => {
                   flex: 1,
                   padding: 0,
                   margin: 0,
+                  "@media (max-width: 610px)": {
+                    alignItems: "flex-start",
+                    justifyContent: "center",
+                  }
                 }}
               >
                 {idx !== 0 && (
@@ -200,6 +215,10 @@ export const HowIWorkTimeline = () => {
                       zIndex: 1,
                       top: 0,
                       height: "calc(50%)",
+                      "@media (max-width: 610px)": {
+                        left: "12px",
+                        transform: "none",
+                      }
                     }}
                   />
                 )}
@@ -216,10 +235,11 @@ export const HowIWorkTimeline = () => {
                     margin: 0,
                     padding: 0,
                     transition: "background 0.2s, border 0.2s",
-                    "@media (max-width: 600px)": {
+                    "@media (max-width: 610px)": {
                       width: "16px",
                       height: "16px",
                       borderWidth: "3px",
+                      marginLeft: "3px",
                     },
                   }}
                 />
@@ -235,14 +255,27 @@ export const HowIWorkTimeline = () => {
                       zIndex: 1,
                       top: "50%",
                       height: "calc(50% + 50px)",
+                      "@media (max-width: 610px)": {
+                        left: "12px",
+                        transform: "none",
+                      }
                     }}
                   />
                 )}
               </Box>
 
               {/* Right column */}
-              <Box sx={{ display: "flex", justifyContent: "flex-start", alignItems: "center", height: "100%" }}>
-                {(isMobile || idx % 2 !== 0) && (
+              <Box sx={{ 
+                display: "flex", 
+                justifyContent: "flex-start", 
+                alignItems: "center", 
+                height: "100%",
+                "@media (max-width: 610px)": {
+                  justifyContent: "flex-start",
+                  width: "100%",
+                }
+              }}>
+                {(isMobile ? true : idx % 2 !== 0) && (
                   <Box
                     sx={{
                       minWidth: "260px",
@@ -264,6 +297,12 @@ export const HowIWorkTimeline = () => {
                         minWidth: 0,
                         maxWidth: "100vw",
                         marginLeft: "8px",
+                      },
+                      "@media (max-width: 610px)": {
+                        margin: "0 0 0 16px",
+                        minWidth: 0,
+                        maxWidth: "100%",
+                        width: "100%",
                       },
                     }}
                   >
