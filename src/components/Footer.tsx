@@ -145,6 +145,13 @@ export function Footer() {
         <Box sx={{ ...classes.buttonsContainer }}>
           <Button 
             endIcon={<ArrowForwardIcon />} 
+            onClick={() => navigate('/')}
+            sx={{ ...classes.textButton }}
+          >
+            Home
+          </Button>
+          <Button 
+            endIcon={<ArrowForwardIcon />} 
             onClick={() => navigate('/quote')}
             sx={{ ...classes.textButton }}
           >

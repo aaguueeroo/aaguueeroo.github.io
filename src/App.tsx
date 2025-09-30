@@ -27,6 +27,7 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/quote" element={<QuotePage />} />
         <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/:slug" element={<BlogPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </HelmetProvider>
