@@ -96,6 +96,16 @@ export const Typography = {
         lineHeight: 1.4,
         fontFamily: 'Golos Text, sans-serif'
     },
+    bodyExtraSmall: {
+        fontSize: {
+            xs: '1rem',
+            sm: '1.1rem',
+            md: '1.2rem'
+        },
+        fontWeight: 400,
+        lineHeight: 1.4,
+        fontFamily: 'Golos Text, sans-serif'
+    },
     // Button text
     button: {
         fontSize: '1.25rem',

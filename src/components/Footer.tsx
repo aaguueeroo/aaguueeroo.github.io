@@ -103,46 +103,71 @@ const useStyles = (theme: Theme) => ({
   },
 });
 
-export function Footer() {
+interface FooterProps {
+  hideSocialMedia?: boolean;
+}
+
+export function Footer({ hideSocialMedia = false }: FooterProps) {
   const theme = useTheme();
   const classes = useStyles(theme);
   const navigate = useNavigate();
 
   return (
-    <Box sx={{ ...classes.footer }}>
-      <Box sx= {{...classes.footerContent}}>
-        <Box sx={{ ...classes.socialRow }}>
-          <Typography variant="subtitle2" sx={{ ...classes.socialText }}>
-            Follow me
-          </Typography>
-          <Box sx={{ ...classes.socialIcons }}>
-            <IconButton
-              href="https://github.com/aaguueeroo"
-              target="_blank"
-              sx={{ ...classes.icon }}
-            >
-              <GitHubIcon />
-            </IconButton>
-            <IconButton
-              href="https://x.com/aaguueeroo"
-              target="_blank"
-              sx={{ ...classes.icon }}
-            >
-              <TwitterIcon />
-            </IconButton>
-            <IconButton
-              href="https://www.linkedin.com/in/julia-aguero-fraguas/"
-              target="_blank"
-              sx={{ ...classes.icon }}
-            >
-              <LinkedInIcon />
-            </IconButton>
-          </Box>
-        </Box>
+    <Box sx={{ 
+      ...classes.footer,
+      padding: hideSocialMedia ? {
+        xs: "32px 32px 32px 32px",
+        sm: "32px 48px 48px 48px",
+        md: "48px 160px 32px",
+      } : classes.footer.padding
+    }}>
+      <Box sx= {{
+        ...classes.footerContent,
+        gap: hideSocialMedia ? "32px" : "48px"
+      }}>
+        {!hideSocialMedia && (
+          <>
+            <Box sx={{ ...classes.socialRow }}>
+              <Typography variant="subtitle2" sx={{ ...classes.socialText }}>
+                Follow me
+              </Typography>
+              <Box sx={{ ...classes.socialIcons }}>
+                <IconButton
+                  href="https://github.com/aaguueeroo"
+                  target="_blank"
+                  sx={{ ...classes.icon }}
+                >
+                  <GitHubIcon />
+                </IconButton>
+                <IconButton
+                  href="https://x.com/aaguueeroo"
+                  target="_blank"
+                  sx={{ ...classes.icon }}
+                >
+                  <TwitterIcon />
+                </IconButton>
+                <IconButton
+                  href="https://www.linkedin.com/in/julia-aguero-fraguas/"
+                  target="_blank"
+                  sx={{ ...classes.icon }}
+                >
+                  <LinkedInIcon />
+                </IconButton>
+              </Box>
+            </Box>
 
-        <Divider sx={{ ...classes.divider }} />
+            <Divider sx={{ ...classes.divider }} />
+          </>
+        )}
 
         <Box sx={{ ...classes.buttonsContainer }}>
+          <Button 
+            endIcon={<ArrowForwardIcon />} 
+            onClick={() => navigate('/')}
+            sx={{ ...classes.textButton }}
+          >
+            Home
+          </Button>
           <Button 
             endIcon={<ArrowForwardIcon />} 
             onClick={() => navigate('/quote')}
