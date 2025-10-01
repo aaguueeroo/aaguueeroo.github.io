@@ -28,6 +28,7 @@ import { useNavigate } from 'react-router-dom';
 import { BlogPostSummary } from '../types';
 import { MaxWidths, Typography as TypographyConstants } from '../../theme/constants';
 import blogHeaderImage from '../../assets/images/blog-header.png';
+import authorImage from '../../assets/images/about-the-author.jpg';
 
 interface BlogListingProps {
   posts: BlogPostSummary[];
@@ -451,7 +452,7 @@ const BlogListing: React.FC<BlogListingProps> = ({ posts, loading, error }) => {
           }}
         >
           <img
-            src="/src/assets/images/about-the-author.jpg"
+            src={authorImage}
             alt="Julia Agüero"
             style={{
               width: '100%',

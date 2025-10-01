@@ -29,6 +29,7 @@ import { useNavigate } from 'react-router-dom';
 import postsIndex from '../content/index.json';
 import { BlogPost } from '../types';
 import { Typography as TypographyConstants } from '../../theme/constants';
+import authorImage from '../../assets/images/about-the-author.jpg';
 
 interface BlogPostProps {
   post: BlogPost | null;
@@ -676,7 +677,7 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, loading, error }) =>
               {/* Left Column: Author Image */}
               <Box sx={{ width: 60, height: 60, borderRadius: '50%', overflow: 'hidden', flexShrink: 0 }}>
                 <img
-                  src="/src/assets/images/about-the-author.jpg"
+                  src={authorImage}
                   alt="Julia Agüero"
                   style={{
                     width: '100%',
