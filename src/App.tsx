@@ -6,14 +6,17 @@ import { AboutPage } from "./pages/about/AboutPage";
 import QuotePage from "./pages/quote/QuotePage";
 import BlogPage from "./pages/blog/BlogPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
+import { trackPageView } from "./services/analytics";
 
-// Component to scroll to top on route change
+// Component to scroll to top on route change and track page views
 const ScrollToTop = () => {
-  const { pathname } = useLocation();
+  const { pathname, search } = useLocation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [pathname]);
+    // Track page view in Google Analytics
+    trackPageView(pathname + search);
+  }, [pathname, search]);
 
   return null;
 };
