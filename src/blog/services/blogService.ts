@@ -1,5 +1,4 @@
 import { BlogPost, BlogPostSummary } from '../types';
-import NotionServiceSimple from './notionServiceSimple';
 
 // Import JSON files - these will be generated at build time
 import postsIndex from '../content/index.json';
@@ -43,22 +42,9 @@ class BlogService {
     } catch (error) {
       console.error(`Error loading post ${slug}:`, error);
       
-      // If no cached file, try Notion service (when available)
-      console.log(`No cached file for ${slug}, trying Notion service...`);
-      
-      // For now, use the simple service
-      const notionService = new NotionServiceSimple({
-        blogDatabaseId: '27cc1b93-843e-8052-88e9-ce0be76f0f82',
-        categoriesDatabaseId: '27cc1b93-843e-8093-9a03-c484ab4f3b88',
-        apiKey: 'not-set-up-yet'
-      });
-      
-      const post = await notionService.getPostBySlug(slug);
-      if (post) {
-        this.postsCache.set(slug, post);
-      }
-      
-      return post;
+      // No cached file found and no Notion fallback configured
+      console.log(`No cached file for ${slug} found`);
+      return null;
     }
   }
 
