@@ -708,14 +708,14 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, loading, error }) =>
                   Julia Agüero
                 </Typography>
                 <Typography variant="body2" sx={{ color: 'text.secondary', fontWeight: 600}}  >
-                  Mobile App Developer & UX Designer
+                  Freelance Developer
                 </Typography>
               </Box>
             </Box>
 
             {/* Bottom Row: Description */}
             <Typography variant="body2" sx={{ color: 'text.secondary', mb: 2 }}>
-              Passionate about creating beautiful, functional mobile applications. I share insights about Flutter, React Native, and mobile UX design.
+          Passionate about creating beautiful, functional mobile applications. I share insights about Tech, Flutter, design, and more.
             </Typography>
             
             {/* Social Media Links */}

@@ -82,22 +82,24 @@ const BlogPage: React.FC = () => {
         url={getPageUrl()}
       />
       <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-        <Box sx={{ flex: 1, pt: 4, pb: 24 }}>
-          {slug ? (
+        {slug ? (
+          <Box sx={{ flex: 1, pt: 4, pb: 24 }}>
             <BlogPostComponent
               post={currentPost}
               loading={loading}
               error={error}
             />
-          ) : (
+          </Box>
+        ) : (
+          <Box sx={{ flex: 1 }}>
             <BlogListing
               posts={posts}
               loading={loading}
               error={error}
             />
-          )}
-        </Box>
-        <Footer />
+          </Box>
+        )}
+        <Footer hideSocialMedia={true} />
       </Box>
     </>
   );

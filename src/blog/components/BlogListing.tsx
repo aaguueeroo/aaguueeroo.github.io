@@ -27,6 +27,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { useNavigate } from 'react-router-dom';
 import { BlogPostSummary } from '../types';
 import { MaxWidths, Typography as TypographyConstants } from '../../theme/constants';
+import blogHeaderImage from '../../assets/images/blog-header.png';
 
 interface BlogListingProps {
   posts: BlogPostSummary[];
@@ -210,6 +211,11 @@ const BlogListing: React.FC<BlogListingProps> = ({ posts, loading, error }) => {
     const bucketCount = [inWeek, inMonth, inYear].filter(Boolean).length;
     return bucketCount > 1;
   }, [posts]);
+
+  // Check if there are any filters available
+  const hasAnyFilters = useMemo(() => {
+    return showCategoryFilter || showLanguageFilter || showSeriesFilter || showTimeFilter;
+  }, [showCategoryFilter, showLanguageFilter, showSeriesFilter, showTimeFilter]);
 
   // Reusable Filters Section Component
   const FiltersSection = () => (
@@ -487,7 +493,7 @@ const BlogListing: React.FC<BlogListingProps> = ({ posts, loading, error }) => {
             fontWeight: 600,
           }}
         >
-          Mobile App Developer & UX Designer
+          Freelance Developer
         </Typography>
 
         {/* Author Description */}
@@ -502,7 +508,7 @@ const BlogListing: React.FC<BlogListingProps> = ({ posts, loading, error }) => {
           }}
         >
           Passionate about creating beautiful, functional mobile applications. 
-          I share insights about Flutter, React Native, and mobile UX design.
+          I share insights about Tech, Flutter, design, and more.
         </Typography>
 
         {/* Social Media Links - Hidden on mobile */}
@@ -618,46 +624,45 @@ const BlogListing: React.FC<BlogListingProps> = ({ posts, loading, error }) => {
   }
 
   return (
-    <Container
-      maxWidth={false}
-      sx={{
-        maxWidth: MaxWidths.content,
-        mx: 'auto',
-        px: { xs: 2, sm: 3, md: 4 },
-        py: { xs: 4, sm: 6, md: 8 },
-        pb: { xs: 8, sm: 10, md: 12 }, // Extra bottom padding to prevent footer overlap
-      }}
-    >
-      {/* Header */}
-      <Box sx={{ mb: 6 }}>
+    <>
+      {/* Full-Width Hero Section */}
+      <Box
+        component="img"
+        src={blogHeaderImage}
+        alt="La Órbita de Dimorpho"
+        sx={{
+          width: '100%',
+          height: { xs: '150px', sm: '200px', md: '250px' },
+          objectFit: 'cover',
+          objectPosition: 'center 15%',
+          display: 'block',
+        }}
+      />
+
+      {/* Main Content with Max Width and Padding */}
+      <Container
+        maxWidth={false}
+        sx={{
+          maxWidth: MaxWidths.content,
+          mx: 'auto',
+          px: { xs: 2, sm: 3, md: 4 },
+          py: { xs: 4, sm: 6, md: 8 },
+          pb: { xs: 8, sm: 10, md: 12 },
+        }}
+      >
+        {/* Blog Title */}
         <Typography
           variant="h1"
           sx={{
             ...TypographyConstants.h1,
             textAlign: 'center',
-            mb: 4,
+            py: { xs: 4, sm: 6, md: 8 },
           }}
         >
-          Dimorpho's News
+          La Órbita de Dimorpho
         </Typography>
-        <Typography
-          variant="body1"
-          sx={{
-            ...TypographyConstants.body,
-            textAlign: 'center',
-            color: 'text.secondary',
-            maxWidth: '800px',
-            mx: 'auto',
-            mb: 10
-          }}
-        >
-          Bite‑sized takes on technology and science with a strong focus on Flutter and Mobile Development. Occasionally I’ll dive into the craft of freelancing, the balance of work and study, and reflections on industry news. Expect a mix of opinions, recommendations, tips, and practical lessons from the field—always concise, useful, and grounded in real projects.
-        </Typography>
-      </Box>
-
-
-      {/* Mobile Drawer */}
-      <Drawer
+        {/* Mobile Drawer */}
+        <Drawer
         anchor="right"
         open={mobileDrawerOpen}
         onClose={handleMobileDrawerClose}
@@ -721,21 +726,23 @@ const BlogListing: React.FC<BlogListingProps> = ({ posts, loading, error }) => {
                   {/* Mobile Icon Controls */}
                   {isMobile ? (
                     <Box sx={{ display: 'flex', gap: 1 }}>
-                      {/* Filter Icon Button */}
-                      <IconButton
-                        onClick={handleMobileDrawerToggle}
-                        sx={{
-                          color: 'text.secondary',
-                          transition: 'all 0.2s ease',
-                          '&:hover': {
-                            color: 'primary.main',
-                            backgroundColor: 'primary.50',
-                          },
-                        }}
-                        aria-label="Open filters"
-                      >
-                        <FilterAltIcon />
-                      </IconButton>
+                      {/* Filter Icon Button - Only show if filters are available */}
+                      {hasAnyFilters && (
+                        <IconButton
+                          onClick={handleMobileDrawerToggle}
+                          sx={{
+                            color: 'text.secondary',
+                            transition: 'all 0.2s ease',
+                            '&:hover': {
+                              color: 'primary.main',
+                              backgroundColor: 'primary.50',
+                            },
+                          }}
+                          aria-label="Open filters"
+                        >
+                          <FilterAltIcon />
+                        </IconButton>
+                      )}
                       
                       {/* Sort Icon Button */}
                       <IconButton
@@ -1052,13 +1059,14 @@ const BlogListing: React.FC<BlogListingProps> = ({ posts, loading, error }) => {
         </Grid>
       </Grid>
 
-      {/* Mobile Author Section - Show at end of posts on mobile */}
-      {isMobile && (
-        <Box sx={{ mt: 6 }}>
-          <AuthorSection />
-        </Box>
-      )}
-    </Container>
+        {/* Mobile Author Section - Show at end of posts on mobile */}
+        {isMobile && (
+          <Box sx={{ mt: 6 }}>
+            <AuthorSection />
+          </Box>
+        )}
+      </Container>
+    </>
   );
 };
 
