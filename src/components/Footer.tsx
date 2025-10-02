@@ -180,6 +180,13 @@ export function Footer({ hideSocialMedia = false }: FooterProps) {
           </Button>
           <Button 
             endIcon={<ArrowForwardIcon />} 
+            onClick={() => navigate('/portfolio')}
+            sx={{ ...classes.textButton }}
+          >
+            Portfolio
+          </Button>
+          <Button 
+            endIcon={<ArrowForwardIcon />} 
             onClick={() => navigate('/blog')}
             sx={{ ...classes.textButton }}
           >

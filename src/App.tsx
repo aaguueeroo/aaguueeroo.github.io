@@ -5,6 +5,8 @@ import HomePage from "./pages/home/HomePage";
 import { AboutPage } from "./pages/about/AboutPage";
 import QuotePage from "./pages/quote/QuotePage";
 import BlogPage from "./pages/blog/BlogPage";
+import PortfolioPage from "./pages/portfolio/PortfolioPage";
+import ProjectPage from "./pages/portfolio/ProjectPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { trackPageView } from "./services/analytics";
 
@@ -31,6 +33,8 @@ function App() {
         <Route path="/quote" element={<QuotePage />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:slug" element={<BlogPage />} />
+        <Route path="/portfolio" element={<PortfolioPage />} />
+        <Route path="/portfolio/:slug" element={<ProjectPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </HelmetProvider>
