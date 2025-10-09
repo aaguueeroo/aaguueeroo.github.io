@@ -105,107 +105,35 @@ async function fetchPostContent(page) {
     // Get page cover image with sensible fallbacks
     let coverImage = getDefaultCoverImage(categories, slug);
     
-    // Check if there's an existing local cover image to preserve
-    const existingPostFile = path.join(__dirname, '../../src/blog/content', `${slug}.json`);
-    let existingLocalCoverImage = null;
-    if (fs.existsSync(existingPostFile)) {
-      try {
-        const existingPost = JSON.parse(fs.readFileSync(existingPostFile, 'utf8'));
-        if (existingPost.coverImage && existingPost.coverImage.startsWith('/src/assets/')) {
-          existingLocalCoverImage = existingPost.coverImage;
-          console.log(`📸 Preserving local cover image for ${title}: ${existingLocalCoverImage}`);
+    // Get cover image from Notion page
+    try {
+      const pageDetails = await notion.pages.retrieve({ page_id: page.id });
+      if (pageDetails.cover) {
+        let notionCoverUrl = null;
+        if (pageDetails.cover.type === 'external') {
+          notionCoverUrl = pageDetails.cover.external.url;
+        } else if (pageDetails.cover.type === 'file') {
+          notionCoverUrl = pageDetails.cover.file.url;
         }
-      } catch (error) {
-        console.log(`⚠️  Could not read existing post file for ${title}:`, error.message);
-      }
-    }
-    
-    // Special handling for specific posts with known local images
-    if (slug === 'flatto-learning-in-public-1' && !existingLocalCoverImage) {
-      existingLocalCoverImage = '/src/assets/images/blog/flatto-learning-in-public-1.png';
-      console.log(`📸 Using hardcoded local cover image for ${title}: ${existingLocalCoverImage}`);
-    }
-    
-    // If we have a local cover image, use it; otherwise try Notion
-    if (existingLocalCoverImage) {
-      coverImage = existingLocalCoverImage;
-    } else {
-      try {
-        const pageDetails = await notion.pages.retrieve({ page_id: page.id });
-        if (pageDetails.cover) {
-          let notionCoverUrl = null;
-          if (pageDetails.cover.type === 'external') {
-            notionCoverUrl = pageDetails.cover.external.url;
-          } else if (pageDetails.cover.type === 'file') {
-            notionCoverUrl = pageDetails.cover.file.url;
-          }
-          
-          // Only use the Notion cover if it's publicly accessible
-          if (notionCoverUrl && isPubliclyAccessible(notionCoverUrl)) {
-            coverImage = notionCoverUrl;
-            console.log(`📸 Using Notion cover for ${page.properties.Title.title[0]?.plain_text}: ${coverImage}`);
-          } else {
-            console.log(`📸 Notion cover not publicly accessible for ${page.properties.Title.title[0]?.plain_text}, using default`);
-          }
+        
+        // Use the Notion cover image
+        if (notionCoverUrl) {
+          coverImage = notionCoverUrl;
+          console.log(`📸 Using Notion cover for ${page.properties.Title.title[0]?.plain_text}: ${coverImage}`);
         } else {
-          console.log(`📸 No cover image for ${page.properties.Title.title[0]?.plain_text}, using default`);
+          console.log(`📸 Notion cover URL not found for ${page.properties.Title.title[0]?.plain_text}, using default`);
         }
-      } catch (error) {
-        console.log(`⚠️  Could not fetch cover image for ${page.properties.Title.title[0]?.plain_text}:`, error.message);
+      } else {
+        console.log(`📸 No cover image for ${page.properties.Title.title[0]?.plain_text}, using default`);
       }
+    } catch (error) {
+      console.log(`⚠️  Could not fetch cover image for ${page.properties.Title.title[0]?.plain_text}:`, error.message);
     }
 
-    // If still default, try first image block from content
-    if (!existingLocalCoverImage && blocks && Array.isArray(blocks)) {
-      const imageBlock = blocks.find((b) => b.type === 'image' && b.image);
-      if (imageBlock) {
-        let imageUrl = null;
-        if (imageBlock.image.type === 'external') {
-          imageUrl = imageBlock.image.external.url;
-        } else if (imageBlock.image.type === 'file') {
-          imageUrl = imageBlock.image.file.url;
-        }
-        if (imageUrl && isPubliclyAccessible(imageUrl)) {
-          coverImage = imageUrl;
-          console.log(`🖼️ Using first content image for ${title}: ${coverImage}`);
-        }
-      }
-    }
+    // Note: We now prioritize Notion's cover image field over content images
 
-    // Preserve local image blocks from existing content
-    let preservedLocalImageBlocks = [];
-    if (fs.existsSync(existingPostFile)) {
-      try {
-        const existingPost = JSON.parse(fs.readFileSync(existingPostFile, 'utf8'));
-        if (existingPost.content && Array.isArray(existingPost.content)) {
-          preservedLocalImageBlocks = existingPost.content.filter(block =>
-            block.type === 'image' &&
-            block.image?.type === 'external' &&
-            block.image?.external?.url?.startsWith('/src/assets/')
-          );
-        }
-      } catch (error) {
-        console.log(`⚠️  Could not read existing content for ${title}:`, error.message);
-      }
-    }
-
-    // Merge preserved local image blocks with Notion blocks
+    // Use Notion blocks directly
     let finalBlocks = blocks || [];
-    if (preservedLocalImageBlocks.length > 0) {
-      const notionBlockIds = new Set(finalBlocks.map(block => block.id));
-      for (const localBlock of preservedLocalImageBlocks) {
-        if (!notionBlockIds.has(localBlock.id)) {
-          // Try to find the original position, otherwise append
-          const originalIndex = finalBlocks.findIndex(b => b.id === localBlock.id);
-          if (originalIndex !== -1 && originalIndex < finalBlocks.length) {
-            finalBlocks.splice(originalIndex, 0, localBlock);
-          } else {
-            finalBlocks.push(localBlock);
-          }
-          console.log(`🖼️ Preserved local image block for ${title}: ${localBlock.image.external.url}`);
-        }
-      }
-    }
 
     const post = {
       id: page.id,
