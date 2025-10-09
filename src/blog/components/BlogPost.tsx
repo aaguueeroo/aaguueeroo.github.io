@@ -903,18 +903,40 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, loading, error }) =>
       {(() => {
         const summaries = (postsIndex as any[]);
         const currentId = post.id;
-        const currentCats = new Set(post.postCategories || []);
-        const currentTags = new Set(post.tags || []);
-        const related = summaries
-          .filter((p) => p.id !== currentId)
-          .map((p) => {
-            const score = ((p.postCategories || []).some((c: string) => currentCats.has(c)) ? 2 : 0) + ((p.tags || []).some((t: string) => currentTags.has(t)) ? 1 : 0);
-            return { p, score };
-          })
-          .filter(({ score }) => score > 0)
-          .sort((a, b) => b.score - a.score)
-          .slice(0, 5) // Show more posts in carousel
-          .map(({ p }) => p);
+        
+        let related: any[] = [];
+        
+        // Combine posts from "Point to" and "Pointed by" fields
+        const relatedPostIds = new Set<string>();
+        if (post.pointTo && post.pointTo.length > 0) {
+          post.pointTo.forEach(id => relatedPostIds.add(id));
+        }
+        if (post.pointedBy && post.pointedBy.length > 0) {
+          post.pointedBy.forEach(id => relatedPostIds.add(id));
+        }
+        
+        // If we have manually linked posts, use those
+        if (relatedPostIds.size > 0) {
+          related = summaries
+            .filter((p) => relatedPostIds.has(p.id))
+            .slice(0, 5);
+        }
+        
+        // If no manual links or not enough posts, use automatic detection
+        if (related.length === 0) {
+          const currentCats = new Set(post.postCategories || []);
+          const currentTags = new Set(post.tags || []);
+          related = summaries
+            .filter((p) => p.id !== currentId)
+            .map((p) => {
+              const score = ((p.postCategories || []).some((c: string) => currentCats.has(c)) ? 2 : 0) + ((p.tags || []).some((t: string) => currentTags.has(t)) ? 1 : 0);
+              return { p, score };
+            })
+            .filter(({ score }) => score > 0)
+            .sort((a, b) => b.score - a.score)
+            .slice(0, 5)
+            .map(({ p }) => p);
+        }
 
         if (!related.length) return null;
 
@@ -1014,7 +1036,7 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, loading, error }) =>
                         component="img"
                         image={rp.coverImage}
                         alt={rp.title}
-                        sx={{ height: 200, objectFit: 'cover' }}
+                        sx={{ height: 200, objectFit: 'cover', borderRadius: 0.12 }}
                       />
                     )}
                     <CardContent sx={{ p: 2 }}>

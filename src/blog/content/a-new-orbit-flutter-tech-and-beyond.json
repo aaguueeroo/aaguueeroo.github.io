@@ -10,6 +10,8 @@
   "language": "English",
   "tags": [],
   "postCategories": [],
+  "pointTo": [],
+  "pointedBy": [],
   "readTime": 3,
   "content": [
     {
@@ -1328,8 +1330,8 @@
     }
   ],
   "createdTime": "2025-09-30T03:23:00.000Z",
-  "lastEditedTime": "2025-10-09T07:55:00.000Z",
-  "lastUpdated": "2025-10-09T07:56:09.530Z",
-  "coverImage": "https://prod-files-secure.s3.us-west-2.amazonaws.com/4a6c1b93-843e-81cb-b4b1-00037c2b55fd/99a64d33-4660-4cda-b2aa-93e29b5ef0af/Unknown.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667XS7RRBM%2F20251009%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251009T075609Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDcaCXVzLXdlc3QtMiJIMEYCIQCS7sq9xqfadALGAaKbAdmfBwRHysQiiWZHGWtMBJ8kkAIhAKCIZ31MEi5SEZpCMe9coOK%2FtTa11oTXvcpLtT7Uy%2BvVKogECND%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1IgzNSiXBMQrPSnN9eLUq3AMjTp9X6mcKQlADO%2BAnT6xd0OIhhcfQatwIt2%2FN8utTLxOZvVYSXxNgfOiEqf8tmKesWautr3Pu6oRsLXyAAUq9yHX9ek5dOG5SFMUuRWNnj%2BWDBJJtSTbZB7la6LlOufMwvNnUz%2Fd5eoiMSWBjUXm868HXa4DyqN5nCJ%2F8jtfPh%2BswoXYqupaWdrsxcuUyzFNQ%2Bp3MgIQrjQbf5MLrI2q9XEJx5YIaEkXAjd5L2b%2FrAkEIkW3lykRfgl74s79SVc7q7rwDzJ6VwPCc1iZgUuAY3tVXH9jhf1ser6GjvUTf7YLzmVFY%2BjVNWW00iQ1NAyR32f28M05osc4IR8SCMqNaTWlCYXDDQDnPXkBBCh%2BHee0Pe%2BgkDwesECNXoOEILygGPmEOTw1VffxjHQAfmZtvge8is3IxJQQxeUvJmPFXI07qlVQuFNjsaziGVECjBfjnfQ08LMkk%2Bq0QknXR5R2TcQdmYSh5Of8naxC7k4Ah8GJvyQYir9AU7V9kwf4vIHNK82QyI5UjoCsPXnByf7oKT%2BcJ5OGqevB35xn2uiRwWF9EGbcxteAONO39ePWr5vaOePfPfLKob%2BddwhmE4E%2BItT1%2F991OCeVzld%2F32PsPMClmq4%2BuQhkqZkyrSTDQtp3HBjqkAbLkXOARvEX1T0Bc04BR2ZUZIBPSV8nLPvBkY7Q1O87uKPZDKYhZtVu4LxsBx%2BTjtIAFJp58yPBP4hFojIsoCNTNvZhOQTCoSwzYbQ%2BkbLs%2B%2BCK5DedUrUoKQphBB2APFdK6niEDlfx2lzvacXirTbt9gtwaSiNuFmtZ5RF%2BahbRY8eIVdAeZ6f7bu%2FutaELjkt1aJDsSIAgwwqrsX8dwKCeRhQ8&X-Amz-Signature=318e1157ebcc8f85a8790c7932f89d044bce99c69eee881687bbe6f98eeab262&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "lastEditedTime": "2025-10-09T08:08:00.000Z",
+  "lastUpdated": "2025-10-09T08:34:47.356Z",
+  "coverImage": "https://prod-files-secure.s3.us-west-2.amazonaws.com/4a6c1b93-843e-81cb-b4b1-00037c2b55fd/99a64d33-4660-4cda-b2aa-93e29b5ef0af/Unknown.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466YWIMVXW2%2F20251009%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251009T083447Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDgaCXVzLXdlc3QtMiJGMEQCIC6of6qVHjTAu2UqhVJouGfhmZbqjUsHDSFr7aYJa7SjAiA3tNpS3ooj0fF32SOIhk0VyfaXfJOz6MA0SeW%2BeLw7%2BCqIBAjR%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMu34%2BfL9xZTNKUyE5KtwDLbaQ3ktFVLKbdejMAxDdskvY0c7zsg7zdQtHujp2d42KOv7S25ydQaHAsy2kfJDlbR4XMOkzYy8SBc3jc76x0wp%2BEY84XmgL73Whdy6yN8Q7t%2BLvm5k0gv84jyJCFVNvmA56qS1BHrcidBAqH%2BHjpGMpnJ%2B5lwKM8cX4Y%2BLYMrWJeriq7PRg2FuMss1fXDNgBfHhpeBQj94mEPRTYX3yzs95hz7Lj6mAXkcb77DIgWVu5%2Fzfi3SKkJLaXNMHKkrG0ar9VcJbqwap43mLTUt%2B%2BiZtbOXwjT8wwlj1UXp%2FxGAU%2F5pgsmI1vQjolNgif5YG4RuKrWNJIJqjADiCvkdW1pY1X2wDnEfnsUuO9U2pO2g7Lsu3rS7YOlb%2Fu69tEnsMQln9mX4gv1AQQCbgLcSWNNakuCdJHTkFzF6lyOkGjC6khwF5dlgolSY8ZJG%2FWobIz%2F3yOvQhlah4YTo29GJgxQF%2FjplaMYeCmRC0WCUMdeW1yPqXDhaf%2F7Zf3Aytr2Q%2BjOmABnk1BYrgrBYe%2BA12KeeQmMZ%2FdV4sZnTaT6sJK7mRdw0iIzao5OewlGVejiNIHDPFxM138%2B7bLUIXzgz%2BS5tq7UcT1eb%2F058VBcaRUAFqIgMAOQLdE24OWmswqNydxwY6pgHTV34FvVUfMAMoR2MwZ0Qffi0yAHTfvk8xb6p65FYaN44fdDevNL8VICqUI2WmGPeTlmFut08GpF%2FK6ofF79%2F8VcI%2FjvjxpvOW8SMypIdNlW1I%2Fzbnm8AUnyK4XdhbFYsd%2F%2FWFsIKEegaQWyGLXD%2F8%2BgBx%2FKCTf13H4qP%2F1YLulcFhJEwtEaw%2BDuFXOvejpF%2FVpGcvKBoQxzZNKaXmyHvMRXNSdgJi&X-Amz-Signature=782238bfc059f30fe05be6c8899bf4417d8cfe2f9e892bd610f8d7757f3b8cc6&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
   "author": "Julia Agüero"
 }
