@@ -1,9 +1,9 @@
 {
   "id": "286c1b93-843e-802d-b850-c3584675616d",
-  "title": "Flatto: Building in Public the App for Shared Flats",
+  "title": "Can you fully vibe code an app? Creating Flatto for shared flats",
   "slug": "flatto-learning-in-public-1",
   "subtitle": "Testing the limits of AI-assisted development through vibe coding",
-  "metaTitle": "**Flatto – Building an App for Shared Flats with AI",
+  "metaTitle": "Can you fully vibe code an app? Creating Flatto for shared flats",
   "metaDescription": "F",
   "publishedDate": "2025-10-09",
   "status": "Published",
@@ -16,6 +16,10 @@
   "postCategories": [
     "Tech"
   ],
+  "pointTo": [
+    "27ec1b93-843e-8001-9dea-ff3c8d1f5e93"
+  ],
+  "pointedBy": [],
   "readTime": 13,
   "content": [
     {
@@ -41,51 +45,6 @@
       "type": "table_of_contents",
       "table_of_contents": {
         "color": "gray"
-      }
-    },
-    {
-      "object": "block",
-      "id": "287c1b93-843e-8061-addd-e631d740465c",
-      "parent": {
-        "type": "page_id",
-        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
-      },
-      "created_time": "2025-10-09T05:51:00.000Z",
-      "last_edited_time": "2025-10-09T06:41:00.000Z",
-      "created_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "last_edited_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "has_children": false,
-      "archived": false,
-      "in_trash": false,
-      "type": "heading_1",
-      "heading_1": {
-        "rich_text": [
-          {
-            "type": "text",
-            "text": {
-              "content": "Flatto: Building in Public the App for Shared Flats",
-              "link": null
-            },
-            "annotations": {
-              "bold": true,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "Flatto: Building in Public the App for Shared Flats",
-            "href": null
-          }
-        ],
-        "is_toggleable": false,
-        "color": "default"
       }
     },
     {
@@ -675,6 +634,915 @@
     },
     {
       "object": "block",
+      "id": "287c1b93-843e-8065-8bac-d7cffdcc5a13",
+      "parent": {
+        "type": "page_id",
+        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
+      },
+      "created_time": "2025-10-09T05:53:00.000Z",
+      "last_edited_time": "2025-10-11T17:15:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "heading_3",
+      "heading_3": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "My Workflow in Vibe Coding",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "My Workflow in Vibe Coding",
+            "href": null
+          }
+        ],
+        "is_toggleable": false,
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "287c1b93-843e-8097-bbf1-e547474f527d",
+      "parent": {
+        "type": "page_id",
+        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
+      },
+      "created_time": "2025-10-09T05:53:00.000Z",
+      "last_edited_time": "2025-10-11T17:15:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Since this project is also my personal experiment to learn to code using AI, I took some time to research and structure my process before diving in.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Since this project is also my personal experiment to learn to code using AI, I took some time to research and structure my process before diving in.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "287c1b93-843e-8057-a04a-d72d68a43394",
+      "parent": {
+        "type": "page_id",
+        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
+      },
+      "created_time": "2025-10-09T05:53:00.000Z",
+      "last_edited_time": "2025-10-11T17:15:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Here’s the ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Here’s the ",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "basic prompt structure",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "basic prompt structure",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " I follow for most cases:",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " I follow for most cases:",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "287c1b93-843e-8075-b26e-fbb77b513942",
+      "parent": {
+        "type": "page_id",
+        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
+      },
+      "created_time": "2025-10-09T05:53:00.000Z",
+      "last_edited_time": "2025-10-11T17:15:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "numbered_list_item",
+      "numbered_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "A broad introduction explaining the problem and the task.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "A broad introduction explaining the problem and the task.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "287c1b93-843e-8065-99e2-c213970edf5c",
+      "parent": {
+        "type": "page_id",
+        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
+      },
+      "created_time": "2025-10-09T05:53:00.000Z",
+      "last_edited_time": "2025-10-11T17:15:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "numbered_list_item",
+      "numbered_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "A more detailed description with steps, context, and examples.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "A more detailed description with steps, context, and examples.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "287c1b93-843e-804a-9b9b-c1641337ee35",
+      "parent": {
+        "type": "page_id",
+        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
+      },
+      "created_time": "2025-10-09T05:53:00.000Z",
+      "last_edited_time": "2025-10-11T17:15:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "numbered_list_item",
+      "numbered_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "A short summary reminding the model of the exact task again.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "A short summary reminding the model of the exact task again.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "287c1b93-843e-80ea-94fb-dd8f02f99756",
+      "parent": {
+        "type": "page_id",
+        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
+      },
+      "created_time": "2025-10-09T05:53:00.000Z",
+      "last_edited_time": "2025-10-11T17:15:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "That’s my go-to formula. Then, depending on what I’m building, I adjust it with extra information. After reading blogs, watching several videos on prompting techniques, and experimenting a lot, these are the tips and patterns that consistently give me the best results:",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "That’s my go-to formula. Then, depending on what I’m building, I adjust it with extra information. After reading blogs, watching several videos on prompting techniques, and experimenting a lot, these are the tips and patterns that consistently give me the best results:",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "287c1b93-843e-8000-ba0a-eda61cddf926",
+      "parent": {
+        "type": "page_id",
+        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
+      },
+      "created_time": "2025-10-09T05:53:00.000Z",
+      "last_edited_time": "2025-10-11T17:15:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "bulleted_list_item",
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Give context.",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Give context.",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " Always explain the bigger picture of what you’re building.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " Always explain the bigger picture of what you’re building.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "287c1b93-843e-80aa-b9d0-d6080504cf15",
+      "parent": {
+        "type": "page_id",
+        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
+      },
+      "created_time": "2025-10-09T05:53:00.000Z",
+      "last_edited_time": "2025-10-11T17:15:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "bulleted_list_item",
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Reference files and widgets.",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Reference files and widgets.",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " Including context files makes a massive difference — it helps the model focus and reduces hallucinations.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " Including context files makes a massive difference — it helps the model focus and reduces hallucinations.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "287c1b93-843e-8035-a585-e477761e3ad1",
+      "parent": {
+        "type": "page_id",
+        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
+      },
+      "created_time": "2025-10-09T05:53:00.000Z",
+      "last_edited_time": "2025-10-11T17:15:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "bulleted_list_item",
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Describe the desired behavior, not the implementation.",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Describe the desired behavior, not the implementation.",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " Cursor will figure out the code; it performs better when you tell it ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " Cursor will figure out the code; it performs better when you tell it ",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "what",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": true,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "what",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " you want, not ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " you want, not ",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "how",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": true,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "how",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " to do it.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " to do it.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "287c1b93-843e-80c7-9b76-c10fbd614452",
+      "parent": {
+        "type": "page_id",
+        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
+      },
+      "created_time": "2025-10-09T05:53:00.000Z",
+      "last_edited_time": "2025-10-11T17:15:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "bulleted_list_item",
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Add examples.",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Add examples.",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " They help anchor the model’s reasoning.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " They help anchor the model’s reasoning.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "287c1b93-843e-80c1-a4f9-c86bd0bb44cc",
+      "parent": {
+        "type": "page_id",
+        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
+      },
+      "created_time": "2025-10-09T05:53:00.000Z",
+      "last_edited_time": "2025-10-11T17:15:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "bulleted_list_item",
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Ask for test-driven development.",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Ask for test-driven development.",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " (I wish I remembered who suggested this!) It’s a game changer! The model keeps iterating until everything works, often without extra input.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " (I wish I remembered who suggested this!) It’s a game changer! The model keeps iterating until everything works, often without extra input.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "287c1b93-843e-801d-9af1-d434a62818fc",
+      "parent": {
+        "type": "page_id",
+        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
+      },
+      "created_time": "2025-10-09T05:53:00.000Z",
+      "last_edited_time": "2025-10-11T17:15:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "bulleted_list_item",
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Start with a plan.",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Start with a plan.",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " Don’t dive straight into coding. Ask the model to outline a plan first — it leads to cleaner, more detailed implementations and self-generated to-do lists.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " Don’t dive straight into coding. Ask the model to outline a plan first — it leads to cleaner, more detailed implementations and self-generated to-do lists.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "287c1b93-843e-8042-8cd8-da51f6d23395",
+      "parent": {
+        "type": "page_id",
+        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
+      },
+      "created_time": "2025-10-09T05:53:00.000Z",
+      "last_edited_time": "2025-10-11T17:15:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Learning when to use each of these tricks (or combine them) is key to getting the best results.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Learning when to use each of these tricks (or combine them) is key to getting the best results.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "287c1b93-843e-8002-bebc-c4a72d151e10",
+      "parent": {
+        "type": "page_id",
+        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
+      },
+      "created_time": "2025-10-09T05:53:00.000Z",
+      "last_edited_time": "2025-10-11T17:15:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Right now, this workflow works best for me, though it’s constantly evolving. If you have any tips or think any of these patterns could be improved, I’d love to hear from you!",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Right now, this workflow works best for me, though it’s constantly evolving. If you have any tips or think any of these patterns could be improved, I’d love to hear from you!",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "287c1b93-843e-80c4-86a6-e216c8e858b5",
+      "parent": {
+        "type": "page_id",
+        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
+      },
+      "created_time": "2025-10-09T05:53:00.000Z",
+      "last_edited_time": "2025-10-11T17:15:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "And to keep things short (and because, let’s be honest, you’d get bored otherwise), I won’t share my full prompts here — but I’ll quote some important parts. Also, please don’t judge my prompts; I text AI like using the same language as if I text a friend 😒😂",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "And to keep things short (and because, let’s be honest, you’d get bored otherwise), I won’t share my full prompts here — but I’ll quote some important parts. Also, please don’t judge my prompts; I text AI like using the same language as if I text a friend 😒😂",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
       "id": "287c1b93-843e-80f9-b808-f0e952ca9d43",
       "parent": {
         "type": "page_id",
@@ -1026,7 +1894,7 @@
         "page_id": "286c1b93-843e-802d-b850-c3584675616d"
       },
       "created_time": "2025-10-09T05:53:00.000Z",
-      "last_edited_time": "2025-10-09T06:57:00.000Z",
+      "last_edited_time": "2025-10-11T17:15:00.000Z",
       "created_by": {
         "object": "user",
         "id": "b3b8f296-add6-451a-ad38-a474404637db"
@@ -1207,7 +2075,7 @@
             "text": {
               "content": "Trello",
               "link": {
-                "url": "https://trello.com/w/juliaaguero1/home"
+                "url": "https://trello.com/"
               }
             },
             "annotations": {
@@ -1219,7 +2087,7 @@
               "color": "default"
             },
             "plain_text": "Trello",
-            "href": "https://trello.com/w/juliaaguero1/home"
+            "href": "https://trello.com/"
           },
           {
             "type": "text",
@@ -1236,938 +2104,6 @@
               "color": "default"
             },
             "plain_text": " to keep my tasks organized.",
-            "href": null
-          }
-        ],
-        "color": "default"
-      }
-    },
-    {
-      "object": "block",
-      "id": "287c1b93-843e-807b-99bb-df22f9198480",
-      "parent": {
-        "type": "page_id",
-        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
-      },
-      "created_time": "2025-10-09T05:53:00.000Z",
-      "last_edited_time": "2025-10-09T05:53:00.000Z",
-      "created_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "last_edited_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "has_children": false,
-      "archived": false,
-      "in_trash": false,
-      "type": "divider",
-      "divider": {}
-    },
-    {
-      "object": "block",
-      "id": "287c1b93-843e-8065-8bac-d7cffdcc5a13",
-      "parent": {
-        "type": "page_id",
-        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
-      },
-      "created_time": "2025-10-09T05:53:00.000Z",
-      "last_edited_time": "2025-10-09T05:53:00.000Z",
-      "created_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "last_edited_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "has_children": false,
-      "archived": false,
-      "in_trash": false,
-      "type": "heading_3",
-      "heading_3": {
-        "rich_text": [
-          {
-            "type": "text",
-            "text": {
-              "content": "My Workflow in Vibe Coding",
-              "link": null
-            },
-            "annotations": {
-              "bold": true,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "My Workflow in Vibe Coding",
-            "href": null
-          }
-        ],
-        "is_toggleable": false,
-        "color": "default"
-      }
-    },
-    {
-      "object": "block",
-      "id": "287c1b93-843e-8097-bbf1-e547474f527d",
-      "parent": {
-        "type": "page_id",
-        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
-      },
-      "created_time": "2025-10-09T05:53:00.000Z",
-      "last_edited_time": "2025-10-09T05:55:00.000Z",
-      "created_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "last_edited_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "has_children": false,
-      "archived": false,
-      "in_trash": false,
-      "type": "paragraph",
-      "paragraph": {
-        "rich_text": [
-          {
-            "type": "text",
-            "text": {
-              "content": "Since this project is also my personal experiment to learn to code using AI, I took some time to research and structure my process before diving in.",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "Since this project is also my personal experiment to learn to code using AI, I took some time to research and structure my process before diving in.",
-            "href": null
-          }
-        ],
-        "color": "default"
-      }
-    },
-    {
-      "object": "block",
-      "id": "287c1b93-843e-8057-a04a-d72d68a43394",
-      "parent": {
-        "type": "page_id",
-        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
-      },
-      "created_time": "2025-10-09T05:53:00.000Z",
-      "last_edited_time": "2025-10-09T05:53:00.000Z",
-      "created_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "last_edited_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "has_children": false,
-      "archived": false,
-      "in_trash": false,
-      "type": "paragraph",
-      "paragraph": {
-        "rich_text": [
-          {
-            "type": "text",
-            "text": {
-              "content": "Here’s the ",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "Here’s the ",
-            "href": null
-          },
-          {
-            "type": "text",
-            "text": {
-              "content": "basic prompt structure",
-              "link": null
-            },
-            "annotations": {
-              "bold": true,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "basic prompt structure",
-            "href": null
-          },
-          {
-            "type": "text",
-            "text": {
-              "content": " I follow for most cases:",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": " I follow for most cases:",
-            "href": null
-          }
-        ],
-        "color": "default"
-      }
-    },
-    {
-      "object": "block",
-      "id": "287c1b93-843e-8075-b26e-fbb77b513942",
-      "parent": {
-        "type": "page_id",
-        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
-      },
-      "created_time": "2025-10-09T05:53:00.000Z",
-      "last_edited_time": "2025-10-09T05:53:00.000Z",
-      "created_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "last_edited_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "has_children": false,
-      "archived": false,
-      "in_trash": false,
-      "type": "numbered_list_item",
-      "numbered_list_item": {
-        "rich_text": [
-          {
-            "type": "text",
-            "text": {
-              "content": "A broad introduction explaining the problem and the task.",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "A broad introduction explaining the problem and the task.",
-            "href": null
-          }
-        ],
-        "color": "default"
-      }
-    },
-    {
-      "object": "block",
-      "id": "287c1b93-843e-8065-99e2-c213970edf5c",
-      "parent": {
-        "type": "page_id",
-        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
-      },
-      "created_time": "2025-10-09T05:53:00.000Z",
-      "last_edited_time": "2025-10-09T05:53:00.000Z",
-      "created_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "last_edited_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "has_children": false,
-      "archived": false,
-      "in_trash": false,
-      "type": "numbered_list_item",
-      "numbered_list_item": {
-        "rich_text": [
-          {
-            "type": "text",
-            "text": {
-              "content": "A more detailed description with steps, context, and examples.",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "A more detailed description with steps, context, and examples.",
-            "href": null
-          }
-        ],
-        "color": "default"
-      }
-    },
-    {
-      "object": "block",
-      "id": "287c1b93-843e-804a-9b9b-c1641337ee35",
-      "parent": {
-        "type": "page_id",
-        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
-      },
-      "created_time": "2025-10-09T05:53:00.000Z",
-      "last_edited_time": "2025-10-09T05:53:00.000Z",
-      "created_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "last_edited_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "has_children": false,
-      "archived": false,
-      "in_trash": false,
-      "type": "numbered_list_item",
-      "numbered_list_item": {
-        "rich_text": [
-          {
-            "type": "text",
-            "text": {
-              "content": "A short summary reminding the model of the exact task again.",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "A short summary reminding the model of the exact task again.",
-            "href": null
-          }
-        ],
-        "color": "default"
-      }
-    },
-    {
-      "object": "block",
-      "id": "287c1b93-843e-80ea-94fb-dd8f02f99756",
-      "parent": {
-        "type": "page_id",
-        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
-      },
-      "created_time": "2025-10-09T05:53:00.000Z",
-      "last_edited_time": "2025-10-09T05:56:00.000Z",
-      "created_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "last_edited_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "has_children": false,
-      "archived": false,
-      "in_trash": false,
-      "type": "paragraph",
-      "paragraph": {
-        "rich_text": [
-          {
-            "type": "text",
-            "text": {
-              "content": "That’s my go-to formula. Then, depending on what I’m building, I adjust it with extra information. After reading blogs, watching several videos on prompting techniques, and experimenting a lot, these are the tips and patterns that consistently give me the best results:",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "That’s my go-to formula. Then, depending on what I’m building, I adjust it with extra information. After reading blogs, watching several videos on prompting techniques, and experimenting a lot, these are the tips and patterns that consistently give me the best results:",
-            "href": null
-          }
-        ],
-        "color": "default"
-      }
-    },
-    {
-      "object": "block",
-      "id": "287c1b93-843e-8000-ba0a-eda61cddf926",
-      "parent": {
-        "type": "page_id",
-        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
-      },
-      "created_time": "2025-10-09T05:53:00.000Z",
-      "last_edited_time": "2025-10-09T05:53:00.000Z",
-      "created_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "last_edited_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "has_children": false,
-      "archived": false,
-      "in_trash": false,
-      "type": "bulleted_list_item",
-      "bulleted_list_item": {
-        "rich_text": [
-          {
-            "type": "text",
-            "text": {
-              "content": "Give context.",
-              "link": null
-            },
-            "annotations": {
-              "bold": true,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "Give context.",
-            "href": null
-          },
-          {
-            "type": "text",
-            "text": {
-              "content": " Always explain the bigger picture of what you’re building.",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": " Always explain the bigger picture of what you’re building.",
-            "href": null
-          }
-        ],
-        "color": "default"
-      }
-    },
-    {
-      "object": "block",
-      "id": "287c1b93-843e-80aa-b9d0-d6080504cf15",
-      "parent": {
-        "type": "page_id",
-        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
-      },
-      "created_time": "2025-10-09T05:53:00.000Z",
-      "last_edited_time": "2025-10-09T05:53:00.000Z",
-      "created_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "last_edited_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "has_children": false,
-      "archived": false,
-      "in_trash": false,
-      "type": "bulleted_list_item",
-      "bulleted_list_item": {
-        "rich_text": [
-          {
-            "type": "text",
-            "text": {
-              "content": "Reference files and widgets.",
-              "link": null
-            },
-            "annotations": {
-              "bold": true,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "Reference files and widgets.",
-            "href": null
-          },
-          {
-            "type": "text",
-            "text": {
-              "content": " Including context files makes a massive difference — it helps the model focus and reduces hallucinations.",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": " Including context files makes a massive difference — it helps the model focus and reduces hallucinations.",
-            "href": null
-          }
-        ],
-        "color": "default"
-      }
-    },
-    {
-      "object": "block",
-      "id": "287c1b93-843e-8035-a585-e477761e3ad1",
-      "parent": {
-        "type": "page_id",
-        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
-      },
-      "created_time": "2025-10-09T05:53:00.000Z",
-      "last_edited_time": "2025-10-09T05:53:00.000Z",
-      "created_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "last_edited_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "has_children": false,
-      "archived": false,
-      "in_trash": false,
-      "type": "bulleted_list_item",
-      "bulleted_list_item": {
-        "rich_text": [
-          {
-            "type": "text",
-            "text": {
-              "content": "Describe the desired behavior, not the implementation.",
-              "link": null
-            },
-            "annotations": {
-              "bold": true,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "Describe the desired behavior, not the implementation.",
-            "href": null
-          },
-          {
-            "type": "text",
-            "text": {
-              "content": " Cursor will figure out the code; it performs better when you tell it ",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": " Cursor will figure out the code; it performs better when you tell it ",
-            "href": null
-          },
-          {
-            "type": "text",
-            "text": {
-              "content": "what",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": true,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "what",
-            "href": null
-          },
-          {
-            "type": "text",
-            "text": {
-              "content": " you want, not ",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": " you want, not ",
-            "href": null
-          },
-          {
-            "type": "text",
-            "text": {
-              "content": "how",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": true,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "how",
-            "href": null
-          },
-          {
-            "type": "text",
-            "text": {
-              "content": " to do it.",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": " to do it.",
-            "href": null
-          }
-        ],
-        "color": "default"
-      }
-    },
-    {
-      "object": "block",
-      "id": "287c1b93-843e-80c7-9b76-c10fbd614452",
-      "parent": {
-        "type": "page_id",
-        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
-      },
-      "created_time": "2025-10-09T05:53:00.000Z",
-      "last_edited_time": "2025-10-09T05:53:00.000Z",
-      "created_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "last_edited_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "has_children": false,
-      "archived": false,
-      "in_trash": false,
-      "type": "bulleted_list_item",
-      "bulleted_list_item": {
-        "rich_text": [
-          {
-            "type": "text",
-            "text": {
-              "content": "Add examples.",
-              "link": null
-            },
-            "annotations": {
-              "bold": true,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "Add examples.",
-            "href": null
-          },
-          {
-            "type": "text",
-            "text": {
-              "content": " They help anchor the model’s reasoning.",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": " They help anchor the model’s reasoning.",
-            "href": null
-          }
-        ],
-        "color": "default"
-      }
-    },
-    {
-      "object": "block",
-      "id": "287c1b93-843e-80c1-a4f9-c86bd0bb44cc",
-      "parent": {
-        "type": "page_id",
-        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
-      },
-      "created_time": "2025-10-09T05:53:00.000Z",
-      "last_edited_time": "2025-10-09T05:57:00.000Z",
-      "created_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "last_edited_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "has_children": false,
-      "archived": false,
-      "in_trash": false,
-      "type": "bulleted_list_item",
-      "bulleted_list_item": {
-        "rich_text": [
-          {
-            "type": "text",
-            "text": {
-              "content": "Ask for test-driven development.",
-              "link": null
-            },
-            "annotations": {
-              "bold": true,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "Ask for test-driven development.",
-            "href": null
-          },
-          {
-            "type": "text",
-            "text": {
-              "content": " (I wish I remembered who suggested this!) It’s a game changer! The model keeps iterating until everything works, often without extra input.",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": " (I wish I remembered who suggested this!) It’s a game changer! The model keeps iterating until everything works, often without extra input.",
-            "href": null
-          }
-        ],
-        "color": "default"
-      }
-    },
-    {
-      "object": "block",
-      "id": "287c1b93-843e-801d-9af1-d434a62818fc",
-      "parent": {
-        "type": "page_id",
-        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
-      },
-      "created_time": "2025-10-09T05:53:00.000Z",
-      "last_edited_time": "2025-10-09T05:53:00.000Z",
-      "created_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "last_edited_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "has_children": false,
-      "archived": false,
-      "in_trash": false,
-      "type": "bulleted_list_item",
-      "bulleted_list_item": {
-        "rich_text": [
-          {
-            "type": "text",
-            "text": {
-              "content": "Start with a plan.",
-              "link": null
-            },
-            "annotations": {
-              "bold": true,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "Start with a plan.",
-            "href": null
-          },
-          {
-            "type": "text",
-            "text": {
-              "content": " Don’t dive straight into coding. Ask the model to outline a plan first — it leads to cleaner, more detailed implementations and self-generated to-do lists.",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": " Don’t dive straight into coding. Ask the model to outline a plan first — it leads to cleaner, more detailed implementations and self-generated to-do lists.",
-            "href": null
-          }
-        ],
-        "color": "default"
-      }
-    },
-    {
-      "object": "block",
-      "id": "287c1b93-843e-8042-8cd8-da51f6d23395",
-      "parent": {
-        "type": "page_id",
-        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
-      },
-      "created_time": "2025-10-09T05:53:00.000Z",
-      "last_edited_time": "2025-10-09T05:53:00.000Z",
-      "created_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "last_edited_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "has_children": false,
-      "archived": false,
-      "in_trash": false,
-      "type": "paragraph",
-      "paragraph": {
-        "rich_text": [
-          {
-            "type": "text",
-            "text": {
-              "content": "Learning when to use each of these tricks (or combine them) is key to getting the best results.",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "Learning when to use each of these tricks (or combine them) is key to getting the best results.",
-            "href": null
-          }
-        ],
-        "color": "default"
-      }
-    },
-    {
-      "object": "block",
-      "id": "287c1b93-843e-8002-bebc-c4a72d151e10",
-      "parent": {
-        "type": "page_id",
-        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
-      },
-      "created_time": "2025-10-09T05:53:00.000Z",
-      "last_edited_time": "2025-10-09T05:53:00.000Z",
-      "created_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "last_edited_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "has_children": false,
-      "archived": false,
-      "in_trash": false,
-      "type": "paragraph",
-      "paragraph": {
-        "rich_text": [
-          {
-            "type": "text",
-            "text": {
-              "content": "Right now, this workflow works best for me, though it’s constantly evolving. If you have any tips or think any of these patterns could be improved, I’d love to hear from you!",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "Right now, this workflow works best for me, though it’s constantly evolving. If you have any tips or think any of these patterns could be improved, I’d love to hear from you!",
-            "href": null
-          }
-        ],
-        "color": "default"
-      }
-    },
-    {
-      "object": "block",
-      "id": "287c1b93-843e-80c4-86a6-e216c8e858b5",
-      "parent": {
-        "type": "page_id",
-        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
-      },
-      "created_time": "2025-10-09T05:53:00.000Z",
-      "last_edited_time": "2025-10-09T05:58:00.000Z",
-      "created_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "last_edited_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "has_children": false,
-      "archived": false,
-      "in_trash": false,
-      "type": "paragraph",
-      "paragraph": {
-        "rich_text": [
-          {
-            "type": "text",
-            "text": {
-              "content": "And to keep things short (and because, let’s be honest, you’d get bored otherwise), I won’t share my full prompts here — but I’ll quote some important parts. Also, please don’t judge my prompts; I text AI like using the same language as if I text a friend 😒😂",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "And to keep things short (and because, let’s be honest, you’d get bored otherwise), I won’t share my full prompts here — but I’ll quote some important parts. Also, please don’t judge my prompts; I text AI like using the same language as if I text a friend 😒😂",
             "href": null
           }
         ],
@@ -2972,13 +2908,13 @@
     },
     {
       "object": "block",
-      "id": "287c1b93-843e-8068-ace1-fd7af6f97e1a",
+      "id": "289c1b93-843e-80ae-a2b7-e8c79f78b1d9",
       "parent": {
         "type": "page_id",
         "page_id": "286c1b93-843e-802d-b850-c3584675616d"
       },
-      "created_time": "2025-10-09T06:00:00.000Z",
-      "last_edited_time": "2025-10-09T06:00:00.000Z",
+      "created_time": "2025-10-11T17:19:00.000Z",
+      "last_edited_time": "2025-10-11T17:19:00.000Z",
       "created_by": {
         "object": "user",
         "id": "b3b8f296-add6-451a-ad38-a474404637db"
@@ -2996,7 +2932,7 @@
           {
             "type": "text",
             "text": {
-              "content": "A basic version of the app with minimal but functional features: the ",
+              "content": "The first version of the app needs to be minimal but functional, including only the core features:",
               "link": null
             },
             "annotations": {
@@ -3007,109 +2943,7 @@
               "code": false,
               "color": "default"
             },
-            "plain_text": "A basic version of the app with minimal but functional features: the ",
-            "href": null
-          },
-          {
-            "type": "text",
-            "text": {
-              "content": "shopping list",
-              "link": null
-            },
-            "annotations": {
-              "bold": true,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "shopping list",
-            "href": null
-          },
-          {
-            "type": "text",
-            "text": {
-              "content": ", the ",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": ", the ",
-            "href": null
-          },
-          {
-            "type": "text",
-            "text": {
-              "content": "cleaning management system",
-              "link": null
-            },
-            "annotations": {
-              "bold": true,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "cleaning management system",
-            "href": null
-          },
-          {
-            "type": "text",
-            "text": {
-              "content": ", and a ",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": ", and a ",
-            "href": null
-          },
-          {
-            "type": "text",
-            "text": {
-              "content": "main page",
-              "link": null
-            },
-            "annotations": {
-              "bold": true,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "main page",
-            "href": null
-          },
-          {
-            "type": "text",
-            "text": {
-              "content": " to tie everything together with a feed and apartment information.",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": " to tie everything together with a feed and apartment information.",
+            "plain_text": "The first version of the app needs to be minimal but functional, including only the core features:",
             "href": null
           }
         ],
@@ -3118,57 +2952,13 @@
     },
     {
       "object": "block",
-      "id": "287c1b93-843e-807a-99fb-f5ac1aa71542",
+      "id": "289c1b93-843e-8042-9d5f-f72bb545604d",
       "parent": {
         "type": "page_id",
         "page_id": "286c1b93-843e-802d-b850-c3584675616d"
       },
-      "created_time": "2025-10-09T06:00:00.000Z",
-      "last_edited_time": "2025-10-09T06:00:00.000Z",
-      "created_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "last_edited_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "has_children": false,
-      "archived": false,
-      "in_trash": false,
-      "type": "paragraph",
-      "paragraph": {
-        "rich_text": [
-          {
-            "type": "text",
-            "text": {
-              "content": "So the first implementation includes:",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "So the first implementation includes:",
-            "href": null
-          }
-        ],
-        "color": "default"
-      }
-    },
-    {
-      "object": "block",
-      "id": "287c1b93-843e-80b7-a616-cb15c5d995d5",
-      "parent": {
-        "type": "page_id",
-        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
-      },
-      "created_time": "2025-10-09T06:00:00.000Z",
-      "last_edited_time": "2025-10-09T06:00:00.000Z",
+      "created_time": "2025-10-11T17:19:00.000Z",
+      "last_edited_time": "2025-10-11T17:19:00.000Z",
       "created_by": {
         "object": "user",
         "id": "b3b8f296-add6-451a-ad38-a474404637db"
@@ -3186,7 +2976,24 @@
           {
             "type": "text",
             "text": {
-              "content": "Shared shopping list",
+              "content": "Shared shopping list ",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Shared shopping list ",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "to manage common purchases.",
               "link": null
             },
             "annotations": {
@@ -3197,7 +3004,7 @@
               "code": false,
               "color": "default"
             },
-            "plain_text": "Shared shopping list",
+            "plain_text": "to manage common purchases.",
             "href": null
           }
         ],
@@ -3206,13 +3013,13 @@
     },
     {
       "object": "block",
-      "id": "287c1b93-843e-80b0-889a-dd9962227c3b",
+      "id": "289c1b93-843e-80e5-ad5e-d2dba1a10434",
       "parent": {
         "type": "page_id",
         "page_id": "286c1b93-843e-802d-b850-c3584675616d"
       },
-      "created_time": "2025-10-09T06:00:00.000Z",
-      "last_edited_time": "2025-10-09T06:00:00.000Z",
+      "created_time": "2025-10-11T17:19:00.000Z",
+      "last_edited_time": "2025-10-11T17:19:00.000Z",
       "created_by": {
         "object": "user",
         "id": "b3b8f296-add6-451a-ad38-a474404637db"
@@ -3234,7 +3041,7 @@
               "link": null
             },
             "annotations": {
-              "bold": false,
+              "bold": true,
               "italic": false,
               "strikethrough": false,
               "underline": false,
@@ -3243,6 +3050,23 @@
             },
             "plain_text": "Cleaning management system",
             "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " to organize household chores.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " to organize household chores.",
+            "href": null
           }
         ],
         "color": "default"
@@ -3250,13 +3074,13 @@
     },
     {
       "object": "block",
-      "id": "287c1b93-843e-80c0-8427-dfb60c802e80",
+      "id": "289c1b93-843e-80e3-a8d0-d332ab176eff",
       "parent": {
         "type": "page_id",
         "page_id": "286c1b93-843e-802d-b850-c3584675616d"
       },
-      "created_time": "2025-10-09T06:00:00.000Z",
-      "last_edited_time": "2025-10-09T06:00:00.000Z",
+      "created_time": "2025-10-11T17:19:00.000Z",
+      "last_edited_time": "2025-10-11T17:19:00.000Z",
       "created_by": {
         "object": "user",
         "id": "b3b8f296-add6-451a-ad38-a474404637db"
@@ -3278,7 +3102,7 @@
               "link": null
             },
             "annotations": {
-              "bold": false,
+              "bold": true,
               "italic": false,
               "strikethrough": false,
               "underline": false,
@@ -3286,6 +3110,23 @@
               "color": "default"
             },
             "plain_text": "Home page with feed and apartment info",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " to bring everything together in one place.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " to bring everything together in one place.",
             "href": null
           }
         ],
@@ -3589,7 +3430,7 @@
         "page_id": "286c1b93-843e-802d-b850-c3584675616d"
       },
       "created_time": "2025-10-09T06:00:00.000Z",
-      "last_edited_time": "2025-10-09T06:47:00.000Z",
+      "last_edited_time": "2025-10-11T17:20:00.000Z",
       "created_by": {
         "object": "user",
         "id": "b3b8f296-add6-451a-ad38-a474404637db"
@@ -3641,7 +3482,7 @@
           {
             "type": "text",
             "text": {
-              "content": ". The result is outstanding: a well-structured roadmap including project setup, a shared components library and design system, detailed steps for each feature, and a polishing and testing phase. The plan is complete, but as always, a bit of refinement is needed to fix hallucinations and sharpen the expected behaviors.x",
+              "content": ". The result is outstanding: a well-structured roadmap including project setup, a shared components library and design system, detailed steps for each feature, and a polishing and testing phase. The plan is complete, but as always, a bit of refinement is needed to fix hallucinations and sharpen the expected behaviors.",
               "link": null
             },
             "annotations": {
@@ -3652,7 +3493,7 @@
               "code": false,
               "color": "default"
             },
-            "plain_text": ". The result is outstanding: a well-structured roadmap including project setup, a shared components library and design system, detailed steps for each feature, and a polishing and testing phase. The plan is complete, but as always, a bit of refinement is needed to fix hallucinations and sharpen the expected behaviors.x",
+            "plain_text": ". The result is outstanding: a well-structured roadmap including project setup, a shared components library and design system, detailed steps for each feature, and a polishing and testing phase. The plan is complete, but as always, a bit of refinement is needed to fix hallucinations and sharpen the expected behaviors.",
             "href": null
           }
         ],
@@ -4061,8 +3902,8 @@
         "caption": [],
         "type": "file",
         "file": {
-          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/4a6c1b93-843e-81cb-b4b1-00037c2b55fd/212d1a2c-015a-4ead-9b1e-2fd349fb64aa/main_screens.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466TL66R4TQ%2F20251009%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251009T075608Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDcaCXVzLXdlc3QtMiJHMEUCIQDqCI9PFA2jE5uUW5CNAjWXB97KkiAbmlLNyWG6BZ2exAIgAay0InO%2F%2FwL98v3Bu160RPo1KmbEpMmSkS3tXEALAuUqiAQI0P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDPm4SRHP9O3%2FatCiCSrcAz5k3GlL6k%2BsuSKjRGto1UQwz3xhNKfhZmyd8X6UQOwycWRUAXNgJ3TbYxlUtFmw4fUrJqJdQoS1Qah0%2Bs2WAR5011u%2FtzMQh8ylJ6wECB1rEL9aijDgqyXyiA2BH7C%2Fx1b%2Bxbbdw%2FrwW6vb6k5xhIs9MRuSad2nCcn3t58qumrITYLdErOmak8H3Y97zrPbwhpQxWNFJtfrGhnKn%2BPRvgevNIeSdthyEDmFB7pLcVqIRm%2BbNHDtqN1bndLMiHLZBo4NiEYlXDdyWObfV%2FNF2JGk3wOUdID1dhoLfGcO4yzTX7rvtYmvUApw%2B2MYc0Yvysdum2IMtwBo1nysbskJH7i8EmVxw7ob8eBxI5m%2FVLxHRsMgCcCBv7Q1rqmSz5Ng%2F%2BsLo74wFztS9oGyDiTlirWIAkdQ7jnlgjglgjX%2FlzAWne1tuvnJYGrDMqULAwgUjuZsImLJi0yIGYQcrI93qD72Fw7h6w16%2B%2FNNkquEzLO%2BV9voxYUM1HoyKNLZdrT%2FLIQlchKTlDenGbSqJXQ6e4hKVEAHV2fVN1%2BNrDdkvXDHpgcnlQIYdHD0JFz%2BdyfjEsYWgHzdLdpStP0YOCf2M8pjO4ctNQlHCKENEBoWLtpg%2Bf1Bd%2FzU6ZYVod1XMM%2B2nccGOqUBWuV7ZWysCYdbOXURcroUEfL53yz5HbSsBc9EmzwPZyntdKrhuiEdgY8Ll%2Bm%2BqPNOFg1eCMylNEw3VFXxVJb2V4HyexzhhE%2B6gm7wt5hM6npgREjDXBtKwIBG3ddLj5wMdrTyJfsBfRBWfLS60g7s%2FV9qyssL6DQ7qIYX7iIaWWkf9VVKOg0lDZhbU4Z9hS3e9Quljisw0iSTYKUHfmU%2FHXESTLQl&X-Amz-Signature=d7eed95d8250820949d2fc8325594a77049cc66d7e77331438b103a27e2976d3&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-          "expiry_time": "2025-10-09T08:56:08.901Z"
+          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/4a6c1b93-843e-81cb-b4b1-00037c2b55fd/212d1a2c-015a-4ead-9b1e-2fd349fb64aa/main_screens.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB46662DANAEG%2F20251011%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251011T172150Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLXdlc3QtMiJHMEUCIG10k4zdxG5BLhMmPJqg9pk8hTkLNbeeB1p2DibjCoZLAiEAoKNFcofa3ME66VrgKrqxGoZJwT276cDVtpO%2BGKz9%2BDcq%2FwMIFxAAGgw2Mzc0MjMxODM4MDUiDEh2jTUDIsMm3iMu0yrcA08XTOCoN2Et8kmtmDvETNVHsfPkwWHD1NJI9fYE2n30bfGwEwSBhLNbwPAcQDxddz%2B7HGCQYd4eeidtMkoySwgks5x7v3mUXDRO3Wfe1%2FQRFiIf6joWBWHomG1tLei1UsRYyXAbnrAgkGvX7OKgpHmxBeP5LpWLUwf4HAsI%2BzJzP1xBYPKpPX1Z8AfAix3VT5TMdtQBbjzYh9ZMkIWEvSg7OsCqFP6QzW7Jw4IVtQeVSsEejtwImPC%2F4uDQEaZe0G%2F1R5MStM74hcEW4xodOrwk51%2FwDamw6xe86UGeU7s3kdlNUsPQI8C3Ed6j0oi3w0NvUKFW%2F%2FNYShS9O2WURBSVdL%2FvRBaOa1MasZm9pLXH2b5okU5GnAftRIEfh%2FluV%2B1N9LLoL1gzOzU%2FvjPWqElA9i5LE2Nd9%2Bs98UAsCpfzQbTV0VEivOjRJ1fS2K%2BBDbw1aMV%2FcA1itucRcpA85sxc4A7ycs2GOqvSbGK8hi2IRk95lr0K%2F68pcypgH64SBdCKh3uwXwGWDqlIlgArjleRWab0KiKF7nOug9nYAurLXlxkrmqk22ufPAPC3MIPOE3%2BAx8s6FjADMmG06HOA44JfjPb%2Bp%2F0qBLuxMcddNGL5fsnwymlnrpitMQcMLS%2BqccGOqUBafqktOKZ69%2FEJihRiJslYxbNn%2BDkmCREARAVaWabErQj52b18lpO3rK3AWM0J4AYswGxYEHE3EPbB1xJrBG743EVaufpgfWmTuJSnkdSmG8J44AFiy3FGB6wnzFaEGDJEz%2FsxlOc%2BSWXPVKz7a4s7xJDLPVTFev%2Fq8kjdIewszNsXIua2o2SsGER7mmdD7EkMlBnQ%2BOnLjFqIGC3%2F1jPyl2Xneog&X-Amz-Signature=da44b70294d9378363fbf4e15ecd4379989b62ec1eb7cd41158ac22f1950cc75&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+          "expiry_time": "2025-10-11T18:21:50.849Z"
         }
       }
     },
@@ -4237,8 +4078,8 @@
         "caption": [],
         "type": "file",
         "file": {
-          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/4a6c1b93-843e-81cb-b4b1-00037c2b55fd/2d1b3ac9-93c1-451f-8bfc-1c4ed8a80057/shopping_list.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466TL66R4TQ%2F20251009%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251009T075608Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDcaCXVzLXdlc3QtMiJHMEUCIQDqCI9PFA2jE5uUW5CNAjWXB97KkiAbmlLNyWG6BZ2exAIgAay0InO%2F%2FwL98v3Bu160RPo1KmbEpMmSkS3tXEALAuUqiAQI0P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDPm4SRHP9O3%2FatCiCSrcAz5k3GlL6k%2BsuSKjRGto1UQwz3xhNKfhZmyd8X6UQOwycWRUAXNgJ3TbYxlUtFmw4fUrJqJdQoS1Qah0%2Bs2WAR5011u%2FtzMQh8ylJ6wECB1rEL9aijDgqyXyiA2BH7C%2Fx1b%2Bxbbdw%2FrwW6vb6k5xhIs9MRuSad2nCcn3t58qumrITYLdErOmak8H3Y97zrPbwhpQxWNFJtfrGhnKn%2BPRvgevNIeSdthyEDmFB7pLcVqIRm%2BbNHDtqN1bndLMiHLZBo4NiEYlXDdyWObfV%2FNF2JGk3wOUdID1dhoLfGcO4yzTX7rvtYmvUApw%2B2MYc0Yvysdum2IMtwBo1nysbskJH7i8EmVxw7ob8eBxI5m%2FVLxHRsMgCcCBv7Q1rqmSz5Ng%2F%2BsLo74wFztS9oGyDiTlirWIAkdQ7jnlgjglgjX%2FlzAWne1tuvnJYGrDMqULAwgUjuZsImLJi0yIGYQcrI93qD72Fw7h6w16%2B%2FNNkquEzLO%2BV9voxYUM1HoyKNLZdrT%2FLIQlchKTlDenGbSqJXQ6e4hKVEAHV2fVN1%2BNrDdkvXDHpgcnlQIYdHD0JFz%2BdyfjEsYWgHzdLdpStP0YOCf2M8pjO4ctNQlHCKENEBoWLtpg%2Bf1Bd%2FzU6ZYVod1XMM%2B2nccGOqUBWuV7ZWysCYdbOXURcroUEfL53yz5HbSsBc9EmzwPZyntdKrhuiEdgY8Ll%2Bm%2BqPNOFg1eCMylNEw3VFXxVJb2V4HyexzhhE%2B6gm7wt5hM6npgREjDXBtKwIBG3ddLj5wMdrTyJfsBfRBWfLS60g7s%2FV9qyssL6DQ7qIYX7iIaWWkf9VVKOg0lDZhbU4Z9hS3e9Quljisw0iSTYKUHfmU%2FHXESTLQl&X-Amz-Signature=198b68e64556805e0026d4e1e6bacc23df0de873250ad9b3a1dc7c2f5ca027c6&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-          "expiry_time": "2025-10-09T08:56:08.901Z"
+          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/4a6c1b93-843e-81cb-b4b1-00037c2b55fd/2d1b3ac9-93c1-451f-8bfc-1c4ed8a80057/shopping_list.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB46662DANAEG%2F20251011%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251011T172150Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLXdlc3QtMiJHMEUCIG10k4zdxG5BLhMmPJqg9pk8hTkLNbeeB1p2DibjCoZLAiEAoKNFcofa3ME66VrgKrqxGoZJwT276cDVtpO%2BGKz9%2BDcq%2FwMIFxAAGgw2Mzc0MjMxODM4MDUiDEh2jTUDIsMm3iMu0yrcA08XTOCoN2Et8kmtmDvETNVHsfPkwWHD1NJI9fYE2n30bfGwEwSBhLNbwPAcQDxddz%2B7HGCQYd4eeidtMkoySwgks5x7v3mUXDRO3Wfe1%2FQRFiIf6joWBWHomG1tLei1UsRYyXAbnrAgkGvX7OKgpHmxBeP5LpWLUwf4HAsI%2BzJzP1xBYPKpPX1Z8AfAix3VT5TMdtQBbjzYh9ZMkIWEvSg7OsCqFP6QzW7Jw4IVtQeVSsEejtwImPC%2F4uDQEaZe0G%2F1R5MStM74hcEW4xodOrwk51%2FwDamw6xe86UGeU7s3kdlNUsPQI8C3Ed6j0oi3w0NvUKFW%2F%2FNYShS9O2WURBSVdL%2FvRBaOa1MasZm9pLXH2b5okU5GnAftRIEfh%2FluV%2B1N9LLoL1gzOzU%2FvjPWqElA9i5LE2Nd9%2Bs98UAsCpfzQbTV0VEivOjRJ1fS2K%2BBDbw1aMV%2FcA1itucRcpA85sxc4A7ycs2GOqvSbGK8hi2IRk95lr0K%2F68pcypgH64SBdCKh3uwXwGWDqlIlgArjleRWab0KiKF7nOug9nYAurLXlxkrmqk22ufPAPC3MIPOE3%2BAx8s6FjADMmG06HOA44JfjPb%2Bp%2F0qBLuxMcddNGL5fsnwymlnrpitMQcMLS%2BqccGOqUBafqktOKZ69%2FEJihRiJslYxbNn%2BDkmCREARAVaWabErQj52b18lpO3rK3AWM0J4AYswGxYEHE3EPbB1xJrBG743EVaufpgfWmTuJSnkdSmG8J44AFiy3FGB6wnzFaEGDJEz%2FsxlOc%2BSWXPVKz7a4s7xJDLPVTFev%2Fq8kjdIewszNsXIua2o2SsGER7mmdD7EkMlBnQ%2BOnLjFqIGC3%2F1jPyl2Xneog&X-Amz-Signature=ae35041fbf41031e82237d773f1b8f8772c048e1341d9ee93aea0c6b19ff022d&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+          "expiry_time": "2025-10-11T18:21:50.850Z"
         }
       }
     },
@@ -4345,8 +4186,8 @@
         "caption": [],
         "type": "file",
         "file": {
-          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/4a6c1b93-843e-81cb-b4b1-00037c2b55fd/a2b8f4df-145c-4f1a-84bd-352e9ce942b8/profile.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466TL66R4TQ%2F20251009%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251009T075608Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDcaCXVzLXdlc3QtMiJHMEUCIQDqCI9PFA2jE5uUW5CNAjWXB97KkiAbmlLNyWG6BZ2exAIgAay0InO%2F%2FwL98v3Bu160RPo1KmbEpMmSkS3tXEALAuUqiAQI0P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDPm4SRHP9O3%2FatCiCSrcAz5k3GlL6k%2BsuSKjRGto1UQwz3xhNKfhZmyd8X6UQOwycWRUAXNgJ3TbYxlUtFmw4fUrJqJdQoS1Qah0%2Bs2WAR5011u%2FtzMQh8ylJ6wECB1rEL9aijDgqyXyiA2BH7C%2Fx1b%2Bxbbdw%2FrwW6vb6k5xhIs9MRuSad2nCcn3t58qumrITYLdErOmak8H3Y97zrPbwhpQxWNFJtfrGhnKn%2BPRvgevNIeSdthyEDmFB7pLcVqIRm%2BbNHDtqN1bndLMiHLZBo4NiEYlXDdyWObfV%2FNF2JGk3wOUdID1dhoLfGcO4yzTX7rvtYmvUApw%2B2MYc0Yvysdum2IMtwBo1nysbskJH7i8EmVxw7ob8eBxI5m%2FVLxHRsMgCcCBv7Q1rqmSz5Ng%2F%2BsLo74wFztS9oGyDiTlirWIAkdQ7jnlgjglgjX%2FlzAWne1tuvnJYGrDMqULAwgUjuZsImLJi0yIGYQcrI93qD72Fw7h6w16%2B%2FNNkquEzLO%2BV9voxYUM1HoyKNLZdrT%2FLIQlchKTlDenGbSqJXQ6e4hKVEAHV2fVN1%2BNrDdkvXDHpgcnlQIYdHD0JFz%2BdyfjEsYWgHzdLdpStP0YOCf2M8pjO4ctNQlHCKENEBoWLtpg%2Bf1Bd%2FzU6ZYVod1XMM%2B2nccGOqUBWuV7ZWysCYdbOXURcroUEfL53yz5HbSsBc9EmzwPZyntdKrhuiEdgY8Ll%2Bm%2BqPNOFg1eCMylNEw3VFXxVJb2V4HyexzhhE%2B6gm7wt5hM6npgREjDXBtKwIBG3ddLj5wMdrTyJfsBfRBWfLS60g7s%2FV9qyssL6DQ7qIYX7iIaWWkf9VVKOg0lDZhbU4Z9hS3e9Quljisw0iSTYKUHfmU%2FHXESTLQl&X-Amz-Signature=310a47e2be979e7314c6c6627dcf0a957cb536ff615f46dc2a958decb7c157d5&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-          "expiry_time": "2025-10-09T08:56:08.930Z"
+          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/4a6c1b93-843e-81cb-b4b1-00037c2b55fd/a2b8f4df-145c-4f1a-84bd-352e9ce942b8/profile.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB46662DANAEG%2F20251011%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251011T172150Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLXdlc3QtMiJHMEUCIG10k4zdxG5BLhMmPJqg9pk8hTkLNbeeB1p2DibjCoZLAiEAoKNFcofa3ME66VrgKrqxGoZJwT276cDVtpO%2BGKz9%2BDcq%2FwMIFxAAGgw2Mzc0MjMxODM4MDUiDEh2jTUDIsMm3iMu0yrcA08XTOCoN2Et8kmtmDvETNVHsfPkwWHD1NJI9fYE2n30bfGwEwSBhLNbwPAcQDxddz%2B7HGCQYd4eeidtMkoySwgks5x7v3mUXDRO3Wfe1%2FQRFiIf6joWBWHomG1tLei1UsRYyXAbnrAgkGvX7OKgpHmxBeP5LpWLUwf4HAsI%2BzJzP1xBYPKpPX1Z8AfAix3VT5TMdtQBbjzYh9ZMkIWEvSg7OsCqFP6QzW7Jw4IVtQeVSsEejtwImPC%2F4uDQEaZe0G%2F1R5MStM74hcEW4xodOrwk51%2FwDamw6xe86UGeU7s3kdlNUsPQI8C3Ed6j0oi3w0NvUKFW%2F%2FNYShS9O2WURBSVdL%2FvRBaOa1MasZm9pLXH2b5okU5GnAftRIEfh%2FluV%2B1N9LLoL1gzOzU%2FvjPWqElA9i5LE2Nd9%2Bs98UAsCpfzQbTV0VEivOjRJ1fS2K%2BBDbw1aMV%2FcA1itucRcpA85sxc4A7ycs2GOqvSbGK8hi2IRk95lr0K%2F68pcypgH64SBdCKh3uwXwGWDqlIlgArjleRWab0KiKF7nOug9nYAurLXlxkrmqk22ufPAPC3MIPOE3%2BAx8s6FjADMmG06HOA44JfjPb%2Bp%2F0qBLuxMcddNGL5fsnwymlnrpitMQcMLS%2BqccGOqUBafqktOKZ69%2FEJihRiJslYxbNn%2BDkmCREARAVaWabErQj52b18lpO3rK3AWM0J4AYswGxYEHE3EPbB1xJrBG743EVaufpgfWmTuJSnkdSmG8J44AFiy3FGB6wnzFaEGDJEz%2FsxlOc%2BSWXPVKz7a4s7xJDLPVTFev%2Fq8kjdIewszNsXIua2o2SsGER7mmdD7EkMlBnQ%2BOnLjFqIGC3%2F1jPyl2Xneog&X-Amz-Signature=ed7128c40ec97425dde943fc659f957d61b4a04a161f4d72ea9f4d6fd11c24d2&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+          "expiry_time": "2025-10-11T18:21:50.884Z"
         }
       }
     },
@@ -4521,8 +4362,8 @@
         "caption": [],
         "type": "file",
         "file": {
-          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/4a6c1b93-843e-81cb-b4b1-00037c2b55fd/162a9dc2-9457-4da7-a97e-dbceee68b333/auth.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466TL66R4TQ%2F20251009%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251009T075608Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDcaCXVzLXdlc3QtMiJHMEUCIQDqCI9PFA2jE5uUW5CNAjWXB97KkiAbmlLNyWG6BZ2exAIgAay0InO%2F%2FwL98v3Bu160RPo1KmbEpMmSkS3tXEALAuUqiAQI0P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDPm4SRHP9O3%2FatCiCSrcAz5k3GlL6k%2BsuSKjRGto1UQwz3xhNKfhZmyd8X6UQOwycWRUAXNgJ3TbYxlUtFmw4fUrJqJdQoS1Qah0%2Bs2WAR5011u%2FtzMQh8ylJ6wECB1rEL9aijDgqyXyiA2BH7C%2Fx1b%2Bxbbdw%2FrwW6vb6k5xhIs9MRuSad2nCcn3t58qumrITYLdErOmak8H3Y97zrPbwhpQxWNFJtfrGhnKn%2BPRvgevNIeSdthyEDmFB7pLcVqIRm%2BbNHDtqN1bndLMiHLZBo4NiEYlXDdyWObfV%2FNF2JGk3wOUdID1dhoLfGcO4yzTX7rvtYmvUApw%2B2MYc0Yvysdum2IMtwBo1nysbskJH7i8EmVxw7ob8eBxI5m%2FVLxHRsMgCcCBv7Q1rqmSz5Ng%2F%2BsLo74wFztS9oGyDiTlirWIAkdQ7jnlgjglgjX%2FlzAWne1tuvnJYGrDMqULAwgUjuZsImLJi0yIGYQcrI93qD72Fw7h6w16%2B%2FNNkquEzLO%2BV9voxYUM1HoyKNLZdrT%2FLIQlchKTlDenGbSqJXQ6e4hKVEAHV2fVN1%2BNrDdkvXDHpgcnlQIYdHD0JFz%2BdyfjEsYWgHzdLdpStP0YOCf2M8pjO4ctNQlHCKENEBoWLtpg%2Bf1Bd%2FzU6ZYVod1XMM%2B2nccGOqUBWuV7ZWysCYdbOXURcroUEfL53yz5HbSsBc9EmzwPZyntdKrhuiEdgY8Ll%2Bm%2BqPNOFg1eCMylNEw3VFXxVJb2V4HyexzhhE%2B6gm7wt5hM6npgREjDXBtKwIBG3ddLj5wMdrTyJfsBfRBWfLS60g7s%2FV9qyssL6DQ7qIYX7iIaWWkf9VVKOg0lDZhbU4Z9hS3e9Quljisw0iSTYKUHfmU%2FHXESTLQl&X-Amz-Signature=9721159af4e5a92c723f9423a56c0542f3ba9f685c3ec1aefe7714a698e5a87f&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-          "expiry_time": "2025-10-09T08:56:08.896Z"
+          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/4a6c1b93-843e-81cb-b4b1-00037c2b55fd/162a9dc2-9457-4da7-a97e-dbceee68b333/auth.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB46662DANAEG%2F20251011%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251011T172150Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLXdlc3QtMiJHMEUCIG10k4zdxG5BLhMmPJqg9pk8hTkLNbeeB1p2DibjCoZLAiEAoKNFcofa3ME66VrgKrqxGoZJwT276cDVtpO%2BGKz9%2BDcq%2FwMIFxAAGgw2Mzc0MjMxODM4MDUiDEh2jTUDIsMm3iMu0yrcA08XTOCoN2Et8kmtmDvETNVHsfPkwWHD1NJI9fYE2n30bfGwEwSBhLNbwPAcQDxddz%2B7HGCQYd4eeidtMkoySwgks5x7v3mUXDRO3Wfe1%2FQRFiIf6joWBWHomG1tLei1UsRYyXAbnrAgkGvX7OKgpHmxBeP5LpWLUwf4HAsI%2BzJzP1xBYPKpPX1Z8AfAix3VT5TMdtQBbjzYh9ZMkIWEvSg7OsCqFP6QzW7Jw4IVtQeVSsEejtwImPC%2F4uDQEaZe0G%2F1R5MStM74hcEW4xodOrwk51%2FwDamw6xe86UGeU7s3kdlNUsPQI8C3Ed6j0oi3w0NvUKFW%2F%2FNYShS9O2WURBSVdL%2FvRBaOa1MasZm9pLXH2b5okU5GnAftRIEfh%2FluV%2B1N9LLoL1gzOzU%2FvjPWqElA9i5LE2Nd9%2Bs98UAsCpfzQbTV0VEivOjRJ1fS2K%2BBDbw1aMV%2FcA1itucRcpA85sxc4A7ycs2GOqvSbGK8hi2IRk95lr0K%2F68pcypgH64SBdCKh3uwXwGWDqlIlgArjleRWab0KiKF7nOug9nYAurLXlxkrmqk22ufPAPC3MIPOE3%2BAx8s6FjADMmG06HOA44JfjPb%2Bp%2F0qBLuxMcddNGL5fsnwymlnrpitMQcMLS%2BqccGOqUBafqktOKZ69%2FEJihRiJslYxbNn%2BDkmCREARAVaWabErQj52b18lpO3rK3AWM0J4AYswGxYEHE3EPbB1xJrBG743EVaufpgfWmTuJSnkdSmG8J44AFiy3FGB6wnzFaEGDJEz%2FsxlOc%2BSWXPVKz7a4s7xJDLPVTFev%2Fq8kjdIewszNsXIua2o2SsGER7mmdD7EkMlBnQ%2BOnLjFqIGC3%2F1jPyl2Xneog&X-Amz-Signature=f5d1d69dd6ce319f9b5a6f1224e44f2b790d91c3a9ff44833c9fd1e9d2316236&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+          "expiry_time": "2025-10-11T18:21:50.845Z"
         }
       }
     },
@@ -4936,8 +4777,8 @@
         "caption": [],
         "type": "file",
         "file": {
-          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/4a6c1b93-843e-81cb-b4b1-00037c2b55fd/1e21ced0-33dc-4159-a574-047de0263822/showcase.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466TL66R4TQ%2F20251009%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251009T075608Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDcaCXVzLXdlc3QtMiJHMEUCIQDqCI9PFA2jE5uUW5CNAjWXB97KkiAbmlLNyWG6BZ2exAIgAay0InO%2F%2FwL98v3Bu160RPo1KmbEpMmSkS3tXEALAuUqiAQI0P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDPm4SRHP9O3%2FatCiCSrcAz5k3GlL6k%2BsuSKjRGto1UQwz3xhNKfhZmyd8X6UQOwycWRUAXNgJ3TbYxlUtFmw4fUrJqJdQoS1Qah0%2Bs2WAR5011u%2FtzMQh8ylJ6wECB1rEL9aijDgqyXyiA2BH7C%2Fx1b%2Bxbbdw%2FrwW6vb6k5xhIs9MRuSad2nCcn3t58qumrITYLdErOmak8H3Y97zrPbwhpQxWNFJtfrGhnKn%2BPRvgevNIeSdthyEDmFB7pLcVqIRm%2BbNHDtqN1bndLMiHLZBo4NiEYlXDdyWObfV%2FNF2JGk3wOUdID1dhoLfGcO4yzTX7rvtYmvUApw%2B2MYc0Yvysdum2IMtwBo1nysbskJH7i8EmVxw7ob8eBxI5m%2FVLxHRsMgCcCBv7Q1rqmSz5Ng%2F%2BsLo74wFztS9oGyDiTlirWIAkdQ7jnlgjglgjX%2FlzAWne1tuvnJYGrDMqULAwgUjuZsImLJi0yIGYQcrI93qD72Fw7h6w16%2B%2FNNkquEzLO%2BV9voxYUM1HoyKNLZdrT%2FLIQlchKTlDenGbSqJXQ6e4hKVEAHV2fVN1%2BNrDdkvXDHpgcnlQIYdHD0JFz%2BdyfjEsYWgHzdLdpStP0YOCf2M8pjO4ctNQlHCKENEBoWLtpg%2Bf1Bd%2FzU6ZYVod1XMM%2B2nccGOqUBWuV7ZWysCYdbOXURcroUEfL53yz5HbSsBc9EmzwPZyntdKrhuiEdgY8Ll%2Bm%2BqPNOFg1eCMylNEw3VFXxVJb2V4HyexzhhE%2B6gm7wt5hM6npgREjDXBtKwIBG3ddLj5wMdrTyJfsBfRBWfLS60g7s%2FV9qyssL6DQ7qIYX7iIaWWkf9VVKOg0lDZhbU4Z9hS3e9Quljisw0iSTYKUHfmU%2FHXESTLQl&X-Amz-Signature=a3a1518adbe5b571b7fe1e79d60b4e03ed924a1568a1bad6d548774c1404284b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-          "expiry_time": "2025-10-09T08:56:08.907Z"
+          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/4a6c1b93-843e-81cb-b4b1-00037c2b55fd/1e21ced0-33dc-4159-a574-047de0263822/showcase.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB46662DANAEG%2F20251011%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251011T172150Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG4aCXVzLXdlc3QtMiJHMEUCIG10k4zdxG5BLhMmPJqg9pk8hTkLNbeeB1p2DibjCoZLAiEAoKNFcofa3ME66VrgKrqxGoZJwT276cDVtpO%2BGKz9%2BDcq%2FwMIFxAAGgw2Mzc0MjMxODM4MDUiDEh2jTUDIsMm3iMu0yrcA08XTOCoN2Et8kmtmDvETNVHsfPkwWHD1NJI9fYE2n30bfGwEwSBhLNbwPAcQDxddz%2B7HGCQYd4eeidtMkoySwgks5x7v3mUXDRO3Wfe1%2FQRFiIf6joWBWHomG1tLei1UsRYyXAbnrAgkGvX7OKgpHmxBeP5LpWLUwf4HAsI%2BzJzP1xBYPKpPX1Z8AfAix3VT5TMdtQBbjzYh9ZMkIWEvSg7OsCqFP6QzW7Jw4IVtQeVSsEejtwImPC%2F4uDQEaZe0G%2F1R5MStM74hcEW4xodOrwk51%2FwDamw6xe86UGeU7s3kdlNUsPQI8C3Ed6j0oi3w0NvUKFW%2F%2FNYShS9O2WURBSVdL%2FvRBaOa1MasZm9pLXH2b5okU5GnAftRIEfh%2FluV%2B1N9LLoL1gzOzU%2FvjPWqElA9i5LE2Nd9%2Bs98UAsCpfzQbTV0VEivOjRJ1fS2K%2BBDbw1aMV%2FcA1itucRcpA85sxc4A7ycs2GOqvSbGK8hi2IRk95lr0K%2F68pcypgH64SBdCKh3uwXwGWDqlIlgArjleRWab0KiKF7nOug9nYAurLXlxkrmqk22ufPAPC3MIPOE3%2BAx8s6FjADMmG06HOA44JfjPb%2Bp%2F0qBLuxMcddNGL5fsnwymlnrpitMQcMLS%2BqccGOqUBafqktOKZ69%2FEJihRiJslYxbNn%2BDkmCREARAVaWabErQj52b18lpO3rK3AWM0J4AYswGxYEHE3EPbB1xJrBG743EVaufpgfWmTuJSnkdSmG8J44AFiy3FGB6wnzFaEGDJEz%2FsxlOc%2BSWXPVKz7a4s7xJDLPVTFev%2Fq8kjdIewszNsXIua2o2SsGER7mmdD7EkMlBnQ%2BOnLjFqIGC3%2F1jPyl2Xneog&X-Amz-Signature=7f1de26a7d583126f7b7273986f7f6aedf5d8184812d1de30c3edc57bb761f7c&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+          "expiry_time": "2025-10-11T18:21:50.852Z"
         }
       }
     },
@@ -5242,6 +5083,50 @@
     },
     {
       "object": "block",
+      "id": "287c1b93-843e-80fe-84d5-c7c52631936f",
+      "parent": {
+        "type": "page_id",
+        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
+      },
+      "created_time": "2025-10-09T08:31:00.000Z",
+      "last_edited_time": "2025-10-09T08:33:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "When discussing actual business, AI could definitely be used as a solution for creating a fast MVP to showcase to clients. However, if the contract extends beyond the demo phase, development should transition to manual coding. Based on my experience, an app built entirely by AI from its core is likely to fail.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "When discussing actual business, AI could definitely be used as a solution for creating a fast MVP to showcase to clients. However, if the contract extends beyond the demo phase, development should transition to manual coding. Based on my experience, an app built entirely by AI from its core is likely to fail.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
       "id": "287c1b93-843e-80a3-8d56-f2035b967c1c",
       "parent": {
         "type": "page_id",
@@ -5309,7 +5194,7 @@
         "page_id": "286c1b93-843e-802d-b850-c3584675616d"
       },
       "created_time": "2025-10-09T04:13:00.000Z",
-      "last_edited_time": "2025-10-09T07:00:00.000Z",
+      "last_edited_time": "2025-10-11T17:20:00.000Z",
       "created_by": {
         "object": "user",
         "id": "b3b8f296-add6-451a-ad38-a474404637db"
@@ -5344,7 +5229,7 @@
           {
             "type": "text",
             "text": {
-              "content": "social media",
+              "content": " ",
               "link": {
                 "url": "https://x.com/aaguueeroo?s=21"
               }
@@ -5357,8 +5242,27 @@
               "code": false,
               "color": "default"
             },
-            "plain_text": "social media",
+            "plain_text": " ",
             "href": "https://x.com/aaguueeroo?s=21"
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "Twitter",
+              "link": {
+                "url": "https://x.com/aaguueeroo"
+              }
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Twitter",
+            "href": "https://x.com/aaguueeroo"
           },
           {
             "type": "text",
@@ -5814,8 +5718,8 @@
     }
   ],
   "createdTime": "2025-10-08T23:16:00.000Z",
-  "lastEditedTime": "2025-10-09T07:16:00.000Z",
-  "lastUpdated": "2025-10-09T07:56:09.971Z",
-  "coverImage": "https://prod-files-secure.s3.us-west-2.amazonaws.com/4a6c1b93-843e-81cb-b4b1-00037c2b55fd/f615f233-e576-460a-877b-396dd7f2a6e5/flatto-learning-in-public-1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB46655B3EJTU%2F20251009%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251009T075609Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDcaCXVzLXdlc3QtMiJIMEYCIQD2H%2BzzjR5GPlcHtt1juTxY7gvK5nQ1SHUmGMUWHl5CKQIhAKeqRAGRzWP4OhrBtyZhsqVYPP2fP4TGV7i1Y4V6LcO1KogECND%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1Igx6cKDq6DOpctN7Zq0q3ANbZPX3tR3iIOQdnW16RAV1VijQvswHviYfm%2FMsXfMMJ2vkzCw2oNDSKiyL50aehKLY8Igw%2FSw4jj%2F%2BeWd5SIxS06vt38sWqG%2BSHyyFtnIhoY99jDuMkurc9mfg0xAM%2F5GFDoQxN%2BSglMX%2FlM9MJBj7dz0rbvHokTEnlgGDhFf9nq43l9%2BOFSoSlRxTCEhmfgwJwClaELYb%2Fmurlponkjw4FD0YPfosI7jFNKJ5LoqkwrdkDuoGm%2FJwCRQAKtEnvIySCX%2BQ7RoWUXesGqUiHf4QYOycm4IIzETuqSGXPPUabGy0OA38gxWjh1b%2FBtNKZlxjGiI%2FXL9uL4pB34cF3cuFWEPJGRrZeTMa5ii%2BWHPr02FebHEXRIkf7LOlINbh%2B4TlFIJWIRZa2l8rqNLexSyki6fHYsnjbFKa92DRFgj3wSTpX7zWf6aK0r74WeLmWORoN5%2B3M3c0wxmztMpRkpeVcYnSf1D9874gEp9%2FjeSQ4URWXEjOSkUCm3LiAsJ2RNdBJl%2FdnUupdEqzsCv8syPKP%2FCztpf5sttEL7lCEYE0jspkm6LD%2FJPm57ViYBKPcQy6xhoan7GdinaEA2K%2B7RVO1HG9fWN2HoIiDoC63vVdRubZldW4zmOkQGRxmDDQtp3HBjqkAWEFiugJUYH%2F7Ujnmg94s5wJQrqf2Wd9XL2Np83dtQ1a03Iq%2BejWObVnTjzJF9ItzSQ7O1HW8cyA2mrpWB8iu1OpoMtlJNwAQWplAR7vjPAOJqiU%2FKrt%2FFlN5Yt4%2FxnmzEYLHB0EpaUaCfri3fl8S2L2zVCgxbOnpytL%2B9UYOfa%2Bn5RKJGgLk24W8pDIfOIW1FcL1H%2Bn0FeyqRm7vl6q3B5thnEo&X-Amz-Signature=6ce9c47888b1d93ab3b19ee45d245334c304fbc1eaf3d34f2650487652a6a001&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "lastEditedTime": "2025-10-11T17:21:00.000Z",
+  "lastUpdated": "2025-10-11T17:21:52.671Z",
+  "coverImage": "https://prod-files-secure.s3.us-west-2.amazonaws.com/4a6c1b93-843e-81cb-b4b1-00037c2b55fd/f615f233-e576-460a-877b-396dd7f2a6e5/flatto-learning-in-public-1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4665DSKJLYA%2F20251011%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251011T172152Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEG8aCXVzLXdlc3QtMiJHMEUCIQDRzDocVak8apUbluq5wtJXutojNx50bbwXlSFiUApdbwIgE1ziBw0HVcrty%2BFFAtBA8D84b%2BOpPQXbedYEnVaAVz0q%2FwMIGBAAGgw2Mzc0MjMxODM4MDUiDJGG1scepP%2Bv5EAgGCrcA%2BMgHKJ0YH2cCa1%2F%2FWo10QA36b3WzSkfsF3aV1tHv5zmjaFmhZ62tN%2F7LPhSnRLCK1cll4pvRAEMjhYpwLLI403bpyIRS5tLcq8dfJeP8PChqoylIV7ZKzvLCJZwHKtpQWCY%2FAomul2lXk7iW6cCRMHkUnQmIjeBQ4qdcQ8EnylokAKq3uPLqcqqEIRlOc19fCAav%2B%2FPz0aWRxQDkc5PRsW7fdADrFpo%2FlvS%2FNxBiIeqCH9j6Mg8TRPyFfaa7g3jf1XJFxg6yfALfgwyW0liI8pA3gW74NTnbVY11O%2FnIm45cJGEnvb8oktBbWzaYRG5sJKfLqb5LOwRvli2qAPraoWAbOmsbzU1sECgWL%2B81Ozr1ocj%2BwjFowUGZkRUZrg7SwA8dOoqZ3ZXSmGZwtxW0ABUQ69bYiwKNujKwQM0f1GjcRNv%2B5cg%2BKqO%2FtPaY211fD%2BHdbV4gMKaSe5d38y67RWC1wdtEJ7GIpumEp7UZxOCpwygcECP40VXOpN0JOZ4WXEr7t0FYBFDO3Z883DntlVZw3VN7YTMzt4f59E9bKNXgeoYFsoRTFd85otUwkkpO34cq8N%2BDgpZd8vxWcQnrK2XYajMz5UOrAS2kDD3Z95GZLKfTN36veUjUQ2sMO7kqccGOqUB6cPcw3jmwFfB6z2TIlsdMMTBimkqh77AZtV%2BoewIgIvp3pIPdPZ0jqNkREgNE44NhOkQgTAQYJ3Ule3GBCPl%2F7dy6CaT1vrosgxLxhW8knqmku6KCpBnpvP5RKLtG8kPVG5Yg%2B5m6Ctl51bMxSrB9Yr2yzFTWDpizQ%2BPc7%2FxyvnwMMEEF8pExHnID9uR97g89ujZRdH4FhW5h8RuUXlAsN0RjPOO&X-Amz-Signature=d792374d640620cce5a30e41408a6d8a0a278565e81ddcd335a755c38d3ff1ab&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
   "author": "Julia Agüero"
 }

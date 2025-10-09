@@ -460,6 +460,67 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, loading, error }) =>
                 return acc;
               };
 
+              const renderBlocks = (blocks: any[]): React.ReactNode[] => {
+                const result: React.ReactNode[] = [];
+                let i = 0;
+                
+                while (i < blocks.length) {
+                  const block = blocks[i];
+                  
+                  // Group consecutive numbered list items
+                  if (block.type === 'numbered_list_item') {
+                    const listItems: any[] = [];
+                    while (i < blocks.length && blocks[i].type === 'numbered_list_item') {
+                      listItems.push(blocks[i]);
+                      i++;
+                    }
+                    
+                    result.push(
+                      <Box
+                        key={`ol-${i}`}
+                        component="ol"
+                        sx={{
+                          ml: 4,
+                          mb: 2,
+                          pl: 2,
+                          counterReset: 'list-counter',
+                        }}
+                      >
+                        {listItems.map((item, idx) => (
+                          <Box
+                            key={idx}
+                            component="li"
+                            sx={{
+                              mb: 1,
+                              display: 'list-item',
+                              listStyleType: 'decimal',
+                              listStylePosition: 'outside',
+                            }}
+                          >
+                            <Typography
+                              variant="body1"
+                              component="span"
+                              sx={{
+                                ...TypographyConstants.body,
+                                lineHeight: 1.6,
+                              }}
+                            >
+                              {renderRT(item.numbered_list_item?.rich_text || [])}
+                            </Typography>
+                          </Box>
+                        ))}
+                      </Box>
+                    );
+                    continue;
+                  }
+                  
+                  result.push(renderBlock(block, i));
+                  i++;
+                }
+                
+                return result;
+              };
+
               const renderBlock = (block: any, key: React.Key): React.ReactNode => {
                 switch (block.type) {
                 case 'paragraph':
@@ -551,30 +612,8 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, loading, error }) =>
                     </Box>
                   );
                 case 'numbered_list_item':
-                  return (
-                    <Box 
-                      key={key} 
-                      component="li"
-                      sx={{ 
-                        ml: 4, 
-                        mb: 1,
-                        display: 'list-item',
-                        listStyleType: 'decimal',
-                        listStylePosition: 'outside',
-                      }}
-                    >
-                      <Typography
-                        variant="body1"
-                        component="span"
-                        sx={{
-                          ...TypographyConstants.body,
-                          lineHeight: 1.6,
-                        }}
-                      >
-                        {renderRT(block.numbered_list_item?.rich_text || [])}
-                      </Typography>
-                    </Box>
-                  );
+                  // Handled by renderBlocks grouping
+                  return null;
                   case 'quote': {
                     return (
                       <Box key={key} sx={{ borderLeft: '4px solid', borderLeftColor: 'primary.main', pl: 2, my: 2 }}>
@@ -815,7 +854,7 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, loading, error }) =>
                 }
               };
 
-              return post.content.map((block: any, index: number) => renderBlock(block, index));
+              return renderBlocks(post.content);
             })()}
           </Box>
         ) : (
@@ -903,18 +942,40 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, loading, error }) =>
       {(() => {
         const summaries = (postsIndex as any[]);
         const currentId = post.id;
-        const currentCats = new Set(post.postCategories || []);
-        const currentTags = new Set(post.tags || []);
-        const related = summaries
-          .filter((p) => p.id !== currentId)
-          .map((p) => {
-            const score = ((p.postCategories || []).some((c: string) => currentCats.has(c)) ? 2 : 0) + ((p.tags || []).some((t: string) => currentTags.has(t)) ? 1 : 0);
-            return { p, score };
-          })
-          .filter(({ score }) => score > 0)
-          .sort((a, b) => b.score - a.score)
-          .slice(0, 5) // Show more posts in carousel
-          .map(({ p }) => p);
+        
+        let related: any[] = [];
+        
+        // Combine posts from "Point to" and "Pointed by" fields
+        const relatedPostIds = new Set<string>();
+        if (post.pointTo && post.pointTo.length > 0) {
+          post.pointTo.forEach(id => relatedPostIds.add(id));
+        }
+        if (post.pointedBy && post.pointedBy.length > 0) {
+          post.pointedBy.forEach(id => relatedPostIds.add(id));
+        }
+        
+        // If we have manually linked posts, use those
+        if (relatedPostIds.size > 0) {
+          related = summaries
+            .filter((p) => relatedPostIds.has(p.id))
+            .slice(0, 5);
+        }
+        
+        // If no manual links or not enough posts, use automatic detection
+        if (related.length === 0) {
+          const currentCats = new Set(post.postCategories || []);
+          const currentTags = new Set(post.tags || []);
+          related = summaries
+            .filter((p) => p.id !== currentId)
+            .map((p) => {
+              const score = ((p.postCategories || []).some((c: string) => currentCats.has(c)) ? 2 : 0) + ((p.tags || []).some((t: string) => currentTags.has(t)) ? 1 : 0);
+              return { p, score };
+            })
+            .filter(({ score }) => score > 0)
+            .sort((a, b) => b.score - a.score)
+            .slice(0, 5)
+            .map(({ p }) => p);
+        }
 
         if (!related.length) return null;
 
@@ -1014,7 +1075,7 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, loading, error }) =>
                         component="img"
                         image={rp.coverImage}
                         alt={rp.title}
-                        sx={{ height: 200, objectFit: 'cover' }}
+                        sx={{ height: 200, objectFit: 'cover', borderRadius: 0.12 }}
                       />
                     )}
                     <CardContent sx={{ p: 2 }}>

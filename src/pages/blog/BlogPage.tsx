@@ -74,12 +74,35 @@ const BlogPage: React.FC = () => {
     return '/blog';
   };
 
+  const getPageImage = (): string | undefined => {
+    if (slug && currentPost && currentPost.coverImage) {
+      // If it's a local path, convert it to full URL
+      if (currentPost.coverImage.startsWith('/')) {
+        return `https://juliaaguero.com${currentPost.coverImage}`;
+      }
+      return currentPost.coverImage;
+    }
+    return undefined;
+  };
+
+  const getPageType = (): string => {
+    if (slug && currentPost) {
+      return 'article';
+    }
+    return 'website';
+  };
+
   return (
     <>
       <SEO
         title={getPageTitle()}
         description={getPageDescription()}
         url={getPageUrl()}
+        image={getPageImage()}
+        type={getPageType()}
+        author={currentPost?.author}
+        publishedDate={currentPost?.publishedDate}
+        modifiedDate={currentPost?.lastEditedTime}
       />
       <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         {slug ? (

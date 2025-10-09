@@ -32,39 +32,36 @@ export const MaxWidths = {
 } as const;
 
 export const Typography = {
-    // Main headings (H1)
     h1: {
         fontSize: {
-            xs: '2.5rem',
-            sm: '3.5rem', 
-            md: '4rem',
-            lg: '5rem'
+            xs: '2rem',
+            sm: '2.5rem',
+            md: '3rem',
+            lg: '3.5rem'
         },
         fontWeight: 700,
-        lineHeight: 1.2,
+        lineHeight: 1.3,
         fontFamily: 'Golos Text, sans-serif'
     },
-    // Section headings (H2)
     h2: {
         fontSize: {
-            xs: '2.2rem',
-            sm: '2.7rem',
-            md: '2.7rem',
+            xs: '1.8rem',
+            sm: '2rem',
+            md: '2.3rem',
             lg: '2.7rem'
         },
         fontWeight: 700,
-        lineHeight: 1.2,
+        lineHeight: 1.3,
         fontFamily: 'Golos Text, sans-serif'
     },
-    // Subsection headings (H3)
     h3: {
         fontSize: {
-            xs: '1.7rem',
-            sm: '1.9rem',
-            md: '2.1rem'
+            xs: '1.5rem',
+            sm: '1.7rem',
+            md: '2rem'
         },
         fontWeight: 600,
-        lineHeight: 1.3,
+        lineHeight: 1.4,
         fontFamily: 'Golos Text, sans-serif'
     },
     h4: {
@@ -73,44 +70,44 @@ export const Typography = {
             sm: '1.5rem',
             md: '1.7rem'
         },
+        fontWeight: 600,
+        lineHeight: 1.4,
+        fontFamily: 'Golos Text, sans-serif'
     },
-    // Body text (descriptions, paragraphs)
     body: {
-        fontSize: {
-            xs: '1.3rem',
-            sm: '1.3rem',
-            md: '1.5rem'
-        },
-        fontWeight: 400,
-        lineHeight: 1.4,
-        fontFamily: 'Golos Text, sans-serif'
-    },
-    // Small body text (captions, secondary info)
-    bodySmall: {
-        fontSize: {
-            xs: '1.1rem',
-            sm: '1.2rem',
-            md: '1.3rem'
-        },
-        fontWeight: 400,
-        lineHeight: 1.4,
-        fontFamily: 'Golos Text, sans-serif'
-    },
-    bodyExtraSmall: {
         fontSize: {
             xs: '1rem',
             sm: '1.1rem',
             md: '1.2rem'
         },
         fontWeight: 400,
-        lineHeight: 1.4,
+        lineHeight: 1.5,
         fontFamily: 'Golos Text, sans-serif'
     },
-    // Button text
+    bodySmall: {
+        fontSize: {
+            xs: '0.9rem',
+            sm: '1rem',
+            md: '1.1rem'
+        },
+        fontWeight: 400,
+        lineHeight: 1.5,
+        fontFamily: 'Golos Text, sans-serif'
+    },
+    bodyExtraSmall: {
+        fontSize: {
+            xs: '0.8rem',
+            sm: '0.9rem',
+            md: '1rem'
+        },
+        fontWeight: 400,
+        lineHeight: 1.5,
+        fontFamily: 'Golos Text, sans-serif'
+    },
     button: {
-        fontSize: '1.25rem',
+        fontSize: '1rem',
         fontWeight: 600,
-        lineHeight: 1.2,
+        lineHeight: 1.3,
         fontFamily: 'Golos Text, sans-serif'
     }
 } as const;
