@@ -7,6 +7,7 @@ export { NavigationButtons } from './common/NavigationButtons';
 // Specific question components
 export { CardGridQuestion } from './specific/CardGridQuestion';
 export { CompositeQuestion } from './specific/CompositeQuestion';
+export { SliderTriangleQuestion } from './specific/SliderTriangleQuestion';
 export { TextInputQuestion } from './specific/TextInputQuestion';
 export { ContactFormQuestion } from './specific/ContactFormQuestion';
 export { WelcomeScreen } from './specific/WelcomeScreen';

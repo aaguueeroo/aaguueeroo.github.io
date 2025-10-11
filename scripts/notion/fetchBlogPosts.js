@@ -3,6 +3,9 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
+import https from 'https';
+import http from 'http';
+import crypto from 'crypto';
 
 // Load environment variables from .env file
 dotenv.config();
@@ -116,10 +119,11 @@ async function fetchPostContent(page) {
           notionCoverUrl = pageDetails.cover.file.url;
         }
         
-        // Use the Notion cover image
+        // Download the Notion cover image
         if (notionCoverUrl) {
-          coverImage = notionCoverUrl;
-          console.log(`📸 Using Notion cover for ${page.properties.Title.title[0]?.plain_text}: ${coverImage}`);
+          console.log(`📸 Found Notion cover for ${page.properties.Title.title[0]?.plain_text}`);
+          coverImage = await downloadImage(notionCoverUrl, slug, 'cover');
+          console.log(`✅ Cover image saved: ${coverImage}`);
         } else {
           console.log(`📸 Notion cover URL not found for ${page.properties.Title.title[0]?.plain_text}, using default`);
         }
@@ -130,10 +134,9 @@ async function fetchPostContent(page) {
       console.log(`⚠️  Could not fetch cover image for ${page.properties.Title.title[0]?.plain_text}:`, error.message);
     }
 
-    // Note: We now prioritize Notion's cover image field over content images
-
-    // Use Notion blocks directly
-    let finalBlocks = blocks || [];
+    // Process blocks to download any images
+    console.log(`🖼️  Processing content images for ${slug}...`);
+    let finalBlocks = await processBlockImages(blocks || [], slug);
 
     const post = {
       id: page.id,
@@ -266,6 +269,123 @@ function isPubliclyAccessible(url) {
   if (url.includes('notion.so/images/page-cover/')) return false;
   if (url.includes('notion.so/images/')) return false;
   return true;
+}
+
+/**
+ * Download an image from a URL and save it locally
+ */
+async function downloadImage(url, slug, imageType = 'cover') {
+  if (!url) return null;
+  
+  // Check if it's a Notion URL (which will expire)
+  const isNotionUrl = url.includes('notion.so') || url.includes('amazonaws.com');
+  
+  if (!isNotionUrl) {
+    // If it's not a Notion URL, we can use it directly
+    console.log(`📎 Using external URL directly: ${url}`);
+    return url;
+  }
+
+  try {
+    // Create images directory if it doesn't exist
+    const imagesDir = path.join(__dirname, '../../src/assets/images/blog');
+    if (!fs.existsSync(imagesDir)) {
+      fs.mkdirSync(imagesDir, { recursive: true });
+    }
+
+    // Extract extension from URL or use default
+    let extension = '.jpg';
+    const urlPath = new URL(url).pathname;
+    const match = urlPath.match(/\.(jpg|jpeg|png|gif|webp)$/i);
+    if (match) {
+      extension = match[0].toLowerCase();
+    }
+
+    // Generate filename based on slug and image type
+    const filename = `${slug}-${imageType}${extension}`;
+    const filepath = path.join(imagesDir, filename);
+
+    // Check if file already exists
+    if (fs.existsSync(filepath)) {
+      console.log(`✅ Image already exists: ${filename}`);
+      return `/src/assets/images/blog/${filename}`;
+    }
+
+    console.log(`📥 Downloading image from: ${url}`);
+    
+    // Download the image
+    await new Promise((resolve, reject) => {
+      const protocol = url.startsWith('https') ? https : http;
+      
+      protocol.get(url, (response) => {
+        if (response.statusCode !== 200) {
+          reject(new Error(`Failed to download image: ${response.statusCode}`));
+          return;
+        }
+
+        const fileStream = fs.createWriteStream(filepath);
+        response.pipe(fileStream);
+
+        fileStream.on('finish', () => {
+          fileStream.close();
+          console.log(`💾 Saved image: ${filename}`);
+          resolve();
+        });
+
+        fileStream.on('error', (err) => {
+          fs.unlink(filepath, () => {}); // Delete the file if error
+          reject(err);
+        });
+      }).on('error', reject);
+    });
+
+    // Return the local path
+    return `/src/assets/images/blog/${filename}`;
+  } catch (error) {
+    console.error(`❌ Error downloading image: ${error.message}`);
+    return url; // Fallback to original URL if download fails
+  }
+}
+
+/**
+ * Process blocks recursively to download images
+ */
+async function processBlockImages(blocks, slug) {
+  if (!blocks || !Array.isArray(blocks)) return blocks;
+
+  const processedBlocks = [];
+  let imageCounter = 1;
+
+  for (const block of blocks) {
+    let processedBlock = { ...block };
+
+    // Handle image blocks
+    if (block.type === 'image') {
+      const imageUrl = block.image?.type === 'external' 
+        ? block.image.external?.url 
+        : block.image?.file?.url;
+
+      if (imageUrl) {
+        const localPath = await downloadImage(imageUrl, slug, `image-${imageCounter}`);
+        imageCounter++;
+
+        if (block.image.type === 'external') {
+          processedBlock.image.external.url = localPath;
+        } else if (block.image.type === 'file') {
+          processedBlock.image.file.url = localPath;
+        }
+      }
+    }
+
+    // Process children recursively
+    if (block.children && Array.isArray(block.children)) {
+      processedBlock.children = await processBlockImages(block.children, slug);
+    }
+
+    processedBlocks.push(processedBlock);
+  }
+
+  return processedBlocks;
 }
 
 /**

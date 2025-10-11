@@ -4,6 +4,7 @@ export enum QuestionType {
   SINGLE_SELECT = 'SINGLE_SELECT',
   MULTI_SELECT = 'MULTI_SELECT',
   COMPOSITE = 'COMPOSITE',
+  SLIDER_TRIANGLE = 'SLIDER_TRIANGLE',
   TEXT_INPUT = 'TEXT_INPUT',
   FILE_UPLOAD = 'FILE_UPLOAD',
   CONTACT_FORM = 'CONTACT_FORM',
@@ -13,6 +14,11 @@ export enum QuestionType {
 export type SingleAnswer = string;
 export type MultiAnswer = string[];
 export type CompositeAnswer = Record<string, string>;
+export type SliderTriangleAnswer = {
+  quality: number;
+  speed: number;
+  budget: number;
+};
 export type TextAnswer = string;
 export type FileAnswer = File[];
 export type ContactAnswer = {
@@ -26,6 +32,7 @@ export type Answer =
   | SingleAnswer 
   | MultiAnswer 
   | CompositeAnswer 
+  | SliderTriangleAnswer
   | TextAnswer 
   | FileAnswer 
   | ContactAnswer;

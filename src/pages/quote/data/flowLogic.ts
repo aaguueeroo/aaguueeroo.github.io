@@ -158,8 +158,18 @@ export const validateAnswer = (
       return { isValid: false, error: 'Please select at least one option' };
     }
 
-    // For objects (composite)
+    // For objects (composite or slider triangle)
     if (typeof answer === 'object' && !Array.isArray(answer)) {
+      // Check if it's a slider triangle answer
+      if ('quality' in answer && 'speed' in answer && 'budget' in answer) {
+        const total = answer.quality + answer.speed + answer.budget;
+        if (total !== 200) {
+          return { isValid: false, error: 'Please distribute all 200 points' };
+        }
+        return { isValid: true };
+      }
+      
+      // For other composite types
       const values = Object.values(answer);
       if (values.length === 0 || values.some(v => !v)) {
         return { isValid: false, error: 'Please complete all fields' };

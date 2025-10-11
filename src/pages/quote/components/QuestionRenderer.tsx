@@ -1,7 +1,8 @@
 import React from 'react';
-import { Question, QuestionType, Answer, CompositeAnswer, ContactAnswer } from '../types';
+import { Question, QuestionType, Answer, CompositeAnswer, ContactAnswer, SliderTriangleAnswer } from '../types';
 import { CardGridQuestion } from './specific/CardGridQuestion';
 import { CompositeQuestion } from './specific/CompositeQuestion';
+import { SliderTriangleQuestion } from './specific/SliderTriangleQuestion';
 import { TextInputQuestion } from './specific/TextInputQuestion';
 import { ContactFormQuestion } from './specific/ContactFormQuestion';
 
@@ -54,6 +55,22 @@ export const QuestionRenderer: React.FC<QuestionRendererProps> = ({
               ...currentValues,
               [subQuestionId]: value,
             });
+          }}
+        />
+      );
+
+    case QuestionType.SLIDER_TRIANGLE:
+      return (
+        <SliderTriangleQuestion
+          value={
+            (answer as SliderTriangleAnswer) || {
+              quality: 67,
+              speed: 67,
+              budget: 66,
+            }
+          }
+          onChange={(value) => {
+            onAnswerChange(value);
           }}
         />
       );

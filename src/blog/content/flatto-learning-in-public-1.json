@@ -4065,8 +4065,8 @@
         "caption": [],
         "type": "file",
         "file": {
-          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/4a6c1b93-843e-81cb-b4b1-00037c2b55fd/212d1a2c-015a-4ead-9b1e-2fd349fb64aa/main_screens.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB46647IDWXJU%2F20251009%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251009T112508Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDsaCXVzLXdlc3QtMiJGMEQCIBuBDY8%2BAntJRVErZaDLLLYQ7IDdS28DqtlZvU6J%2BzbbAiA2tMmWfNCYbFQBMrJQDesiT3Do4F%2Fps8XFgrCy%2FQ4yliqIBAjU%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMun0RR6Ew1QrvW2nnKtwDZ2vd4XHLWERhgDRz1lrSPIdinSBnszLUQpVa1CW8cfXnkACCzeQSbqr1H5%2BO4tCTsOzeYhtPP20J05RhUu4v%2FBxzz%2B6cTUzTfaZEu8N6pJ6FU%2Bmn40Eshb6RDwOSnQ2C%2FDEIGMgarIwZDBR5Wtaxh%2B7oB8kcFtf2rmPI8q74ZVe6zsFlguMFX8LZhtp5LzKl24ua2extum342jhyFxdw%2Bisd%2FeOhebwTlBMnXNji3YsoeJS1HAny9OIPekFUFGr3NdKZDjoW1kwuVAofSPbd7%2B0528WkSGOyzbcE8KLAZEW3LRDroX8fz%2Fg59vXB878CfVEy5R4YiGliqy1rFRiYjjJTIWNfKMaWwKRHQZYguslheukbZfTLmPrRWcIrZR7VrWYAWTY3L4FvI1RVXzbNj0MdvwweacOOpQ4AwSiIaMTtfHaiFWCXqsZLegNxKrcnaQ9TGlcVV92W6208Eili%2Fl%2FUjr4lIaORyipjG%2BJR2E7IIio%2F9axmkryJISMBpb2UNDcXKCbORy9yih9F38qrrr1vEP%2FUHLJuZ%2BFGQuP4VlYhJkY5HNk8zrrh0UExcUeTnP%2FN9edLi%2BPynkQ7RhGevae%2FVesFh4Ehv53%2FMIeMokVIJbEtNZx0Y0hcJqAw5q2exwY6pgHR7K%2BhUA5FimE8xmrIt0jTkNxYk55%2BX5opz8wpavnFvYe%2BIaTUHIinQKN7v9WX%2BikvavlSBjp9X8YhhtFO2e7q2WqUDAHzU3UzggKqeuOODoMy3TBcrzyJ9IhcCPamfZcn6AqH0GVMnTS4UiDLLRGs71SRwMqKBpUWo9IdDr27IZKo0QbOlnsBDlq%2FYmotu0Adbmvna825hIbey0fSpJvBA%2BuOW3O9&X-Amz-Signature=0d852e6c154ccb41bc168b3d57d766428d88aad9a3d3bf14caf533bb66bb87d2&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-          "expiry_time": "2025-10-09T12:25:08.385Z"
+          "url": "/src/assets/images/blog/flatto-learning-in-public-1-image-1.png",
+          "expiry_time": "2025-10-11T18:06:03.066Z"
         }
       }
     },
@@ -4241,8 +4241,8 @@
         "caption": [],
         "type": "file",
         "file": {
-          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/4a6c1b93-843e-81cb-b4b1-00037c2b55fd/2d1b3ac9-93c1-451f-8bfc-1c4ed8a80057/shopping_list.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB46647IDWXJU%2F20251009%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251009T112508Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDsaCXVzLXdlc3QtMiJGMEQCIBuBDY8%2BAntJRVErZaDLLLYQ7IDdS28DqtlZvU6J%2BzbbAiA2tMmWfNCYbFQBMrJQDesiT3Do4F%2Fps8XFgrCy%2FQ4yliqIBAjU%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMun0RR6Ew1QrvW2nnKtwDZ2vd4XHLWERhgDRz1lrSPIdinSBnszLUQpVa1CW8cfXnkACCzeQSbqr1H5%2BO4tCTsOzeYhtPP20J05RhUu4v%2FBxzz%2B6cTUzTfaZEu8N6pJ6FU%2Bmn40Eshb6RDwOSnQ2C%2FDEIGMgarIwZDBR5Wtaxh%2B7oB8kcFtf2rmPI8q74ZVe6zsFlguMFX8LZhtp5LzKl24ua2extum342jhyFxdw%2Bisd%2FeOhebwTlBMnXNji3YsoeJS1HAny9OIPekFUFGr3NdKZDjoW1kwuVAofSPbd7%2B0528WkSGOyzbcE8KLAZEW3LRDroX8fz%2Fg59vXB878CfVEy5R4YiGliqy1rFRiYjjJTIWNfKMaWwKRHQZYguslheukbZfTLmPrRWcIrZR7VrWYAWTY3L4FvI1RVXzbNj0MdvwweacOOpQ4AwSiIaMTtfHaiFWCXqsZLegNxKrcnaQ9TGlcVV92W6208Eili%2Fl%2FUjr4lIaORyipjG%2BJR2E7IIio%2F9axmkryJISMBpb2UNDcXKCbORy9yih9F38qrrr1vEP%2FUHLJuZ%2BFGQuP4VlYhJkY5HNk8zrrh0UExcUeTnP%2FN9edLi%2BPynkQ7RhGevae%2FVesFh4Ehv53%2FMIeMokVIJbEtNZx0Y0hcJqAw5q2exwY6pgHR7K%2BhUA5FimE8xmrIt0jTkNxYk55%2BX5opz8wpavnFvYe%2BIaTUHIinQKN7v9WX%2BikvavlSBjp9X8YhhtFO2e7q2WqUDAHzU3UzggKqeuOODoMy3TBcrzyJ9IhcCPamfZcn6AqH0GVMnTS4UiDLLRGs71SRwMqKBpUWo9IdDr27IZKo0QbOlnsBDlq%2FYmotu0Adbmvna825hIbey0fSpJvBA%2BuOW3O9&X-Amz-Signature=7579785911d8f0f41233128baeed125d27d8e74201bb9592b8c16c41b2a387fe&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-          "expiry_time": "2025-10-09T12:25:08.386Z"
+          "url": "/src/assets/images/blog/flatto-learning-in-public-1-image-2.png",
+          "expiry_time": "2025-10-11T18:06:03.066Z"
         }
       }
     },
@@ -4349,8 +4349,8 @@
         "caption": [],
         "type": "file",
         "file": {
-          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/4a6c1b93-843e-81cb-b4b1-00037c2b55fd/a2b8f4df-145c-4f1a-84bd-352e9ce942b8/profile.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB46647IDWXJU%2F20251009%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251009T112508Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDsaCXVzLXdlc3QtMiJGMEQCIBuBDY8%2BAntJRVErZaDLLLYQ7IDdS28DqtlZvU6J%2BzbbAiA2tMmWfNCYbFQBMrJQDesiT3Do4F%2Fps8XFgrCy%2FQ4yliqIBAjU%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMun0RR6Ew1QrvW2nnKtwDZ2vd4XHLWERhgDRz1lrSPIdinSBnszLUQpVa1CW8cfXnkACCzeQSbqr1H5%2BO4tCTsOzeYhtPP20J05RhUu4v%2FBxzz%2B6cTUzTfaZEu8N6pJ6FU%2Bmn40Eshb6RDwOSnQ2C%2FDEIGMgarIwZDBR5Wtaxh%2B7oB8kcFtf2rmPI8q74ZVe6zsFlguMFX8LZhtp5LzKl24ua2extum342jhyFxdw%2Bisd%2FeOhebwTlBMnXNji3YsoeJS1HAny9OIPekFUFGr3NdKZDjoW1kwuVAofSPbd7%2B0528WkSGOyzbcE8KLAZEW3LRDroX8fz%2Fg59vXB878CfVEy5R4YiGliqy1rFRiYjjJTIWNfKMaWwKRHQZYguslheukbZfTLmPrRWcIrZR7VrWYAWTY3L4FvI1RVXzbNj0MdvwweacOOpQ4AwSiIaMTtfHaiFWCXqsZLegNxKrcnaQ9TGlcVV92W6208Eili%2Fl%2FUjr4lIaORyipjG%2BJR2E7IIio%2F9axmkryJISMBpb2UNDcXKCbORy9yih9F38qrrr1vEP%2FUHLJuZ%2BFGQuP4VlYhJkY5HNk8zrrh0UExcUeTnP%2FN9edLi%2BPynkQ7RhGevae%2FVesFh4Ehv53%2FMIeMokVIJbEtNZx0Y0hcJqAw5q2exwY6pgHR7K%2BhUA5FimE8xmrIt0jTkNxYk55%2BX5opz8wpavnFvYe%2BIaTUHIinQKN7v9WX%2BikvavlSBjp9X8YhhtFO2e7q2WqUDAHzU3UzggKqeuOODoMy3TBcrzyJ9IhcCPamfZcn6AqH0GVMnTS4UiDLLRGs71SRwMqKBpUWo9IdDr27IZKo0QbOlnsBDlq%2FYmotu0Adbmvna825hIbey0fSpJvBA%2BuOW3O9&X-Amz-Signature=e7e4310dd92b781656242d959c335091f6c9e321eba446fc5ab45c80209c8388&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-          "expiry_time": "2025-10-09T12:25:08.388Z"
+          "url": "/src/assets/images/blog/flatto-learning-in-public-1-image-3.png",
+          "expiry_time": "2025-10-11T18:06:03.096Z"
         }
       }
     },
@@ -4525,8 +4525,8 @@
         "caption": [],
         "type": "file",
         "file": {
-          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/4a6c1b93-843e-81cb-b4b1-00037c2b55fd/162a9dc2-9457-4da7-a97e-dbceee68b333/auth.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB46647IDWXJU%2F20251009%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251009T112508Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDsaCXVzLXdlc3QtMiJGMEQCIBuBDY8%2BAntJRVErZaDLLLYQ7IDdS28DqtlZvU6J%2BzbbAiA2tMmWfNCYbFQBMrJQDesiT3Do4F%2Fps8XFgrCy%2FQ4yliqIBAjU%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMun0RR6Ew1QrvW2nnKtwDZ2vd4XHLWERhgDRz1lrSPIdinSBnszLUQpVa1CW8cfXnkACCzeQSbqr1H5%2BO4tCTsOzeYhtPP20J05RhUu4v%2FBxzz%2B6cTUzTfaZEu8N6pJ6FU%2Bmn40Eshb6RDwOSnQ2C%2FDEIGMgarIwZDBR5Wtaxh%2B7oB8kcFtf2rmPI8q74ZVe6zsFlguMFX8LZhtp5LzKl24ua2extum342jhyFxdw%2Bisd%2FeOhebwTlBMnXNji3YsoeJS1HAny9OIPekFUFGr3NdKZDjoW1kwuVAofSPbd7%2B0528WkSGOyzbcE8KLAZEW3LRDroX8fz%2Fg59vXB878CfVEy5R4YiGliqy1rFRiYjjJTIWNfKMaWwKRHQZYguslheukbZfTLmPrRWcIrZR7VrWYAWTY3L4FvI1RVXzbNj0MdvwweacOOpQ4AwSiIaMTtfHaiFWCXqsZLegNxKrcnaQ9TGlcVV92W6208Eili%2Fl%2FUjr4lIaORyipjG%2BJR2E7IIio%2F9axmkryJISMBpb2UNDcXKCbORy9yih9F38qrrr1vEP%2FUHLJuZ%2BFGQuP4VlYhJkY5HNk8zrrh0UExcUeTnP%2FN9edLi%2BPynkQ7RhGevae%2FVesFh4Ehv53%2FMIeMokVIJbEtNZx0Y0hcJqAw5q2exwY6pgHR7K%2BhUA5FimE8xmrIt0jTkNxYk55%2BX5opz8wpavnFvYe%2BIaTUHIinQKN7v9WX%2BikvavlSBjp9X8YhhtFO2e7q2WqUDAHzU3UzggKqeuOODoMy3TBcrzyJ9IhcCPamfZcn6AqH0GVMnTS4UiDLLRGs71SRwMqKBpUWo9IdDr27IZKo0QbOlnsBDlq%2FYmotu0Adbmvna825hIbey0fSpJvBA%2BuOW3O9&X-Amz-Signature=eb91e095513a4d2f85cfecd2df3f31a441e57d122f9a07ab4f95f5ab58083855&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-          "expiry_time": "2025-10-09T12:25:08.383Z"
+          "url": "/src/assets/images/blog/flatto-learning-in-public-1-image-4.png",
+          "expiry_time": "2025-10-11T18:06:03.063Z"
         }
       }
     },
@@ -4940,8 +4940,8 @@
         "caption": [],
         "type": "file",
         "file": {
-          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/4a6c1b93-843e-81cb-b4b1-00037c2b55fd/1e21ced0-33dc-4159-a574-047de0263822/showcase.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB46647IDWXJU%2F20251009%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251009T112508Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDsaCXVzLXdlc3QtMiJGMEQCIBuBDY8%2BAntJRVErZaDLLLYQ7IDdS28DqtlZvU6J%2BzbbAiA2tMmWfNCYbFQBMrJQDesiT3Do4F%2Fps8XFgrCy%2FQ4yliqIBAjU%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMun0RR6Ew1QrvW2nnKtwDZ2vd4XHLWERhgDRz1lrSPIdinSBnszLUQpVa1CW8cfXnkACCzeQSbqr1H5%2BO4tCTsOzeYhtPP20J05RhUu4v%2FBxzz%2B6cTUzTfaZEu8N6pJ6FU%2Bmn40Eshb6RDwOSnQ2C%2FDEIGMgarIwZDBR5Wtaxh%2B7oB8kcFtf2rmPI8q74ZVe6zsFlguMFX8LZhtp5LzKl24ua2extum342jhyFxdw%2Bisd%2FeOhebwTlBMnXNji3YsoeJS1HAny9OIPekFUFGr3NdKZDjoW1kwuVAofSPbd7%2B0528WkSGOyzbcE8KLAZEW3LRDroX8fz%2Fg59vXB878CfVEy5R4YiGliqy1rFRiYjjJTIWNfKMaWwKRHQZYguslheukbZfTLmPrRWcIrZR7VrWYAWTY3L4FvI1RVXzbNj0MdvwweacOOpQ4AwSiIaMTtfHaiFWCXqsZLegNxKrcnaQ9TGlcVV92W6208Eili%2Fl%2FUjr4lIaORyipjG%2BJR2E7IIio%2F9axmkryJISMBpb2UNDcXKCbORy9yih9F38qrrr1vEP%2FUHLJuZ%2BFGQuP4VlYhJkY5HNk8zrrh0UExcUeTnP%2FN9edLi%2BPynkQ7RhGevae%2FVesFh4Ehv53%2FMIeMokVIJbEtNZx0Y0hcJqAw5q2exwY6pgHR7K%2BhUA5FimE8xmrIt0jTkNxYk55%2BX5opz8wpavnFvYe%2BIaTUHIinQKN7v9WX%2BikvavlSBjp9X8YhhtFO2e7q2WqUDAHzU3UzggKqeuOODoMy3TBcrzyJ9IhcCPamfZcn6AqH0GVMnTS4UiDLLRGs71SRwMqKBpUWo9IdDr27IZKo0QbOlnsBDlq%2FYmotu0Adbmvna825hIbey0fSpJvBA%2BuOW3O9&X-Amz-Signature=16040d4c75d0604e4f79608ff8c831a7283aca1d10cc157a5a7ac49d1ed13785&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-          "expiry_time": "2025-10-09T12:25:08.408Z"
+          "url": "/src/assets/images/blog/flatto-learning-in-public-1-image-5.png",
+          "expiry_time": "2025-10-11T18:06:03.093Z"
         }
       }
     },
@@ -5863,7 +5863,7 @@
   ],
   "createdTime": "2025-10-08T23:16:00.000Z",
   "lastEditedTime": "2025-10-09T08:33:00.000Z",
-  "lastUpdated": "2025-10-09T11:25:09.347Z",
-  "coverImage": "https://prod-files-secure.s3.us-west-2.amazonaws.com/4a6c1b93-843e-81cb-b4b1-00037c2b55fd/f615f233-e576-460a-877b-396dd7f2a6e5/flatto-learning-in-public-1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466QZ4T4V2Z%2F20251009%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251009T112509Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDsaCXVzLXdlc3QtMiJIMEYCIQC5QAEhXGoL3BiW9o6%2B2E1kFdnx1lYeRs5GlnbuPTYYbwIhAJWDEiXNDNQ1TXUyYxIwCrrStP%2BlE%2Bx69adfT3tp9HPSKogECNT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1Igyzu%2F4rDGB9UouXKQYq3AO%2FKdUrvT%2B1EkfRM83SCYcwyBlPtyP5akL6yU2G6rteSyrPMDahm67pS1z3feBv4Tu1BzMSemAmrCL6hg7feNvXIqAnAOBLLlEhyOhzBoFeCIAwh5flVyQXurLpo8QJjRrzXKP6buIT3%2FHiEagCJRnshpTE78MqJGpZe2EncCeShl69TJhboRE0DRgG5AkeOZqipJvRxLxbDbulv5aAF%2Fa3hoz2O7YgQxiDCOOYsHdDTY59oZiPzagMBVZ6TpFzHwuP2PhW%2B6vOoapzzeW601rOlKoGNSqtbIKWHV4DR%2FwSqtaBRCSDXg3n%2B5zv7x1BOf9KfSBKAMyEI%2F6BrS6UVO7TbauT1hP%2BdSqtF1FfHPuH04Rtwp%2FmZtTZvG%2BWWUb6p94we6nPUHxzttEm7XG4QYoF%2F69k9d7%2BbLtzT%2BVJxMRrrtgdQ1XQPAkufLWQ5EI6b9cECIPdk%2B4UtLekTtut96wqYZU7IuNDjeUxPFFjiaK%2B1n7XJPIM3uXTJmjCIHH%2F7VwrJ6tMRDeS9t9vQrDX%2F31AQ0t2XZdQl2xmMMViQYuiepU80v4L5kydP5jzZOZK0U3OLhJoLQTwFCbxMtXlDp5JhtNp%2F6CBIfVXLVE0776dAt%2BT3AdnHhKC61ZDoTCErp7HBjqkAezv0hvBlzYUulY17qdB5zuIrktfjsUjd9aQfUNm1waToIPCGEelbvrmwTB97plO%2FRFCqPuamzcaD577ecw7kRjjOJskZoDdKfTUHwMzxw9jAJwA8oNzAE77ryZMc9wGjjX2kaPGIX79qoq1rv7Q4LDHie75q1bj7X%2BvvqHa9sEvlKGhwciYiR95pAJ17zjG%2Ffl60kNSHPgt0WtOhsf%2FhXIvpCiD&X-Amz-Signature=cfb17b4ac26d83e7706b9957c219513c220e1a3fd5038ff1a851fa8bbf769b06&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "lastUpdated": "2025-10-11T17:06:13.553Z",
+  "coverImage": "/src/assets/images/blog/flatto-learning-in-public-1-cover.png",
   "author": "Julia Agüero"
 }

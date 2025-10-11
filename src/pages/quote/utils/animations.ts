@@ -51,18 +51,21 @@ export const cardStagger = {
 };
 
 export const cardHover = {
-  scale: 1.02,
-  y: -4,
+  scale: 1.03,
+  y: -6,
   transition: {
-    duration: 0.2,
-    ease: [0.4, 0, 0.2, 1] as const,
+    type: 'spring' as const,
+    stiffness: 400,
+    damping: 15,
   },
 };
 
 export const cardTap = {
-  scale: 0.98,
+  scale: 0.97,
   transition: {
-    duration: 0.1,
+    type: 'spring' as const,
+    stiffness: 600,
+    damping: 20,
   },
 };
 

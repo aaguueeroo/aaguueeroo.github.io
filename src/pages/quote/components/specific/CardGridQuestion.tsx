@@ -42,7 +42,7 @@ export const CardGridQuestion: React.FC<CardGridQuestionProps> = ({
     if (optionCount === 3) return 4; // 3 columns for 3 items
     if (optionCount === 4) return 3; // 4 columns for 4 items
     if (optionCount === 5) return 2.4; // 5 columns for 5 items
-    return 2; // 6 columns for 6+ items
+    return 4; // 3 columns for 6+ items (2 rows)
   };
 
   return (
@@ -52,18 +52,18 @@ export const CardGridQuestion: React.FC<CardGridQuestionProps> = ({
       animate="animate"
       style={{ width: '100%' }}
     >
-      <Grid container spacing={{ xs: 1.5, sm: 2, md: 3 }}>
+      <Grid container spacing={{ xs: 1.5, sm: 2, md: 2.5 }} alignItems="stretch">
         {question.options.map((option) => (
           <Grid
             item
             xs={12}
             sm={getGridSize()}
             key={option.id}
-            sx={{ display: 'flex', justifyContent: 'center', alignItems: 'stretch' }}
+            sx={{ display: 'flex' }}
           >
             <motion.div 
               variants={cardStagger.item}
-              style={{ width: '100%', display: 'flex' }}
+              style={{ width: '100%', height: '100%', display: 'flex' }}
             >
               <OptionCard
                 option={option}

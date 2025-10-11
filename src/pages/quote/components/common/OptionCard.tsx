@@ -36,18 +36,25 @@ export const OptionCard: React.FC<OptionCardProps> = ({
       whileTap={!disabled ? cardTap : undefined}
       sx={{
         cursor: disabled ? 'not-allowed' : 'pointer',
-        border: 2,
-        borderColor: isSelected ? 'primary.main' : 'divider',
+        border: 'none',
         backgroundColor: isSelected ? 'primary.light' : 'background.paper',
         opacity: disabled ? 0.5 : 1,
-        transition: 'border-color 0.2s ease, background-color 0.2s ease',
+        boxShadow: isSelected 
+          ? '0 4px 12px rgba(0, 0, 0, 0.12)' 
+          : '0 2px 8px rgba(0, 0, 0, 0.08)',
+        transition: 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
         height: '100%',
         width: '100%',
         display: 'flex',
         flexDirection: 'column',
         '&:hover': {
-          borderColor: !disabled && !isSelected ? 'primary.light' : undefined,
-          boxShadow: !disabled ? 4 : undefined,
+          boxShadow: !disabled 
+            ? isSelected 
+              ? '0 6px 16px rgba(0, 0, 0, 0.14)' 
+              : '0 4px 12px rgba(0, 0, 0, 0.12)' 
+            : undefined,
+          transform: !disabled ? 'scale(1.03)' : undefined,
+          transformOrigin: 'center center',
         },
       }}
     >
@@ -58,12 +65,11 @@ export const OptionCard: React.FC<OptionCardProps> = ({
           alignItems: { xs: 'center', sm: 'center' },
           justifyContent: { xs: 'flex-start', sm: 'center' },
           textAlign: { xs: 'left', sm: 'center' },
-          gap: { xs: 1.5, sm: 1.5, md: 2 },
-          py: { xs: 1.5, sm: 2.5, md: 3 },
-          px: { xs: 2, sm: 1.5, md: 2 },
+          gap: { xs: 1.5, sm: 1.25, md: 1.5 },
+          p: 0,
           flex: 1,
           '&:last-child': {
-            pb: { xs: 1.5, sm: 2.5, md: 3 },
+            pb: 0,
           },
         }}
       >
@@ -77,14 +83,14 @@ export const OptionCard: React.FC<OptionCardProps> = ({
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            transition: 'background-color 0.2s ease',
+            transition: 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
           }}
         >
           <IconComponent
             sx={{
               fontSize: { xs: 22, sm: 26, md: 32 },
               color: isSelected ? 'primary.contrastText' : 'primary.main',
-              transition: 'color 0.2s ease',
+              transition: 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
             }}
           />
         </Box>

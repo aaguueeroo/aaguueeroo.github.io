@@ -50,7 +50,7 @@ export const CompositeQuestion: React.FC<CompositeQuestionProps> = ({
               animate="animate"
               style={{ width: '100%' }}
             >
-              <Grid container spacing={{ xs: 1.5, sm: 2, md: 3 }}>
+              <Grid container spacing={{ xs: 1.5, sm: 2, md: 0 }} alignItems="stretch">
                 {subQuestion.options.map((option) => {
                   const optionCount = subQuestion.options.length;
                   const getGridSize = () => {
@@ -58,7 +58,7 @@ export const CompositeQuestion: React.FC<CompositeQuestionProps> = ({
                     if (optionCount === 3) return 4;
                     if (optionCount === 4) return 3;
                     if (optionCount === 5) return 2.4;
-                    return 2;
+                    return 4; // 3 columns for 6+ items (2 rows)
                   };
 
                   return (
@@ -67,11 +67,11 @@ export const CompositeQuestion: React.FC<CompositeQuestionProps> = ({
                       xs={12}
                       sm={getGridSize()}
                       key={option.id}
-                      sx={{ display: 'flex', justifyContent: 'center', alignItems: 'stretch' }}
+                      sx={{ display: 'flex' }}
                     >
                       <motion.div 
                         variants={cardStagger.item}
-                        style={{ width: '100%', display: 'flex' }}
+                        style={{ width: '100%', height: '100%', display: 'flex' }}
                       >
                         <OptionCard
                           option={option}
