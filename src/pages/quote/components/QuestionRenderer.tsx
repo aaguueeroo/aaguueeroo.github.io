@@ -62,13 +62,7 @@ export const QuestionRenderer: React.FC<QuestionRendererProps> = ({
     case QuestionType.SLIDER_TRIANGLE:
       return (
         <SliderTriangleQuestion
-          value={
-            (answer as SliderTriangleAnswer) || {
-              quality: 67,
-              speed: 67,
-              budget: 66,
-            }
-          }
+          value={(answer as SliderTriangleAnswer) || []}
           onChange={(value) => {
             onAnswerChange(value);
           }}
@@ -107,4 +101,3 @@ export const QuestionRenderer: React.FC<QuestionRendererProps> = ({
       return null;
   }
 };
-

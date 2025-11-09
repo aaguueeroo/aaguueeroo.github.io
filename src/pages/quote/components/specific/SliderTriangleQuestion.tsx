@@ -1,6 +1,14 @@
-import React, { useState, useEffect } from "react";
-import { Box, Typography, Slider } from "@mui/material";
+import React, { useCallback, useEffect, useState } from "react";
+import { Alert, Box, Grid, Snackbar } from "@mui/material";
+import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
+import BoltIcon from "@mui/icons-material/Bolt";
+import BoltOutlinedIcon from "@mui/icons-material/BoltOutlined";
+import LocalAtmIcon from "@mui/icons-material/LocalAtm";
+import SavingsIcon from "@mui/icons-material/Savings";
+import StarBorderIcon from "@mui/icons-material/StarBorder";
 import { motion } from "framer-motion";
+import { InteractiveOptionCardLayout } from "../common/InteractiveOptionCardLayout";
+import { cardStagger } from "../../utils/animations";
 import { SliderTriangleAnswer } from "../../types";
 
 interface SliderTriangleQuestionProps {
@@ -8,336 +16,183 @@ interface SliderTriangleQuestionProps {
   onChange: (value: SliderTriangleAnswer) => void;
 }
 
-const TOTAL_POINTS = 200;
-const MAX_PER_SLIDER = 100;
+type SliderTriangleOptionId = "quality" | "speed" | "budget";
+
+interface SliderTriangleOption {
+  readonly id: SliderTriangleOptionId;
+  readonly label: string;
+  readonly description: string;
+  readonly icon: React.ElementType;
+  readonly selectedIcon: React.ElementType;
+}
+
+const sliderTriangleOptions: readonly SliderTriangleOption[] = [
+  {
+    id: "quality",
+    label: "Quality",
+    description: "High-quality code, thorough testing, and best practices",
+    icon: StarBorderIcon,
+    selectedIcon: AutoAwesomeIcon,
+  },
+  {
+    id: "speed",
+    label: "Speed",
+    description: "Fast delivery and quick turnaround time",
+    icon: BoltOutlinedIcon,
+    selectedIcon: BoltIcon,
+  },
+  {
+    id: "budget",
+    label: "Budget",
+    description: "Cost-effective solution within your budget constraints",
+    icon: LocalAtmIcon,
+    selectedIcon: SavingsIcon,
+  },
+] as const;
+
+const areValuesEqual = (
+  first: SliderTriangleAnswer,
+  second: SliderTriangleAnswer
+): boolean => {
+  if (first.length !== second.length) {
+    return false;
+  }
+  const firstSorted = [...first].sort();
+  const secondSorted = [...second].sort();
+  return firstSorted.every((value, index) => value === secondSorted[index]);
+};
 
 export const SliderTriangleQuestion: React.FC<SliderTriangleQuestionProps> = ({
   value,
   onChange,
 }) => {
-  const [localValue, setLocalValue] = useState<SliderTriangleAnswer>(
-    value || { quality: 67, speed: 67, budget: 66 }
+  const [selectedValues, setSelectedValues] = useState<SliderTriangleAnswer>(
+    () => (value ? [...value] : [])
   );
+  const [showLimitToast, setShowLimitToast] = useState<boolean>(false);
 
   useEffect(() => {
-    if (value) {
-      setLocalValue(value);
-    }
-  }, [value]);
-
-  const handleSliderChange = (
-    slider: keyof SliderTriangleAnswer,
-    newValue: number
-  ) => {
-    const currentTotal =
-      localValue.quality + localValue.speed + localValue.budget;
-    const otherSliders = (
-      Object.keys(localValue) as Array<keyof SliderTriangleAnswer>
-    ).filter((key) => key !== slider);
-
-    const currentSliderValue = localValue[slider];
-    const delta = newValue - currentSliderValue;
-
-    // Calculate new values
-    const newValues = { ...localValue, [slider]: newValue };
-    let remainingDelta = delta;
-
-    // Distribute the delta across other sliders
-    for (const otherSlider of otherSliders) {
-      if (remainingDelta === 0) break;
-
-      const currentOtherValue = localValue[otherSlider];
-      const maxDecrease = currentOtherValue; // Can't go below 0
-      const maxIncrease = MAX_PER_SLIDER - currentOtherValue; // Can't go above 100
-
-      if (remainingDelta > 0) {
-        // Need to decrease this slider
-        const decrease = Math.min(remainingDelta, maxDecrease);
-        newValues[otherSlider] = currentOtherValue - decrease;
-        remainingDelta -= decrease;
-      } else {
-        // Need to increase this slider
-        const increase = Math.min(-remainingDelta, maxIncrease);
-        newValues[otherSlider] = currentOtherValue + increase;
-        remainingDelta += increase;
+    if (!value) {
+      if (selectedValues.length > 0) {
+        setSelectedValues([]);
       }
+      return;
     }
-
-    // Ensure total is exactly 200
-    const newTotal = newValues.quality + newValues.speed + newValues.budget;
-    if (newTotal !== TOTAL_POINTS) {
-      // Adjust the first other slider to compensate
-      const adjustSlider = otherSliders[0];
-      newValues[adjustSlider] += TOTAL_POINTS - newTotal;
+    if (!areValuesEqual(value, selectedValues)) {
+      setSelectedValues([...value]);
     }
+  }, [value, selectedValues]);
 
-    setLocalValue(newValues);
-    onChange(newValues);
-  };
+  const handleOptionSelect = useCallback(
+    (optionId: SliderTriangleOptionId) => {
+      const isAlreadySelected = selectedValues.includes(optionId);
 
-  const getPercentage = (value: number) => ((value / MAX_PER_SLIDER) * 100).toFixed(0);
+      if (isAlreadySelected) {
+        const updatedValues = selectedValues.filter((valueId) => valueId !== optionId);
+        setSelectedValues(updatedValues);
+        onChange(updatedValues);
+        return;
+      }
+
+      if (selectedValues.length >= 2) {
+        setShowLimitToast(true);
+        return;
+      }
+
+      const updatedValues = [...selectedValues, optionId];
+      setSelectedValues(updatedValues);
+      onChange(updatedValues);
+    },
+    [onChange, selectedValues]
+  );
+
+  const handleToastClose = useCallback(() => {
+    setShowLimitToast(false);
+  }, []);
 
   return (
-    <Box sx={{ width: "100%", maxWidth: "800px", mx: "auto" }}>
+    <Box sx={{ width: "100%", maxWidth: "960px", mx: "auto" }}>
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        variants={cardStagger.container}
+        initial="initial"
+        animate="animate"
       >
-        <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: 4, sm: 5, md: 6 } }}>
-          {/* Quality Slider */}
-          <Box>
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                mb: 2,
-              }}
-            >
-              <Typography
-                sx={{
-                  fontWeight: 600,
-                  fontSize: { xs: "1.125rem", sm: "1.25rem", md: "1.375rem" },
-                }}
-              >
-                Quality
-              </Typography>
-              <Typography
-                sx={{
-                  fontWeight: 700,
-                  fontSize: { xs: "1.25rem", sm: "1.5rem", md: "1.75rem" },
-                  color: "primary.main",
-                }}
-              >
-                {localValue.quality}
-                <Typography
-                  component="span"
-                  sx={{
-                    fontSize: { xs: "0.875rem", sm: "1rem", md: "1.125rem" },
-                    color: "text.secondary",
-                    ml: 0.5,
-                  }}
-                >
-                  / {MAX_PER_SLIDER}
-                </Typography>
-              </Typography>
-            </Box>
-            <Slider
-              value={localValue.quality}
-              onChange={(_, newValue) =>
-                handleSliderChange("quality", newValue as number)
-              }
-              min={0}
-              max={MAX_PER_SLIDER}
-              step={1}
-              valueLabelDisplay="auto"
-              sx={{
-                "& .MuiSlider-thumb": {
-                  width: { xs: 20, sm: 24, md: 28 },
-                  height: { xs: 20, sm: 24, md: 28 },
-                },
-                "& .MuiSlider-track": {
-                  height: { xs: 6, sm: 8, md: 10 },
-                },
-                "& .MuiSlider-rail": {
-                  height: { xs: 6, sm: 8, md: 10 },
-                },
-              }}
-            />
-            <Typography
-              sx={{
-                color: "text.secondary",
-                fontSize: { xs: "0.875rem", sm: "0.9375rem", md: "1rem" },
-                mt: 1,
-              }}
-            >
-              High-quality code, thorough testing, and best practices
-            </Typography>
-          </Box>
+        <Grid
+          container
+          spacing={{ xs: 2, sm: 2.5, md: 3 }}
+          sx={{
+            flex: 1,
+            width: "100%",
+            alignContent: "stretch",
+          }}
+        >
+          {sliderTriangleOptions.map((option) => {
+            const IconComponent = option.icon;
+            const SelectedIconComponent = option.selectedIcon;
+            const isSelected = selectedValues.includes(option.id);
 
-          {/* Speed Slider */}
-          <Box>
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                mb: 2,
-              }}
-            >
-              <Typography
-                sx={{
-                  fontWeight: 600,
-                  fontSize: { xs: "1.125rem", sm: "1.25rem", md: "1.375rem" },
-                }}
+            return (
+              <Grid
+                item
+                xs={12}
+                sm={6}
+                md={4}
+                key={option.id}
+                sx={{ display: "flex", width: "100%" }}
               >
-                Speed
-              </Typography>
-              <Typography
-                sx={{
-                  fontWeight: 700,
-                  fontSize: { xs: "1.25rem", sm: "1.5rem", md: "1.75rem" },
-                  color: "primary.main",
-                }}
-              >
-                {localValue.speed}
-                <Typography
-                  component="span"
-                  sx={{
-                    fontSize: { xs: "0.875rem", sm: "1rem", md: "1.125rem" },
-                    color: "text.secondary",
-                    ml: 0.5,
-                  }}
+                <motion.div
+                  variants={cardStagger.item}
+                  style={{ width: "100%", height: "100%", display: "flex", flex: 1 }}
                 >
-                  / {MAX_PER_SLIDER}
-                </Typography>
-              </Typography>
-            </Box>
-            <Slider
-              value={localValue.speed}
-              onChange={(_, newValue) =>
-                handleSliderChange("speed", newValue as number)
-              }
-              min={0}
-              max={MAX_PER_SLIDER}
-              step={1}
-              valueLabelDisplay="auto"
-              sx={{
-                "& .MuiSlider-thumb": {
-                  width: { xs: 20, sm: 24, md: 28 },
-                  height: { xs: 20, sm: 24, md: 28 },
-                },
-                "& .MuiSlider-track": {
-                  height: { xs: 6, sm: 8, md: 10 },
-                },
-                "& .MuiSlider-rail": {
-                  height: { xs: 6, sm: 8, md: 10 },
-                },
-              }}
-            />
-            <Typography
-              sx={{
-                color: "text.secondary",
-                fontSize: { xs: "0.875rem", sm: "0.9375rem", md: "1rem" },
-                mt: 1,
-              }}
-            >
-              Fast delivery and quick turnaround time
-            </Typography>
-          </Box>
-
-          {/* Budget Slider */}
-          <Box>
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                mb: 2,
-              }}
-            >
-              <Typography
-                sx={{
-                  fontWeight: 600,
-                  fontSize: { xs: "1.125rem", sm: "1.25rem", md: "1.375rem" },
-                }}
-              >
-                Budget
-              </Typography>
-              <Typography
-                sx={{
-                  fontWeight: 700,
-                  fontSize: { xs: "1.25rem", sm: "1.5rem", md: "1.75rem" },
-                  color: "primary.main",
-                }}
-              >
-                {localValue.budget}
-                <Typography
-                  component="span"
-                  sx={{
-                    fontSize: { xs: "0.875rem", sm: "1rem", md: "1.125rem" },
-                    color: "text.secondary",
-                    ml: 0.5,
-                  }}
-                >
-                  / {MAX_PER_SLIDER}
-                </Typography>
-              </Typography>
-            </Box>
-            <Slider
-              value={localValue.budget}
-              onChange={(_, newValue) =>
-                handleSliderChange("budget", newValue as number)
-              }
-              min={0}
-              max={MAX_PER_SLIDER}
-              step={1}
-              valueLabelDisplay="auto"
-              sx={{
-                "& .MuiSlider-thumb": {
-                  width: { xs: 20, sm: 24, md: 28 },
-                  height: { xs: 20, sm: 24, md: 28 },
-                },
-                "& .MuiSlider-track": {
-                  height: { xs: 6, sm: 8, md: 10 },
-                },
-                "& .MuiSlider-rail": {
-                  height: { xs: 6, sm: 8, md: 10 },
-                },
-              }}
-            />
-            <Typography
-              sx={{
-                color: "text.secondary",
-                fontSize: { xs: "0.875rem", sm: "0.9375rem", md: "1rem" },
-                mt: 1,
-              }}
-            >
-              Cost-effective solution within your budget constraints
-            </Typography>
-          </Box>
-
-          {/* Points Summary */}
-          <Box
-            sx={{
-              mt: { xs: 2, sm: 3, md: 4 },
-              p: { xs: 2, sm: 2.5, md: 3 },
-              backgroundColor: "grey.100",
-              borderRadius: 2,
-              textAlign: "center",
-            }}
-          >
-            <Typography
-              sx={{
-                fontSize: { xs: "0.875rem", sm: "1rem", md: "1.125rem" },
-                color: "text.secondary",
-                mb: 0.5,
-              }}
-            >
-              Points Distributed
-            </Typography>
-            <Typography
-              sx={{
-                fontWeight: 700,
-                fontSize: { xs: "1.5rem", sm: "1.75rem", md: "2rem" },
-                color:
-                  localValue.quality + localValue.speed + localValue.budget ===
-                  TOTAL_POINTS
-                    ? "success.main"
-                    : "error.main",
-              }}
-            >
-              {localValue.quality + localValue.speed + localValue.budget} /{" "}
-              {TOTAL_POINTS}
-            </Typography>
-          </Box>
-        </Box>
+                  <InteractiveOptionCardLayout
+                    ariaLabel={`${option.label}: ${option.description}`}
+                    isSelected={isSelected}
+                    onSelect={() => handleOptionSelect(option.id)}
+                    slots={{
+                      renderIcon: ({ isSelected: selected }) =>
+                        selected ? (
+                          <SelectedIconComponent
+                            sx={{
+                              fontSize: { xs: 24, sm: 28, md: 34 },
+                              color: "primary.contrastText",
+                              transition: "all 0.3s ease",
+                            }}
+                          />
+                        ) : (
+                          <IconComponent
+                            sx={{
+                              fontSize: { xs: 24, sm: 28, md: 34 },
+                              color: "primary.main",
+                              transition: "all 0.3s ease",
+                            }}
+                          />
+                        ),
+                      renderTitle: () => option.label,
+                      renderDescription: () => option.description,
+                    }}
+                  />
+                </motion.div>
+              </Grid>
+            );
+          })}
+        </Grid>
       </motion.div>
+
+      <Snackbar
+        open={showLimitToast}
+        autoHideDuration={3200}
+        onClose={handleToastClose}
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+        sx={{ top: "50% !important", transform: "translateY(-50%)" }}
+      >
+        <Alert
+          onClose={handleToastClose}
+          severity="info"
+          sx={{ width: "100%" }}
+        >
+          You can’t have everything in this life. Pick the two that matter most.
+        </Alert>
+      </Snackbar>
     </Box>
   );
 };
-
-
-
-

@@ -27,6 +27,8 @@ interface UseQuoteFormReturn {
   resetForm: () => void;
   submitForm: () => Promise<void>;
   allAnswers: FormAnswers;
+  isSubmitting: boolean;
+  submitError: string | null;
 }
 
 const createInitialState = (): FormState => ({
@@ -42,6 +44,8 @@ export const useQuoteForm = (): UseQuoteFormReturn => {
     const savedState = loadFormState();
     return savedState || createInitialState();
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   // Save to localStorage whenever state changes
   useEffect(() => {
@@ -158,6 +162,9 @@ export const useQuoteForm = (): UseQuoteFormReturn => {
    * Submit form
    */
   const submitForm = useCallback(async () => {
+    setIsSubmitting(true);
+    setSubmitError(null);
+    
     try {
       const { submitQuoteForm } = await import('../utils/submission');
       await submitQuoteForm(formState.answers);
@@ -172,7 +179,12 @@ export const useQuoteForm = (): UseQuoteFormReturn => {
       }));
     } catch (error) {
       console.error('Error submitting form:', error);
-      // TODO: Show error message to user
+      const errorMessage = error instanceof Error 
+        ? error.message 
+        : 'Failed to submit form. Please try again.';
+      setSubmitError(errorMessage);
+    } finally {
+      setIsSubmitting(false);
     }
   }, [formState.answers]);
 
@@ -189,6 +201,8 @@ export const useQuoteForm = (): UseQuoteFormReturn => {
     resetForm,
     submitForm,
     allAnswers: formState.answers,
+    isSubmitting,
+    submitError,
   };
 };
 

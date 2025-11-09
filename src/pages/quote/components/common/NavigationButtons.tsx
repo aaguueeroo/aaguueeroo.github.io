@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Button, Container } from '@mui/material';
+import { Box, Button, CircularProgress } from '@mui/material';
 import { motion } from 'framer-motion';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
@@ -13,6 +13,9 @@ interface NavigationButtonsProps {
   onBack: () => void;
   onNext: () => void;
   onSubmit?: () => void;
+  isSubmitting?: boolean;
+  nextLabel?: string;
+  nextButtonTone?: 'default' | 'neutral';
 }
 
 const MotionButton = motion(Button);
@@ -24,6 +27,9 @@ export const NavigationButtons: React.FC<NavigationButtonsProps> = ({
   onBack,
   onNext,
   onSubmit,
+  isSubmitting = false,
+  nextLabel,
+  nextButtonTone = 'default',
 }) => {
   const handleNext = () => {
     if (isLastStep && onSubmit) {
@@ -33,13 +39,29 @@ export const NavigationButtons: React.FC<NavigationButtonsProps> = ({
     }
   };
 
+  const getNextButtonText = () => {
+    if (isSubmitting) {
+      return 'Submitting...';
+    }
+
+    if (isLastStep) {
+      return 'Submit';
+    }
+
+    return nextLabel || 'Continue';
+  };
+
   return (
     <Box
       sx={{
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
+        gap: 2,
+        width: '100%',
       }}
+      role="group"
+      aria-label="Form navigation"
     >
         {/* Back Button */}
         {canGoBack ? (
@@ -51,31 +73,54 @@ export const NavigationButtons: React.FC<NavigationButtonsProps> = ({
             whileHover={buttonHover}
             whileTap={buttonTap}
             sx={{
-              minWidth: 120,
+              minWidth: { xs: 100, sm: 120 },
+              px: { xs: 2, sm: 3 },
             }}
           >
             Back
           </MotionButton>
         ) : (
-          <Box sx={{ minWidth: 120 }} /> // Spacer
+          <Box sx={{ minWidth: { xs: 100, sm: 120 } }} /> // Spacer
         )}
 
         {/* Next/Submit Button */}
         <MotionButton
           variant="contained"
           size="large"
-          endIcon={isLastStep ? <SendIcon /> : <ArrowForwardIcon />}
+          endIcon={
+            isSubmitting ? (
+              <CircularProgress size={20} color="inherit" />
+            ) : isLastStep ? (
+              <SendIcon />
+            ) : (
+              <ArrowForwardIcon />
+            )
+          }
           onClick={handleNext}
-          disabled={!canGoNext}
-          whileHover={canGoNext ? buttonHover : undefined}
-          whileTap={canGoNext ? buttonTap : undefined}
-          sx={{
-            minWidth: 140,
-          }}
+          disabled={!canGoNext || isSubmitting}
+          whileHover={canGoNext && !isSubmitting ? buttonHover : undefined}
+          whileTap={canGoNext && !isSubmitting ? buttonTap : undefined}
+        sx={(theme) => ({
+          minWidth: { xs: 120, sm: 140 },
+          px: { xs: 3, sm: 4 },
+          backgroundColor:
+            nextButtonTone === 'neutral'
+              ? theme.palette.grey[200]
+              : undefined,
+          color:
+            nextButtonTone === 'neutral'
+              ? theme.palette.text.primary
+              : undefined,
+          '&:hover': {
+            backgroundColor:
+              nextButtonTone === 'neutral'
+                ? theme.palette.grey[300]
+                : undefined,
+          },
+        })}
         >
-          {isLastStep ? 'Submit' : 'Continue'}
+          {getNextButtonText()}
         </MotionButton>
       </Box>
   );
 };
-

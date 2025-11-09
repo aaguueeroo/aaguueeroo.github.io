@@ -1,16 +1,15 @@
 import React from "react";
-import { Box } from "@mui/material";
+import { Box, Typography, Alert, Snackbar } from "@mui/material";
 import { Helmet } from "react-helmet-async";
 import Navbar from "../../components/Navbar";
 import { Footer } from "../../components/Footer";
 import { useQuoteForm } from "./hooks/useQuoteForm";
-import { ProgressIndicator } from "./components/common/ProgressIndicator";
-import { Typography } from "@mui/material";
-import { NavigationButtons } from "./components/common/NavigationButtons";
+import { FormStepContainer } from "./components/common/FormStepContainer";
 import { QuestionRenderer } from "./components/QuestionRenderer";
 import { SuccessScreen } from "./components/SuccessScreen";
 import { WelcomeScreen } from "./components/specific/WelcomeScreen";
 import { QuestionType } from "./types";
+import { QUESTION_IDS } from "./data/questionFlow";
 
 const QuotePage: React.FC = () => {
   const {
@@ -26,27 +25,66 @@ const QuotePage: React.FC = () => {
     submitForm,
     resetForm,
     allAnswers,
+    isSubmitting,
+    submitError,
   } = useQuoteForm();
+
+  const [showError, setShowError] = React.useState(false);
+
+  React.useEffect(() => {
+    if (submitError) {
+      setShowError(true);
+    }
+  }, [submitError]);
+
+  // Scroll to top when question changes
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [currentQuestion?.id]);
 
   // Check if form is complete
   const isComplete = !currentQuestion && Object.keys(allAnswers).length > 0;
 
+  const shouldShowSkipForAdditionalInfo =
+    currentQuestion?.id === QUESTION_IDS.ADDITIONAL_INFO &&
+    (typeof currentAnswer !== "string" || currentAnswer.trim().length === 0);
+
   if (!currentQuestion && !isComplete) {
     return (
-      <Box>
-        <Navbar />
+      <>
+        <Helmet>
+          <title>Loading... | Julia Aguero</title>
+        </Helmet>
         <Box
           sx={{
-            minHeight: "100vh",
             display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
+            flexDirection: "column",
+            minHeight: "100vh",
+            backgroundColor: "background.default",
           }}
         >
-          <h1>Loading...</h1>
+          <Navbar />
+          <Box
+            sx={{
+              flex: 1,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Typography
+              variant="h5"
+              sx={{
+                color: "text.secondary",
+                fontWeight: 400,
+              }}
+            >
+              Loading your quote form...
+            </Typography>
+          </Box>
+          <Footer />
         </Box>
-        <Footer />
-      </Box>
+      </>
     );
   }
 
@@ -78,158 +116,132 @@ const QuotePage: React.FC = () => {
         <Navbar />
 
         {/* Main Content */}
-        {isComplete ? (
-          <Box
-            sx={{
-              flex: 1,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              minHeight: "calc(100vh - 64px)",
-              pt: { xs: 8, sm: 10, md: 12 },
-            }}
-          >
-            <SuccessScreen onReset={resetForm} />
-          </Box>
-        ) : currentQuestion?.type === QuestionType.WELCOME ? (
-          <Box
-            sx={{
-              flex: 1,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              minHeight: "calc(100vh - 64px)",
-              pt: { xs: 10, sm: 12, md: 14 },
-              px: { xs: 2, md: 4 },
-            }}
-          >
-            <WelcomeScreen
-              title={currentQuestion.title}
-              description={currentQuestion.description}
-              onStart={goNext}
-            />
-          </Box>
-        ) : (
-          <Box
-            sx={{
-              flex: 1,
-              display: "flex",
-              flexDirection: "column",
-              minHeight: "calc(100vh - 64px)",
-              pt: { xs: 10, sm: 12, md: 14 },
-            }}
-          >
-            {/* Card Container with equal padding on all sides */}
-            <Box
-              sx={{
-                flex: 1,
-                display: "flex",
-                px: { xs: 2, md: 32 },
-                pt: { xs: 2 + 64 / 8, md: 0 }, // 64px navbar height, theme spacing unit = 8px
-                pb: { xs: 2, md: 16 },
-              }}
+        <Box
+          sx={{
+            flex: 1,
+            display: "flex",
+            alignItems: "stretch",
+            justifyContent: "center",
+            minHeight: "calc(100vh - 64px)",
+            pt: { xs: 10, sm: 12, md: 14 },
+            px: { xs: 2, md: 32 },
+            pb: { xs: 2, md: 16 },
+          }}
+        >
+          {isComplete ? (
+            <FormStepContainer>
+              <SuccessScreen onReset={resetForm} />
+            </FormStepContainer>
+          ) : currentQuestion?.type === QuestionType.WELCOME ? (
+            <FormStepContainer
+              showProgress={false}
+              showNavigation={true}
+              progress={progress}
+              canGoBack={false}
+              canGoNext={true}
+              isLastStep={false}
+              onNext={goNext}
+              useCTAButton={true}
+              ctaButtonText="Start Building"
             >
+              <WelcomeScreen
+                title={currentQuestion.title}
+                description={currentQuestion.description}
+              />
+            </FormStepContainer>
+          ) : (
+            <FormStepContainer
+              showProgress={true}
+              showNavigation={true}
+              progress={progress}
+              canGoBack={canGoBack && !isSubmitting}
+              canGoNext={canGoNext && !isSubmitting}
+              isLastStep={isLastStep}
+              onBack={goBack}
+              onNext={goNext}
+              onSubmit={submitForm}
+              isSubmitting={isSubmitting}
+              nextButtonText={shouldShowSkipForAdditionalInfo ? "Skip" : undefined}
+              nextButtonTone={shouldShowSkipForAdditionalInfo ? "neutral" : "default"}
+            >
+              {/* Top Container: Title and Description */}
               <Box
                 sx={{
-                  backgroundColor: "background.paper",
-                  borderRadius: { xs: 1, sm: 1, md: 0.9 },
-                  boxShadow: {
-                    xs: "0 4px 16px rgba(0, 0, 0, 0.06)",
-                    sm: "0 6px 24px rgba(0, 0, 0, 0.07)",
-                    md: "0 8px 32px rgba(0, 0, 0, 0.08)",
-                  },
-                  py: { xs: 4, sm: 6, md: 16 },
-                  px: { xs: 2.5, sm: 4, md: 12 },
-                  width: "100%",
-                  maxWidth: "1200px",
-                  mx: "auto",
-                  display: "flex",
-                  flexDirection: "column",
+                  flexShrink: 0,
+                  textAlign: "center",
+                  mb: { xs: 3, sm: 4, md: 5 },
                 }}
               >
-                {/* Top Container: Title and Description */}
-                <Box
+                <Typography
+                  variant="h3"
+                  component="h1"
                   sx={{
-                    flexShrink: 0,
-                    textAlign: "center",
-                    mb: { xs: 3, sm: 4, md: 5 },
+                    fontWeight: 700,
+                    mb: { xs: 1, sm: 1.5, md: 2 },
+                    fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
                   }}
                 >
+                  {currentQuestion!.title}
+                </Typography>
+                {currentQuestion!.description && (
                   <Typography
-                    variant="h3"
-                    component="h1"
+                    variant="h6"
                     sx={{
-                      fontWeight: 700,
-                      mb: { xs: 1, sm: 1.5, md: 2 },
-                      fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
+                      color: "text.secondary",
+                      fontWeight: 400,
+                      fontSize: {
+                        xs: "0.9375rem",
+                        sm: "1.1rem",
+                        md: "1.25rem",
+                      },
+                      lineHeight: { xs: 1.4, sm: 1.5, md: 1.5 },
                     }}
                   >
-                    {currentQuestion!.title}
+                    {currentQuestion!.description}
                   </Typography>
-                  {currentQuestion!.description && (
-                    <Typography
-                      variant="h6"
-                      sx={{
-                        color: "text.secondary",
-                        fontWeight: 400,
-                        fontSize: {
-                          xs: "0.9375rem",
-                          sm: "1.1rem",
-                          md: "1.25rem",
-                        },
-                        lineHeight: { xs: 1.4, sm: 1.5, md: 1.5 },
-                      }}
-                    >
-                      {currentQuestion!.description}
-                    </Typography>
-                  )}
-                </Box>
+                )}
+              </Box>
 
-                {/* Center Container: Question Content */}
-                <Box
-                  sx={{
-                    flex: 1,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  <Box sx={{ width: "100%" }}>
-                    <QuestionRenderer
-                      question={currentQuestion!}
-                      answer={currentAnswer}
-                      onAnswerChange={setAnswer}
-                    />
-                  </Box>
-                </Box>
-
-                {/* Bottom Container: Progress and Buttons */}
-                <Box sx={{ 
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                 }}>
-                  {/* Progress Indicator */}
-                  <ProgressIndicator progress={progress} />
-
-                  {/* Navigation Buttons */}
-                  <NavigationButtons
-                    canGoBack={canGoBack}
-                    canGoNext={canGoNext}
-                    isLastStep={isLastStep}
-                    onBack={goBack}
-                    onNext={goNext}
-                    onSubmit={submitForm}
+              {/* Center Container: Question Content */}
+              <Box
+                sx={{
+                  flex: 1,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <Box sx={{ width: "100%", height: "100%" }}>
+                  <QuestionRenderer
+                    question={currentQuestion!}
+                    answer={currentAnswer}
+                    onAnswerChange={setAnswer}
                   />
                 </Box>
               </Box>
-            </Box>
-          </Box>
-        )}
+            </FormStepContainer>
+          )}
+        </Box>
 
         {/* Footer */}
         <Footer />
       </Box>
+
+      {/* Error Snackbar */}
+      <Snackbar
+        open={showError}
+        autoHideDuration={6000}
+        onClose={() => setShowError(false)}
+        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+      >
+        <Alert 
+          onClose={() => setShowError(false)} 
+          severity="error" 
+          sx={{ width: '100%' }}
+        >
+          {submitError || 'An error occurred. Please try again.'}
+        </Alert>
+      </Snackbar>
     </>
   );
 };

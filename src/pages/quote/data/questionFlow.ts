@@ -44,7 +44,7 @@ export const questions: Question[] = [
     id: QUESTION_IDS.WELCOME,
     type: QuestionType.WELCOME,
     title: 'Let\'s bring your vision to life',
-    description: 'Tell us about your project and we\'ll provide you with a custom quote tailored to your needs. This will only take a few minutes.',
+    description: 'Tell me about your project and I\'ll provide you with a custom quote tailored to your needs.',
     nextQuestionId: QUESTION_IDS.PROJECT_TYPE,
   },
   
@@ -217,9 +217,11 @@ export const questions: Question[] = [
     id: QUESTION_IDS.PROJECT_DETAILS,
     type: QuestionType.SLIDER_TRIANGLE,
     title: 'Choose your project priorities',
-    description: 'You have 200 points to distribute. Balance quality, speed, and budget based on your needs.',
+    description: 'Select up to two priorities that matter most — quality, speed, or budget.',
     validation: {
       required: true,
+      minSelections: 1,
+      maxSelections: 2,
     },
     nextQuestionId: QUESTION_IDS.ADDITIONAL_INFO,
   },
@@ -228,8 +230,8 @@ export const questions: Question[] = [
   {
     id: QUESTION_IDS.ADDITIONAL_INFO,
     type: QuestionType.TEXT_INPUT,
-    title: 'Anything else you\'d like to share?',
-    description: 'Tell us more about your project, goals, or attach relevant files',
+    title: 'Any more context that you want to share?',
+    description: 'Include background details, constraints, inspirations, or anything else that will help me understand your vision.',
     validation: {
       required: false,
       maxLength: 2000,
@@ -241,8 +243,8 @@ export const questions: Question[] = [
   {
     id: QUESTION_IDS.CONTACT_INFO,
     type: QuestionType.CONTACT_FORM,
-    title: 'How can we reach you?',
-    description: 'We\'ll get back to you within 24 hours',
+    title: 'How can I reach you?',
+    description: 'Share your contant details so I can reach you with an estimation about your project.',
     validation: {
       required: true,
     },

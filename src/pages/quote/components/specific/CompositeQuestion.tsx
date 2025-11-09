@@ -21,7 +21,14 @@ export const CompositeQuestion: React.FC<CompositeQuestionProps> = ({
   }
 
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        flex: 1,
+        gap: { xs: 6, sm: 7, md: 8 },
+      }}
+    >
       {question.subQuestions.map((subQuestion, index) => (
         <motion.div
           key={subQuestion.id}
@@ -35,7 +42,7 @@ export const CompositeQuestion: React.FC<CompositeQuestionProps> = ({
               variant="h5"
               sx={{
                 fontWeight: 600,
-                mb: { xs: 2, sm: 2.5, md: 3 },
+                mb: { xs: 2.5, sm: 3, md: 3.5 },
                 textAlign: 'center',
                 fontSize: { xs: '1.125rem', sm: '1.25rem', md: '1.5rem' },
               }}
@@ -50,7 +57,7 @@ export const CompositeQuestion: React.FC<CompositeQuestionProps> = ({
               animate="animate"
               style={{ width: '100%' }}
             >
-              <Grid container spacing={{ xs: 1.5, sm: 2, md: 0 }} alignItems="stretch">
+              <Grid container spacing={{ xs: 1.5, sm: 2, md: 2.5 }} alignItems="stretch">
                 {subQuestion.options.map((option) => {
                   const optionCount = subQuestion.options.length;
                   const getGridSize = () => {

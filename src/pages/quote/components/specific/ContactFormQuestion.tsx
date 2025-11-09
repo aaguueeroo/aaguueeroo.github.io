@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { Box, TextField, Grid, Paper } from '@mui/material';
 import { motion } from 'framer-motion';
 import { ContactAnswer } from '../../types';
@@ -15,7 +15,23 @@ export const ContactFormQuestion: React.FC<ContactFormQuestionProps> = ({
 }) => {
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  const handleFieldChange = (field: keyof ContactAnswer, fieldValue: string) => {
+  const inputTypographySx = {
+    '& .MuiOutlinedInput-root': {
+      fontSize: { xs: '0.95rem', sm: '1rem', md: '1.2rem' },
+      lineHeight: 1.5,
+    },
+  };
+
+  const inputSlotProps = {
+    inputLabel: {
+      sx: {
+        fontSize: { xs: '0.8rem', sm: '0.85rem', md: '1rem' },
+        fontWeight: 500,
+      },
+    },
+  };
+
+  const handleFieldChange = useCallback((field: keyof ContactAnswer, fieldValue: string) => {
     onChange({
       ...value,
       [field]: fieldValue,
@@ -29,21 +45,21 @@ export const ContactFormQuestion: React.FC<ContactFormQuestionProps> = ({
         return newErrors;
       });
     }
-  };
+  }, [value, onChange, errors]);
 
   const validateEmail = (email: string): boolean => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
 
-  const handleEmailBlur = () => {
+  const handleEmailBlur = useCallback(() => {
     if (value?.email && !validateEmail(value.email)) {
       setErrors((prev) => ({
         ...prev,
         email: 'Please enter a valid email address',
       }));
     }
-  };
+  }, [value?.email]);
 
   return (
     <motion.div
@@ -53,17 +69,17 @@ export const ContactFormQuestion: React.FC<ContactFormQuestionProps> = ({
     >
       <Box
         sx={{
-          maxWidth: '800px',
+          maxWidth: '900px',
           mx: 'auto',
         }}
       >
         <Paper
           elevation={0}
           sx={{
-            p: 4,
-            border: 1,
-            borderColor: 'divider',
-            borderRadius: 2,
+            p: { xs: 3, sm: 4, md: 5 },
+            border: 'none',
+            boxShadow: 'none',
+            backgroundColor: 'transparent',
           }}
         >
           <motion.div
@@ -71,7 +87,7 @@ export const ContactFormQuestion: React.FC<ContactFormQuestionProps> = ({
             initial="initial"
             animate="animate"
           >
-            <Grid container spacing={3}>
+            <Grid container spacing={{ xs: 2.5, sm: 3, md: 3.5 }}>
               {/* Name Field */}
               <Grid item xs={12} sm={6}>
                 <motion.div variants={cardStagger.item}>
@@ -84,6 +100,9 @@ export const ContactFormQuestion: React.FC<ContactFormQuestionProps> = ({
                     error={!!errors.name}
                     helperText={errors.name}
                     placeholder="John Doe"
+                    autoComplete="name"
+                    sx={inputTypographySx}
+                    slotProps={inputSlotProps}
                   />
                 </motion.div>
               </Grid>
@@ -102,6 +121,9 @@ export const ContactFormQuestion: React.FC<ContactFormQuestionProps> = ({
                     error={!!errors.email}
                     helperText={errors.email}
                     placeholder="john@example.com"
+                    autoComplete="email"
+                    sx={inputTypographySx}
+                    slotProps={inputSlotProps}
                   />
                 </motion.div>
               </Grid>
@@ -116,6 +138,9 @@ export const ContactFormQuestion: React.FC<ContactFormQuestionProps> = ({
                     value={value?.phone || ''}
                     onChange={(e) => handleFieldChange('phone', e.target.value)}
                     placeholder="+1 (555) 123-4567"
+                    autoComplete="tel"
+                    sx={inputTypographySx}
+                    slotProps={inputSlotProps}
                   />
                 </motion.div>
               </Grid>
@@ -129,6 +154,9 @@ export const ContactFormQuestion: React.FC<ContactFormQuestionProps> = ({
                     value={value?.company || ''}
                     onChange={(e) => handleFieldChange('company', e.target.value)}
                     placeholder="Acme Inc."
+                    autoComplete="organization"
+                    sx={inputTypographySx}
+                    slotProps={inputSlotProps}
                   />
                 </motion.div>
               </Grid>

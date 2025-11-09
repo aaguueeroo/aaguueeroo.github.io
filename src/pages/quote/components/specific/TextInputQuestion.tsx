@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { Box, TextField, Typography, Paper } from '@mui/material';
 import { motion } from 'framer-motion';
 import { Question } from '../../types';
@@ -18,11 +18,11 @@ export const TextInputQuestion: React.FC<TextInputQuestionProps> = ({
   const maxLength = question.validation?.maxLength || 2000;
   const [charCount, setCharCount] = useState(value?.length || 0);
 
-  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const handleChange = useCallback((event: React.ChangeEvent<HTMLTextAreaElement>) => {
     const newValue = event.target.value;
     setCharCount(newValue.length);
     onChange(newValue);
-  };
+  }, [onChange]);
 
   return (
     <motion.div
@@ -32,17 +32,17 @@ export const TextInputQuestion: React.FC<TextInputQuestionProps> = ({
     >
       <Box
         sx={{
-          maxWidth: '800px',
+          maxWidth: '900px',
           mx: 'auto',
         }}
       >
         <Paper
           elevation={0}
           sx={{
-            p: 4,
-            border: 1,
-            borderColor: 'divider',
-            borderRadius: 2,
+            p: { xs: 3, sm: 4, md: 5 },
+            border: 'none',
+            boxShadow: 'none',
+            backgroundColor: 'transparent',
           }}
         >
           <TextField
@@ -57,8 +57,12 @@ export const TextInputQuestion: React.FC<TextInputQuestionProps> = ({
             }}
             sx={{
               '& .MuiOutlinedInput-root': {
-                fontSize: '1rem',
+                fontSize: { xs: '0.9375rem', sm: '1rem', md: '1rem' },
                 lineHeight: 1.6,
+                borderRadius: 0.5,
+              },
+              '& .MuiOutlinedInput-notchedOutline': {
+                borderColor: 'divider',
               },
             }}
           />
@@ -67,7 +71,7 @@ export const TextInputQuestion: React.FC<TextInputQuestionProps> = ({
             sx={{
               display: 'flex',
               justifyContent: 'flex-end',
-              mt: 1,
+              mt: { xs: 1, sm: 1.5, md: 1.5 },
             }}
           >
             <Typography
@@ -84,4 +88,3 @@ export const TextInputQuestion: React.FC<TextInputQuestionProps> = ({
     </motion.div>
   );
 };
-

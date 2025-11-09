@@ -14,11 +14,7 @@ export enum QuestionType {
 export type SingleAnswer = string;
 export type MultiAnswer = string[];
 export type CompositeAnswer = Record<string, string>;
-export type SliderTriangleAnswer = {
-  quality: number;
-  speed: number;
-  budget: number;
-};
+export type SliderTriangleAnswer = string[];
 export type TextAnswer = string;
 export type FileAnswer = File[];
 export type ContactAnswer = {
