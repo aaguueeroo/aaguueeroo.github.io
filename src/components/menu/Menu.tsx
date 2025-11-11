@@ -26,7 +26,6 @@ const Menu = ({ isOpen, onClose }: MenuProps) => {
   const menuItems = [
     { label: "Home", path: "/" },
     { label: "About me", path: "/about" },
-    { label: "Build your app", path: "/build-your-app" },
     { label: "Blog", path: "/blog" },
   ];
 
