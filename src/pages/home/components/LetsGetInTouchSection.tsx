@@ -145,7 +145,7 @@ export function LetsGetInTouchSection() {
         <Box sx={{ width: 'auto', mx: 'auto' }}>
           <PrimaryButton
             showArrow
-            onClick={() => navigate('/quote')}
+            onClick={() => navigate('/build-your-app')}
             style={{
               minHeight: 56,
               height: 56,

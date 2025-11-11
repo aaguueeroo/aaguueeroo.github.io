@@ -26,6 +26,7 @@ const Menu = ({ isOpen, onClose }: MenuProps) => {
   const menuItems = [
     { label: "Home", path: "/" },
     { label: "About me", path: "/about" },
+    { label: "Build your app", path: "/build-your-app" },
     { label: "Blog", path: "/blog" },
   ];
 
@@ -69,7 +70,7 @@ const Menu = ({ isOpen, onClose }: MenuProps) => {
           <PrimaryButton
             showArrow
             responsiveArrow={true}
-            onClick={() => navigate('/quote')}
+            onClick={() => navigate('/build-your-app')}
             sx={{ ...classes.button }}
             size="large"
           >
