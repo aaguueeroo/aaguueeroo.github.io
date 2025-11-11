@@ -460,6 +460,67 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, loading, error }) =>
                 return acc;
               };
 
+              const renderBlocks = (blocks: any[]): React.ReactNode[] => {
+                const result: React.ReactNode[] = [];
+                let i = 0;
+                
+                while (i < blocks.length) {
+                  const block = blocks[i];
+                  
+                  // Group consecutive numbered list items
+                  if (block.type === 'numbered_list_item') {
+                    const listItems: any[] = [];
+                    while (i < blocks.length && blocks[i].type === 'numbered_list_item') {
+                      listItems.push(blocks[i]);
+                      i++;
+                    }
+                    
+                    result.push(
+                      <Box
+                        key={`ol-${i}`}
+                        component="ol"
+                        sx={{
+                          ml: 4,
+                          mb: 2,
+                          pl: 2,
+                          counterReset: 'list-counter',
+                        }}
+                      >
+                        {listItems.map((item, idx) => (
+                          <Box
+                            key={idx}
+                            component="li"
+                            sx={{
+                              mb: 1,
+                              display: 'list-item',
+                              listStyleType: 'decimal',
+                              listStylePosition: 'outside',
+                            }}
+                          >
+                            <Typography
+                              variant="body1"
+                              component="span"
+                              sx={{
+                                ...TypographyConstants.body,
+                                lineHeight: 1.6,
+                              }}
+                            >
+                              {renderRT(item.numbered_list_item?.rich_text || [])}
+                            </Typography>
+                          </Box>
+                        ))}
+                      </Box>
+                    );
+                    continue;
+                  }
+                  
+                  result.push(renderBlock(block, i));
+                  i++;
+                }
+                
+                return result;
+              };
+
               const renderBlock = (block: any, key: React.Key): React.ReactNode => {
                 switch (block.type) {
                 case 'paragraph':
@@ -551,30 +612,8 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, loading, error }) =>
                     </Box>
                   );
                 case 'numbered_list_item':
-                  return (
-                    <Box 
-                      key={key} 
-                      component="li"
-                      sx={{ 
-                        ml: 4, 
-                        mb: 1,
-                        display: 'list-item',
-                        listStyleType: 'decimal',
-                        listStylePosition: 'outside',
-                      }}
-                    >
-                      <Typography
-                        variant="body1"
-                        component="span"
-                        sx={{
-                          ...TypographyConstants.body,
-                          lineHeight: 1.6,
-                        }}
-                      >
-                        {renderRT(block.numbered_list_item?.rich_text || [])}
-                      </Typography>
-                    </Box>
-                  );
+                  // Handled by renderBlocks grouping
+                  return null;
                   case 'quote': {
                     return (
                       <Box key={key} sx={{ borderLeft: '4px solid', borderLeftColor: 'primary.main', pl: 2, my: 2 }}>
@@ -815,7 +854,7 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, loading, error }) =>
                 }
               };
 
-              return post.content.map((block: any, index: number) => renderBlock(block, index));
+              return renderBlocks(post.content);
             })()}
           </Box>
         ) : (

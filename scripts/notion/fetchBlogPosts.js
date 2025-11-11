@@ -5,7 +5,6 @@ import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
 import https from 'https';
 import http from 'http';
-import crypto from 'crypto';
 
 // Load environment variables from .env file
 dotenv.config();
@@ -25,6 +24,152 @@ if (!NOTION_API_KEY || !NOTION_BLOG_DATABASE_ID || !NOTION_CATEGORIES_DATABASE_I
 }
 
 const notion = new Client({ auth: NOTION_API_KEY });
+
+/**
+ * Download an image from a URL and save it locally
+ */
+async function downloadImage(url, filepath) {
+  return new Promise((resolve, reject) => {
+    const protocol = url.startsWith('https') ? https : http;
+    
+    protocol.get(url, (response) => {
+      if (response.statusCode === 200) {
+        const dir = path.dirname(filepath);
+        if (!fs.existsSync(dir)) {
+          fs.mkdirSync(dir, { recursive: true });
+        }
+        
+        const fileStream = fs.createWriteStream(filepath);
+        response.pipe(fileStream);
+        
+        fileStream.on('finish', () => {
+          fileStream.close();
+          resolve(filepath);
+        });
+        
+        fileStream.on('error', (err) => {
+          fs.unlink(filepath, () => {}); // Delete the file if error
+          reject(err);
+        });
+      } else if (response.statusCode === 301 || response.statusCode === 302) {
+        // Handle redirects
+        downloadImage(response.headers.location, filepath)
+          .then(resolve)
+          .catch(reject);
+      } else {
+        reject(new Error(`Failed to download image: ${response.statusCode}`));
+      }
+    }).on('error', (err) => {
+      reject(err);
+    });
+  });
+}
+
+/**
+ * Download and save cover image locally
+ */
+async function downloadCoverImage(imageUrl, slug) {
+  if (!imageUrl) return null;
+  
+  // Skip if it's already a local path
+  if (imageUrl.startsWith('/') || imageUrl.startsWith('./') || imageUrl.startsWith('../')) {
+    return imageUrl;
+  }
+  
+  try {
+    // Determine file extension from URL or default to jpg
+    let ext = 'jpg';
+    const urlPath = new URL(imageUrl).pathname;
+    const match = urlPath.match(/\.(jpg|jpeg|png|gif|webp)$/i);
+    if (match) {
+      ext = match[1].toLowerCase();
+    }
+    
+    const filename = `${slug}-cover.${ext}`;
+    const imagesDir = path.join(__dirname, '../../public/blog-images');
+    const filepath = path.join(imagesDir, filename);
+    
+    // Check if image already exists
+    if (fs.existsSync(filepath)) {
+      console.log(`✅ Cover image already exists: ${filename}`);
+      return `/blog-images/${filename}`;
+    }
+    
+    console.log(`⬇️  Downloading cover image: ${filename}`);
+    await downloadImage(imageUrl, filepath);
+    console.log(`✅ Downloaded cover image: ${filename}`);
+    
+    // Return the absolute path from root for use in the app
+    return `/blog-images/${filename}`;
+  } catch (error) {
+    console.error(`❌ Error downloading cover image for ${slug}:`, error.message);
+    return null;
+  }
+}
+
+/**
+ * Download images from content blocks
+ */
+async function downloadContentImages(blocks, slug) {
+  if (!blocks || !Array.isArray(blocks)) return blocks;
+  
+  const processedBlocks = [];
+  
+  for (const block of blocks) {
+    const processedBlock = { ...block };
+    
+    // Handle image blocks
+    if (block.type === 'image') {
+      const imageUrl = block.image?.file?.url || block.image?.external?.url;
+      
+      if (imageUrl && (imageUrl.includes('amazonaws.com') || imageUrl.includes('notion.so'))) {
+        try {
+          // Determine file extension
+          let ext = 'jpg';
+          const urlPath = new URL(imageUrl).pathname;
+          const match = urlPath.match(/\.(jpg|jpeg|png|gif|webp)$/i);
+          if (match) {
+            ext = match[1].toLowerCase();
+          }
+          
+          // Generate unique filename based on block id
+          const filename = `${slug}-image-${block.id}.${ext}`;
+          const imagesDir = path.join(__dirname, '../../public/blog-images');
+          const filepath = path.join(imagesDir, filename);
+          
+          // Check if image already exists
+          if (!fs.existsSync(filepath)) {
+            console.log(`⬇️  Downloading content image: ${filename}`);
+            await downloadImage(imageUrl, filepath);
+            console.log(`✅ Downloaded content image: ${filename}`);
+          } else {
+            console.log(`✅ Content image already exists: ${filename}`);
+          }
+          
+          // Update the block to use local path
+          const localPath = `/blog-images/${filename}`;
+          if (processedBlock.image.file) {
+            processedBlock.image.file.url = localPath;
+          }
+          if (processedBlock.image.external) {
+            processedBlock.image.external.url = localPath;
+          }
+        } catch (error) {
+          console.error(`❌ Error downloading content image for block ${block.id}:`, error.message);
+        }
+      }
+    }
+    
+    // Recursively process children
+    if (block.children && Array.isArray(block.children)) {
+      processedBlock.children = await downloadContentImages(block.children, slug);
+    }
+    
+    processedBlocks.push(processedBlock);
+  }
+  
+  return processedBlocks;
+}
 
 /**
  * Fetch all blocks for a parent, recursively including children
@@ -107,36 +252,43 @@ async function fetchPostContent(page) {
 
     // Get page cover image with sensible fallbacks
     let coverImage = getDefaultCoverImage(categories, slug);
+    let notionCoverUrl = null;
     
     // Get cover image from Notion page
     try {
       const pageDetails = await notion.pages.retrieve({ page_id: page.id });
       if (pageDetails.cover) {
-        let notionCoverUrl = null;
         if (pageDetails.cover.type === 'external') {
           notionCoverUrl = pageDetails.cover.external.url;
         } else if (pageDetails.cover.type === 'file') {
           notionCoverUrl = pageDetails.cover.file.url;
         }
         
-        // Download the Notion cover image
         if (notionCoverUrl) {
-          console.log(`📸 Found Notion cover for ${page.properties.Title.title[0]?.plain_text}`);
-          coverImage = await downloadImage(notionCoverUrl, slug, 'cover');
-          console.log(`✅ Cover image saved: ${coverImage}`);
+          console.log(`📸 Found Notion cover for ${title}: ${notionCoverUrl}`);
         } else {
-          console.log(`📸 Notion cover URL not found for ${page.properties.Title.title[0]?.plain_text}, using default`);
+          console.log(`📸 Notion cover URL not found for ${title}, using default`);
         }
       } else {
-        console.log(`📸 No cover image for ${page.properties.Title.title[0]?.plain_text}, using default`);
+        console.log(`📸 No cover image for ${title}, using default`);
       }
     } catch (error) {
-      console.log(`⚠️  Could not fetch cover image for ${page.properties.Title.title[0]?.plain_text}:`, error.message);
+      console.log(`⚠️  Could not fetch cover image for ${title}:`, error.message);
     }
 
-    // Process blocks to download any images
-    console.log(`🖼️  Processing content images for ${slug}...`);
-    let finalBlocks = await processBlockImages(blocks || [], slug);
+    // Download the cover image locally if it's a Notion URL
+    if (notionCoverUrl && (notionCoverUrl.includes('amazonaws.com') || notionCoverUrl.includes('notion.so'))) {
+      const localCoverPath = await downloadCoverImage(notionCoverUrl, slug);
+      if (localCoverPath) {
+        coverImage = localCoverPath;
+      }
+    } else if (notionCoverUrl) {
+      // Use the URL directly if it's not a Notion/AWS URL (e.g., external URLs)
+      coverImage = notionCoverUrl;
+    }
+
+    // Download content images and update blocks
+    let finalBlocks = await downloadContentImages(blocks, slug);
 
     const post = {
       id: page.id,
@@ -269,123 +421,6 @@ function isPubliclyAccessible(url) {
   if (url.includes('notion.so/images/page-cover/')) return false;
   if (url.includes('notion.so/images/')) return false;
   return true;
-}
-
-/**
- * Download an image from a URL and save it locally
- */
-async function downloadImage(url, slug, imageType = 'cover') {
-  if (!url) return null;
-  
-  // Check if it's a Notion URL (which will expire)
-  const isNotionUrl = url.includes('notion.so') || url.includes('amazonaws.com');
-  
-  if (!isNotionUrl) {
-    // If it's not a Notion URL, we can use it directly
-    console.log(`📎 Using external URL directly: ${url}`);
-    return url;
-  }
-
-  try {
-    // Create images directory if it doesn't exist
-    const imagesDir = path.join(__dirname, '../../src/assets/images/blog');
-    if (!fs.existsSync(imagesDir)) {
-      fs.mkdirSync(imagesDir, { recursive: true });
-    }
-
-    // Extract extension from URL or use default
-    let extension = '.jpg';
-    const urlPath = new URL(url).pathname;
-    const match = urlPath.match(/\.(jpg|jpeg|png|gif|webp)$/i);
-    if (match) {
-      extension = match[0].toLowerCase();
-    }
-
-    // Generate filename based on slug and image type
-    const filename = `${slug}-${imageType}${extension}`;
-    const filepath = path.join(imagesDir, filename);
-
-    // Check if file already exists
-    if (fs.existsSync(filepath)) {
-      console.log(`✅ Image already exists: ${filename}`);
-      return `/src/assets/images/blog/${filename}`;
-    }
-
-    console.log(`📥 Downloading image from: ${url}`);
-    
-    // Download the image
-    await new Promise((resolve, reject) => {
-      const protocol = url.startsWith('https') ? https : http;
-      
-      protocol.get(url, (response) => {
-        if (response.statusCode !== 200) {
-          reject(new Error(`Failed to download image: ${response.statusCode}`));
-          return;
-        }
-
-        const fileStream = fs.createWriteStream(filepath);
-        response.pipe(fileStream);
-
-        fileStream.on('finish', () => {
-          fileStream.close();
-          console.log(`💾 Saved image: ${filename}`);
-          resolve();
-        });
-
-        fileStream.on('error', (err) => {
-          fs.unlink(filepath, () => {}); // Delete the file if error
-          reject(err);
-        });
-      }).on('error', reject);
-    });
-
-    // Return the local path
-    return `/src/assets/images/blog/${filename}`;
-  } catch (error) {
-    console.error(`❌ Error downloading image: ${error.message}`);
-    return url; // Fallback to original URL if download fails
-  }
-}
-
-/**
- * Process blocks recursively to download images
- */
-async function processBlockImages(blocks, slug) {
-  if (!blocks || !Array.isArray(blocks)) return blocks;
-
-  const processedBlocks = [];
-  let imageCounter = 1;
-
-  for (const block of blocks) {
-    let processedBlock = { ...block };
-
-    // Handle image blocks
-    if (block.type === 'image') {
-      const imageUrl = block.image?.type === 'external' 
-        ? block.image.external?.url 
-        : block.image?.file?.url;
-
-      if (imageUrl) {
-        const localPath = await downloadImage(imageUrl, slug, `image-${imageCounter}`);
-        imageCounter++;
-
-        if (block.image.type === 'external') {
-          processedBlock.image.external.url = localPath;
-        } else if (block.image.type === 'file') {
-          processedBlock.image.file.url = localPath;
-        }
-      }
-    }
-
-    // Process children recursively
-    if (block.children && Array.isArray(block.children)) {
-      processedBlock.children = await processBlockImages(block.children, slug);
-    }
-
-    processedBlocks.push(processedBlock);
-  }
-
-  return processedBlocks;
 }
 
 /**

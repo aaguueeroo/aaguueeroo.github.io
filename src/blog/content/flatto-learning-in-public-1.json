@@ -1,9 +1,9 @@
 {
   "id": "286c1b93-843e-802d-b850-c3584675616d",
-  "title": "Flatto: Building in Public the App for Shared Flats",
+  "title": "Can you fully vibe code an app? Creating Flatto for shared flats",
   "slug": "flatto-learning-in-public-1",
   "subtitle": "Testing the limits of AI-assisted development through vibe coding",
-  "metaTitle": "**Flatto – Building an App for Shared Flats with AI",
+  "metaTitle": "Can you fully vibe code an app? Creating Flatto for shared flats",
   "metaDescription": "F",
   "publishedDate": "2025-10-09",
   "status": "Published",
@@ -45,51 +45,6 @@
       "type": "table_of_contents",
       "table_of_contents": {
         "color": "gray"
-      }
-    },
-    {
-      "object": "block",
-      "id": "287c1b93-843e-8061-addd-e631d740465c",
-      "parent": {
-        "type": "page_id",
-        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
-      },
-      "created_time": "2025-10-09T05:51:00.000Z",
-      "last_edited_time": "2025-10-09T06:41:00.000Z",
-      "created_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "last_edited_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "has_children": false,
-      "archived": false,
-      "in_trash": false,
-      "type": "heading_1",
-      "heading_1": {
-        "rich_text": [
-          {
-            "type": "text",
-            "text": {
-              "content": "Flatto: Building in Public the App for Shared Flats",
-              "link": null
-            },
-            "annotations": {
-              "bold": true,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "Flatto: Building in Public the App for Shared Flats",
-            "href": null
-          }
-        ],
-        "is_toggleable": false,
-        "color": "default"
       }
     },
     {
@@ -679,6 +634,915 @@
     },
     {
       "object": "block",
+      "id": "287c1b93-843e-8065-8bac-d7cffdcc5a13",
+      "parent": {
+        "type": "page_id",
+        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
+      },
+      "created_time": "2025-10-09T05:53:00.000Z",
+      "last_edited_time": "2025-10-11T17:15:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "heading_3",
+      "heading_3": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "My Workflow in Vibe Coding",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "My Workflow in Vibe Coding",
+            "href": null
+          }
+        ],
+        "is_toggleable": false,
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "287c1b93-843e-8097-bbf1-e547474f527d",
+      "parent": {
+        "type": "page_id",
+        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
+      },
+      "created_time": "2025-10-09T05:53:00.000Z",
+      "last_edited_time": "2025-10-11T17:15:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Since this project is also my personal experiment to learn to code using AI, I took some time to research and structure my process before diving in.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Since this project is also my personal experiment to learn to code using AI, I took some time to research and structure my process before diving in.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "287c1b93-843e-8057-a04a-d72d68a43394",
+      "parent": {
+        "type": "page_id",
+        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
+      },
+      "created_time": "2025-10-09T05:53:00.000Z",
+      "last_edited_time": "2025-10-11T17:15:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Here’s the ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Here’s the ",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "basic prompt structure",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "basic prompt structure",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " I follow for most cases:",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " I follow for most cases:",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "287c1b93-843e-8075-b26e-fbb77b513942",
+      "parent": {
+        "type": "page_id",
+        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
+      },
+      "created_time": "2025-10-09T05:53:00.000Z",
+      "last_edited_time": "2025-10-11T17:15:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "numbered_list_item",
+      "numbered_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "A broad introduction explaining the problem and the task.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "A broad introduction explaining the problem and the task.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "287c1b93-843e-8065-99e2-c213970edf5c",
+      "parent": {
+        "type": "page_id",
+        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
+      },
+      "created_time": "2025-10-09T05:53:00.000Z",
+      "last_edited_time": "2025-10-11T17:15:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "numbered_list_item",
+      "numbered_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "A more detailed description with steps, context, and examples.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "A more detailed description with steps, context, and examples.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "287c1b93-843e-804a-9b9b-c1641337ee35",
+      "parent": {
+        "type": "page_id",
+        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
+      },
+      "created_time": "2025-10-09T05:53:00.000Z",
+      "last_edited_time": "2025-10-11T17:15:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "numbered_list_item",
+      "numbered_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "A short summary reminding the model of the exact task again.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "A short summary reminding the model of the exact task again.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "287c1b93-843e-80ea-94fb-dd8f02f99756",
+      "parent": {
+        "type": "page_id",
+        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
+      },
+      "created_time": "2025-10-09T05:53:00.000Z",
+      "last_edited_time": "2025-10-11T17:15:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "That’s my go-to formula. Then, depending on what I’m building, I adjust it with extra information. After reading blogs, watching several videos on prompting techniques, and experimenting a lot, these are the tips and patterns that consistently give me the best results:",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "That’s my go-to formula. Then, depending on what I’m building, I adjust it with extra information. After reading blogs, watching several videos on prompting techniques, and experimenting a lot, these are the tips and patterns that consistently give me the best results:",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "287c1b93-843e-8000-ba0a-eda61cddf926",
+      "parent": {
+        "type": "page_id",
+        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
+      },
+      "created_time": "2025-10-09T05:53:00.000Z",
+      "last_edited_time": "2025-10-11T17:15:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "bulleted_list_item",
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Give context.",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Give context.",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " Always explain the bigger picture of what you’re building.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " Always explain the bigger picture of what you’re building.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "287c1b93-843e-80aa-b9d0-d6080504cf15",
+      "parent": {
+        "type": "page_id",
+        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
+      },
+      "created_time": "2025-10-09T05:53:00.000Z",
+      "last_edited_time": "2025-10-11T17:15:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "bulleted_list_item",
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Reference files and widgets.",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Reference files and widgets.",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " Including context files makes a massive difference — it helps the model focus and reduces hallucinations.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " Including context files makes a massive difference — it helps the model focus and reduces hallucinations.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "287c1b93-843e-8035-a585-e477761e3ad1",
+      "parent": {
+        "type": "page_id",
+        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
+      },
+      "created_time": "2025-10-09T05:53:00.000Z",
+      "last_edited_time": "2025-10-11T17:15:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "bulleted_list_item",
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Describe the desired behavior, not the implementation.",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Describe the desired behavior, not the implementation.",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " Cursor will figure out the code; it performs better when you tell it ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " Cursor will figure out the code; it performs better when you tell it ",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "what",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": true,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "what",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " you want, not ",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " you want, not ",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "how",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": true,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "how",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " to do it.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " to do it.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "287c1b93-843e-80c7-9b76-c10fbd614452",
+      "parent": {
+        "type": "page_id",
+        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
+      },
+      "created_time": "2025-10-09T05:53:00.000Z",
+      "last_edited_time": "2025-10-11T17:15:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "bulleted_list_item",
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Add examples.",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Add examples.",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " They help anchor the model’s reasoning.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " They help anchor the model’s reasoning.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "287c1b93-843e-80c1-a4f9-c86bd0bb44cc",
+      "parent": {
+        "type": "page_id",
+        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
+      },
+      "created_time": "2025-10-09T05:53:00.000Z",
+      "last_edited_time": "2025-10-11T17:15:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "bulleted_list_item",
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Ask for test-driven development.",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Ask for test-driven development.",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " (I wish I remembered who suggested this!) It’s a game changer! The model keeps iterating until everything works, often without extra input.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " (I wish I remembered who suggested this!) It’s a game changer! The model keeps iterating until everything works, often without extra input.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "287c1b93-843e-801d-9af1-d434a62818fc",
+      "parent": {
+        "type": "page_id",
+        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
+      },
+      "created_time": "2025-10-09T05:53:00.000Z",
+      "last_edited_time": "2025-10-11T17:15:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "bulleted_list_item",
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Start with a plan.",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Start with a plan.",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " Don’t dive straight into coding. Ask the model to outline a plan first — it leads to cleaner, more detailed implementations and self-generated to-do lists.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " Don’t dive straight into coding. Ask the model to outline a plan first — it leads to cleaner, more detailed implementations and self-generated to-do lists.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "287c1b93-843e-8042-8cd8-da51f6d23395",
+      "parent": {
+        "type": "page_id",
+        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
+      },
+      "created_time": "2025-10-09T05:53:00.000Z",
+      "last_edited_time": "2025-10-11T17:15:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Learning when to use each of these tricks (or combine them) is key to getting the best results.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Learning when to use each of these tricks (or combine them) is key to getting the best results.",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "287c1b93-843e-8002-bebc-c4a72d151e10",
+      "parent": {
+        "type": "page_id",
+        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
+      },
+      "created_time": "2025-10-09T05:53:00.000Z",
+      "last_edited_time": "2025-10-11T17:15:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Right now, this workflow works best for me, though it’s constantly evolving. If you have any tips or think any of these patterns could be improved, I’d love to hear from you!",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Right now, this workflow works best for me, though it’s constantly evolving. If you have any tips or think any of these patterns could be improved, I’d love to hear from you!",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
+      "id": "287c1b93-843e-80c4-86a6-e216c8e858b5",
+      "parent": {
+        "type": "page_id",
+        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
+      },
+      "created_time": "2025-10-09T05:53:00.000Z",
+      "last_edited_time": "2025-10-11T17:15:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "b3b8f296-add6-451a-ad38-a474404637db"
+      },
+      "has_children": false,
+      "archived": false,
+      "in_trash": false,
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "And to keep things short (and because, let’s be honest, you’d get bored otherwise), I won’t share my full prompts here — but I’ll quote some important parts. Also, please don’t judge my prompts; I text AI like using the same language as if I text a friend 😒😂",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "And to keep things short (and because, let’s be honest, you’d get bored otherwise), I won’t share my full prompts here — but I’ll quote some important parts. Also, please don’t judge my prompts; I text AI like using the same language as if I text a friend 😒😂",
+            "href": null
+          }
+        ],
+        "color": "default"
+      }
+    },
+    {
+      "object": "block",
       "id": "287c1b93-843e-80f9-b808-f0e952ca9d43",
       "parent": {
         "type": "page_id",
@@ -1030,7 +1894,7 @@
         "page_id": "286c1b93-843e-802d-b850-c3584675616d"
       },
       "created_time": "2025-10-09T05:53:00.000Z",
-      "last_edited_time": "2025-10-09T06:57:00.000Z",
+      "last_edited_time": "2025-10-11T17:15:00.000Z",
       "created_by": {
         "object": "user",
         "id": "b3b8f296-add6-451a-ad38-a474404637db"
@@ -1211,7 +2075,7 @@
             "text": {
               "content": "Trello",
               "link": {
-                "url": "https://trello.com/w/juliaaguero1/home"
+                "url": "https://trello.com/"
               }
             },
             "annotations": {
@@ -1223,7 +2087,7 @@
               "color": "default"
             },
             "plain_text": "Trello",
-            "href": "https://trello.com/w/juliaaguero1/home"
+            "href": "https://trello.com/"
           },
           {
             "type": "text",
@@ -1240,938 +2104,6 @@
               "color": "default"
             },
             "plain_text": " to keep my tasks organized.",
-            "href": null
-          }
-        ],
-        "color": "default"
-      }
-    },
-    {
-      "object": "block",
-      "id": "287c1b93-843e-807b-99bb-df22f9198480",
-      "parent": {
-        "type": "page_id",
-        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
-      },
-      "created_time": "2025-10-09T05:53:00.000Z",
-      "last_edited_time": "2025-10-09T05:53:00.000Z",
-      "created_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "last_edited_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "has_children": false,
-      "archived": false,
-      "in_trash": false,
-      "type": "divider",
-      "divider": {}
-    },
-    {
-      "object": "block",
-      "id": "287c1b93-843e-8065-8bac-d7cffdcc5a13",
-      "parent": {
-        "type": "page_id",
-        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
-      },
-      "created_time": "2025-10-09T05:53:00.000Z",
-      "last_edited_time": "2025-10-09T05:53:00.000Z",
-      "created_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "last_edited_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "has_children": false,
-      "archived": false,
-      "in_trash": false,
-      "type": "heading_3",
-      "heading_3": {
-        "rich_text": [
-          {
-            "type": "text",
-            "text": {
-              "content": "My Workflow in Vibe Coding",
-              "link": null
-            },
-            "annotations": {
-              "bold": true,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "My Workflow in Vibe Coding",
-            "href": null
-          }
-        ],
-        "is_toggleable": false,
-        "color": "default"
-      }
-    },
-    {
-      "object": "block",
-      "id": "287c1b93-843e-8097-bbf1-e547474f527d",
-      "parent": {
-        "type": "page_id",
-        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
-      },
-      "created_time": "2025-10-09T05:53:00.000Z",
-      "last_edited_time": "2025-10-09T05:55:00.000Z",
-      "created_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "last_edited_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "has_children": false,
-      "archived": false,
-      "in_trash": false,
-      "type": "paragraph",
-      "paragraph": {
-        "rich_text": [
-          {
-            "type": "text",
-            "text": {
-              "content": "Since this project is also my personal experiment to learn to code using AI, I took some time to research and structure my process before diving in.",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "Since this project is also my personal experiment to learn to code using AI, I took some time to research and structure my process before diving in.",
-            "href": null
-          }
-        ],
-        "color": "default"
-      }
-    },
-    {
-      "object": "block",
-      "id": "287c1b93-843e-8057-a04a-d72d68a43394",
-      "parent": {
-        "type": "page_id",
-        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
-      },
-      "created_time": "2025-10-09T05:53:00.000Z",
-      "last_edited_time": "2025-10-09T05:53:00.000Z",
-      "created_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "last_edited_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "has_children": false,
-      "archived": false,
-      "in_trash": false,
-      "type": "paragraph",
-      "paragraph": {
-        "rich_text": [
-          {
-            "type": "text",
-            "text": {
-              "content": "Here’s the ",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "Here’s the ",
-            "href": null
-          },
-          {
-            "type": "text",
-            "text": {
-              "content": "basic prompt structure",
-              "link": null
-            },
-            "annotations": {
-              "bold": true,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "basic prompt structure",
-            "href": null
-          },
-          {
-            "type": "text",
-            "text": {
-              "content": " I follow for most cases:",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": " I follow for most cases:",
-            "href": null
-          }
-        ],
-        "color": "default"
-      }
-    },
-    {
-      "object": "block",
-      "id": "287c1b93-843e-8075-b26e-fbb77b513942",
-      "parent": {
-        "type": "page_id",
-        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
-      },
-      "created_time": "2025-10-09T05:53:00.000Z",
-      "last_edited_time": "2025-10-09T05:53:00.000Z",
-      "created_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "last_edited_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "has_children": false,
-      "archived": false,
-      "in_trash": false,
-      "type": "numbered_list_item",
-      "numbered_list_item": {
-        "rich_text": [
-          {
-            "type": "text",
-            "text": {
-              "content": "A broad introduction explaining the problem and the task.",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "A broad introduction explaining the problem and the task.",
-            "href": null
-          }
-        ],
-        "color": "default"
-      }
-    },
-    {
-      "object": "block",
-      "id": "287c1b93-843e-8065-99e2-c213970edf5c",
-      "parent": {
-        "type": "page_id",
-        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
-      },
-      "created_time": "2025-10-09T05:53:00.000Z",
-      "last_edited_time": "2025-10-09T05:53:00.000Z",
-      "created_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "last_edited_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "has_children": false,
-      "archived": false,
-      "in_trash": false,
-      "type": "numbered_list_item",
-      "numbered_list_item": {
-        "rich_text": [
-          {
-            "type": "text",
-            "text": {
-              "content": "A more detailed description with steps, context, and examples.",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "A more detailed description with steps, context, and examples.",
-            "href": null
-          }
-        ],
-        "color": "default"
-      }
-    },
-    {
-      "object": "block",
-      "id": "287c1b93-843e-804a-9b9b-c1641337ee35",
-      "parent": {
-        "type": "page_id",
-        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
-      },
-      "created_time": "2025-10-09T05:53:00.000Z",
-      "last_edited_time": "2025-10-09T05:53:00.000Z",
-      "created_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "last_edited_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "has_children": false,
-      "archived": false,
-      "in_trash": false,
-      "type": "numbered_list_item",
-      "numbered_list_item": {
-        "rich_text": [
-          {
-            "type": "text",
-            "text": {
-              "content": "A short summary reminding the model of the exact task again.",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "A short summary reminding the model of the exact task again.",
-            "href": null
-          }
-        ],
-        "color": "default"
-      }
-    },
-    {
-      "object": "block",
-      "id": "287c1b93-843e-80ea-94fb-dd8f02f99756",
-      "parent": {
-        "type": "page_id",
-        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
-      },
-      "created_time": "2025-10-09T05:53:00.000Z",
-      "last_edited_time": "2025-10-09T05:56:00.000Z",
-      "created_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "last_edited_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "has_children": false,
-      "archived": false,
-      "in_trash": false,
-      "type": "paragraph",
-      "paragraph": {
-        "rich_text": [
-          {
-            "type": "text",
-            "text": {
-              "content": "That’s my go-to formula. Then, depending on what I’m building, I adjust it with extra information. After reading blogs, watching several videos on prompting techniques, and experimenting a lot, these are the tips and patterns that consistently give me the best results:",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "That’s my go-to formula. Then, depending on what I’m building, I adjust it with extra information. After reading blogs, watching several videos on prompting techniques, and experimenting a lot, these are the tips and patterns that consistently give me the best results:",
-            "href": null
-          }
-        ],
-        "color": "default"
-      }
-    },
-    {
-      "object": "block",
-      "id": "287c1b93-843e-8000-ba0a-eda61cddf926",
-      "parent": {
-        "type": "page_id",
-        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
-      },
-      "created_time": "2025-10-09T05:53:00.000Z",
-      "last_edited_time": "2025-10-09T05:53:00.000Z",
-      "created_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "last_edited_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "has_children": false,
-      "archived": false,
-      "in_trash": false,
-      "type": "bulleted_list_item",
-      "bulleted_list_item": {
-        "rich_text": [
-          {
-            "type": "text",
-            "text": {
-              "content": "Give context.",
-              "link": null
-            },
-            "annotations": {
-              "bold": true,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "Give context.",
-            "href": null
-          },
-          {
-            "type": "text",
-            "text": {
-              "content": " Always explain the bigger picture of what you’re building.",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": " Always explain the bigger picture of what you’re building.",
-            "href": null
-          }
-        ],
-        "color": "default"
-      }
-    },
-    {
-      "object": "block",
-      "id": "287c1b93-843e-80aa-b9d0-d6080504cf15",
-      "parent": {
-        "type": "page_id",
-        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
-      },
-      "created_time": "2025-10-09T05:53:00.000Z",
-      "last_edited_time": "2025-10-09T05:53:00.000Z",
-      "created_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "last_edited_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "has_children": false,
-      "archived": false,
-      "in_trash": false,
-      "type": "bulleted_list_item",
-      "bulleted_list_item": {
-        "rich_text": [
-          {
-            "type": "text",
-            "text": {
-              "content": "Reference files and widgets.",
-              "link": null
-            },
-            "annotations": {
-              "bold": true,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "Reference files and widgets.",
-            "href": null
-          },
-          {
-            "type": "text",
-            "text": {
-              "content": " Including context files makes a massive difference — it helps the model focus and reduces hallucinations.",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": " Including context files makes a massive difference — it helps the model focus and reduces hallucinations.",
-            "href": null
-          }
-        ],
-        "color": "default"
-      }
-    },
-    {
-      "object": "block",
-      "id": "287c1b93-843e-8035-a585-e477761e3ad1",
-      "parent": {
-        "type": "page_id",
-        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
-      },
-      "created_time": "2025-10-09T05:53:00.000Z",
-      "last_edited_time": "2025-10-09T05:53:00.000Z",
-      "created_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "last_edited_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "has_children": false,
-      "archived": false,
-      "in_trash": false,
-      "type": "bulleted_list_item",
-      "bulleted_list_item": {
-        "rich_text": [
-          {
-            "type": "text",
-            "text": {
-              "content": "Describe the desired behavior, not the implementation.",
-              "link": null
-            },
-            "annotations": {
-              "bold": true,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "Describe the desired behavior, not the implementation.",
-            "href": null
-          },
-          {
-            "type": "text",
-            "text": {
-              "content": " Cursor will figure out the code; it performs better when you tell it ",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": " Cursor will figure out the code; it performs better when you tell it ",
-            "href": null
-          },
-          {
-            "type": "text",
-            "text": {
-              "content": "what",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": true,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "what",
-            "href": null
-          },
-          {
-            "type": "text",
-            "text": {
-              "content": " you want, not ",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": " you want, not ",
-            "href": null
-          },
-          {
-            "type": "text",
-            "text": {
-              "content": "how",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": true,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "how",
-            "href": null
-          },
-          {
-            "type": "text",
-            "text": {
-              "content": " to do it.",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": " to do it.",
-            "href": null
-          }
-        ],
-        "color": "default"
-      }
-    },
-    {
-      "object": "block",
-      "id": "287c1b93-843e-80c7-9b76-c10fbd614452",
-      "parent": {
-        "type": "page_id",
-        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
-      },
-      "created_time": "2025-10-09T05:53:00.000Z",
-      "last_edited_time": "2025-10-09T05:53:00.000Z",
-      "created_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "last_edited_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "has_children": false,
-      "archived": false,
-      "in_trash": false,
-      "type": "bulleted_list_item",
-      "bulleted_list_item": {
-        "rich_text": [
-          {
-            "type": "text",
-            "text": {
-              "content": "Add examples.",
-              "link": null
-            },
-            "annotations": {
-              "bold": true,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "Add examples.",
-            "href": null
-          },
-          {
-            "type": "text",
-            "text": {
-              "content": " They help anchor the model’s reasoning.",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": " They help anchor the model’s reasoning.",
-            "href": null
-          }
-        ],
-        "color": "default"
-      }
-    },
-    {
-      "object": "block",
-      "id": "287c1b93-843e-80c1-a4f9-c86bd0bb44cc",
-      "parent": {
-        "type": "page_id",
-        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
-      },
-      "created_time": "2025-10-09T05:53:00.000Z",
-      "last_edited_time": "2025-10-09T05:57:00.000Z",
-      "created_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "last_edited_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "has_children": false,
-      "archived": false,
-      "in_trash": false,
-      "type": "bulleted_list_item",
-      "bulleted_list_item": {
-        "rich_text": [
-          {
-            "type": "text",
-            "text": {
-              "content": "Ask for test-driven development.",
-              "link": null
-            },
-            "annotations": {
-              "bold": true,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "Ask for test-driven development.",
-            "href": null
-          },
-          {
-            "type": "text",
-            "text": {
-              "content": " (I wish I remembered who suggested this!) It’s a game changer! The model keeps iterating until everything works, often without extra input.",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": " (I wish I remembered who suggested this!) It’s a game changer! The model keeps iterating until everything works, often without extra input.",
-            "href": null
-          }
-        ],
-        "color": "default"
-      }
-    },
-    {
-      "object": "block",
-      "id": "287c1b93-843e-801d-9af1-d434a62818fc",
-      "parent": {
-        "type": "page_id",
-        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
-      },
-      "created_time": "2025-10-09T05:53:00.000Z",
-      "last_edited_time": "2025-10-09T05:53:00.000Z",
-      "created_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "last_edited_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "has_children": false,
-      "archived": false,
-      "in_trash": false,
-      "type": "bulleted_list_item",
-      "bulleted_list_item": {
-        "rich_text": [
-          {
-            "type": "text",
-            "text": {
-              "content": "Start with a plan.",
-              "link": null
-            },
-            "annotations": {
-              "bold": true,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "Start with a plan.",
-            "href": null
-          },
-          {
-            "type": "text",
-            "text": {
-              "content": " Don’t dive straight into coding. Ask the model to outline a plan first — it leads to cleaner, more detailed implementations and self-generated to-do lists.",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": " Don’t dive straight into coding. Ask the model to outline a plan first — it leads to cleaner, more detailed implementations and self-generated to-do lists.",
-            "href": null
-          }
-        ],
-        "color": "default"
-      }
-    },
-    {
-      "object": "block",
-      "id": "287c1b93-843e-8042-8cd8-da51f6d23395",
-      "parent": {
-        "type": "page_id",
-        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
-      },
-      "created_time": "2025-10-09T05:53:00.000Z",
-      "last_edited_time": "2025-10-09T05:53:00.000Z",
-      "created_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "last_edited_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "has_children": false,
-      "archived": false,
-      "in_trash": false,
-      "type": "paragraph",
-      "paragraph": {
-        "rich_text": [
-          {
-            "type": "text",
-            "text": {
-              "content": "Learning when to use each of these tricks (or combine them) is key to getting the best results.",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "Learning when to use each of these tricks (or combine them) is key to getting the best results.",
-            "href": null
-          }
-        ],
-        "color": "default"
-      }
-    },
-    {
-      "object": "block",
-      "id": "287c1b93-843e-8002-bebc-c4a72d151e10",
-      "parent": {
-        "type": "page_id",
-        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
-      },
-      "created_time": "2025-10-09T05:53:00.000Z",
-      "last_edited_time": "2025-10-09T05:53:00.000Z",
-      "created_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "last_edited_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "has_children": false,
-      "archived": false,
-      "in_trash": false,
-      "type": "paragraph",
-      "paragraph": {
-        "rich_text": [
-          {
-            "type": "text",
-            "text": {
-              "content": "Right now, this workflow works best for me, though it’s constantly evolving. If you have any tips or think any of these patterns could be improved, I’d love to hear from you!",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "Right now, this workflow works best for me, though it’s constantly evolving. If you have any tips or think any of these patterns could be improved, I’d love to hear from you!",
-            "href": null
-          }
-        ],
-        "color": "default"
-      }
-    },
-    {
-      "object": "block",
-      "id": "287c1b93-843e-80c4-86a6-e216c8e858b5",
-      "parent": {
-        "type": "page_id",
-        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
-      },
-      "created_time": "2025-10-09T05:53:00.000Z",
-      "last_edited_time": "2025-10-09T05:58:00.000Z",
-      "created_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "last_edited_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "has_children": false,
-      "archived": false,
-      "in_trash": false,
-      "type": "paragraph",
-      "paragraph": {
-        "rich_text": [
-          {
-            "type": "text",
-            "text": {
-              "content": "And to keep things short (and because, let’s be honest, you’d get bored otherwise), I won’t share my full prompts here — but I’ll quote some important parts. Also, please don’t judge my prompts; I text AI like using the same language as if I text a friend 😒😂",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "And to keep things short (and because, let’s be honest, you’d get bored otherwise), I won’t share my full prompts here — but I’ll quote some important parts. Also, please don’t judge my prompts; I text AI like using the same language as if I text a friend 😒😂",
             "href": null
           }
         ],
@@ -2976,13 +2908,13 @@
     },
     {
       "object": "block",
-      "id": "287c1b93-843e-8068-ace1-fd7af6f97e1a",
+      "id": "289c1b93-843e-80ae-a2b7-e8c79f78b1d9",
       "parent": {
         "type": "page_id",
         "page_id": "286c1b93-843e-802d-b850-c3584675616d"
       },
-      "created_time": "2025-10-09T06:00:00.000Z",
-      "last_edited_time": "2025-10-09T06:00:00.000Z",
+      "created_time": "2025-10-11T17:19:00.000Z",
+      "last_edited_time": "2025-10-11T17:19:00.000Z",
       "created_by": {
         "object": "user",
         "id": "b3b8f296-add6-451a-ad38-a474404637db"
@@ -3000,7 +2932,7 @@
           {
             "type": "text",
             "text": {
-              "content": "A basic version of the app with minimal but functional features: the ",
+              "content": "The first version of the app needs to be minimal but functional, including only the core features:",
               "link": null
             },
             "annotations": {
@@ -3011,109 +2943,7 @@
               "code": false,
               "color": "default"
             },
-            "plain_text": "A basic version of the app with minimal but functional features: the ",
-            "href": null
-          },
-          {
-            "type": "text",
-            "text": {
-              "content": "shopping list",
-              "link": null
-            },
-            "annotations": {
-              "bold": true,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "shopping list",
-            "href": null
-          },
-          {
-            "type": "text",
-            "text": {
-              "content": ", the ",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": ", the ",
-            "href": null
-          },
-          {
-            "type": "text",
-            "text": {
-              "content": "cleaning management system",
-              "link": null
-            },
-            "annotations": {
-              "bold": true,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "cleaning management system",
-            "href": null
-          },
-          {
-            "type": "text",
-            "text": {
-              "content": ", and a ",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": ", and a ",
-            "href": null
-          },
-          {
-            "type": "text",
-            "text": {
-              "content": "main page",
-              "link": null
-            },
-            "annotations": {
-              "bold": true,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "main page",
-            "href": null
-          },
-          {
-            "type": "text",
-            "text": {
-              "content": " to tie everything together with a feed and apartment information.",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": " to tie everything together with a feed and apartment information.",
+            "plain_text": "The first version of the app needs to be minimal but functional, including only the core features:",
             "href": null
           }
         ],
@@ -3122,57 +2952,13 @@
     },
     {
       "object": "block",
-      "id": "287c1b93-843e-807a-99fb-f5ac1aa71542",
+      "id": "289c1b93-843e-8042-9d5f-f72bb545604d",
       "parent": {
         "type": "page_id",
         "page_id": "286c1b93-843e-802d-b850-c3584675616d"
       },
-      "created_time": "2025-10-09T06:00:00.000Z",
-      "last_edited_time": "2025-10-09T06:00:00.000Z",
-      "created_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "last_edited_by": {
-        "object": "user",
-        "id": "b3b8f296-add6-451a-ad38-a474404637db"
-      },
-      "has_children": false,
-      "archived": false,
-      "in_trash": false,
-      "type": "paragraph",
-      "paragraph": {
-        "rich_text": [
-          {
-            "type": "text",
-            "text": {
-              "content": "So the first implementation includes:",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "So the first implementation includes:",
-            "href": null
-          }
-        ],
-        "color": "default"
-      }
-    },
-    {
-      "object": "block",
-      "id": "287c1b93-843e-80b7-a616-cb15c5d995d5",
-      "parent": {
-        "type": "page_id",
-        "page_id": "286c1b93-843e-802d-b850-c3584675616d"
-      },
-      "created_time": "2025-10-09T06:00:00.000Z",
-      "last_edited_time": "2025-10-09T06:00:00.000Z",
+      "created_time": "2025-10-11T17:19:00.000Z",
+      "last_edited_time": "2025-10-11T17:19:00.000Z",
       "created_by": {
         "object": "user",
         "id": "b3b8f296-add6-451a-ad38-a474404637db"
@@ -3190,7 +2976,24 @@
           {
             "type": "text",
             "text": {
-              "content": "Shared shopping list",
+              "content": "Shared shopping list ",
+              "link": null
+            },
+            "annotations": {
+              "bold": true,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Shared shopping list ",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "to manage common purchases.",
               "link": null
             },
             "annotations": {
@@ -3201,7 +3004,7 @@
               "code": false,
               "color": "default"
             },
-            "plain_text": "Shared shopping list",
+            "plain_text": "to manage common purchases.",
             "href": null
           }
         ],
@@ -3210,13 +3013,13 @@
     },
     {
       "object": "block",
-      "id": "287c1b93-843e-80b0-889a-dd9962227c3b",
+      "id": "289c1b93-843e-80e5-ad5e-d2dba1a10434",
       "parent": {
         "type": "page_id",
         "page_id": "286c1b93-843e-802d-b850-c3584675616d"
       },
-      "created_time": "2025-10-09T06:00:00.000Z",
-      "last_edited_time": "2025-10-09T06:00:00.000Z",
+      "created_time": "2025-10-11T17:19:00.000Z",
+      "last_edited_time": "2025-10-11T17:19:00.000Z",
       "created_by": {
         "object": "user",
         "id": "b3b8f296-add6-451a-ad38-a474404637db"
@@ -3238,7 +3041,7 @@
               "link": null
             },
             "annotations": {
-              "bold": false,
+              "bold": true,
               "italic": false,
               "strikethrough": false,
               "underline": false,
@@ -3247,6 +3050,23 @@
             },
             "plain_text": "Cleaning management system",
             "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " to organize household chores.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " to organize household chores.",
+            "href": null
           }
         ],
         "color": "default"
@@ -3254,13 +3074,13 @@
     },
     {
       "object": "block",
-      "id": "287c1b93-843e-80c0-8427-dfb60c802e80",
+      "id": "289c1b93-843e-80e3-a8d0-d332ab176eff",
       "parent": {
         "type": "page_id",
         "page_id": "286c1b93-843e-802d-b850-c3584675616d"
       },
-      "created_time": "2025-10-09T06:00:00.000Z",
-      "last_edited_time": "2025-10-09T06:00:00.000Z",
+      "created_time": "2025-10-11T17:19:00.000Z",
+      "last_edited_time": "2025-10-11T17:19:00.000Z",
       "created_by": {
         "object": "user",
         "id": "b3b8f296-add6-451a-ad38-a474404637db"
@@ -3282,7 +3102,7 @@
               "link": null
             },
             "annotations": {
-              "bold": false,
+              "bold": true,
               "italic": false,
               "strikethrough": false,
               "underline": false,
@@ -3290,6 +3110,23 @@
               "color": "default"
             },
             "plain_text": "Home page with feed and apartment info",
+            "href": null
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": " to bring everything together in one place.",
+              "link": null
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": " to bring everything together in one place.",
             "href": null
           }
         ],
@@ -3593,7 +3430,7 @@
         "page_id": "286c1b93-843e-802d-b850-c3584675616d"
       },
       "created_time": "2025-10-09T06:00:00.000Z",
-      "last_edited_time": "2025-10-09T06:47:00.000Z",
+      "last_edited_time": "2025-10-11T17:20:00.000Z",
       "created_by": {
         "object": "user",
         "id": "b3b8f296-add6-451a-ad38-a474404637db"
@@ -3645,7 +3482,7 @@
           {
             "type": "text",
             "text": {
-              "content": ". The result is outstanding: a well-structured roadmap including project setup, a shared components library and design system, detailed steps for each feature, and a polishing and testing phase. The plan is complete, but as always, a bit of refinement is needed to fix hallucinations and sharpen the expected behaviors.x",
+              "content": ". The result is outstanding: a well-structured roadmap including project setup, a shared components library and design system, detailed steps for each feature, and a polishing and testing phase. The plan is complete, but as always, a bit of refinement is needed to fix hallucinations and sharpen the expected behaviors.",
               "link": null
             },
             "annotations": {
@@ -3656,7 +3493,7 @@
               "code": false,
               "color": "default"
             },
-            "plain_text": ". The result is outstanding: a well-structured roadmap including project setup, a shared components library and design system, detailed steps for each feature, and a polishing and testing phase. The plan is complete, but as always, a bit of refinement is needed to fix hallucinations and sharpen the expected behaviors.x",
+            "plain_text": ". The result is outstanding: a well-structured roadmap including project setup, a shared components library and design system, detailed steps for each feature, and a polishing and testing phase. The plan is complete, but as always, a bit of refinement is needed to fix hallucinations and sharpen the expected behaviors.",
             "href": null
           }
         ],
@@ -4065,8 +3902,8 @@
         "caption": [],
         "type": "file",
         "file": {
-          "url": "/src/assets/images/blog/flatto-learning-in-public-1-image-1.png",
-          "expiry_time": "2025-10-11T18:06:03.066Z"
+          "url": "/blog-images/flatto-learning-in-public-1-image-287c1b93-843e-80f8-82fb-c021c7c1be8e.png",
+          "expiry_time": "2025-10-18T20:43:05.480Z"
         }
       }
     },
@@ -4241,8 +4078,8 @@
         "caption": [],
         "type": "file",
         "file": {
-          "url": "/src/assets/images/blog/flatto-learning-in-public-1-image-2.png",
-          "expiry_time": "2025-10-11T18:06:03.066Z"
+          "url": "/blog-images/flatto-learning-in-public-1-image-287c1b93-843e-80ff-956e-ef5d69f4f43f.png",
+          "expiry_time": "2025-10-18T20:43:05.480Z"
         }
       }
     },
@@ -4349,8 +4186,8 @@
         "caption": [],
         "type": "file",
         "file": {
-          "url": "/src/assets/images/blog/flatto-learning-in-public-1-image-3.png",
-          "expiry_time": "2025-10-11T18:06:03.096Z"
+          "url": "/blog-images/flatto-learning-in-public-1-image-287c1b93-843e-80dd-9172-e7807c4cab96.png",
+          "expiry_time": "2025-10-18T20:43:05.512Z"
         }
       }
     },
@@ -4525,8 +4362,8 @@
         "caption": [],
         "type": "file",
         "file": {
-          "url": "/src/assets/images/blog/flatto-learning-in-public-1-image-4.png",
-          "expiry_time": "2025-10-11T18:06:03.063Z"
+          "url": "/blog-images/flatto-learning-in-public-1-image-287c1b93-843e-80aa-bf5a-e5356d6c701b.png",
+          "expiry_time": "2025-10-18T20:43:05.477Z"
         }
       }
     },
@@ -4940,8 +4777,8 @@
         "caption": [],
         "type": "file",
         "file": {
-          "url": "/src/assets/images/blog/flatto-learning-in-public-1-image-5.png",
-          "expiry_time": "2025-10-11T18:06:03.093Z"
+          "url": "/blog-images/flatto-learning-in-public-1-image-287c1b93-843e-804c-ace3-dc1415715b2c.png",
+          "expiry_time": "2025-10-18T20:43:05.500Z"
         }
       }
     },
@@ -5357,7 +5194,7 @@
         "page_id": "286c1b93-843e-802d-b850-c3584675616d"
       },
       "created_time": "2025-10-09T04:13:00.000Z",
-      "last_edited_time": "2025-10-09T07:00:00.000Z",
+      "last_edited_time": "2025-10-11T17:20:00.000Z",
       "created_by": {
         "object": "user",
         "id": "b3b8f296-add6-451a-ad38-a474404637db"
@@ -5392,7 +5229,7 @@
           {
             "type": "text",
             "text": {
-              "content": "social media",
+              "content": " ",
               "link": {
                 "url": "https://x.com/aaguueeroo?s=21"
               }
@@ -5405,8 +5242,27 @@
               "code": false,
               "color": "default"
             },
-            "plain_text": "social media",
+            "plain_text": " ",
             "href": "https://x.com/aaguueeroo?s=21"
+          },
+          {
+            "type": "text",
+            "text": {
+              "content": "Twitter",
+              "link": {
+                "url": "https://x.com/aaguueeroo"
+              }
+            },
+            "annotations": {
+              "bold": false,
+              "italic": false,
+              "strikethrough": false,
+              "underline": false,
+              "code": false,
+              "color": "default"
+            },
+            "plain_text": "Twitter",
+            "href": "https://x.com/aaguueeroo"
           },
           {
             "type": "text",
@@ -5862,8 +5718,8 @@
     }
   ],
   "createdTime": "2025-10-08T23:16:00.000Z",
-  "lastEditedTime": "2025-10-09T08:33:00.000Z",
-  "lastUpdated": "2025-10-11T17:06:13.553Z",
-  "coverImage": "/src/assets/images/blog/flatto-learning-in-public-1-cover.png",
+  "lastEditedTime": "2025-10-11T17:21:00.000Z",
+  "lastUpdated": "2025-10-18T19:43:06.487Z",
+  "coverImage": "/blog-images/flatto-learning-in-public-1-cover.png",
   "author": "Julia Agüero"
 }

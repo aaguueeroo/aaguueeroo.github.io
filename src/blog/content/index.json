@@ -1,10 +1,10 @@
 [
   {
     "id": "286c1b93-843e-802d-b850-c3584675616d",
-    "title": "Flatto: Building in Public the App for Shared Flats",
+    "title": "Can you fully vibe code an app? Creating Flatto for shared flats",
     "slug": "flatto-learning-in-public-1",
     "subtitle": "Testing the limits of AI-assisted development through vibe coding",
-    "metaTitle": "**Flatto – Building an App for Shared Flats with AI",
+    "metaTitle": "Can you fully vibe code an app? Creating Flatto for shared flats",
     "metaDescription": "F",
     "publishedDate": "2025-10-09",
     "language": "English",
@@ -22,8 +22,8 @@
     "pointedBy": [],
     "readTime": 13,
     "createdTime": "2025-10-08T23:16:00.000Z",
-    "lastEditedTime": "2025-10-09T08:33:00.000Z",
-    "coverImage": "/src/assets/images/blog/flatto-learning-in-public-1-cover.png",
+    "lastEditedTime": "2025-10-11T17:21:00.000Z",
+    "coverImage": "/blog-images/flatto-learning-in-public-1-cover.png",
     "author": "Julia Agüero",
     "contentPreview": "Copilot, Cursor, ChatGPT, Perplexity, Claude, Gemini, Windsurf… we keep hearing and reading these names everywhere. Everyone’s talking about vibe..."
   },
@@ -43,7 +43,7 @@
     "readTime": 3,
     "createdTime": "2025-09-30T03:23:00.000Z",
     "lastEditedTime": "2025-10-09T08:08:00.000Z",
-    "coverImage": "/src/assets/images/blog/a-new-orbit-flutter-tech-and-beyond-cover.jpg",
+    "coverImage": "/blog-images/a-new-orbit-flutter-tech-and-beyond-cover.jpg",
     "author": "Julia Agüero",
     "contentPreview": "Thanks for stopping by! This blog is meant to be a space where I write down what I learn, share my experiences, and hopefully pass along something..."
   }
