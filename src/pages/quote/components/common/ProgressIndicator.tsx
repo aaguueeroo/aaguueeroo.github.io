@@ -17,10 +17,10 @@ export const ProgressIndicator: React.FC<ProgressIndicatorProps> = ({
 
   const shimmerAnimation = keyframes`
     from {
-      background-position: 0% 50%;
+      background-position: 200% 50%;
     }
     to {
-      background-position: 200% 50%;
+      background-position: 0% 50%;
     }
   `;
 
@@ -28,7 +28,10 @@ export const ProgressIndicator: React.FC<ProgressIndicatorProps> = ({
     <Box
       sx={{
         position: 'relative',
-        width: 'min(100%, 520px)',
+        width: {
+          xs: 'min(100%, 480px)',
+          sm: 'clamp(150px, 10vw, 260px)',
+        },
         height: 16,
         borderRadius: 999,
         overflow: 'hidden',
@@ -45,7 +48,12 @@ export const ProgressIndicator: React.FC<ProgressIndicatorProps> = ({
         component={motion.div}
         initial={{ width: 0 }}
         animate={{ width: `${progressFraction * 100}%` }}
-        transition={{ duration: 0.6, ease: 'easeInOut' }}
+        transition={{
+          type: 'spring',
+          stiffness: 160,
+          damping: 18,
+          mass: 0.65,
+        }}
         sx={{
           position: 'absolute',
           top: 0,
@@ -53,10 +61,11 @@ export const ProgressIndicator: React.FC<ProgressIndicatorProps> = ({
           left: 0,
           borderRadius: 'inherit',
           background:
-            'linear-gradient(90deg, #fde9e5 0%, #f8cdc6 30%, #f0b4b2 55%, #d58b93 75%, #b76e79 100%)',
-          boxShadow: '0 6px 16px rgba(183, 110, 121, 0.28)',
-          backgroundSize: '200% 100%',
+            'linear-gradient(90deg, rgba(248, 204, 198, 0.9) 0%, rgba(237, 170, 166, 0.7) 40%, rgba(209, 136, 144, 0.45) 70%, rgba(209, 136, 144, 0) 100%)',
+          boxShadow: '0 6px 14px rgba(183, 110, 121, 0.2)',
+          backgroundSize: '220% 100%',
           animation: `${shimmerAnimation} 2.5s ease-in-out infinite`,
+          backdropFilter: 'blur(0.5px)',
         }}
       />
       <Box

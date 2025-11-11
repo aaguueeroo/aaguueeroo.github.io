@@ -73,7 +73,7 @@ const Menu = ({ isOpen, onClose }: MenuProps) => {
             sx={{ ...classes.button }}
             size="large"
           >
-            Get a quote
+            Build your app
           </PrimaryButton>
         </Box>
       </Box>

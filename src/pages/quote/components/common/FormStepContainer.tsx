@@ -96,7 +96,8 @@ export const FormStepContainer: React.FC<FormStepContainerProps> = ({
                   order: { xs: 2, sm: 1 },
                   width: { xs: '100%', sm: 'auto' },
                   display: 'flex',
-                  justifyContent: 'center',
+                  justifyContent: { xs: 'center', sm: 'flex-start' },
+                  flexShrink: 0,
                 }}
               >
                 <ProgressIndicator progress={progress} />
@@ -112,6 +113,7 @@ export const FormStepContainer: React.FC<FormStepContainerProps> = ({
                   ml: { xs: 0, sm: showProgress ? 0 : 'auto' },
                   display: 'flex',
                   justifyContent: 'flex-end',
+                  flexGrow: { xs: 0, sm: 1 },
                 }}
               >
                 {useCTAButton ? (
@@ -129,8 +131,8 @@ export const FormStepContainer: React.FC<FormStepContainerProps> = ({
                     onNext={onNext}
                     onSubmit={onSubmit}
                     isSubmitting={isSubmitting}
-                nextLabel={nextButtonText}
-                nextButtonTone={nextButtonTone}
+                    nextLabel={nextButtonText}
+                    nextButtonTone={nextButtonTone}
                   />
                 )}
               </Box>

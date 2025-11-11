@@ -173,7 +173,7 @@ export function Footer({ hideSocialMedia = false }: FooterProps) {
             onClick={() => navigate('/quote')}
             sx={{ ...classes.textButton }}
           >
-            Get a quote
+            Build your app
           </Button>
           <Button endIcon={<ArrowForwardIcon />} onClick={() => navigate('/about')} sx={{ ...classes.textButton }}>
             About me

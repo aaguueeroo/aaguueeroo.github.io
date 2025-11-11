@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { Alert, Box, Grid, Snackbar } from "@mui/material";
+import { Alert, Box, Grid2 as Grid, Snackbar } from "@mui/material";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import BoltIcon from "@mui/icons-material/Bolt";
 import BoltOutlinedIcon from "@mui/icons-material/BoltOutlined";
@@ -88,7 +88,9 @@ export const SliderTriangleQuestion: React.FC<SliderTriangleQuestionProps> = ({
       const isAlreadySelected = selectedValues.includes(optionId);
 
       if (isAlreadySelected) {
-        const updatedValues = selectedValues.filter((valueId) => valueId !== optionId);
+        const updatedValues = selectedValues.filter(
+          (valueId) => valueId !== optionId
+        );
         setSelectedValues(updatedValues);
         onChange(updatedValues);
         return;
@@ -111,21 +113,13 @@ export const SliderTriangleQuestion: React.FC<SliderTriangleQuestionProps> = ({
   }, []);
 
   return (
-    <Box sx={{ width: "100%", maxWidth: "960px", mx: "auto" }}>
+    <Box sx={{ width: "100%", mx: "auto" }}>
       <motion.div
         variants={cardStagger.container}
         initial="initial"
         animate="animate"
       >
-        <Grid
-          container
-          spacing={{ xs: 2, sm: 2.5, md: 3 }}
-          sx={{
-            flex: 1,
-            width: "100%",
-            alignContent: "stretch",
-          }}
-        >
+        <Grid container justifyContent="space-between" spacing={4}>
           {sliderTriangleOptions.map((option) => {
             const IconComponent = option.icon;
             const SelectedIconComponent = option.selectedIcon;
@@ -133,16 +127,13 @@ export const SliderTriangleQuestion: React.FC<SliderTriangleQuestionProps> = ({
 
             return (
               <Grid
-                item
-                xs={12}
-                sm={6}
-                md={4}
+                size={{ xs: 12, sm: 6, md: 4 }}
                 key={option.id}
-                sx={{ display: "flex", width: "100%" }}
+                sx={{ display: "flex" }}
               >
                 <motion.div
                   variants={cardStagger.item}
-                  style={{ width: "100%", height: "100%", display: "flex", flex: 1 }}
+                  style={{ display: "flex" }}
                 >
                   <InteractiveOptionCardLayout
                     ariaLabel={`${option.label}: ${option.description}`}

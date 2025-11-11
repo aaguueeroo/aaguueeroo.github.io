@@ -157,7 +157,7 @@ export function LetsGetInTouchSection() {
               paddingRight: '32px'
             }}
           >
-            Get a quote
+            Start building
           </PrimaryButton>
         </Box>
       </Box>

@@ -91,12 +91,12 @@ const QuotePage: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Get a Quote | Julia Aguero - Web & App Development</title>
+        <title>Build your app | Julia Aguero - Web & App Development</title>
         <meta
           name="description"
           content="Request a custom quote for your web development, mobile app, or design project. Get started with an interactive, personalized questionnaire."
         />
-        <meta property="og:title" content="Get a Quote | Julia Aguero" />
+        <meta property="og:title" content="Build your app | Julia Aguero" />
         <meta
           property="og:description"
           content="Request a custom quote for your web development, mobile app, or design project."

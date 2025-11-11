@@ -1,9 +1,10 @@
-import React from 'react';
-import { Grid } from '@mui/material';
-import { motion } from 'framer-motion';
-import { Question } from '../../types';
-import { GridOptionCard } from './GridOptionCard';
-import { cardStagger } from '../../utils/animations';
+import React from "react";
+import { Grid2 as Grid } from "@mui/material";
+import { motion } from "framer-motion";
+import { Question } from "../../types";
+import { GridOptionCard } from "./GridOptionCard";
+import { cardStagger } from "../../utils/animations";
+import { QUESTION_IDS } from "../../data/questionFlow";
 
 interface CardGridQuestionProps {
   question: Question;
@@ -34,33 +35,11 @@ export const CardGridQuestion: React.FC<CardGridQuestionProps> = ({
     return null;
   }
 
-  const optionCount = question.options.length;
+  const isAppFeaturesQuestion = question.id === QUESTION_IDS.APP_FEATURES;
 
-  const getGridItemSizes = () => {
-    if (optionCount === 1) {
-      return { xs: 12, sm: 12, md: 8, lg: 6 };
-    }
-
-    if (optionCount === 2) {
-      return { xs: 12, sm: 6, md: 5, lg: 4 };
-    }
-
-    if (optionCount === 3) {
-      return { xs: 12, sm: 6, md: 4, lg: 4 };
-    }
-
-    if (optionCount === 4) {
-      return { xs: 12, sm: 6, md: 3, lg: 3 };
-    }
-
-    if (optionCount === 5) {
-      return { xs: 12, sm: 6, md: 4, lg: 3 };
-    }
-
-    return { xs: 12, sm: 6, md: 4, lg: 3 };
-  };
-
-  const gridItemSizes = getGridItemSizes();
+  const gridItemSize = isAppFeaturesQuestion
+    ? { xs: 6, sm: 4, md: 4, lg: 3 }
+    : { xs: 12, sm: 6, md: 4 };
 
   return (
     <motion.div
@@ -68,47 +47,32 @@ export const CardGridQuestion: React.FC<CardGridQuestionProps> = ({
       initial="initial"
       animate="animate"
       style={{
-        width: '100%',
-        height: '100%',
-        display: 'flex',
-        flexDirection: 'column',
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
       }}
     >
       <Grid
         container
-        spacing={{ xs: 2, sm: 2.5, md: 3 }}
-        alignItems="stretch"
-        columns={{ xs: 12, sm: 12, md: 12, lg: 12 }}
-        sx={{
-          flex: 1,
-          width: '100%',
-          alignContent: 'stretch',
-        }}
+        justifyContent={isAppFeaturesQuestion ? "flex-start" : "space-between"}
+        spacing={isAppFeaturesQuestion ? 2 : 4}
       >
         {question.options.map((option) => (
           <Grid
-            item
-            xs={12}
-            sm={gridItemSizes.sm}
-            md={gridItemSizes.md}
-            lg={gridItemSizes.lg}
             key={option.id}
-            sx={{ display: 'flex', width: '100%' }}
+            size={gridItemSize}
+            sx={{ display: "flex" }}
           >
-            <motion.div
-              variants={cardStagger.item}
-              style={{ width: '100%', height: '100%', display: 'flex', flex: 1 }}
-            >
-              <GridOptionCard
-                option={option}
-                isSelected={isSelected(option.value)}
-                onClick={handleCardClick}
-              />
-            </motion.div>
+            <GridOptionCard
+              option={option}
+              isSelected={isSelected(option.value)}
+              onClick={handleCardClick}
+              questionId={question.id}
+            />
           </Grid>
         ))}
       </Grid>
     </motion.div>
   );
 };
-

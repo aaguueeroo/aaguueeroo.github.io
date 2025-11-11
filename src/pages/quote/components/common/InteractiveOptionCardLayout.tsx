@@ -80,22 +80,22 @@ export const InteractiveOptionCardLayout: React.FC<InteractiveOptionCardLayoutPr
       ? '0 4px 12px rgba(0, 0, 0, 0.12)'
       : '0 2px 8px rgba(0, 0, 0, 0.08)',
     transition: 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
-    height: '100%',
     width: '100%',
     display: 'flex',
     flexDirection: 'column',
     '&:hover': {
       boxShadow: !disabled
-        ? isSelected
-          ? '0 6px 16px rgba(0, 0, 0, 0.14)'
-          : '0 4px 12px rgba(0, 0, 0, 0.12)'
-        : undefined,
+      ? isSelected
+      ? '0 6px 16px rgba(0, 0, 0, 0.14)'
+      : '0 4px 12px rgba(0, 0, 0, 0.12)'
+      : undefined,
       transform: !disabled ? 'scale(1.03)' : undefined,
       transformOrigin: 'center center',
     },
   };
-
+  
   const baseContentSx: SxProps<Theme> = {
+    height: '100%',
     display: 'flex',
     flexDirection: { xs: 'row', sm: 'column' },
     alignItems: { xs: 'center', sm: 'center' },
@@ -104,9 +104,6 @@ export const InteractiveOptionCardLayout: React.FC<InteractiveOptionCardLayoutPr
     gap: { xs: 1.5, sm: 1.25, md: 1.5 },
     p: { xs: 2, sm: 2.5, md: 3 },
     flex: 1,
-    '&:last-child': {
-      pb: { xs: 2, sm: 2.5, md: 3 },
-    },
   };
 
   const baseIconWrapperSx: SxProps<Theme> = {

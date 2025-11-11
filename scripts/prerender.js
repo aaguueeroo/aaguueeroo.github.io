@@ -21,7 +21,7 @@ const routes = [
   },
   {
     path: '/quote',
-    title: 'Get a Free Quote - Julia Agüero Mobile App Development',
+    title: 'Build your app - Julia Agüero Mobile App Development',
     description: 'Get a personalized quote for your mobile app project. Share your requirements and I\'ll provide you with a detailed estimate and project plan. Free consultation, no obligations.',
     url: 'https://juliaaguero.com/quote'
   },

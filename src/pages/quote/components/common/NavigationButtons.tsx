@@ -55,7 +55,7 @@ export const NavigationButtons: React.FC<NavigationButtonsProps> = ({
     <Box
       sx={{
         display: 'flex',
-        justifyContent: 'space-between',
+        justifyContent: 'flex-end',
         alignItems: 'center',
         gap: 2,
         width: '100%',
@@ -63,43 +63,41 @@ export const NavigationButtons: React.FC<NavigationButtonsProps> = ({
       role="group"
       aria-label="Form navigation"
     >
-        {/* Back Button */}
-        {canGoBack ? (
-          <MotionButton
-            variant="text"
-            size="large"
-            startIcon={<ArrowBackIcon />}
-            onClick={onBack}
-            whileHover={buttonHover}
-            whileTap={buttonTap}
-            sx={{
-              minWidth: { xs: 100, sm: 120 },
-              px: { xs: 2, sm: 3 },
-            }}
-          >
-            Back
-          </MotionButton>
-        ) : (
-          <Box sx={{ minWidth: { xs: 100, sm: 120 } }} /> // Spacer
-        )}
-
-        {/* Next/Submit Button */}
+      {/* Back Button */}
+      {canGoBack && (
         <MotionButton
-          variant="contained"
+          variant="text"
           size="large"
-          endIcon={
-            isSubmitting ? (
-              <CircularProgress size={20} color="inherit" />
-            ) : isLastStep ? (
-              <SendIcon />
-            ) : (
-              <ArrowForwardIcon />
-            )
-          }
-          onClick={handleNext}
-          disabled={!canGoNext || isSubmitting}
-          whileHover={canGoNext && !isSubmitting ? buttonHover : undefined}
-          whileTap={canGoNext && !isSubmitting ? buttonTap : undefined}
+          startIcon={<ArrowBackIcon />}
+          onClick={onBack}
+          whileHover={buttonHover}
+          whileTap={buttonTap}
+          sx={{
+            minWidth: { xs: 100, sm: 120 },
+            px: { xs: 2, sm: 3 },
+          }}
+        >
+          Back
+        </MotionButton>
+      )}
+
+      {/* Next/Submit Button */}
+      <MotionButton
+        variant="contained"
+        size="large"
+        endIcon={
+          isSubmitting ? (
+            <CircularProgress size={20} color="inherit" />
+          ) : isLastStep ? (
+            <SendIcon />
+          ) : (
+            <ArrowForwardIcon />
+          )
+        }
+        onClick={handleNext}
+        disabled={!canGoNext || isSubmitting}
+        whileHover={canGoNext && !isSubmitting ? buttonHover : undefined}
+        whileTap={canGoNext && !isSubmitting ? buttonTap : undefined}
         sx={(theme) => ({
           minWidth: { xs: 120, sm: 140 },
           px: { xs: 3, sm: 4 },
@@ -118,9 +116,9 @@ export const NavigationButtons: React.FC<NavigationButtonsProps> = ({
                 : undefined,
           },
         })}
-        >
-          {getNextButtonText()}
-        </MotionButton>
-      </Box>
+      >
+        {getNextButtonText()}
+      </MotionButton>
+    </Box>
   );
 };

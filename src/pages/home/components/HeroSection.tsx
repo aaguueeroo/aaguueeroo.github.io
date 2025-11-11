@@ -97,7 +97,7 @@ const HeroSection = () => {
         </Typography>
         <PrimaryButton onClick={() => navigate('/quote')}>
           <span style={{ display: 'none' }} className="show-xs">Get quote</span>
-          <span className="hide-xs">Get your quote for free</span>
+          <span className="hide-xs">Start building</span>
         </PrimaryButton>
       </Box>
     </Box>
