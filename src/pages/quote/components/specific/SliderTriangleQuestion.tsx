@@ -174,12 +174,26 @@ export const SliderTriangleQuestion: React.FC<SliderTriangleQuestionProps> = ({
         autoHideDuration={3200}
         onClose={handleToastClose}
         anchorOrigin={{ vertical: "top", horizontal: "center" }}
-        sx={{ top: "50% !important", transform: "translateY(-50%)" }}
+        sx={{
+          top: "50% !important",
+          transform: "translate(-50%, -50%) !important",
+        }}
       >
         <Alert
           onClose={handleToastClose}
           severity="info"
-          sx={{ width: "100%" }}
+          sx={{
+            width: "100%",
+            alignItems: "center",
+            "& .MuiAlert-icon": {
+              display: "flex",
+              alignItems: "center",
+            },
+            "& .MuiAlert-action": {
+              display: "flex",
+              alignItems: "center",
+            },
+          }}
         >
           You can’t have everything in this life. Pick the two that matter most.
         </Alert>
