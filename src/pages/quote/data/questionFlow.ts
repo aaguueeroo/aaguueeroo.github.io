@@ -258,7 +258,7 @@ export const questions: Question[] = [
     id: QUESTION_IDS.CONTACT_INFO,
     type: QuestionType.CONTACT_FORM,
     title: 'How can I reach you?',
-    description: 'Share your contant details so I can reach you with an estimation about your project.',
+    description: 'Share your contact details so I can reach you with an estimation about your project.',
     validation: {
       required: true,
     },

@@ -38,14 +38,16 @@ export const ContactFormQuestion: React.FC<ContactFormQuestionProps> = ({
     });
 
     // Clear error when user starts typing
-    if (errors[field]) {
-      setErrors((prev) => {
-        const newErrors = { ...prev };
-        delete newErrors[field];
-        return newErrors;
-      });
-    }
-  }, [value, onChange, errors]);
+    setErrors((prev) => {
+      if (!prev[field]) {
+        return prev;
+      }
+
+      const updatedErrors = { ...prev };
+      delete updatedErrors[field];
+      return updatedErrors;
+    });
+  }, [value, onChange]);
 
   const validateEmail = (email: string): boolean => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

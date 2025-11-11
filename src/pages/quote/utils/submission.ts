@@ -1,4 +1,4 @@
-import { FormAnswers, ContactAnswer } from '../types';
+import { FormAnswers, ContactAnswer, SliderTriangleAnswer } from '../types';
 import { formspreeEndpoint, isFormspreeConfigured } from '../../../config/formspree';
 
 interface FormspreePayload {
@@ -109,12 +109,18 @@ export const generateEmailBody = (answers: FormAnswers): string => {
   body += '\n';
 
   // Project Details
-  if (answers['project-details']) {
-    const details = answers['project-details'] as Record<string, string>;
-    body += 'Project Details:\n';
-    body += `  Size: ${details.size || 'N/A'}\n`;
-    body += `  Budget: ${details.budget || 'N/A'}\n`;
-    body += `  Timeline: ${details.timeline || 'N/A'}\n`;
+  const priorityLabels: Record<string, string> = {
+    quality: 'Quality',
+    speed: 'Speed',
+    budget: 'Budget',
+  };
+
+  const projectPriorities = answers['project-details'] as SliderTriangleAnswer | undefined;
+  if (projectPriorities && projectPriorities.length > 0) {
+    const formattedPriorities = projectPriorities
+      .map((priority) => priorityLabels[priority] ?? priority)
+      .join(', ');
+    body += `Project Priorities: ${formattedPriorities}\n`;
   }
 
   body += '\n';

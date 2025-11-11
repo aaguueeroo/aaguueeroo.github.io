@@ -1,4 +1,11 @@
-import { Question, FormAnswers, ProgressInfo, ValidationResult } from '../types';
+import {
+  Question,
+  QuestionType,
+  ContactAnswer,
+  FormAnswers,
+  ProgressInfo,
+  ValidationResult,
+} from '../types';
 import { questionsMap, QUESTION_IDS } from './questionFlow';
 
 /**
@@ -160,10 +167,35 @@ export const validateAnswer = (
 
     // For objects (composite or slider triangle)
     if (typeof answer === 'object' && !Array.isArray(answer)) {
-      // For other composite types
-      const values = Object.values(answer);
-      if (values.length === 0 || values.some(v => !v)) {
-        return { isValid: false, error: 'Please complete all fields' };
+      if (question.type === QuestionType.CONTACT_FORM) {
+        const contactAnswer = answer as ContactAnswer;
+        const requiredContactFields: Array<keyof ContactAnswer> = ['name', 'email'];
+        const missingRequiredField = requiredContactFields.some((field) => {
+          const fieldValue = contactAnswer[field];
+          return typeof fieldValue !== 'string' || fieldValue.trim().length === 0;
+        });
+
+        if (missingRequiredField) {
+          return {
+            isValid: false,
+            error: 'Please provide your name and email',
+          };
+        }
+      } else {
+        const values = Object.values(answer);
+        const hasEmptyValue =
+          values.length === 0 ||
+          values.some((value) => {
+            if (typeof value === 'string') {
+              return value.trim().length === 0;
+            }
+
+            return value === undefined || value === null;
+          });
+
+        if (hasEmptyValue) {
+          return { isValid: false, error: 'Please complete all fields' };
+        }
       }
     }
   }
