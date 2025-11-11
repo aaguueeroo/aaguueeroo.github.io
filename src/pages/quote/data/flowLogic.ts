@@ -1,5 +1,5 @@
 import { Question, FormAnswers, ProgressInfo, ValidationResult } from '../types';
-import { questions, questionsMap, QUESTION_IDS } from './questionFlow';
+import { questionsMap, QUESTION_IDS } from './questionFlow';
 
 /**
  * Get the next question ID based on current question and answers

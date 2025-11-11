@@ -1,5 +1,12 @@
 import { useState, useEffect, useCallback } from 'react';
-import { FormState, FormAnswers, Answer, ProgressInfo, Question } from '../types';
+import {
+  FormState,
+  FormAnswers,
+  Answer,
+  ProgressInfo,
+  Question,
+  ContactAnswer,
+} from '../types';
 import { questionsMap } from '../data/questionFlow';
 import {
   getFirstQuestionId,
@@ -162,16 +169,26 @@ export const useQuoteForm = (): UseQuoteFormReturn => {
    * Submit form
    */
   const submitForm = useCallback(async () => {
-    setIsSubmitting(true);
     setSubmitError(null);
-    
+
+    const contactAnswer = formState.answers['contact-info'] as ContactAnswer | undefined;
+
+    const submissionModule = await import('../utils/submission');
+    const { validateContactInfo, submitQuoteForm } = submissionModule;
+
+    if (!contactAnswer || !validateContactInfo(contactAnswer)) {
+      setSubmitError('Please add your name and a valid email before submitting the form.');
+      return;
+    }
+
+    setIsSubmitting(true);
+
     try {
-      const { submitQuoteForm } = await import('../utils/submission');
       await submitQuoteForm(formState.answers);
-      
+
       // Clear form after successful submission
       clearFormState();
-      
+
       // Mark as complete
       setFormState((prev) => ({
         ...prev,
@@ -179,9 +196,8 @@ export const useQuoteForm = (): UseQuoteFormReturn => {
       }));
     } catch (error) {
       console.error('Error submitting form:', error);
-      const errorMessage = error instanceof Error 
-        ? error.message 
-        : 'Failed to submit form. Please try again.';
+      const errorMessage =
+        error instanceof Error ? error.message : 'Failed to submit form. Please try again.';
       setSubmitError(errorMessage);
     } finally {
       setIsSubmitting(false);

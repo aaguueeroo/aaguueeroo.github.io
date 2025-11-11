@@ -230,14 +230,29 @@ const QuotePage: React.FC = () => {
       {/* Error Snackbar */}
       <Snackbar
         open={showError}
-        autoHideDuration={6000}
+        autoHideDuration={4000}
         onClose={() => setShowError(false)}
         anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+        sx={{
+          top: '50% !important',
+          transform: 'translate(-50%, -50%) !important',
+        }}
       >
         <Alert 
           onClose={() => setShowError(false)} 
           severity="error" 
-          sx={{ width: '100%' }}
+          sx={{ 
+            width: '100%',
+            alignItems: 'center',
+            '& .MuiAlert-icon': {
+              display: 'flex',
+              alignItems: 'center',
+            },
+            '& .MuiAlert-action': {
+              display: 'flex',
+              alignItems: 'center',
+            },
+          }}
         >
           {submitError || 'An error occurred. Please try again.'}
         </Alert>

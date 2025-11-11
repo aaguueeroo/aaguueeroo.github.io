@@ -1,9 +1,15 @@
 import { FormAnswers, ContactAnswer } from '../types';
+import { formspreeEndpoint, isFormspreeConfigured } from '../../../config/formspree';
+
+interface FormspreePayload {
+  timestamp: string;
+  answers: FormAnswers;
+}
 
 /**
  * Format form data for submission
  */
-export const formatFormData = (answers: FormAnswers): Record<string, any> => {
+export const formatFormData = (answers: FormAnswers): FormspreePayload => {
   return {
     timestamp: new Date().toISOString(),
     answers,
@@ -28,18 +34,46 @@ export const validateContactInfo = (contact: ContactAnswer): boolean => {
  * TODO: Implement actual backend submission
  */
 export const submitQuoteForm = async (answers: FormAnswers): Promise<void> => {
-  const formattedData = formatFormData(answers);
+  const contact = answers['contact-info'] as ContactAnswer | undefined;
+  if (!contact || !validateContactInfo(contact)) {
+    throw new Error('Please complete the contact information with a valid email address.');
+  }
 
-  // TODO: Replace with actual API call
-  console.log('Submitting form data:', formattedData);
+  if (!isFormspreeConfigured()) {
+    throw new Error('Form submission service is not configured. Please try again later.');
+  }
 
-  // Simulate API call
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      console.log('Form submitted successfully!');
-      resolve();
-    }, 1000);
+  const response = await fetch(formspreeEndpoint, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+    body: JSON.stringify(formatFormData(answers)),
   });
+
+  if (!response.ok) {
+    let fallbackMessage = 'Failed to submit form. Please try again later.';
+
+    try {
+      const errorPayload = await response.json();
+
+      if (Array.isArray(errorPayload?.errors) && errorPayload.errors.length > 0) {
+        fallbackMessage = errorPayload.errors
+          .map((item: { message?: string } | string) =>
+            typeof item === 'string' ? item : item?.message ?? ''
+          )
+          .filter((message: string) => message.length > 0)
+          .join(', ');
+      } else if (typeof errorPayload?.error === 'string') {
+        fallbackMessage = errorPayload.error;
+      }
+    } catch {
+      // Ignore JSON parsing errors and use fallback message
+    }
+
+    throw new Error(fallbackMessage || 'Failed to submit form. Please try again later.');
+  }
 };
 
 /**
