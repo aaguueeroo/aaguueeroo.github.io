@@ -136,12 +136,12 @@ export function AboutFinalCTA() {
           </Box>
         </Box> */}
         <Box sx={{ width: 'auto', mx: 'auto' }}>
-          <PrimaryButton 
-            showArrow 
-            onClick={() => navigate('/quote')}
+          <PrimaryButton
+            showArrow
+            onClick={() => navigate('/build-your-app')}
             style={{ minHeight: 56, height: 56, width: 'auto', lineHeight: 1, fontSize: '1.25rem', fontFamily: 'Golos Text, sans-serif', paddingLeft: '32px', paddingRight: '32px' }}
           >
-            Get a quote
+            Start building
           </PrimaryButton>
         </Box>
       </Box>

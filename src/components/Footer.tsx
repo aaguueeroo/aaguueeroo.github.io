@@ -161,25 +161,29 @@ export function Footer({ hideSocialMedia = false }: FooterProps) {
         )}
 
         <Box sx={{ ...classes.buttonsContainer }}>
-          <Button 
-            endIcon={<ArrowForwardIcon />} 
+          <Button
+            endIcon={<ArrowForwardIcon />}
             onClick={() => navigate('/')}
             sx={{ ...classes.textButton }}
           >
             Home
           </Button>
-          <Button 
-            endIcon={<ArrowForwardIcon />} 
-            onClick={() => navigate('/quote')}
+          <Button
+            endIcon={<ArrowForwardIcon />}
+            onClick={() => navigate('/build-your-app')}
             sx={{ ...classes.textButton }}
           >
-            Get a quote
+            Build your app
           </Button>
-          <Button endIcon={<ArrowForwardIcon />} onClick={() => navigate('/about')} sx={{ ...classes.textButton }}>
+          <Button
+            endIcon={<ArrowForwardIcon />}
+            onClick={() => navigate('/about')}
+            sx={{ ...classes.textButton }}
+          >
             About me
           </Button>
-          <Button 
-            endIcon={<ArrowForwardIcon />} 
+          <Button
+            endIcon={<ArrowForwardIcon />}
             onClick={() => navigate('/blog')}
             sx={{ ...classes.textButton }}
           >

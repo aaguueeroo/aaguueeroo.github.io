@@ -69,11 +69,11 @@ const Menu = ({ isOpen, onClose }: MenuProps) => {
           <PrimaryButton
             showArrow
             responsiveArrow={true}
-            onClick={() => navigate('/quote')}
+            onClick={() => navigate('/build-your-app')}
             sx={{ ...classes.button }}
             size="large"
           >
-            Get a quote
+            Build your app
           </PrimaryButton>
         </Box>
       </Box>

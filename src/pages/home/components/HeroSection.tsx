@@ -95,9 +95,9 @@ const HeroSection = () => {
           Share your vision, values and personality. I'll turn them into an app
           that truly represents you.
         </Typography>
-        <PrimaryButton onClick={() => navigate('/quote')}>
+        <PrimaryButton onClick={() => navigate('/build-your-app')}>
           <span style={{ display: 'none' }} className="show-xs">Get quote</span>
-          <span className="hide-xs">Get your quote for free</span>
+          <span className="hide-xs">Start building</span>
         </PrimaryButton>
       </Box>
     </Box>
