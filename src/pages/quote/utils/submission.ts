@@ -115,7 +115,7 @@ export const generateEmailBody = (answers: FormAnswers): string => {
     budget: 'Budget',
   };
 
-  const projectPriorities = answers['project-details'] as SliderTriangleAnswer | undefined;
+  const projectPriorities = answers['project-priorities'] as SliderTriangleAnswer | undefined;
   if (projectPriorities && projectPriorities.length > 0) {
     const formattedPriorities = projectPriorities
       .map((priority) => priorityLabels[priority] ?? priority)

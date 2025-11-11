@@ -21,6 +21,7 @@ interface FormStepContainerProps {
   isSubmitting?: boolean;
   nextButtonText?: string;
   nextButtonTone?: 'default' | 'neutral';
+  disableMinHeight?: boolean;
 }
 
 export const FormStepContainer: React.FC<FormStepContainerProps> = ({
@@ -39,6 +40,7 @@ export const FormStepContainer: React.FC<FormStepContainerProps> = ({
   isSubmitting = false,
   nextButtonText,
   nextButtonTone = 'default',
+  disableMinHeight = false,
 }) => {
   return (
     <Box
@@ -57,14 +59,14 @@ export const FormStepContainer: React.FC<FormStepContainerProps> = ({
         mx: 'auto',
         display: 'flex',
         flexDirection: 'column',
-        minHeight: { xs: '500px', sm: '550px', md: '600px' },
-        height: '100%',
+        minHeight: disableMinHeight ? 'auto' : { xs: '500px', sm: '550px', md: '600px' },
+        height: disableMinHeight ? '0' : '100%',
       }}
     >
       {/* Main Content Area */}
       <Box
         sx={{
-          flex: 1,
+          flex: disableMinHeight ? '0 0 auto' : 1,
           display: 'flex',
           flexDirection: 'column',
         }}

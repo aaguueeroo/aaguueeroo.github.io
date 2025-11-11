@@ -1,14 +1,22 @@
-import React from 'react';
-import { Box, Typography, Button, Container } from '@mui/material';
+import React, { useCallback } from 'react';
+import { Box, Typography, Container } from '@mui/material';
 import { motion } from 'framer-motion';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import { useNavigate } from 'react-router-dom';
 import { slideUp } from '../utils/animations';
+import PrimaryButton from '../../../components/PrimaryButton';
 
 interface SuccessScreenProps {
   onReset: () => void;
 }
 
 export const SuccessScreen: React.FC<SuccessScreenProps> = ({ onReset }) => {
+  const navigate = useNavigate();
+  const handleGoHome = useCallback(() => {
+    onReset();
+    navigate('/');
+  }, [navigate, onReset]);
+
   return (
     <Container maxWidth="md">
       <motion.div
@@ -21,9 +29,12 @@ export const SuccessScreen: React.FC<SuccessScreenProps> = ({ onReset }) => {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            justifyContent: 'center',
             textAlign: 'center',
-            py: 8,
+            maxWidth: { xs: 520, sm: 560, md: 600 },
+            width: '100%',
+            mx: 'auto',
+            px: { xs: 3, sm: 4 },
+            py: { xs: 6, sm: 7 },
             gap: 4,
           }}
         >
@@ -40,7 +51,7 @@ export const SuccessScreen: React.FC<SuccessScreenProps> = ({ onReset }) => {
             <CheckCircleOutlineIcon
               sx={{
                 fontSize: 120,
-                color: 'success.main',
+                color: '#B76E79',
               }}
             />
           </motion.div>
@@ -51,10 +62,10 @@ export const SuccessScreen: React.FC<SuccessScreenProps> = ({ onReset }) => {
               sx={{
                 fontWeight: 700,
                 mb: 2,
-                fontSize: { xs: '2rem', md: '3rem' },
+                fontSize: { xs: '1.75rem', sm: '2.125rem', md: '2.5rem' },
               }}
             >
-              Thank You!
+              Submission Successful
             </Typography>
             <Typography
               variant="h5"
@@ -62,9 +73,11 @@ export const SuccessScreen: React.FC<SuccessScreenProps> = ({ onReset }) => {
                 color: 'text.secondary',
                 fontWeight: 400,
                 mb: 4,
+                fontSize: { xs: '1rem', sm: '1.0625rem', md: '1.125rem' },
+                lineHeight: { xs: 1.5, sm: 1.55, md: 1.6 },
               }}
             >
-              Your quote request has been received successfully.
+              Thank you for sharing your project details.
             </Typography>
             <Typography
               variant="body1"
@@ -72,21 +85,27 @@ export const SuccessScreen: React.FC<SuccessScreenProps> = ({ onReset }) => {
                 color: 'text.secondary',
                 maxWidth: '600px',
                 mx: 'auto',
+                fontSize: { xs: '0.95rem', sm: '1rem', md: '1.05rem' },
+                lineHeight: { xs: 1.6, sm: 1.65, md: 1.65 },
               }}
             >
-              I'll review your request and get back to you within 24 hours with a detailed proposal. 
-              Check your email for a confirmation message.
+              I will review your request and follow up quickly with the next steps. 
             </Typography>
           </Box>
 
-          <Button
-            variant="outlined"
-            size="large"
-            onClick={onReset}
-            sx={{ mt: 2 }}
+          <Box
+            sx={{
+              mt: { xs: 4, sm: 5 },
+            }}
           >
-            Submit Another Quote
-          </Button>
+            <PrimaryButton
+              onClick={handleGoHome}
+              responsiveArrow
+              arrowSize={{ xs: '1.125rem', sm: '1.5rem', md: '1.75rem' }}
+            >
+              Go to Home
+            </PrimaryButton>
+          </Box>
         </Box>
       </motion.div>
     </Container>

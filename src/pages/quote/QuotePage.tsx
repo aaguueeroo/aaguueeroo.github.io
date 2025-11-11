@@ -19,12 +19,12 @@ const QuotePage: React.FC = () => {
     canGoNext,
     canGoBack,
     isLastStep,
+    isComplete,
+    resetForm,
     setAnswer,
     goNext,
     goBack,
     submitForm,
-    resetForm,
-    allAnswers,
     isSubmitting,
     submitError,
   } = useQuoteForm();
@@ -41,9 +41,6 @@ const QuotePage: React.FC = () => {
   React.useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [currentQuestion?.id]);
-
-  // Check if form is complete
-  const isComplete = !currentQuestion && Object.keys(allAnswers).length > 0;
 
   const shouldShowSkipForAdditionalInfo =
     currentQuestion?.id === QUESTION_IDS.ADDITIONAL_INFO &&
@@ -129,7 +126,7 @@ const QuotePage: React.FC = () => {
           }}
         >
           {isComplete ? (
-            <FormStepContainer>
+            <FormStepContainer disableMinHeight>
               <SuccessScreen onReset={resetForm} />
             </FormStepContainer>
           ) : currentQuestion?.type === QuestionType.WELCOME ? (

@@ -7,7 +7,7 @@ export const QUESTION_IDS = {
   WEB_TYPE: 'web-type',
   APP_FEATURES: 'app-features',
   DESIGN_TYPE: 'design-type',
-  PROJECT_DETAILS: 'project-details',
+  PROJECT_DETAILS: 'project-priorities',
   ADDITIONAL_INFO: 'additional-info',
   CONTACT_INFO: 'contact-info',
 } as const;

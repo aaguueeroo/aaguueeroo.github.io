@@ -28,6 +28,7 @@ interface UseQuoteFormReturn {
   canGoNext: boolean;
   canGoBack: boolean;
   isLastStep: boolean;
+  isComplete: boolean;
   setAnswer: (answer: Answer) => void;
   goNext: () => void;
   goBack: () => void;
@@ -211,6 +212,7 @@ export const useQuoteForm = (): UseQuoteFormReturn => {
     canGoNext,
     canGoBack,
     isLastStep,
+    isComplete: formState.isComplete,
     setAnswer,
     goNext,
     goBack,
