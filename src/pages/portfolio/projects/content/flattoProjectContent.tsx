@@ -10,9 +10,6 @@ import flattoShoppingImage from "../../../../assets/images/portfolio/flatto-shop
 import flattoCleaningImage from "../../../../assets/images/portfolio/flatto-cleaning.png";
 import flattoApartmentImage from "../../../../assets/images/portfolio/flatto-apartment.png";
 import flattoProfileImage from "../../../../assets/images/portfolio/flatto-profile.png";
-import cursorLogo from "../../../../assets/images/tech/cursor-logo.png";
-import flutterLogo from "../../../../assets/images/tech/flutter-logo.png";
-import supabaseLogo from "../../../../assets/images/tech/supabase-logo.png";
 
 export const flattoProjectContent: ProjectPageContent = {
   slug: "flatto",
@@ -56,7 +53,6 @@ export const flattoProjectContent: ProjectPageContent = {
         name: "Cursor AI",
         category: "Development Tools",
         description: "AI-assisted coding accelerated prototyping and refactoring.",
-        logo: cursorLogo,
         chips: ["AI Agent"],
         color: "#424242",
       },
@@ -64,7 +60,6 @@ export const flattoProjectContent: ProjectPageContent = {
         name: "Flutter",
         category: "Frontend",
         description: "Cross-platform UI with auto_route navigation and provider for state.",
-        logo: flutterLogo,
         chips: ["auto_route", "provider"],
         color: "#1976D2",
       },
@@ -73,7 +68,6 @@ export const flattoProjectContent: ProjectPageContent = {
         category: "Backend",
         description:
           "Authentication, Postgres database, storage, and real-time subscriptions to keep flatmates in sync.",
-        logo: supabaseLogo,
         chips: ["PostgreSQL"],
         color: "#2D5016",
       },
