@@ -1,6 +1,6 @@
-import { ProjectPageContent } from "./projectContent.types";
-import { flattoProjectContent } from "./content/flattoProjectContent";
-import { urbanRunnersProjectContent } from "./content/urbanRunnersProjectContent";
+import { ProjectPageContent } from "./projectContentTypes";
+import { flattoProjectContent } from "./content/flattoProjectContent.tsx";
+import { urbanRunnersProjectContent } from "./content/urbanRunnersProjectContent.tsx";
 
 const projectRegistry: Record<string, ProjectPageContent> = {
   [flattoProjectContent.slug]: flattoProjectContent,

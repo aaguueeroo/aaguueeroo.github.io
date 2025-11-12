@@ -13,7 +13,14 @@ const PortfolioCard = ({ project }: PortfolioCardProps) => {
   const navigate = useNavigate();
 
   const handleCardClick = () => {
-    navigate(`/portfolio/${project.slug}`);
+    if (project.slug) {
+      navigate(`/portfolio/${project.slug}`);
+      return;
+    }
+
+    if (project.liveUrl) {
+      window.open(project.liveUrl, "_blank");
+    }
   };
 
   const handleGitHubClick = (e: React.MouseEvent) => {
@@ -66,7 +73,11 @@ const PortfolioCard = ({ project }: PortfolioCardProps) => {
         </Typography>
 
         <Box sx={{ mb: 2 }}>
-          <Typography variant="body2" color="text.secondary" sx={{ mb: 1, fontSize: "0.875rem" }}>
+          <Typography
+            variant="body2"
+            color="text.secondary"
+            sx={{ mb: 1, fontSize: "0.875rem", fontWeight: 700 }}
+          >
             Technologies:
           </Typography>
           <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>

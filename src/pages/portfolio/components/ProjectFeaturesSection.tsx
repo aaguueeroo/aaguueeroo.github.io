@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import FeatureCarousel from "../../../components/FeatureCarousel";
-import { ProjectFeaturesSectionContent } from "../projects/projectContent.types";
+import { ProjectFeaturesSectionContent } from "../projects/projectContentTypes";
 
 type ProjectFeaturesSectionProps = {
   features: ProjectFeaturesSectionContent;
@@ -14,9 +14,14 @@ const ProjectFeaturesSection = ({
   return (
     <Box component="section" sx={{ mb: 16 }}>
       <Typography
-        variant="h4"
+        variant="h3"
         component="h2"
-        sx={{ mb: 6, fontWeight: 600, textAlign: "center" }}
+        sx={{
+          mb: 6,
+          fontWeight: 700,
+          textAlign: "center",
+          fontSize: { xs: "1.9rem", md: "2.4rem" },
+        }}
       >
         {features.title}
       </Typography>

@@ -1,6 +1,7 @@
 import HeroSection from "./components/HeroSection";
 import { AboutHero } from "./components/AboutHero";
 import { WhatDoIOfferSection } from "./components/WhatDoIOfferSection";
+import PortfolioOverviewSection from "./components/PortfolioOverviewSection";
 import { LetsGetInTouchSection } from "./components/LetsGetInTouchSection";
 import Navbar from "../../components/Navbar";
 import { Footer } from "../../components/Footer";
@@ -51,6 +52,7 @@ const HomePage = () => {
           </Box>
           <AboutHero />
           <WhatDoIOfferSection />
+          <PortfolioOverviewSection />
           <LetsGetInTouchSection />
           <Footer />
         </Box>

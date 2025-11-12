@@ -2,7 +2,7 @@ import { screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 import ProjectCallToActionSection from "../ProjectCallToActionSection";
 import { renderWithProviders } from "../../../../tests/renderWithProviders";
-import { ProjectCallToActionContent } from "../../projects/projectContent.types";
+import { ProjectCallToActionContent } from "../../projects/projectContentTypes";
 
 const ctaContent: ProjectCallToActionContent = {
   title: "Interested in building something similar?",

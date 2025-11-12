@@ -1,7 +1,7 @@
 import SendIcon from "@mui/icons-material/Send";
 import { Box, Typography, useTheme } from "@mui/material";
 import PrimaryButton from "../../../components/PrimaryButton";
-import { ProjectCallToActionContent } from "../projects/projectContent.types";
+import { ProjectCallToActionContent } from "../projects/projectContentTypes";
 
 type ProjectCallToActionSectionProps = {
   cta: ProjectCallToActionContent;
@@ -28,9 +28,12 @@ const ProjectCallToActionSection = ({
       }}
     >
       <Typography
-        variant="h4"
+        variant="h3"
         component="h2"
-        sx={{ fontWeight: 600 }}
+        sx={{
+          fontWeight: 700,
+          fontSize: { xs: "2rem", md: "2.5rem" },
+        }}
       >
         {cta.title}
       </Typography>
@@ -47,21 +50,24 @@ const ProjectCallToActionSection = ({
         endIcon={<SendIcon />}
         onClick={() => onAction(cta.buttonHref)}
         sx={{
-          boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-          padding: theme.spacing(2, 12),
+          boxShadow: "0 6px 10px rgba(0, 0, 0, 0.15)",
+          padding: theme.spacing(3, 16),
           display: "flex",
           alignItems: "center",
-          gap: theme.spacing(1),
+          gap: theme.spacing(1.5),
           transition: "all 0.3s ease",
           transform: "scale(1)",
+          fontSize: { xs: "1.3rem", md: "1.5rem" },
+          fontWeight: 600,
           "&:hover": {
-            boxShadow: "0 6px 8px rgba(0, 0, 0, 0.2)",
-            transform: "scale(1.05)",
+            boxShadow: "0 10px 16px rgba(0, 0, 0, 0.2)",
+            transform: "scale(1.06)",
             bgcolor: theme.palette.primary.main,
           },
           "& .MuiSvgIcon-root": {
             color: "#CF8B7F",
             transition: "color 0.3s ease",
+            fontSize: { xs: "1.6rem", md: "1.8rem" },
           },
           "&:hover .MuiSvgIcon-root": {
             color: "#212529",

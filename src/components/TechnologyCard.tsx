@@ -58,7 +58,6 @@ const TechnologyCard = ({
   return (
     <Card
       sx={{
-        height: "100%",
         display: "flex",
         flexDirection: "column",
         borderRadius: 0.2,

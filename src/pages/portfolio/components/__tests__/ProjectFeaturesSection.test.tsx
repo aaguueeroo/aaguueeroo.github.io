@@ -2,7 +2,7 @@ import { fireEvent, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 import ProjectFeaturesSection from "../ProjectFeaturesSection";
 import { renderWithProviders } from "../../../../tests/renderWithProviders";
-import { ProjectFeaturesSectionContent } from "../../projects/projectContent.types";
+import { ProjectFeaturesSectionContent } from "../../projects/projectContentTypes";
 
 const featuresSection: ProjectFeaturesSectionContent = {
   title: "Key Features",

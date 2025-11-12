@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import { ProjectDescriptionSectionContent } from "../projects/projectContent.types";
+import { ProjectDescriptionSectionContent } from "../projects/projectContentTypes";
 
 type ProjectDescriptionSectionProps = {
   description: ProjectDescriptionSectionContent;
@@ -10,13 +10,7 @@ const ProjectDescriptionSection = ({
 }: ProjectDescriptionSectionProps) => {
   return (
     <Box component="section" sx={{ mb: 8 }}>
-      <Typography
-        variant="h4"
-        component="h2"
-        sx={{ mb: 3, fontWeight: 600, textAlign: "center" }}
-      >
-        {description.title}
-      </Typography>
+      <Box sx={{ height: { xs: 24, md: 32 } }} />
       <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
         {description.paragraphs.map((paragraph) => (
           <Typography

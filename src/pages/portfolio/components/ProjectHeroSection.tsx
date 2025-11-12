@@ -2,7 +2,7 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import LaunchIcon from "@mui/icons-material/Launch";
 import { Box, Button, Chip, Typography } from "@mui/material";
 import Navbar from "../../../components/Navbar";
-import { ProjectHeroAction, ProjectHeroContent } from "../projects/projectContent.types";
+import { ProjectHeroAction, ProjectHeroContent } from "../projects/projectContentTypes";
 
 type ProjectHeroSectionProps = {
   hero: ProjectHeroContent;
@@ -101,10 +101,10 @@ const ProjectHeroSection = ({
         </Typography>
 
         <Typography
-          variant="h5"
+          variant="h4"
           sx={{
             mb: 4,
-            fontSize: { xs: "1rem", md: "1.25rem" },
+            fontSize: { xs: "1.05rem", md: "1.4rem" },
             lineHeight: 1.4,
             maxWidth: { xs: "100%", md: "45%" },
             color: "text.secondary",
@@ -117,7 +117,7 @@ const ProjectHeroSection = ({
           variant="body1"
           sx={{
             mb: 4,
-            fontSize: { xs: "0.95rem", md: "1rem" },
+            fontSize: { xs: "1rem", md: "1.1rem" },
             lineHeight: 1.6,
             maxWidth: { xs: "100%", md: "45%" },
             color: "text.primary",
@@ -162,17 +162,6 @@ const ProjectHeroSection = ({
         </Box>
 
         <Box sx={{ maxWidth: { xs: "100%", md: "90%" } }}>
-          <Typography
-            variant="h6"
-            sx={{
-              mb: 3,
-              fontSize: "1.1rem",
-              fontWeight: 600,
-              color: "text.primary",
-            }}
-          >
-            Technologies Used
-          </Typography>
           <Box
             sx={{
               display: "flex",
@@ -232,7 +221,7 @@ const ProjectHeroSection = ({
           },
         }}
       >
-        <Typography variant="body2" sx={{ mb: 1, fontSize: "0.8rem" }}>
+        <Typography variant="body1" sx={{ mb: 1, fontSize: "0.95rem" }}>
           Scroll to explore
         </Typography>
         <Box

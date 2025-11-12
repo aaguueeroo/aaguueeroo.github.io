@@ -2,7 +2,7 @@ import { screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import ProjectTechnologiesSection from "../ProjectTechnologiesSection";
 import { renderWithProviders } from "../../../../tests/renderWithProviders";
-import { ProjectTechnologiesSectionContent } from "../../projects/projectContent.types";
+import { ProjectTechnologiesSectionContent } from "../../projects/projectContentTypes";
 
 const technologies: ProjectTechnologiesSectionContent = {
   title: "Technologies",

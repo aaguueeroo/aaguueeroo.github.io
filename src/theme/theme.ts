@@ -143,14 +143,14 @@ let theme = createTheme({
       lineHeight: 1.6,
       fontSize: "1rem",
       "@media (min-width:900px)": {
-        fontSize: "1.0625rem",
+        fontSize: "1.2rem",
       },
     },
     body2: {
       fontFamily: ["Golos Text", "sans-serif"].join(","),
       fontWeight: 400,
       lineHeight: 1.6,
-      fontSize: "0.9375rem",
+      fontSize: "1rem",
     },
     caption: {
       fontFamily: ["Golos Text", "sans-serif"].join(","),

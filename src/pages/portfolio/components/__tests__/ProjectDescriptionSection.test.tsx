@@ -2,7 +2,7 @@ import { screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import ProjectDescriptionSection from "../ProjectDescriptionSection";
 import { renderWithProviders } from "../../../../tests/renderWithProviders";
-import { ProjectDescriptionSectionContent } from "../../projects/projectContent.types";
+import { ProjectDescriptionSectionContent } from "../../projects/projectContentTypes";
 
 const description: ProjectDescriptionSectionContent = {
   title: "Project Overview",
@@ -14,14 +14,10 @@ const description: ProjectDescriptionSectionContent = {
 };
 
 describe("ProjectDescriptionSection", () => {
-  it("renders title, paragraphs, and bullet points", () => {
+  it("renders paragraphs and bullet points without a heading", () => {
     renderWithProviders(
       <ProjectDescriptionSection description={description} />,
     );
-
-    expect(
-      screen.getByRole("heading", { name: description.title }),
-    ).toBeInTheDocument();
 
     description.paragraphs.forEach((paragraph) => {
       expect(screen.getByText(paragraph)).toBeInTheDocument();

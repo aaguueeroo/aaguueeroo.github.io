@@ -5,9 +5,15 @@ import {
   within,
 } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import ProjectPage from "../ProjectPage";
+import ProjectExtraSection from "../../components/ProjectExtraSection";
+import ProjectFeaturesSection from "../../components/ProjectFeaturesSection";
+import ProjectDetailsView from "../ProjectDetailsView";
 import { renderWithProviders } from "../../../../tests/renderWithProviders";
-import { ProjectPageContent } from "../projectContent.types";
+import {
+  ProjectExtraSectionContent,
+  ProjectFeaturesSectionContent,
+  ProjectPageContent,
+} from "../projectContentTypes";
 
 const mockNavigate = vi.fn();
 
@@ -49,18 +55,12 @@ const projectContent: ProjectPageContent = {
     ],
     bulletPoints: ["Supports integrations", "Provides analytics"],
   },
-  features: {
-    title: "Core Features",
-    features: [
-      {
-        id: "feature-1",
-        title: "Composable Workflows",
-        description: "Build workflows visually to match your processes.",
-        image: "/feature-1.png",
-        imageAlt: "Composable workflows example",
-      },
-    ],
-  },
+  renderFeaturesSection: ({ onOpenImageModal }) => (
+    <ProjectFeaturesSection
+      features={mockFeaturesSection}
+      onFeatureImageClick={onOpenImageModal}
+    />
+  ),
   technologies: {
     title: "Technologies",
     technologies: [
@@ -72,10 +72,9 @@ const projectContent: ProjectPageContent = {
       },
     ],
   },
-  extra: {
-    title: "What is Next",
-    paragraphs: ["We are preparing an automation SDK.", "Launching beta soon."],
-  },
+  renderExtraSection: () => (
+    <ProjectExtraSection extra={mockExtraSection} />
+  ),
   cta: {
     title: "Interested in building something similar?",
     description: "Let's create your product together.",
@@ -84,7 +83,7 @@ const projectContent: ProjectPageContent = {
   },
 };
 
-describe("ProjectPage", () => {
+describe("ProjectDetailsView", () => {
   beforeEach(() => {
     mockNavigate.mockClear();
   });
@@ -92,19 +91,16 @@ describe("ProjectPage", () => {
   it("renders sections and handles interactions", async () => {
     const windowOpenSpy = vi.spyOn(window, "open").mockImplementation(() => null);
 
-    renderWithProviders(<ProjectPage content={projectContent} />);
+    renderWithProviders(<ProjectDetailsView content={projectContent} />);
 
     expect(
       screen.getByRole("heading", { name: projectContent.hero.title }),
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("heading", { name: projectContent.description.title }),
+      screen.getByRole("heading", { name: mockFeaturesSection.title }),
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("heading", { name: projectContent.features.title }),
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole("heading", { name: projectContent.extra.title }),
+      screen.getByRole("heading", { name: mockExtraSection.title }),
     ).toBeInTheDocument();
 
     fireEvent.click(
@@ -119,13 +115,13 @@ describe("ProjectPage", () => {
 
     fireEvent.click(
       screen.getByRole("img", {
-        name: projectContent.features.features[0].imageAlt,
+        name: mockFeaturesSection.features[0].imageAlt,
       }),
     );
     const dialog = await screen.findByRole("dialog");
     expect(
       within(dialog).getByRole("img", {
-        name: projectContent.features.features[0].imageAlt,
+        name: mockFeaturesSection.features[0].imageAlt,
       }),
     ).toBeInTheDocument();
     fireEvent.click(within(dialog).getByRole("button"));
@@ -139,4 +135,22 @@ describe("ProjectPage", () => {
     windowOpenSpy.mockRestore();
   });
 });
+
+const mockFeaturesSection: ProjectFeaturesSectionContent = {
+  title: "Core Features",
+  features: [
+    {
+      id: "feature-1",
+      title: "Composable Workflows",
+      description: "Build workflows visually to match your processes.",
+      image: "/feature-1.png",
+      imageAlt: "Composable workflows example",
+    },
+  ],
+};
+
+const mockExtraSection: ProjectExtraSectionContent = {
+  title: "What is Next",
+  paragraphs: ["We are preparing an automation SDK.", "Launching beta soon."],
+};
 

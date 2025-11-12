@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export type ProjectHeroAction = {
   label: string;
   url: string;
@@ -33,6 +35,14 @@ export type ProjectFeaturesSectionContent = {
   features: ProjectFeatureContent[];
 };
 
+export type ProjectFeaturesSectionRendererArgs = {
+  onOpenImageModal: (imageSrc: string, imageAlt: string) => void;
+};
+
+export type ProjectFeaturesSectionRenderer = (
+  args: ProjectFeaturesSectionRendererArgs,
+) => ReactNode;
+
 export type ProjectTechnologyDetail = {
   name: string;
   category: string;
@@ -46,6 +56,8 @@ export type ProjectTechnologiesSectionContent = {
   title: string;
   technologies: ProjectTechnologyDetail[];
 };
+
+export type ProjectExtraSectionRenderer = () => ReactNode;
 
 export type ProjectExtraSectionContent = {
   title: string;
@@ -68,9 +80,9 @@ export type ProjectPageContent = {
   };
   hero: ProjectHeroContent;
   description: ProjectDescriptionSectionContent;
-  features: ProjectFeaturesSectionContent;
+  renderFeaturesSection: ProjectFeaturesSectionRenderer;
   technologies: ProjectTechnologiesSectionContent;
-  extra: ProjectExtraSectionContent;
+  renderExtraSection?: ProjectExtraSectionRenderer;
   cta: ProjectCallToActionContent;
 };
 

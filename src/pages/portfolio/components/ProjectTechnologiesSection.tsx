@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import TechnologyGrid from "../../../components/TechnologyGrid";
-import { ProjectTechnologiesSectionContent } from "../projects/projectContent.types";
+import { ProjectTechnologiesSectionContent } from "../projects/projectContentTypes";
 
 type ProjectTechnologiesSectionProps = {
   technologies: ProjectTechnologiesSectionContent;
@@ -19,9 +19,14 @@ const ProjectTechnologiesSection = ({
       }}
     >
       <Typography
-        variant="h4"
+        variant="h3"
         component="h2"
-        sx={{ mb: 6, fontWeight: 600, textAlign: "center" }}
+        sx={{
+          mb: 6,
+          fontWeight: 700,
+          textAlign: "center",
+          fontSize: { xs: "1.9rem", md: "2.4rem" },
+        }}
       >
         {technologies.title}
       </Typography>

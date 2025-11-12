@@ -2,7 +2,7 @@ import { screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import ProjectExtraSection from "../ProjectExtraSection";
 import { renderWithProviders } from "../../../../tests/renderWithProviders";
-import { ProjectExtraSectionContent } from "../../projects/projectContent.types";
+import { ProjectExtraSectionContent } from "../../projects/projectContentTypes";
 
 const extraContent: ProjectExtraSectionContent = {
   title: "Additional Insights",

@@ -40,7 +40,7 @@ const PortfolioPage = () => {
                 color="text.secondary"
                 sx={{ maxWidth: 600, mx: "auto", ...TypographyConstants.body }}
               >
-                Here are some of the apps and projects I’ve built. Each one
+                Here are some of the apps and projects I’ve worked on. Each one
                 reflects my approach to design, development, and problem
                 solving.
               </Typography>

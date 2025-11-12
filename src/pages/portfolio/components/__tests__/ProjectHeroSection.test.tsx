@@ -2,7 +2,7 @@ import { screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 import ProjectHeroSection from "../ProjectHeroSection";
 import { renderWithProviders } from "../../../../tests/renderWithProviders";
-import { ProjectHeroContent } from "../../projects/projectContent.types";
+import { ProjectHeroContent } from "../../projects/projectContentTypes";
 
 const heroContent: ProjectHeroContent = {
   coverImage: "/image.png",

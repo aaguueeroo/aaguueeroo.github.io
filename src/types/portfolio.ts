@@ -9,7 +9,7 @@ export interface Project {
   featured: boolean;
   githubUrl?: string;
   liveUrl?: string;
-  slug: string;
+  slug?: string;
 }
 
 export interface PortfolioData {
