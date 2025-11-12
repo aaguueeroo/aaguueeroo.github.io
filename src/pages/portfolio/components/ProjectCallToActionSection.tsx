@@ -1,0 +1,85 @@
+import SendIcon from "@mui/icons-material/Send";
+import { Box, Typography, useTheme } from "@mui/material";
+import { alpha } from "@mui/material/styles";
+import PrimaryButton from "../../../components/PrimaryButton";
+import { ProjectCallToActionContent } from "../projects/projectContentTypes";
+
+type ProjectCallToActionSectionProps = {
+  cta: ProjectCallToActionContent;
+  onAction: (href: string) => void;
+};
+
+const ProjectCallToActionSection = ({
+  cta,
+  onAction,
+}: ProjectCallToActionSectionProps) => {
+  const theme = useTheme();
+
+  return (
+    <Box
+      component="section"
+      sx={{
+        mb: 8,
+        py: { xs: 12, md: 24 },
+        textAlign: "center",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: 4,
+      }}
+    >
+      <Typography
+        variant="h3"
+        component="h2"
+        sx={{
+          fontWeight: 700,
+          fontSize: { xs: "2rem", md: "2.5rem" },
+        }}
+      >
+        {cta.title}
+      </Typography>
+      {cta.description && (
+        <Typography
+          variant="body1"
+          sx={{ maxWidth: "600px", lineHeight: 1.7, fontSize: "1rem" }}
+        >
+          {cta.description}
+        </Typography>
+      )}
+      <PrimaryButton
+        showArrow={false}
+        endIcon={<SendIcon />}
+        onClick={() => onAction(cta.buttonHref)}
+        sx={{
+          boxShadow: `0 6px 10px ${alpha(theme.palette.common.black, 0.15)}`,
+          padding: theme.spacing(3, 16),
+          display: "flex",
+          alignItems: "center",
+          gap: theme.spacing(1.5),
+          transition: "all 0.3s ease",
+          transform: "scale(1)",
+          fontSize: { xs: "1.3rem", md: "1.5rem" },
+          fontWeight: 600,
+          "&:hover": {
+            boxShadow: `0 10px 16px ${alpha(theme.palette.common.black, 0.2)}`,
+            transform: "scale(1.06)",
+            bgcolor: theme.palette.primary.main,
+          },
+          "& .MuiSvgIcon-root": {
+            color: theme.palette.primary.main,
+            transition: "color 0.3s ease",
+            fontSize: { xs: "1.6rem", md: "1.8rem" },
+          },
+          "&:hover .MuiSvgIcon-root": {
+            color: theme.palette.secondary.main,
+          },
+        }}
+      >
+        {cta.buttonText}
+      </PrimaryButton>
+    </Box>
+  );
+};
+
+export default ProjectCallToActionSection;
+

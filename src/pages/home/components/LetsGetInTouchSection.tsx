@@ -114,7 +114,18 @@ export function LetsGetInTouchSection() {
         Let's get in touch
       </Typography>
 
-      <Typography variant="body1" align="center">
+      <Typography
+        variant="body1"
+        align="center"
+        sx={{
+          fontSize: {
+            xs: "1.4rem",
+            sm: "1.6rem",
+            md: "2.2rem",
+            lg: "2.4rem",
+          },
+        }}
+      >
         Ready to bring your vision to life? Let's create something amazing
         together.
       </Typography>

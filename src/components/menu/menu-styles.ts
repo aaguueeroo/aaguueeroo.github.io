@@ -50,15 +50,18 @@ const useStyles = (theme: Theme) => ({
     background: "none",
     border: "none",
     padding: {
-      xs: "12px",
-      sm: "24px",
-      md: "24px"
+      xs: "8px",
+      sm: "16px",
+      md: "16px"
     },
-    display: "flex",
+    display: "inline-flex",
     justifyContent: "flex-end",
-    gap: '16px',
+    gap: '12px',
     alignItems: "center",
     transition: "transform 0.3s ease-in-out",
+    cursor: "pointer",
+    width: "fit-content",
+    marginLeft: "auto",
     "&:hover": {
       background: "none",
       "& .MuiTypography-root": {
@@ -68,13 +71,16 @@ const useStyles = (theme: Theme) => ({
       },
       "& .menu-arrow": {
         animation: 'bounceX 1s ease-in-out infinite',
+        color: theme.palette.secondary.main,
       },
     },
   },
   listItemText: {
     transition: "color 0.3s ease-in-out",
     fontSize: {
-      md: "4.5rem"
+      xs: "3.5rem",
+      sm: "2.5rem",
+      md: "3.5rem"
     },
     textAlign: "right",
     color: "#212529",
@@ -89,11 +95,11 @@ const useStyles = (theme: Theme) => ({
   },
   button: {
     alignSelf: "center",
-    padding: "8px 64px",
+    padding: "6px 48px",
     fontSize: {
-      xs: "1.2rem !important",
-      sm: "2rem !important",
-      md: "3.2rem !important"
+      xs: "1.1rem !important",
+      sm: "1.6rem !important",
+      md: "2.2rem !important"
     },
     lineHeight: 1.2,
     "& .MuiSvgIcon-root": {
@@ -108,13 +114,8 @@ const useStyles = (theme: Theme) => ({
     bgcolor: theme.palette.secondary.main,
     transition: "all 0.3s ease-in-out",
     "&:hover": {
-      transform: "scale(1.05)",
+      transform: "scale(1.02)",
       bgcolor: theme.palette.primary.main,
-      fontSize: {
-        xs: "1.3rem !important",
-        sm: "2.1rem !important",
-        md: "3.3rem !important"
-      },
       "& .MuiSvgIcon-root": {
         color: theme.palette.secondary.main,
       },

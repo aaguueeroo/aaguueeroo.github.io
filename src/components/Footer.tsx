@@ -49,6 +49,11 @@ const useStyles = (theme: Theme) => ({
   socialText: {
     fontWeight: "regular",
     color: theme.palette.secondary.main,
+    fontSize: {
+      xs: "1.2rem",
+      sm: "1.3rem",
+      md: "1.5rem",
+    },
   },
   socialIcons: {
     display: "flex",
@@ -82,6 +87,11 @@ const useStyles = (theme: Theme) => ({
     padding: "8px 0",
     color: theme.palette.secondary.main,
     fontWeight: "regular",
+    fontSize: {
+      xs: "1.125rem",
+      sm: "1.25rem",
+      md: "1.375rem",
+    },
     lineHeight: "1.0",
     textTransform: "none",
     "&:hover": {
@@ -182,8 +192,15 @@ export function Footer({ hideSocialMedia = false }: FooterProps) {
           >
             About me
           </Button>
-          <Button
-            endIcon={<ArrowForwardIcon />}
+          <Button 
+            endIcon={<ArrowForwardIcon />} 
+            onClick={() => navigate('/portfolio')}
+            sx={{ ...classes.textButton }}
+          >
+            Portfolio
+          </Button>
+          <Button 
+            endIcon={<ArrowForwardIcon />} 
             onClick={() => navigate('/blog')}
             sx={{ ...classes.textButton }}
           >
