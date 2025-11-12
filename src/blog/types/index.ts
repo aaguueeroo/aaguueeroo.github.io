@@ -18,6 +18,8 @@ export interface BlogPost {
   lastEditedTime?: string;
   coverImage?: string;
   author?: string;
+  pointTo?: string[]; // Array of post IDs this post points to
+  pointedBy?: string[]; // Array of post IDs that point to this post
 }
 
 export interface BlogPostSummary {
@@ -39,6 +41,8 @@ export interface BlogPostSummary {
   author?: string;
   description?: string;
   contentPreview?: string;
+  pointTo?: string[]; // Array of post IDs this post points to
+  pointedBy?: string[]; // Array of post IDs that point to this post
 }
 
 export interface PostCategory {

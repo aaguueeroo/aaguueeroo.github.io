@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import {
   Box,
   Typography,
@@ -35,6 +35,52 @@ interface BlogPostProps {
   post: BlogPost | null;
   loading?: boolean;
   error?: string;
+}
+
+// Twitter Embed Component
+const TwitterEmbed: React.FC<{ tweetId: string }> = ({ tweetId }) => {
+  const tweetRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Load Twitter widgets script if not already loaded
+    if (!window.twttr) {
+      const script = document.createElement('script');
+      script.src = 'https://platform.twitter.com/widgets.js';
+      script.async = true;
+      script.charset = 'utf-8';
+      document.body.appendChild(script);
+      
+      script.onload = () => {
+        if (window.twttr && tweetRef.current) {
+          window.twttr.widgets.load(tweetRef.current);
+        }
+      };
+    } else {
+      // Script already loaded, just render the widget
+      if (tweetRef.current) {
+        window.twttr.widgets.load(tweetRef.current);
+      }
+    }
+  }, [tweetId]);
+
+  return (
+    <div ref={tweetRef}>
+      <blockquote className="twitter-tweet" data-theme="light" data-align="center">
+        <a href={`https://twitter.com/x/status/${tweetId}`}>Loading tweet...</a>
+      </blockquote>
+    </div>
+  );
+};
+
+// Extend window type for Twitter widgets
+declare global {
+  interface Window {
+    twttr?: {
+      widgets: {
+        load: (element?: HTMLElement) => void;
+      };
+    };
+  }
 }
 
 const BlogPostComponent: React.FC<BlogPostProps> = ({ post, loading, error }) => {
@@ -414,6 +460,67 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, loading, error }) =>
                 return acc;
               };
 
+              const renderBlocks = (blocks: any[]): React.ReactNode[] => {
+                const result: React.ReactNode[] = [];
+                let i = 0;
+                
+                while (i < blocks.length) {
+                  const block = blocks[i];
+                  
+                  // Group consecutive numbered list items
+                  if (block.type === 'numbered_list_item') {
+                    const listItems: any[] = [];
+                    while (i < blocks.length && blocks[i].type === 'numbered_list_item') {
+                      listItems.push(blocks[i]);
+                      i++;
+                    }
+                    
+                    result.push(
+                      <Box
+                        key={`ol-${i}`}
+                        component="ol"
+                        sx={{
+                          ml: 4,
+                          mb: 2,
+                          pl: 2,
+                          counterReset: 'list-counter',
+                        }}
+                      >
+                        {listItems.map((item, idx) => (
+                          <Box
+                            key={idx}
+                            component="li"
+                            sx={{
+                              mb: 1,
+                              display: 'list-item',
+                              listStyleType: 'decimal',
+                              listStylePosition: 'outside',
+                            }}
+                          >
+                            <Typography
+                              variant="body1"
+                              component="span"
+                              sx={{
+                                ...TypographyConstants.body,
+                                lineHeight: 1.6,
+                              }}
+                            >
+                              {renderRT(item.numbered_list_item?.rich_text || [])}
+                            </Typography>
+                          </Box>
+                        ))}
+                      </Box>
+                    );
+                    continue;
+                  }
+                  
+                  result.push(renderBlock(block, i));
+                  i++;
+                }
+                
+                return result;
+              };
+
               const renderBlock = (block: any, key: React.Key): React.ReactNode => {
                 switch (block.type) {
                 case 'paragraph':
@@ -504,6 +611,9 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, loading, error }) =>
                       </Typography>
                     </Box>
                   );
+                case 'numbered_list_item':
+                  // Handled by renderBlocks grouping
+                  return null;
                   case 'quote': {
                     return (
                       <Box key={key} sx={{ borderLeft: '4px solid', borderLeftColor: 'primary.main', pl: 2, my: 2 }}>
@@ -646,12 +756,105 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, loading, error }) =>
                       </Box>
                     );
                   }
+                  case 'embed': {
+                    const url = block.embed?.url;
+                    if (!url) return null;
+                    
+                    // Check if it's a Twitter/X embed
+                    const isTwitter = url.includes('twitter.com') || url.includes('x.com');
+                    
+                    if (isTwitter) {
+                      // Extract tweet ID from URL
+                      const tweetIdMatch = url.match(/status\/(\d+)/);
+                      const tweetId = tweetIdMatch ? tweetIdMatch[1] : null;
+                      
+                      if (tweetId) {
+                        return (
+                          <Box key={key} sx={{ my: 3, display: 'flex', justifyContent: 'center' }}>
+                            <Box sx={{ width: '100%', maxWidth: '650px' }}>
+                              <TwitterEmbed tweetId={tweetId} />
+                            </Box>
+                          </Box>
+                        );
+                      }
+                    }
+                    
+                    // Generic embed fallback
+                    return (
+                      <Box key={key} sx={{ my: 3 }}>
+                        <Box
+                          sx={{
+                            width: '100%',
+                            height: '400px',
+                            border: '1px solid',
+                            borderColor: 'divider',
+                            borderRadius: 2,
+                            overflow: 'hidden',
+                          }}
+                        >
+                          <iframe
+                            src={url}
+                            width="100%"
+                            height="100%"
+                            style={{ border: 'none' }}
+                            title="Embedded content"
+                          />
+                        </Box>
+                      </Box>
+                    );
+                  }
+                  case 'bookmark': {
+                    const bookmarkUrl = block.bookmark?.url;
+                    const caption = getPlainText(block.bookmark?.caption || []);
+                    if (!bookmarkUrl) return null;
+                    
+                    return (
+                      <Box key={key} sx={{ my: 3 }}>
+                        <Card
+                          component="a"
+                          href={bookmarkUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          sx={{
+                            display: 'block',
+                            textDecoration: 'none',
+                            border: '1px solid',
+                            borderColor: 'divider',
+                            borderRadius: 2,
+                            transition: 'all 0.2s ease',
+                            '&:hover': {
+                              borderColor: 'primary.main',
+                              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+                            },
+                          }}
+                        >
+                          <CardContent sx={{ p: 2 }}>
+                            <Typography
+                              variant="body2"
+                              sx={{
+                                color: 'primary.main',
+                                fontWeight: 500,
+                                mb: caption ? 1 : 0,
+                              }}
+                            >
+                              🔗 {bookmarkUrl}
+                            </Typography>
+                            {caption && (
+                              <Typography variant="caption" sx={{ color: 'text.secondary' }}>
+                                {caption}
+                              </Typography>
+                            )}
+                          </CardContent>
+                        </Card>
+                      </Box>
+                    );
+                  }
                 default:
                   return null;
                 }
               };
 
-              return post.content.map((block: any, index: number) => renderBlock(block, index));
+              return renderBlocks(post.content);
             })()}
           </Box>
         ) : (
@@ -739,18 +942,40 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, loading, error }) =>
       {(() => {
         const summaries = (postsIndex as any[]);
         const currentId = post.id;
-        const currentCats = new Set(post.postCategories || []);
-        const currentTags = new Set(post.tags || []);
-        const related = summaries
-          .filter((p) => p.id !== currentId)
-          .map((p) => {
-            const score = ((p.postCategories || []).some((c: string) => currentCats.has(c)) ? 2 : 0) + ((p.tags || []).some((t: string) => currentTags.has(t)) ? 1 : 0);
-            return { p, score };
-          })
-          .filter(({ score }) => score > 0)
-          .sort((a, b) => b.score - a.score)
-          .slice(0, 5) // Show more posts in carousel
-          .map(({ p }) => p);
+        
+        let related: any[] = [];
+        
+        // Combine posts from "Point to" and "Pointed by" fields
+        const relatedPostIds = new Set<string>();
+        if (post.pointTo && post.pointTo.length > 0) {
+          post.pointTo.forEach(id => relatedPostIds.add(id));
+        }
+        if (post.pointedBy && post.pointedBy.length > 0) {
+          post.pointedBy.forEach(id => relatedPostIds.add(id));
+        }
+        
+        // If we have manually linked posts, use those
+        if (relatedPostIds.size > 0) {
+          related = summaries
+            .filter((p) => relatedPostIds.has(p.id))
+            .slice(0, 5);
+        }
+        
+        // If no manual links or not enough posts, use automatic detection
+        if (related.length === 0) {
+          const currentCats = new Set(post.postCategories || []);
+          const currentTags = new Set(post.tags || []);
+          related = summaries
+            .filter((p) => p.id !== currentId)
+            .map((p) => {
+              const score = ((p.postCategories || []).some((c: string) => currentCats.has(c)) ? 2 : 0) + ((p.tags || []).some((t: string) => currentTags.has(t)) ? 1 : 0);
+              return { p, score };
+            })
+            .filter(({ score }) => score > 0)
+            .sort((a, b) => b.score - a.score)
+            .slice(0, 5)
+            .map(({ p }) => p);
+        }
 
         if (!related.length) return null;
 
@@ -850,7 +1075,7 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, loading, error }) =>
                         component="img"
                         image={rp.coverImage}
                         alt={rp.title}
-                        sx={{ height: 200, objectFit: 'cover' }}
+                        sx={{ height: 200, objectFit: 'cover', borderRadius: 0.12 }}
                       />
                     )}
                     <CardContent sx={{ p: 2 }}>

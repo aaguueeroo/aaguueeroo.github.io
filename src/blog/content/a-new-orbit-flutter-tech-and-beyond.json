@@ -10,6 +10,8 @@
   "language": "English",
   "tags": [],
   "postCategories": [],
+  "pointTo": [],
+  "pointedBy": [],
   "readTime": 3,
   "content": [
     {
@@ -20,7 +22,7 @@
         "page_id": "27ec1b93-843e-80a0-96a7-c735a7bd1ec6"
       },
       "created_time": "2025-09-30T03:50:00.000Z",
-      "last_edited_time": "2025-09-30T04:24:00.000Z",
+      "last_edited_time": "2025-10-06T01:51:00.000Z",
       "created_by": {
         "object": "user",
         "id": "b3b8f296-add6-451a-ad38-a474404637db"
@@ -38,7 +40,7 @@
           {
             "type": "text",
             "text": {
-              "content": "Hello 👋🏻 Welcome to La ’Órbita de Dimorpho",
+              "content": "Hello 👋🏻 Welcome to La Órbita de Dimorpho",
               "link": null
             },
             "annotations": {
@@ -49,7 +51,7 @@
               "code": false,
               "color": "default"
             },
-            "plain_text": "Hello 👋🏻 Welcome to La ’Órbita de Dimorpho",
+            "plain_text": "Hello 👋🏻 Welcome to La Órbita de Dimorpho",
             "href": null
           }
         ],
@@ -433,7 +435,7 @@
         "page_id": "27ec1b93-843e-80a0-96a7-c735a7bd1ec6"
       },
       "created_time": "2025-09-30T03:50:00.000Z",
-      "last_edited_time": "2025-09-30T03:54:00.000Z",
+      "last_edited_time": "2025-10-06T01:53:00.000Z",
       "created_by": {
         "object": "user",
         "id": "b3b8f296-add6-451a-ad38-a474404637db"
@@ -485,7 +487,7 @@
           {
             "type": "text",
             "text": {
-              "content": ", since that’s my core tool as a developer. I’ll write about best practices, lessons learned, widgets, packages, recommendations, and my own projects. But I don’t want this blog to feel like a narrow Flutter manual. I’ll also branch into other areas: ",
+              "content": ", since that’s my core tool as a developer. I’ll write about best practices, lessons learned, widgets, packages, and my own projects. But I don’t want this blog to feel like a narrow Flutter manual. I’ll also branch into other areas: ",
               "link": null
             },
             "annotations": {
@@ -496,13 +498,13 @@
               "code": false,
               "color": "default"
             },
-            "plain_text": ", since that’s my core tool as a developer. I’ll write about best practices, lessons learned, widgets, packages, recommendations, and my own projects. But I don’t want this blog to feel like a narrow Flutter manual. I’ll also branch into other areas: ",
+            "plain_text": ", since that’s my core tool as a developer. I’ll write about best practices, lessons learned, widgets, packages, and my own projects. But I don’t want this blog to feel like a narrow Flutter manual. I’ll also branch into other areas: ",
             "href": null
           },
           {
             "type": "text",
             "text": {
-              "content": "technology trends, AI tools, build-in-public updates, hackathons, conferences, science news, book reviews, and opinion pieces, ",
+              "content": "technology trends, AI tools, build-in-public updates, hackathons, conferences, science news, book reviews, opinion pieces, ",
               "link": null
             },
             "annotations": {
@@ -513,7 +515,7 @@
               "code": false,
               "color": "default"
             },
-            "plain_text": "technology trends, AI tools, build-in-public updates, hackathons, conferences, science news, book reviews, and opinion pieces, ",
+            "plain_text": "technology trends, AI tools, build-in-public updates, hackathons, conferences, science news, book reviews, opinion pieces, ",
             "href": null
           },
           {
@@ -1328,8 +1330,8 @@
     }
   ],
   "createdTime": "2025-09-30T03:23:00.000Z",
-  "lastEditedTime": "2025-10-01T00:07:00.000Z",
-  "lastUpdated": "2025-10-01T01:36:35.501Z",
-  "coverImage": "https://prod-files-secure.s3.us-west-2.amazonaws.com/4a6c1b93-843e-81cb-b4b1-00037c2b55fd/99a64d33-4660-4cda-b2aa-93e29b5ef0af/Unknown.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667AH2V36G%2F20251001%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251001T013635Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEHIaCXVzLXdlc3QtMiJIMEYCIQCO02%2BD7kxEQdZosZoB8a1FlEyte3%2FP0FBtpWa4nJ4w7wIhAIxBnl1%2FXpB2ttsN%2BDKXNyryRXs6R3r5pxD5%2BZN%2BDV94KogECPv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1Igx5S4fjHuf6LbRyZZUq3AMzUOEDL49Yl6hQM%2BN2iTswaH6RwihEcsTMVuoMKebSgotfbG5a3nvn2G0aLzk2a4LaMt8ZLObs8XWWsfxgTj4DlNLRlKV5ex33DNKG3XKCeLdR7KmGvwGcT1xlMf2CVaD8hkoNWqXg1b1XDz8ioLt2AVAZ47qsgizfrPoS3oUuXoLzg8F1YJVyzDHWMKnEeLJC2cSTmgkZg0%2BTDgW9kzcyEQf7eyfxrCVuIIel3CjeDn%2BsqloF9%2BiFYM9bM33wz9EvSN0haF6vphkz8TKBPzO%2BGpFXwgZJ6pctrzqNUlF%2F%2B6QnbVQYRe9PQiky0ZN0%2BEHRFaN14nwSyGwpEScs9EpIfiw%2B9dM82kUXkpAeiUF077mE9A2wbLzm3MHdT5nkqM0BAQWmf%2BPfhCXHTs8J30yyDhPqY%2FKvBF%2FDRtJzq5%2FmhhcAxzbHvJxYkUeM271C%2FHDOOWNm0qTNxXFPZU%2FLyDxNYsGdwQc%2Fu4RnMIw4%2Fs8w35k%2FA%2FbbLb0%2F4ibrIDP1W86ww1LndcRHh09KI9tdxofHCA6XqP37HimZ72BlxNoeNmNiAUKvivkJ%2FMP%2BQ%2Be%2Bteh8PQOfvKkWshbXAsuEhTd7tqIEk2eVvrJY8ox7JNtz4zRMM6deI6rbQCQ1%2FjCGifLGBjqkAfnfX4FMqKq%2B4E1H7qwRelh5uLSiiNQBdgaeGh6yKTdRKScM8USCYqVsPalJLHX3PE0QOjhTV8K6KrCCzMgL5WcxkIhKSuVJk3WHAZzNWuYxylNcd6wjHnu6ZgKaB9YKzMOHgaMFzMcJw5hSlWNdnPhoXhSNpcAB4YwXAseDXu4vIwqafppluzaUsns6MR7UaBUT4pCjGV%2BSNZUXGJhKknY1F7Xm&X-Amz-Signature=42c534ab3826f2f93054d8e14727e92ef70b5c18a6bcbc351e03738319704474&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+  "lastEditedTime": "2025-10-09T08:08:00.000Z",
+  "lastUpdated": "2025-10-18T19:43:06.994Z",
+  "coverImage": "/blog-images/a-new-orbit-flutter-tech-and-beyond-cover.jpg",
   "author": "Julia Agüero"
 }

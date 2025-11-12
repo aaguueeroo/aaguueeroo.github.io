@@ -1,5 +1,33 @@
 [
   {
+    "id": "286c1b93-843e-802d-b850-c3584675616d",
+    "title": "Can you fully vibe code an app? Creating Flatto for shared flats",
+    "slug": "flatto-learning-in-public-1",
+    "subtitle": "Testing the limits of AI-assisted development through vibe coding",
+    "metaTitle": "Can you fully vibe code an app? Creating Flatto for shared flats",
+    "metaDescription": "F",
+    "publishedDate": "2025-10-09",
+    "language": "English",
+    "series": "Flatto: build in public",
+    "tags": [
+      "#cursor",
+      "#learnInPublic"
+    ],
+    "postCategories": [
+      "Tech"
+    ],
+    "pointTo": [
+      "27ec1b93-843e-8001-9dea-ff3c8d1f5e93"
+    ],
+    "pointedBy": [],
+    "readTime": 13,
+    "createdTime": "2025-10-08T23:16:00.000Z",
+    "lastEditedTime": "2025-10-11T17:21:00.000Z",
+    "coverImage": "/blog-images/flatto-learning-in-public-1-cover.png",
+    "author": "Julia Agüero",
+    "contentPreview": "Copilot, Cursor, ChatGPT, Perplexity, Claude, Gemini, Windsurf… we keep hearing and reading these names everywhere. Everyone’s talking about vibe..."
+  },
+  {
     "id": "27ec1b93-843e-80a0-96a7-c735a7bd1ec6",
     "title": "A New Orbit: Flutter, Tech, and Beyond",
     "slug": "a-new-orbit-flutter-tech-and-beyond",
@@ -10,10 +38,12 @@
     "language": "English",
     "tags": [],
     "postCategories": [],
+    "pointTo": [],
+    "pointedBy": [],
     "readTime": 3,
     "createdTime": "2025-09-30T03:23:00.000Z",
-    "lastEditedTime": "2025-10-01T00:07:00.000Z",
-    "coverImage": "https://prod-files-secure.s3.us-west-2.amazonaws.com/4a6c1b93-843e-81cb-b4b1-00037c2b55fd/99a64d33-4660-4cda-b2aa-93e29b5ef0af/Unknown.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667AH2V36G%2F20251001%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251001T013635Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEHIaCXVzLXdlc3QtMiJIMEYCIQCO02%2BD7kxEQdZosZoB8a1FlEyte3%2FP0FBtpWa4nJ4w7wIhAIxBnl1%2FXpB2ttsN%2BDKXNyryRXs6R3r5pxD5%2BZN%2BDV94KogECPv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1Igx5S4fjHuf6LbRyZZUq3AMzUOEDL49Yl6hQM%2BN2iTswaH6RwihEcsTMVuoMKebSgotfbG5a3nvn2G0aLzk2a4LaMt8ZLObs8XWWsfxgTj4DlNLRlKV5ex33DNKG3XKCeLdR7KmGvwGcT1xlMf2CVaD8hkoNWqXg1b1XDz8ioLt2AVAZ47qsgizfrPoS3oUuXoLzg8F1YJVyzDHWMKnEeLJC2cSTmgkZg0%2BTDgW9kzcyEQf7eyfxrCVuIIel3CjeDn%2BsqloF9%2BiFYM9bM33wz9EvSN0haF6vphkz8TKBPzO%2BGpFXwgZJ6pctrzqNUlF%2F%2B6QnbVQYRe9PQiky0ZN0%2BEHRFaN14nwSyGwpEScs9EpIfiw%2B9dM82kUXkpAeiUF077mE9A2wbLzm3MHdT5nkqM0BAQWmf%2BPfhCXHTs8J30yyDhPqY%2FKvBF%2FDRtJzq5%2FmhhcAxzbHvJxYkUeM271C%2FHDOOWNm0qTNxXFPZU%2FLyDxNYsGdwQc%2Fu4RnMIw4%2Fs8w35k%2FA%2FbbLb0%2F4ibrIDP1W86ww1LndcRHh09KI9tdxofHCA6XqP37HimZ72BlxNoeNmNiAUKvivkJ%2FMP%2BQ%2Be%2Bteh8PQOfvKkWshbXAsuEhTd7tqIEk2eVvrJY8ox7JNtz4zRMM6deI6rbQCQ1%2FjCGifLGBjqkAfnfX4FMqKq%2B4E1H7qwRelh5uLSiiNQBdgaeGh6yKTdRKScM8USCYqVsPalJLHX3PE0QOjhTV8K6KrCCzMgL5WcxkIhKSuVJk3WHAZzNWuYxylNcd6wjHnu6ZgKaB9YKzMOHgaMFzMcJw5hSlWNdnPhoXhSNpcAB4YwXAseDXu4vIwqafppluzaUsns6MR7UaBUT4pCjGV%2BSNZUXGJhKknY1F7Xm&X-Amz-Signature=42c534ab3826f2f93054d8e14727e92ef70b5c18a6bcbc351e03738319704474&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    "lastEditedTime": "2025-10-09T08:08:00.000Z",
+    "coverImage": "/blog-images/a-new-orbit-flutter-tech-and-beyond-cover.jpg",
     "author": "Julia Agüero",
     "contentPreview": "Thanks for stopping by! This blog is meant to be a space where I write down what I learn, share my experiences, and hopefully pass along something..."
   }

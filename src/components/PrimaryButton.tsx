@@ -12,10 +12,31 @@ const bounce = keyframes`
 interface PrimaryButtonProps extends ButtonProps {
   showArrow?: boolean;
   responsiveArrow?: boolean;
+  arrowSize?: {
+    xs?: string;
+    sm?: string;
+    md?: string;
+  };
 }
 
-const PrimaryButton = ({ children, showArrow = true, responsiveArrow = false, ...props }: PrimaryButtonProps) => {
+const PrimaryButton = ({
+  children,
+  showArrow = true,
+  responsiveArrow = false,
+  arrowSize,
+  ...props
+}: PrimaryButtonProps) => {
   const theme = useTheme();
+  const defaultResponsiveSizes = {
+    xs: '1.5rem',
+    sm: '2.5rem',
+    md: '3.5rem',
+  };
+  const resolvedArrowSizes = {
+    xs: arrowSize?.xs ?? defaultResponsiveSizes.xs,
+    sm: arrowSize?.sm ?? defaultResponsiveSizes.sm,
+    md: arrowSize?.md ?? defaultResponsiveSizes.md,
+  };
 
   return (
     <Button
@@ -33,14 +54,14 @@ const PrimaryButton = ({ children, showArrow = true, responsiveArrow = false, ..
               color="primary" 
               sx={responsiveArrow ? {
                 fontSize: {
-                  xs: '1.5rem',
-                  sm: '2.5rem',
-                  md: '3.5rem'
+                  xs: resolvedArrowSizes.xs,
+                  sm: resolvedArrowSizes.sm,
+                  md: resolvedArrowSizes.md,
                 },
                 width: {
-                  xs: '1.5rem',
-                  sm: '2.5rem',
-                  md: '3.5rem'
+                  xs: resolvedArrowSizes.xs,
+                  sm: resolvedArrowSizes.sm,
+                  md: resolvedArrowSizes.md,
                 },
                 display: 'flex',
                 alignItems: 'center',

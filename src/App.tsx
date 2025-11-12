@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 import { useEffect } from "react";
 import { HelmetProvider } from "react-helmet-async";
 import HomePage from "./pages/home/HomePage";
@@ -30,7 +30,8 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/quote" element={<QuotePage />} />
+        <Route path="/build-your-app" element={<QuotePage />} />
+        <Route path="/quote" element={<Navigate to="/build-your-app" replace />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:slug" element={<BlogPage />} />
         <Route path="/portfolio" element={<PortfolioPage />} />
