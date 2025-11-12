@@ -111,7 +111,7 @@ export function AboutFinalCTA() {
           mb: 4
         }}
       >
-        Give me your app description and get a quote for free, or simply send me an email
+        Give me your app description and get a quote for free.
       </Typography>
 
       <Box sx={{...classes.buttonsContainer}}>
