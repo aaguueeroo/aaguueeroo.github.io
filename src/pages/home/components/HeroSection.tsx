@@ -70,7 +70,7 @@ const HeroSection = () => {
           }}
           gutterBottom
         >
-          Get a premium app{" "}
+          Get a premium app{" "}<br></br>
           <span
             style={{
               color: theme.palette.primary.main,
@@ -86,6 +86,12 @@ const HeroSection = () => {
           sx={{
             color: theme.palette.secondary.main,
             fontWeight: 400,
+            fontSize: {
+              xs: "1.5rem",
+              sm: "1.75rem",
+              md: "2.25rem",
+              lg: "2.5rem",
+            },
             marginTop: theme.spacing(2),
             marginBottom: theme.spacing(4),
             textShadow: "1px 1px 2px rgba(0, 0, 0, 0.2)",
@@ -95,8 +101,28 @@ const HeroSection = () => {
           Share your vision, values and personality. I'll turn them into an app
           that truly represents you.
         </Typography>
-        <PrimaryButton onClick={() => navigate('/build-your-app')}>
-          <span style={{ display: 'none' }} className="show-xs">Get quote</span>
+        <PrimaryButton
+          onClick={() => navigate('/build-your-app')}
+          sx={{
+            fontSize: {
+              xs: "1.2rem",
+              sm: "1.3rem",
+              md: "1.4rem",
+              lg: "1.5rem",
+            },
+            paddingX: {
+              xs: theme.spacing(6),
+              sm: theme.spacing(8),
+              md: theme.spacing(10),
+            },
+            paddingY: {
+              xs: theme.spacing(2),
+              sm: theme.spacing(2.5),
+              md: theme.spacing(3),
+            },
+          }}
+        >
+          <span style={{ display: 'none' }} className="show-xs">Start building</span>
           <span className="hide-xs">Start building</span>
         </PrimaryButton>
       </Box>

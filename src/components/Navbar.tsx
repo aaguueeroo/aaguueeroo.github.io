@@ -5,17 +5,16 @@ import Menu from "./menu/Menu";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { makeStyles } from "@mui/styles";
-import { useTheme } from "@mui/material/styles";
-import { MaxWidths } from "../theme/constants";
 
 const useStyles = makeStyles(() => ({
   navBox: {
     display: "flex",
+    alignItems: "center",
     justifyContent: "space-between",
     height: "100%",
     transition: "background-color 0.3s ease",
-    maxWidth: MaxWidths.layout,
     width: "100%",
+    padding: 0,
   },
   appBar: {
     boxShadow: "none !important",
@@ -35,7 +34,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
-  const classes = useStyles(useTheme());
+  const classes = useStyles();
 
   const isHomePage = location.pathname === "/";
 

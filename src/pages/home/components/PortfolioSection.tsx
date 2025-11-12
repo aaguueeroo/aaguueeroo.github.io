@@ -76,7 +76,7 @@ const PortfolioSection = () => {
           >
             Get to know my work
           </Typography>
-          <PrimaryButton>
+          <PrimaryButton sx={{ fontSize: "1.5rem" }}>
             See projects
           </PrimaryButton>
         </Box>

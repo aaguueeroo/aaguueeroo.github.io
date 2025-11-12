@@ -59,73 +59,104 @@ let theme = createTheme({
   typography: {
     fontFamily: ["Golos Text", "sans-serif"].join(","),
     h1: {
-      fontSize: "6em",
-      '@media (min-width:600px)': {
-        fontSize: "3.5rem",
-      },
-      fontWeight: 700,
       fontFamily: ["Golos Text", "sans-serif"].join(","),
-    },
-    h2: {
-      fontSize: "5em",
-      '@media (min-width:600px)': {
+      fontWeight: 700,
+      lineHeight: 1.2,
+      fontSize: "2.5rem",
+      "@media (min-width:600px)": {
         fontSize: "3rem",
       },
-      fontWeight: 700,
+      "@media (min-width:900px)": {
+        fontSize: "3.5rem",
+      },
+    },
+    h2: {
       fontFamily: ["Golos Text", "sans-serif"].join(","),
+      fontWeight: 700,
+      lineHeight: 1.25,
+      fontSize: "2rem",
+      "@media (min-width:600px)": {
+        fontSize: "2.5rem",
+      },
+      "@media (min-width:900px)": {
+        fontSize: "3rem",
+      },
     },
     h3: {
-      fontSize: "4.5rem",
-      fontWeight: 700,
       fontFamily: ["Golos Text", "sans-serif"].join(","),
+      fontWeight: 700,
+      lineHeight: 1.3,
+      fontSize: "1.75rem",
+      "@media (min-width:900px)": {
+        fontSize: "2.125rem",
+      },
     },
     h4: {
-      fontSize: "4rem",
-      fontWeight: 700,
       fontFamily: ["Golos Text", "sans-serif"].join(","),
+      fontWeight: 700,
+      lineHeight: 1.35,
+      fontSize: "1.5rem",
+      "@media (min-width:900px)": {
+        fontSize: "1.875rem",
+      },
     },
     h5: {
-      fontSize: "3.5rem",
-      fontWeight: 700,
       fontFamily: ["Golos Text", "sans-serif"].join(","),
+      fontWeight: 700,
+      lineHeight: 1.35,
+      fontSize: "1.25rem",
+      "@media (min-width:900px)": {
+        fontSize: "1.5rem",
+      },
     },
     h6: {
-      fontSize: "3rem",
-      fontWeight: 700,
       fontFamily: ["Golos Text", "sans-serif"].join(","),
+      fontWeight: 700,
+      lineHeight: 1.4,
+      fontSize: "1.125rem",
+      "@media (min-width:900px)": {
+        fontSize: "1.25rem",
+      },
     },
     subtitle1: {
-      fontSize: "2rem",
-      fontWeight: 700,
       fontFamily: ["Golos Text", "sans-serif"].join(","),
+      fontWeight: 600,
+      lineHeight: 1.5,
+      fontSize: "1.0625rem",
     },
     subtitle2: {
-      fontSize: "1.75rem",
-      fontWeight: 700,
       fontFamily: ["Golos Text", "sans-serif"].join(","),
+      fontWeight: 600,
+      lineHeight: 1.45,
+      fontSize: "0.9375rem",
     },
     button: {
-      textTransform: "none",
-      fontWeight: 700,
       fontFamily: ["Golos Text", "sans-serif"].join(","),
-      fontSize: "1.5rem",
+      fontWeight: 600,
+      textTransform: "none",
+      fontSize: "1rem",
+      lineHeight: 1.4,
     },
     body1: {
-      fontSize: "2.5rem",
-      fontWeight: 400,
-      lineHeight: 1.5,
       fontFamily: ["Golos Text", "sans-serif"].join(","),
-      
+      fontWeight: 400,
+      lineHeight: 1.6,
+      fontSize: "1rem",
+      "@media (min-width:900px)": {
+        fontSize: "1.0625rem",
+      },
     },
     body2: {
-      fontSize: "1.25rem",
-      fontWeight: 400,
       fontFamily: ["Golos Text", "sans-serif"].join(","),
+      fontWeight: 400,
+      lineHeight: 1.6,
+      fontSize: "0.9375rem",
     },
     caption: {
-      fontSize: "1rem",
-      fontWeight: 400,
       fontFamily: ["Golos Text", "sans-serif"].join(","),
+      fontWeight: 400,
+      lineHeight: 1.4,
+      fontSize: "0.8125rem",
     },
   },
 });

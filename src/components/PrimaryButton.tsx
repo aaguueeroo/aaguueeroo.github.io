@@ -24,6 +24,7 @@ const PrimaryButton = ({
   showArrow = true,
   responsiveArrow = false,
   arrowSize,
+  sx,
   ...props
 }: PrimaryButtonProps) => {
   const theme = useTheme();
@@ -37,6 +38,23 @@ const PrimaryButton = ({
     sm: arrowSize?.sm ?? defaultResponsiveSizes.sm,
     md: arrowSize?.md ?? defaultResponsiveSizes.md,
   };
+
+  const defaultSx = {
+    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+    padding: theme.spacing(2, 12),
+    display: "flex",
+    alignItems: "center",
+    gap: theme.spacing(1),
+    transition: 'all 0.3s ease',
+    transform: 'scale(1)',
+    "&:hover": {
+      boxShadow: "0 6px 8px rgba(0, 0, 0, 0.2)",
+      transform: 'scale(1.05)',
+      bgcolor: theme.palette.primary.main,
+    },
+  } as const;
+
+  const incomingSx = Array.isArray(sx) ? sx : sx ? [sx] : [];
 
   return (
     <Button
@@ -87,20 +105,7 @@ const PrimaryButton = ({
           </Box>
         ) : null
       }
-      sx={{
-        boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-        padding: theme.spacing(2, 12),
-        display: "flex",
-        alignItems: "center",
-        gap: theme.spacing(1),
-        transition: 'all 0.3s ease',
-        transform: 'scale(1)',
-        "&:hover": {
-          boxShadow: "0 6px 8px rgba(0, 0, 0, 0.2)",
-          transform: 'scale(1.05)',
-          bgcolor: theme.palette.primary.main,
-        },
-      }}
+      sx={[defaultSx, ...incomingSx]}
       {...props}
     >
       {children}
