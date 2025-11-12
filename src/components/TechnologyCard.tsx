@@ -1,6 +1,4 @@
 import { Card, CardContent, Typography, Box } from "@mui/material";
-import { SiFlutter, SiSupabase, SiPostgresql } from "react-icons/si";
-
 interface TechnologyCardProps {
   name: string;
   category: string;
@@ -19,36 +17,41 @@ const TechnologyCard = ({
   color = "#1976D2",
 }: TechnologyCardProps) => {
   // Technology icons mapping
+  const renderCustomIcon = (src: string, alt: string): JSX.Element => (
+    <Box
+      component="img"
+      src={src}
+      alt={alt}
+      sx={{
+        width: 32,
+        height: 32,
+        filter: "brightness(0) invert(1)",
+        objectFit: "contain"
+      }}
+    />
+  );
   const getTechnologyIcon = (techName: string) => {
     const iconMap: { [key: string]: JSX.Element } = {
-      "Cursor AI": (
-        <Box
-          component="img"
-          src="https://img.icons8.com/?size=512&id=DiGZkjCzyZXn&format=png"
-          alt="Cursor AI"
-          sx={{
-            width: 32,
-            height: 32,
-            filter: "brightness(0) invert(1)", // Makes the image white
-            objectFit: "contain"
-          }}
-        />
+      "Cursor AI": renderCustomIcon(
+        "https://img.icons8.com/?size=512&id=DiGZkjCzyZXn&format=png",
+        "Cursor AI"
       ),
-      Flutter: <SiFlutter size={32} color="white" />,
-      Supabase: <SiSupabase size={32} color="white" />,
+      Flutter: renderCustomIcon(
+        "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/flutter.svg",
+        "Flutter"
+      ),
+      Supabase: renderCustomIcon(
+        "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/supabase.svg",
+        "Supabase"
+      ),
+      PostgreSQL: renderCustomIcon(
+        "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/postgresql.svg",
+        "PostgreSQL"
+      )
     };
-    return iconMap[techName] || (
-      <Box
-        component="img"
-        src="https://img.icons8.com/?size=512&id=DiGZkjCzyZXn&format=png"
-        alt="Default"
-        sx={{
-          width: 32,
-          height: 32,
-          filter: "brightness(0) invert(1)",
-          objectFit: "contain"
-        }}
-      />
+    return iconMap[techName] || renderCustomIcon(
+      "https://img.icons8.com/?size=512&id=DiGZkjCzyZXn&format=png",
+      "Default"
     );
   };
 

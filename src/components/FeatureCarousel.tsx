@@ -6,6 +6,7 @@ interface Feature {
   title: string;
   description: string;
   image: string;
+  imageAlt?: string;
 }
 
 interface FeatureCarouselProps {
@@ -130,8 +131,10 @@ const FeatureCarousel = ({ features, onImageClick }: FeatureCarouselProps) => {
                   <Box
                     component="img"
                     src={feature.image}
-                    alt={feature.title}
-                    onClick={() => onImageClick(feature.image, feature.title)}
+                    alt={feature.imageAlt ?? feature.title}
+                    onClick={() =>
+                      onImageClick(feature.image, feature.imageAlt ?? feature.title)
+                    }
                     sx={{
                       width: "100%",
                       height: "100%",
