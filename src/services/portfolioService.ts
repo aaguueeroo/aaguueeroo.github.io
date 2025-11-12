@@ -1,4 +1,7 @@
 import { Project } from "../types/portfolio";
+import urbanRunnersImage from "../assets/images/portfolio/urban-runners-1.png";
+import app4itImage from "../assets/images/portfolio/app4it-thumbnail.png";
+import flattoImage from "../assets/images/portfolio/flatto-hero.png";
 
 const showUrbanRunners = import.meta.env.VITE_SHOW_URBAN_RUNNERS === "true";
 
@@ -10,7 +13,7 @@ const rawProjects: Project[] = [
       "A comprehensive mobile application for running clubs that enables users to discover, join, and create running events. The app features user authorization, race management, admin approval workflows, and personalized user profiles with customizable settings.",
     shortDescription:
       "Mobile app for running clubs with event management and user profiles",
-    image: "/src/assets/images/portfolio/urban-runners-1.png",
+    image: urbanRunnersImage,
     technologies: [
       "Flutter",
       "Supabase",
@@ -31,7 +34,7 @@ const rawProjects: Project[] = [
       "App4it is a social platform that helps young adults discover local events, share memories, and build real-world connections.",
     shortDescription:
       "Social app for finding local events, sharing memories, and growing real-world connections.",
-    image: "/src/assets/images/portfolio/app4it-thumbnail.png",
+    image: app4itImage,
     technologies: ["Flutter", "Supabase", "Figma", "Jira"],
     category: "Mobile Development",
     featured: false,
@@ -44,7 +47,7 @@ const rawProjects: Project[] = [
       "A mobile app that helps flatmates organize their household life, reduce friction, and keep everyone on the same page. Features include shared shopping lists, cleaning schedules, real-time feed, and apartment management.",
     shortDescription:
       "Mobile app for shared living - shopping, cleaning, and communication",
-    image: "/src/assets/images/portfolio/flatto-hero.png",
+    image: flattoImage,
     technologies: ["Flutter", "Supabase", "SQL", "Cursor AI"],
     category: "Mobile Development",
     featured: true,

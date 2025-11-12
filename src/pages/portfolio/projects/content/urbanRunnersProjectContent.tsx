@@ -4,6 +4,10 @@ import {
   ProjectFeaturesSectionContent,
   ProjectPageContent,
 } from "../projectContentTypes";
+import urbanRunnersImage1 from "../../../../assets/images/portfolio/urban-runners-1.png";
+import urbanRunnersImage2 from "../../../../assets/images/portfolio/urban-runners-2.png";
+import urbanRunnersImage3 from "../../../../assets/images/portfolio/urban-runners-3.png";
+import urbanRunnersImage4 from "../../../../assets/images/portfolio/urban-runners-4.png";
 
 export const urbanRunnersProjectContent: ProjectPageContent = {
   slug: "urban-runners",
@@ -11,10 +15,10 @@ export const urbanRunnersProjectContent: ProjectPageContent = {
     title: "Urban Runners - Julia's Portfolio",
     description:
       "Mobile app for running clubs that handles event discovery, race creation, and role-based moderation.",
-    image: "/src/assets/images/portfolio/urban-runners-1.png",
+    image: urbanRunnersImage1,
   },
   hero: {
-    coverImage: "/src/assets/images/portfolio/urban-runners-1.png",
+    coverImage: urbanRunnersImage1,
     coverImageAlt: "Urban Runners application preview",
     title: "Urban Runners – Community Driven Racing",
     subtitle:
@@ -123,7 +127,7 @@ const urbanRunnersFeaturesSection: ProjectFeaturesSectionContent = {
       title: "Multi-provider Authorization",
       description:
         "Supports email/password alongside Google and social logins with secure session handling and password recovery.",
-      image: "/src/assets/images/portfolio/urban-runners-1.png",
+      image: urbanRunnersImage1,
       imageAlt: "Urban Runners authorization screens",
     },
     {
@@ -131,7 +135,7 @@ const urbanRunnersFeaturesSection: ProjectFeaturesSectionContent = {
       title: "Race Management",
       description:
         "Tools for browsing nearby events, creating races with detailed logistics, and tracking participation history.",
-      image: "/src/assets/images/portfolio/urban-runners-2.png",
+      image: urbanRunnersImage2,
       imageAlt: "Urban Runners race management screens",
     },
     {
@@ -139,7 +143,7 @@ const urbanRunnersFeaturesSection: ProjectFeaturesSectionContent = {
       title: "Admin Approval System",
       description:
         "Role-based dashboard where administrators moderate new races, handle bulk approvals, and maintain event quality.",
-      image: "/src/assets/images/portfolio/urban-runners-3.png",
+      image: urbanRunnersImage3,
       imageAlt: "Urban Runners admin approval screens",
     },
     {
@@ -147,7 +151,7 @@ const urbanRunnersFeaturesSection: ProjectFeaturesSectionContent = {
       title: "User Profiles & Settings",
       description:
         "Personalized experience with running stats, notification controls, and privacy preferences per runner.",
-      image: "/src/assets/images/portfolio/urban-runners-4.png",
+      image: urbanRunnersImage4,
       imageAlt: "Urban Runners profile screens",
     },
   ],

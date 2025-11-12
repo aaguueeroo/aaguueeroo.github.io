@@ -4,6 +4,15 @@ import {
   ProjectFeaturesSectionContent,
   ProjectPageContent,
 } from "../projectContentTypes";
+import flattoFeedImage from "../../../../assets/images/portfolio/flatto-feed.png";
+import flattoHeroImage from "../../../../assets/images/portfolio/flatto-hero.png";
+import flattoShoppingImage from "../../../../assets/images/portfolio/flatto-shopping.png";
+import flattoCleaningImage from "../../../../assets/images/portfolio/flatto-cleaning.png";
+import flattoApartmentImage from "../../../../assets/images/portfolio/flatto-apartment.png";
+import flattoProfileImage from "../../../../assets/images/portfolio/flatto-profile.png";
+import cursorLogo from "../../../../assets/images/tech/cursor-logo.png";
+import flutterLogo from "../../../../assets/images/tech/flutter-logo.png";
+import supabaseLogo from "../../../../assets/images/tech/supabase-logo.png";
 
 export const flattoProjectContent: ProjectPageContent = {
   slug: "flatto",
@@ -11,10 +20,10 @@ export const flattoProjectContent: ProjectPageContent = {
     title: "Flatto - Julia's Portfolio",
     description:
       "Mobile app for shared living with shopping lists, cleaning schedules, and a shared feed.",
-    image: "/src/assets/images/portfolio/flatto-feed.png",
+    image: flattoFeedImage,
   },
   hero: {
-    coverImage: "/src/assets/images/portfolio/flatto-hero.png",
+    coverImage: flattoHeroImage,
     coverImageAlt: "Flatto application hero background",
     title: "Flatto – Making Shared Living Effortless",
     subtitle:
@@ -47,7 +56,7 @@ export const flattoProjectContent: ProjectPageContent = {
         name: "Cursor AI",
         category: "Development Tools",
         description: "AI-assisted coding accelerated prototyping and refactoring.",
-        logo: "/src/assets/images/tech/cursor-logo.png",
+        logo: cursorLogo,
         chips: ["AI Agent"],
         color: "#424242",
       },
@@ -55,7 +64,7 @@ export const flattoProjectContent: ProjectPageContent = {
         name: "Flutter",
         category: "Frontend",
         description: "Cross-platform UI with auto_route navigation and provider for state.",
-        logo: "/src/assets/images/tech/flutter-logo.png",
+        logo: flutterLogo,
         chips: ["auto_route", "provider"],
         color: "#1976D2",
       },
@@ -64,7 +73,7 @@ export const flattoProjectContent: ProjectPageContent = {
         category: "Backend",
         description:
           "Authentication, Postgres database, storage, and real-time subscriptions to keep flatmates in sync.",
-        logo: "/src/assets/images/tech/supabase-logo.png",
+        logo: supabaseLogo,
         chips: ["PostgreSQL"],
         color: "#2D5016",
       },
@@ -117,7 +126,7 @@ const flattoFeaturesSection: ProjectFeaturesSectionContent = {
       title: "Activity Feed",
       description:
         "Captures the latest cleaning and shopping activity so that every flatmate knows what happened without chasing updates.",
-      image: "/src/assets/images/portfolio/flatto-feed.png",
+      image: flattoFeedImage,
       imageAlt: "Flatto activity feed screen",
     },
     {
@@ -125,7 +134,7 @@ const flattoFeaturesSection: ProjectFeaturesSectionContent = {
       title: "Shared Shopping List",
       description:
         "A synced grocery list that records who added each item, purchase history, and buyer tracking for complete transparency.",
-      image: "/src/assets/images/portfolio/flatto-shopping.png",
+      image: flattoShoppingImage,
       imageAlt: "Flatto shared shopping list screen",
     },
     {
@@ -133,7 +142,7 @@ const flattoFeaturesSection: ProjectFeaturesSectionContent = {
       title: "Cleaning Scheduler",
       description:
         "Weighted rotations balance chores fairly and keep everyone accountable with reminders and feed updates.",
-      image: "/src/assets/images/portfolio/flatto-cleaning.png",
+      image: flattoCleaningImage,
       imageAlt: "Flatto cleaning scheduler screen",
     },
     {
@@ -141,7 +150,7 @@ const flattoFeaturesSection: ProjectFeaturesSectionContent = {
       title: "Apartment & Room Management",
       description:
         "Apartment details, expenses, and room information live side-by-side so newcomers understand costs and context instantly.",
-      image: "/src/assets/images/portfolio/flatto-apartment.png",
+      image: flattoApartmentImage,
       imageAlt: "Flatto apartment management screen",
     },
     {
@@ -149,7 +158,7 @@ const flattoFeaturesSection: ProjectFeaturesSectionContent = {
       title: "Supabase-backed Profiles",
       description:
         "Authenticated user profiles let flatmates recognise each other, manage roles, and keep their details up to date.",
-      image: "/src/assets/images/portfolio/flatto-profile.png",
+      image: flattoProfileImage,
       imageAlt: "Flatto profile screen",
     },
   ],
