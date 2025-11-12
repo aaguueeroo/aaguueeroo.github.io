@@ -4,6 +4,7 @@ export interface Project {
   description: string;
   shortDescription: string;
   image: string;
+  imageObjectPosition?: string;
   technologies: string[];
   category: string;
   featured: boolean;

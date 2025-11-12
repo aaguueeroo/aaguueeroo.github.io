@@ -52,6 +52,7 @@ const rawProjects: Project[] = [
     category: "Mobile Development",
     featured: true,
     slug: "flatto",
+    imageObjectPosition: "60% 70%",
   },
   {
     id: "hymate",

@@ -22,7 +22,6 @@ const PortfolioOverviewSection = () => {
   const projects = getAllProjects().slice(0, 3);
 
   const handleCardClick = (
-    projectId: string,
     slug?: string,
     liveUrl?: string
   ) => {
@@ -110,7 +109,7 @@ const PortfolioOverviewSection = () => {
             >
               <CardActionArea
                 onClick={() =>
-                  handleCardClick(project.id, project.slug, project.liveUrl)
+                  handleCardClick(project.slug, project.liveUrl)
                 }
                 sx={{
                   display: "flex",

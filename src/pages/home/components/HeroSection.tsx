@@ -70,7 +70,7 @@ const HeroSection = () => {
           }}
           gutterBottom
         >
-          Get a premium app{" "}<br></br>
+          Get a premium app{" "}<br/>
           <span
             style={{
               color: theme.palette.primary.main,

@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LaunchIcon from "@mui/icons-material/Launch";
 import { Project } from "../../../types/portfolio";
-import { Typography as TypographyConstants } from '../../../theme/constants';
 
 interface PortfolioCardProps {
   project: Project;
@@ -60,11 +59,11 @@ const PortfolioCard = ({ project }: PortfolioCardProps) => {
         sx={{ 
           objectFit: "cover", 
           borderRadius: 0.3,
-          objectPosition: project.id === "flatto" ? "60% 70%" : "center"
+          objectPosition: project.imageObjectPosition ?? "center"
         }}
       />
       <CardContent sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>
-        <Typography variant="h6" component="h4" sx={{ mb: 1, ...TypographyConstants.h3 }}>
+        <Typography variant="h6" component="h4" sx={{ mb: 1 }}>
           {project.title}
         </Typography>
         

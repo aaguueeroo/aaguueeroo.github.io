@@ -1,7 +1,9 @@
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import LaunchIcon from "@mui/icons-material/Launch";
 import { Box, Button, Chip, Typography } from "@mui/material";
+import { useEffect, useState } from "react";
 import Navbar from "../../../components/Navbar";
+import defaultCoverImage from "../../../assets/images/portfolio/app4it-thumbnail.png";
 import { ProjectHeroAction, ProjectHeroContent } from "../projects/projectContentTypes";
 
 type ProjectHeroSectionProps = {
@@ -15,6 +17,27 @@ const ProjectHeroSection = ({
   onNavigateBack,
   onPrimaryActionClick,
 }: ProjectHeroSectionProps) => {
+  const [coverImage, setCoverImage] = useState(hero.coverImage);
+
+  useEffect(() => {
+    let isMounted = true;
+    const image = new Image();
+    image.src = hero.coverImage;
+    image.onload = () => {
+      if (isMounted) {
+        setCoverImage(hero.coverImage);
+      }
+    };
+    image.onerror = () => {
+      if (isMounted) {
+        setCoverImage(defaultCoverImage);
+      }
+    };
+    return () => {
+      isMounted = false;
+    };
+  }, [hero.coverImage]);
+
   const handlePrimaryActionClick = (action: ProjectHeroAction) => {
     onPrimaryActionClick?.(action);
     window.open(action.url, "_blank");
@@ -28,7 +51,7 @@ const ProjectHeroSection = ({
         height: "100vh",
         width: "100vw",
         backgroundColor: "background.default",
-        backgroundImage: `url('${hero.coverImage}')`,
+        backgroundImage: coverImage ? `url('${coverImage}')` : undefined,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

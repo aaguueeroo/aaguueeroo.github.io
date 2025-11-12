@@ -18,8 +18,8 @@ const TechnologyGrid = ({ technologies }: TechnologyGridProps) => {
   return (
     <Box>
       <Grid container spacing={4} justifyContent="center">
-        {technologies.map((tech, index) => (
-          <Grid size={{ xs: 12, sm: 6, md: 4 }} key={index} sx={{ mb: { xs: 3, sm: 0 } }}>
+        {technologies.map((tech) => (
+          <Grid size={{ xs: 12, sm: 6, md: 4 }} key={`${tech.name}-${tech.category}`} sx={{ mb: { xs: 3, sm: 0 } }}>
             <TechnologyCard
               name={tech.name}
               category={tech.category}

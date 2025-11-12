@@ -105,9 +105,9 @@ const TechnologyCard = ({
 
         {/* Chips */}
         <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, justifyContent: "center" }}>
-          {chips.map((chip, index) => (
+          {chips.map((chip) => (
             <Box
-              key={index}
+              key={`${name}-${chip}`}
               sx={{
                 px: 2,
                 py: 0.5,

@@ -108,46 +108,67 @@ const FeatureCarousel = ({ features, onImageClick }: FeatureCarouselProps) => {
               </Box>
 
               {/* Image Section */}
-              <Box sx={{ 
-                flex: 1,
-                order: { xs: 1, md: isImageLeft ? 1 : 2 },
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center"
-              }}>
-                <Box sx={{ 
-                  position: "relative",
-                  width: "100%",
-                  maxWidth: { xs: "250px", md: "320px" },
-                  height: { xs: "280px", md: "350px" },
-                  borderRadius: 0.2,
-                  overflow: "hidden",
-                  transition: "all 0.3s ease-in-out",
-                  cursor: "pointer",
-                  "&:hover": {
-                    transform: "translateY(-4px)"
+              <Box
+                sx={{
+                  flex: 1,
+                  order: { xs: 1, md: isImageLeft ? 1 : 2 },
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center"
+                }}
+              >
+                <Box
+                  component="button"
+                  type="button"
+                  onClick={() =>
+                    onImageClick(feature.image, feature.imageAlt ?? feature.title)
                   }
-                }}>
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                      event.preventDefault();
+                      onImageClick(feature.image, feature.imageAlt ?? feature.title);
+                    }
+                  }}
+                  aria-label={`Open ${feature.title} image`}
+                  sx={{
+                    position: "relative",
+                    width: "100%",
+                    maxWidth: { xs: "250px", md: "320px" },
+                    height: { xs: "280px", md: "350px" },
+                    borderRadius: 0.2,
+                    overflow: "hidden",
+                    transition: "all 0.3s ease-in-out",
+                    cursor: "pointer",
+                    border: 0,
+                    padding: 0,
+                    backgroundColor: "transparent",
+                    "&:hover": {
+                      transform: "translateY(-4px)"
+                    },
+                    "&:focus-visible": {
+                      outline: "2px solid currentColor",
+                      outlineOffset: "4px"
+                    }
+                  }}
+                >
                   <Box
                     component="img"
                     src={feature.image}
                     alt={feature.imageAlt ?? feature.title}
-                    onClick={() =>
-                      onImageClick(feature.image, feature.imageAlt ?? feature.title)
-                    }
                     sx={{
                       width: "100%",
                       height: "100%",
                       objectFit: "cover",
                       objectPosition: getObjectPosition(feature.title),
-                      display: "block"
+                      display: "block",
+                      pointerEvents: "none"
                     }}
                   />
                   {/* Gradient Overlay */}
                   <Box
                     sx={{
                       position: "absolute",
-                      top: feature.title.toLowerCase().includes('feed') ? "0" : "0",
+                      top: "0",
                       left: 0,
                       right: 0,
                       height: "25%",
