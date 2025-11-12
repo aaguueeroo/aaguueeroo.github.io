@@ -1,8 +1,6 @@
 import { Box, Typography } from "@mui/material";
-import ProjectExtraSection from "../../components/ProjectExtraSection";
 import ProjectFeaturesSection from "../../components/ProjectFeaturesSection";
 import {
-  ProjectExtraSectionContent,
   ProjectFeaturesSectionContent,
   ProjectPageContent,
 } from "../projectContentTypes";
@@ -26,7 +24,7 @@ export const urbanRunnersProjectContent: ProjectPageContent = {
     technologies: [
       "Flutter",
       "Dart",
-      "Firebase",
+      "Supabase",
       "Google Maps API",
       "Provider",
       "Push Notifications",
@@ -43,7 +41,7 @@ export const urbanRunnersProjectContent: ProjectPageContent = {
       "The product integrates authentication, data management, and moderation so that user-generated events remain trustworthy and relevant for the community.",
     ],
     bulletPoints: [
-      "Secure multi-provider authentication handled with Firebase Auth",
+      "Secure multi-provider authentication handled with Supabase Auth",
       "Event discovery with geolocation and calendar-friendly filtering",
       "Administrative approval flow that keeps user generated events high quality",
     ],
@@ -69,8 +67,8 @@ export const urbanRunnersProjectContent: ProjectPageContent = {
         name: "Supabase",
         category: "Backend",
         description:
-          "Authentication, Firestore database, and Cloud Functions coordinate secure data flows and validations.",
-        chips: ["Firestore", "Cloud Functions"],
+          "Authentication, Postgres database, and edge functions coordinate secure data flows and validations.",
+        chips: ["Postgres", "Edge Functions"],
         color: "#FFCA28",
       },
     ],
@@ -89,7 +87,10 @@ export const urbanRunnersProjectContent: ProjectPageContent = {
       >
         Building The Experience
       </Typography>
-      <Box component="ul" sx={{ pl: 3, display: "flex", flexDirection: "column", gap: 2 }}>
+      <Box
+        component="ul"
+        sx={{ pl: 3, display: "flex", flexDirection: "column", gap: 2 }}
+      >
         {urbanRunnersExperienceSteps.map((step) => (
           <Typography
             key={step.label}
@@ -156,7 +157,7 @@ const urbanRunnersExperienceSteps = [
   {
     label: "Authentication",
     description:
-      "implemented with Firebase Auth to cover email/password and Google Sign-In, enforcing secure password resets and session management.",
+      "implemented with Supabase Auth to cover email/password and social sign-in, enforcing secure password resets and session management.",
   },
   {
     label: "Race Discovery",
@@ -171,7 +172,7 @@ const urbanRunnersExperienceSteps = [
   {
     label: "Notifications",
     description:
-      "Firebase Cloud Messaging keeps runners informed about approvals, registrations, and last-minute race updates.",
+      "Supabase Edge Functions trigger push notifications that keep runners informed about approvals, registrations, and last-minute race updates.",
   },
   {
     label: "Offline Support",
@@ -179,4 +180,3 @@ const urbanRunnersExperienceSteps = [
       "event data is cached locally to keep browsing fast and reduce friction before race day.",
   },
 ];
-

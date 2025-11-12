@@ -1,5 +1,6 @@
 import SendIcon from "@mui/icons-material/Send";
 import { Box, Typography, useTheme } from "@mui/material";
+import { alpha } from "@mui/material/styles";
 import PrimaryButton from "../../../components/PrimaryButton";
 import { ProjectCallToActionContent } from "../projects/projectContentTypes";
 
@@ -50,7 +51,7 @@ const ProjectCallToActionSection = ({
         endIcon={<SendIcon />}
         onClick={() => onAction(cta.buttonHref)}
         sx={{
-          boxShadow: "0 6px 10px rgba(0, 0, 0, 0.15)",
+          boxShadow: `0 6px 10px ${alpha(theme.palette.common.black, 0.15)}`,
           padding: theme.spacing(3, 16),
           display: "flex",
           alignItems: "center",
@@ -60,17 +61,17 @@ const ProjectCallToActionSection = ({
           fontSize: { xs: "1.3rem", md: "1.5rem" },
           fontWeight: 600,
           "&:hover": {
-            boxShadow: "0 10px 16px rgba(0, 0, 0, 0.2)",
+            boxShadow: `0 10px 16px ${alpha(theme.palette.common.black, 0.2)}`,
             transform: "scale(1.06)",
             bgcolor: theme.palette.primary.main,
           },
           "& .MuiSvgIcon-root": {
-            color: "#CF8B7F",
+            color: theme.palette.primary.main,
             transition: "color 0.3s ease",
             fontSize: { xs: "1.6rem", md: "1.8rem" },
           },
           "&:hover .MuiSvgIcon-root": {
-            color: "#212529",
+            color: theme.palette.secondary.main,
           },
         }}
       >
