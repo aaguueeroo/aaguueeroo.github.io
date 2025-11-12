@@ -25,7 +25,7 @@ const PortfolioCard = ({ project }: PortfolioCardProps) => {
   const handleGitHubClick = (e: React.MouseEvent) => {
     e.stopPropagation();
     if (project.githubUrl) {
-      window.open(project.githubUrl, "_blank");
+      window.open(project.githubUrl, "_blank", "noopener,noreferrer");
     }
   };
 
