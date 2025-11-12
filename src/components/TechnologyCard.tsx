@@ -10,9 +10,6 @@ interface TechnologyCardProps {
 
 const TechnologyCard = ({
   name,
-  category,
-  description,
-  logo,
   chips = [],
   color = "#1976D2",
 }: TechnologyCardProps) => {
