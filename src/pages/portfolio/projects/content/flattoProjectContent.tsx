@@ -112,7 +112,6 @@ export const flattoProjectContent: ProjectPageContent = {
   ),
   cta: {
     title: "Interested in building something similar?",
-    description: "",
     buttonText: "Let's talk",
     buttonHref: "/quote",
   },

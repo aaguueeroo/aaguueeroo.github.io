@@ -98,11 +98,11 @@ const ProjectDetailsView = ({ content }: ProjectDetailsViewProps) => {
             </Button>
           </Box>
           <ProjectDescriptionSection description={content.description} />
-      {content.renderFeaturesSection({
-        onOpenImageModal: handleFeatureImageClick,
-      })}
+          {content.renderFeaturesSection({
+            onOpenImageModal: handleFeatureImageClick,
+          })}
           <ProjectTechnologiesSection technologies={content.technologies} />
-      {content.renderExtraSection?.()}
+          {content.renderExtraSection?.()}
           <ProjectCallToActionSection
             cta={content.cta}
             onAction={handleCallToAction}
@@ -121,4 +121,3 @@ const ProjectDetailsView = ({ content }: ProjectDetailsViewProps) => {
 };
 
 export default ProjectDetailsView;
-

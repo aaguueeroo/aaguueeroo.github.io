@@ -17,9 +17,7 @@ const ProjectHeroSection = ({
 }: ProjectHeroSectionProps) => {
   const handlePrimaryActionClick = (action: ProjectHeroAction) => {
     onPrimaryActionClick?.(action);
-    if (!onPrimaryActionClick) {
-      window.open(action.url, "_blank");
-    }
+    window.open(action.url, "_blank");
   };
 
   return (
@@ -29,6 +27,7 @@ const ProjectHeroSection = ({
         position: "relative",
         height: "100vh",
         width: "100vw",
+        backgroundColor: "background.default",
         backgroundImage: `url('${hero.coverImage}')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -220,6 +219,7 @@ const ProjectHeroSection = ({
             },
           },
         }}
+        aria-hidden="true"
       >
         <Typography variant="body1" sx={{ mb: 1, fontSize: "0.95rem" }}>
           Scroll to explore

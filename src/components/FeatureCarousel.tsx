@@ -151,9 +151,7 @@ const FeatureCarousel = ({ features, onImageClick }: FeatureCarouselProps) => {
                       left: 0,
                       right: 0,
                       height: "25%",
-                      background: feature.title.toLowerCase().includes('feed') 
-                                 ? "linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%)"
-                                 : "linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%)",
+                      background: "linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%)",
                       pointerEvents: "none"
                     }}
                   />
