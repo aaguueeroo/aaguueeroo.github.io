@@ -133,7 +133,7 @@ export const SliderTriangleQuestion: React.FC<SliderTriangleQuestionProps> = ({
               >
                 <motion.div
                   variants={cardStagger.item}
-                  style={{ display: "flex" }}
+                  style={{ width: "100%", height: "100%", display: "flex" }}
                 >
                   <InteractiveOptionCardLayout
                     ariaLabel={`${option.label}: ${option.description}`}
@@ -175,8 +175,12 @@ export const SliderTriangleQuestion: React.FC<SliderTriangleQuestionProps> = ({
         onClose={handleToastClose}
         anchorOrigin={{ vertical: "top", horizontal: "center" }}
         sx={{
-          top: "50% !important",
-          transform: "translate(-50%, -50%) !important",
+          top: { xs: '50%', sm: '50%' },
+          transform: { xs: 'translate(-50%, -50%)', sm: 'translate(-50%, -50%)' },
+          width: { xs: '90%', sm: 'auto' },
+          maxWidth: { xs: '90%', sm: '600px' },
+          left: { xs: '50%', sm: 'auto' },
+          right: { xs: 'auto', sm: 'auto' },
         }}
       >
         <Alert
@@ -195,7 +199,7 @@ export const SliderTriangleQuestion: React.FC<SliderTriangleQuestionProps> = ({
             },
           }}
         >
-          You can’t have everything in this life. Pick the two that matter most.
+          You can't have everything in this life. Pick the two that matter most.
         </Alert>
       </Snackbar>
     </Box>

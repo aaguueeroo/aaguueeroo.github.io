@@ -231,8 +231,12 @@ const QuotePage: React.FC = () => {
         onClose={() => setShowError(false)}
         anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
         sx={{
-          top: '50% !important',
-          transform: 'translate(-50%, -50%) !important',
+          top: { xs: '50%', sm: '50%' },
+          transform: { xs: 'translate(-50%, -50%)', sm: 'translate(-50%, -50%)' },
+          width: { xs: '90%', sm: 'auto' },
+          maxWidth: { xs: '90%', sm: '600px' },
+          left: { xs: '50%', sm: 'auto' },
+          right: { xs: 'auto', sm: 'auto' },
         }}
       >
         <Alert 

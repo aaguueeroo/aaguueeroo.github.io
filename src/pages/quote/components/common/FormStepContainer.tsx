@@ -46,12 +46,13 @@ export const FormStepContainer: React.FC<FormStepContainerProps> = ({
     <Box
       sx={{
         backgroundColor: 'background.paper',
-        borderRadius: { xs: 1, sm: 1, md: 0.9 },
+        borderRadius: { xs: 0.5, sm: 1, md: 0.9 },
         boxShadow: {
           xs: '0 4px 16px rgba(0, 0, 0, 0.06)',
           sm: '0 6px 24px rgba(0, 0, 0, 0.07)',
           md: '0 8px 32px rgba(0, 0, 0, 0.08)',
         },
+        mt: { xs: 12, sm: 3, md: 4 },
         py: { xs: 4, sm: 6, md: 16 },
         px: { xs: 2.5, sm: 4, md: 12 },
         width: '100%',
@@ -69,6 +70,8 @@ export const FormStepContainer: React.FC<FormStepContainerProps> = ({
           flex: disableMinHeight ? '0 0 auto' : 1,
           display: 'flex',
           flexDirection: 'column',
+          pt: { xs: 2, sm: 3, md: 4 },
+          pb: { xs: 2, sm: 3, md: 4 },
         }}
       >
         {children}
@@ -80,66 +83,54 @@ export const FormStepContainer: React.FC<FormStepContainerProps> = ({
           sx={{
             flexShrink: 0,
             mt: { xs: 4, sm: 5, md: 6 },
+            display: 'flex',
+            flexDirection: 'column',
+            gap: { xs: 3, sm: 4 },
           }}
         >
-          <Box
-            sx={{
-              display: 'flex',
-              flexDirection: { xs: 'column', sm: 'row' },
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              gap: { xs: 3, sm: 2 },
-            }}
-          >
-            {/* Progress Indicator */}
-            {showProgress && progress && (
-              <Box
-                sx={{
-                  order: { xs: 2, sm: 1 },
-                  width: { xs: '100%', sm: 'auto' },
-                  display: 'flex',
-                  justifyContent: { xs: 'center', sm: 'flex-start' },
-                  flexShrink: 0,
-                }}
-              >
-                <ProgressIndicator progress={progress} />
-              </Box>
-            )}
+          {/* Progress Indicator */}
+          {showProgress && progress && (
+            <Box
+              sx={{
+                width: '100%',
+                display: 'flex',
+                justifyContent: { xs: 'center', sm: 'flex-start' },
+              }}
+            >
+              <ProgressIndicator progress={progress} />
+            </Box>
+          )}
 
-            {/* Navigation Buttons */}
-            {showNavigation && onNext && (
-              <Box
-                sx={{
-                  order: { xs: 1, sm: 2 },
-                  width: { xs: '100%', sm: 'auto' },
-                  ml: { xs: 0, sm: showProgress ? 0 : 'auto' },
-                  display: 'flex',
-                  justifyContent: 'flex-end',
-                  flexGrow: { xs: 0, sm: 1 },
-                }}
-              >
-                {useCTAButton ? (
-                  <CTAButton
-                    onClick={onNext}
-                    disabled={!canGoNext}
-                    text={ctaButtonText}
-                  />
-                ) : (
-                  <NavigationButtons
-                    canGoBack={canGoBack}
-                    canGoNext={canGoNext}
-                    isLastStep={isLastStep}
-                    onBack={onBack || (() => {})}
-                    onNext={onNext}
-                    onSubmit={onSubmit}
-                    isSubmitting={isSubmitting}
-                    nextLabel={nextButtonText}
-                    nextButtonTone={nextButtonTone}
-                  />
-                )}
-              </Box>
-            )}
-          </Box>
+          {/* Navigation Buttons */}
+          {showNavigation && onNext && (
+            <Box
+              sx={{
+                width: '100%',
+                display: 'flex',
+                justifyContent: 'flex-end',
+              }}
+            >
+              {useCTAButton ? (
+                <CTAButton
+                  onClick={onNext}
+                  disabled={!canGoNext}
+                  text={ctaButtonText}
+                />
+              ) : (
+                <NavigationButtons
+                  canGoBack={canGoBack}
+                  canGoNext={canGoNext}
+                  isLastStep={isLastStep}
+                  onBack={onBack || (() => {})}
+                  onNext={onNext}
+                  onSubmit={onSubmit}
+                  isSubmitting={isSubmitting}
+                  nextLabel={nextButtonText}
+                  nextButtonTone={nextButtonTone}
+                />
+              )}
+            </Box>
+          )}
         </Box>
       )}
     </Box>
