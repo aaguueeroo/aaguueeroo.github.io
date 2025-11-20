@@ -23,9 +23,7 @@ const ProjectTechnologiesSection = ({
         component="h2"
         sx={{
           mb: 6,
-          fontWeight: 700,
           textAlign: "center",
-          fontSize: { xs: "1.9rem", md: "2.4rem" },
         }}
       >
         {technologies.title}

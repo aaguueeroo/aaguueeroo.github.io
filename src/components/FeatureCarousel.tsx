@@ -86,22 +86,14 @@ const FeatureCarousel = ({ features, onImageClick }: FeatureCarouselProps) => {
                 <Typography 
                   variant="h4" 
                   sx={{ 
-                    mb: 3, 
-                    fontSize: { xs: "1.5rem", md: "2rem" },
-                    fontWeight: 600,
-                    color: "text.primary"
+                    mb: 3
                   }}
                 >
                   {feature.title}
                 </Typography>
                 
                 <Typography 
-                  variant="body1" 
-                  sx={{ 
-                    lineHeight: 1.7, 
-                    fontSize: { xs: "0.9rem", md: "1rem" },
-                    color: "text.secondary"
-                  }}
+                  variant="body1"
                 >
                   {feature.description}
                 </Typography>

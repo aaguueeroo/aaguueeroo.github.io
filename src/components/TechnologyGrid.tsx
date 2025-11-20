@@ -17,9 +17,17 @@ interface TechnologyGridProps {
 const TechnologyGrid = ({ technologies }: TechnologyGridProps) => {
   return (
     <Box>
-      <Grid container spacing={4} justifyContent="center">
+      <Grid container spacing={4} justifyContent="center" alignItems="stretch">
         {technologies.map((tech) => (
-          <Grid size={{ xs: 12, sm: 6, md: 4 }} key={`${tech.name}-${tech.category}`} sx={{ mb: { xs: 3, sm: 0 } }}>
+          <Grid 
+            size={{ xs: 12, sm: 6, md: 4 }} 
+            key={`${tech.name}-${tech.category}`} 
+            sx={{ 
+              mb: { xs: 3, sm: 0 },
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
             <TechnologyCard
               name={tech.name}
               category={tech.category}

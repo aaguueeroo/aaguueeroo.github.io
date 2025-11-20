@@ -1,4 +1,3 @@
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import LaunchIcon from "@mui/icons-material/Launch";
 import { Box, Button, Chip, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
@@ -69,32 +68,22 @@ const ProjectHeroSection = ({
           left: 0,
           right: 0,
           zIndex: 3,
-          backgroundColor: "rgba(255, 255, 255, 0.1)",
+          backgroundColor: hero.useLightColors
+            ? "rgba(0, 0, 0, 0.1)"
+            : "rgba(255, 255, 255, 0.1)",
           backdropFilter: "blur(10px)",
-          borderBottom: "1px solid rgba(255, 255, 255, 0.2)",
+          borderBottom: hero.useLightColors
+            ? "1px solid rgba(255, 255, 255, 0.2)"
+            : "1px solid rgba(255, 255, 255, 0.2)",
+          "& .MuiSvgIcon-root": hero.useLightColors
+            ? {
+                color: "rgba(255, 255, 255, 0.95)",
+              }
+            : {},
         }}
       >
         <Navbar />
       </Box>
-
-      <Button
-        startIcon={<ArrowBackIcon />}
-        onClick={onNavigateBack}
-        sx={{
-          position: "absolute",
-          top: 100,
-          left: 24,
-          zIndex: 3,
-          backgroundColor: "rgba(255, 255, 255, 0.9)",
-          color: "primary.main",
-          "&:hover": {
-            backgroundColor: "white",
-          },
-          backdropFilter: "blur(10px)",
-        }}
-      >
-        Back to Portfolio
-      </Button>
 
       <Box
         sx={{
@@ -116,7 +105,7 @@ const ProjectHeroSection = ({
             fontSize: { xs: "2rem", md: "3rem" },
             fontWeight: 700,
             lineHeight: 1.2,
-            color: "text.primary",
+            color: hero.useLightColors ? "rgba(255, 255, 255, 0.95)" : "text.primary",
           }}
         >
           {hero.title}
@@ -129,7 +118,7 @@ const ProjectHeroSection = ({
             fontSize: { xs: "1.05rem", md: "1.4rem" },
             lineHeight: 1.4,
             maxWidth: { xs: "100%", md: "45%" },
-            color: "text.secondary",
+            color: hero.useLightColors ? "rgba(255, 255, 255, 0.85)" : "text.secondary",
           }}
         >
           {hero.subtitle}
@@ -142,7 +131,7 @@ const ProjectHeroSection = ({
             fontSize: { xs: "1rem", md: "1.1rem" },
             lineHeight: 1.6,
             maxWidth: { xs: "100%", md: "45%" },
-            color: "text.primary",
+            color: hero.useLightColors ? "rgba(255, 255, 255, 0.9)" : "text.primary",
           }}
         >
           {hero.description}
@@ -199,14 +188,22 @@ const ProjectHeroSection = ({
                 variant="outlined"
                 sx={{
                   fontWeight: 500,
-                  backgroundColor: "rgba(0, 0, 0, 0.05)",
-                  color: "text.primary",
-                  borderColor: "rgba(0, 0, 0, 0.2)",
+                  backgroundColor: hero.useLightColors
+                    ? "rgba(255, 255, 255, 0.15)"
+                    : "rgba(0, 0, 0, 0.05)",
+                  color: hero.useLightColors
+                    ? "rgba(255, 255, 255, 0.95)"
+                    : "text.primary",
+                  borderColor: hero.useLightColors
+                    ? "rgba(255, 255, 255, 0.3)"
+                    : "rgba(0, 0, 0, 0.2)",
                   fontSize: "0.9rem",
                   py: 2,
                   px: 1,
                   "&:hover": {
-                    backgroundColor: "rgba(0, 0, 0, 0.1)",
+                    backgroundColor: hero.useLightColors
+                      ? "rgba(255, 255, 255, 0.25)"
+                      : "rgba(0, 0, 0, 0.1)",
                     transform: "translateY(-1px)",
                   },
                   transition: "all 0.2s ease",
@@ -227,7 +224,7 @@ const ProjectHeroSection = ({
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          color: "text.primary",
+          color: hero.useLightColors ? "rgba(255, 255, 255, 0.9)" : "text.primary",
           opacity: 0.7,
           animation: "bounce 2s infinite",
           "@keyframes bounce": {
@@ -252,7 +249,9 @@ const ProjectHeroSection = ({
           sx={{
             width: 2,
             height: 24,
-            backgroundColor: "text.primary",
+            backgroundColor: hero.useLightColors
+              ? "rgba(255, 255, 255, 0.9)"
+              : "text.primary",
             borderRadius: 1,
           }}
         />

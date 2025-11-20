@@ -13,6 +13,7 @@ export type ProjectHeroContent = {
   description: string;
   technologies: string[];
   primaryAction?: ProjectHeroAction;
+  useLightColors?: boolean;
 };
 
 export type ProjectDescriptionSectionContent = {

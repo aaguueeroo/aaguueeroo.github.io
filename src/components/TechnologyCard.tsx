@@ -57,6 +57,7 @@ const TechnologyCard = ({
       sx={{
         display: "flex",
         flexDirection: "column",
+        flex: 1,
         borderRadius: 0.2,
         px: 4,
         py: 2,
@@ -101,7 +102,16 @@ const TechnologyCard = ({
         </Typography>
 
         {/* Chips */}
-        <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, justifyContent: "center" }}>
+        <Box 
+          sx={{ 
+            display: "flex", 
+            flexWrap: "wrap", 
+            gap: 1, 
+            justifyContent: "center",
+            flexGrow: 1,
+            alignItems: "flex-start",
+          }}
+        >
           {chips.map((chip) => (
             <Box
               key={`${name}-${chip}`}

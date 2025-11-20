@@ -2,6 +2,7 @@ import { Project } from "../types/portfolio";
 import urbanRunnersImage from "../assets/images/portfolio/urban-runners-1.png";
 import app4itImage from "../assets/images/portfolio/app4it-thumbnail.png";
 import flattoImage from "../assets/images/portfolio/flatto-hero.png";
+import exxcellentHeroImage from "../assets/images/portfolio/exxcellent/hero.png";
 
 const showUrbanRunners = import.meta.env.VITE_SHOW_URBAN_RUNNERS === "true";
 
@@ -50,9 +51,22 @@ const rawProjects: Project[] = [
     image: flattoImage,
     technologies: ["Flutter", "Supabase", "SQL", "Cursor AI"],
     category: "Mobile Development",
-    featured: true,
+    featured: false,
     slug: "flatto",
     imageObjectPosition: "60% 70%",
+  },
+  {
+    id: "exxcellent-meal-management",
+    title: "Exxcellent Meal Management System",
+    description:
+      "An internal mobile application that streamlines meal planning for company cafeterias, enabling chefs to plan meals and employees to select their preferences, reducing food waste through data-driven planning.",
+    shortDescription:
+      "Internal app for employees to choose meals and chefs to plan meals, reducing food waste",
+    image: exxcellentHeroImage,
+    technologies: ["Flutter", "Python", "Firebase"],
+    category: "Mobile Development",
+    featured: true,
+    slug: "exxcellent-meal-management",
   },
   {
     id: "hymate",

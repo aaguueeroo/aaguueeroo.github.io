@@ -9,7 +9,7 @@ import {
   Typography,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { getAllProjects } from "../../../services/portfolioService";
+import { getFeaturedProjects } from "../../../services/portfolioService";
 import {
   MaxWidths,
   Typography as TypographyConstants,
@@ -19,7 +19,7 @@ const CARD_IMAGE_WIDTH = 120;
 
 const PortfolioOverviewSection = () => {
   const navigate = useNavigate();
-  const projects = getAllProjects().slice(0, 3);
+  const projects = getFeaturedProjects().slice(0, 3);
 
   const handleCardClick = (
     slug?: string,

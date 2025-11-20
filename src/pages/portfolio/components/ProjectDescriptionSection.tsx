@@ -16,7 +16,6 @@ const ProjectDescriptionSection = ({
           <Typography
             key={paragraph}
             variant="body1"
-            sx={{ lineHeight: 1.7, fontSize: "1rem" }}
           >
             {paragraph}
           </Typography>
@@ -29,7 +28,7 @@ const ProjectDescriptionSection = ({
               key={bulletPoint}
               component="li"
               variant="body1"
-              sx={{ mb: 1, lineHeight: 1.6, fontSize: "1rem" }}
+              sx={{ mb: 1 }}
             >
               {bulletPoint}
             </Typography>

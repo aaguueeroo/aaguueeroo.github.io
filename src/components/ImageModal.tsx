@@ -14,22 +14,24 @@ const ImageModal = ({ open, onClose, imageSrc, imageAlt }: ImageModalProps) => {
       open={open}
       onClose={onClose}
       maxWidth={false}
+      fullWidth
       PaperProps={{
         sx: {
-          backgroundColor: "rgba(0, 0, 0, 0.9)",
+          backgroundColor: "rgba(0, 0, 0, 0.5)",
           boxShadow: "none",
           borderRadius: 0,
-          maxWidth: "95vw",
-          maxHeight: "95vh",
-          width: "auto",
-          height: "auto",
+          width: "100vw",
+          height: "100vh",
+          maxWidth: "100vw",
+          maxHeight: "100vh",
+          margin: 0,
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
         },
       }}
     >
-      <DialogContent sx={{ p: 0, position: "relative", display: "flex", alignItems: "center", justifyContent: "center" }}>
+      <DialogContent sx={{ p: 0, position: "relative", display: "flex", alignItems: "center", justifyContent: "center", width: "100%", height: "100%" }}>
         <IconButton
           onClick={onClose}
           sx={{
