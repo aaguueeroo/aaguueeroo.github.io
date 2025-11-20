@@ -26,7 +26,7 @@ const ProjectTechnologiesSection = ({
           textAlign: "center",
         }}
       >
-        {technologies.title}
+        Tech Stack
       </Typography>
       <TechnologyGrid technologies={technologies.technologies} />
     </Box>

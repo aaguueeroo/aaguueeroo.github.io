@@ -46,7 +46,7 @@ const PortfolioPage = () => {
               </Typography>
             </Box>
 
-            <Box sx={{ display: "flex", flexWrap: "wrap", gap: 4, mb: 8 }}>
+            <Box sx={{ display: "flex", flexWrap: "wrap", rowGap: 7, columnGap: 4, mb: 8 }}>
               {projects.map((project) => (
                 <Box
                   key={project.id}

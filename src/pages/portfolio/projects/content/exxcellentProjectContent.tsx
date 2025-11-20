@@ -1,9 +1,11 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Link } from "@mui/material";
 import ProjectFeaturesWideSection from "../../components/ProjectFeaturesWideSection";
+import TestimonialsSection from "../../../../components/TestimonialsSection";
 import {
   ProjectFeaturesSectionContent,
   ProjectPageContent,
 } from "../projectContentTypes";
+import { getTestimonialsByCompany } from "../../../../data/testimonials";
 import exxcellentHeroImage from "../../../../assets/images/portfolio/exxcellent/hero.png";
 import exxcellentMealPlanningImage from "../../../../assets/images/portfolio/exxcellent/meal_planning.png";
 import exxcellentMealListImage from "../../../../assets/images/portfolio/exxcellent/meal_list.png";
@@ -33,7 +35,27 @@ export const exxcellentProjectContent: ProjectPageContent = {
   description: {
     title: "Project Overview",
     paragraphs: [
-      "The Exxcellent Meal Management System was developed as an internal application for Exxcellent company to optimize their cafeteria operations. The app addresses the challenge of meal planning and food waste by creating a direct communication channel between chefs and employees.",
+      <>
+        The Meal Management System was developed as an internal application for{" "}
+        <Link
+          href="https://www.exxcellent.de"
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{
+            color: "primary.main",
+            textDecoration: "none",
+            fontWeight: 600,
+            "&:hover": {
+              textDecoration: "underline",
+            },
+          }}
+        >
+          Exxcellent Solutions
+        </Link>{" "}
+        to optimize their cafeteria operations. The app addresses the challenge
+        of meal planning and food waste by creating a direct communication
+        channel between chefs and employees.
+      </>,
       "Chefs can schedule meals for specific days and time slots, view employee selections in real-time, and adjust preparation quantities accordingly. Employees can browse available meals, see allergen information, select their preferred options, and communicate directly with the chef through comments.",
     ],
     bulletPoints: [
@@ -52,7 +74,6 @@ export const exxcellentProjectContent: ProjectPageContent = {
     />
   ),
   technologies: {
-    title: "Technology Highlights",
     technologies: [
       {
         name: "Flutter",
@@ -88,41 +109,88 @@ export const exxcellentProjectContent: ProjectPageContent = {
       },
     ],
   },
-  renderExtraSection: () => (
-    <Box component="section" sx={{ mb: 16 }}>
-      <Typography
-        variant="h3"
-        component="h2"
-        sx={{
-          mb: 4,
-          fontWeight: 700,
-          textAlign: "center",
-          fontSize: { xs: "1.9rem", md: "2.4rem" },
-        }}
-      >
-        Project Overview
-      </Typography>
-      <Box
-        sx={{
-          width: "100%",
-          borderRadius: 0.5,
-          overflow: "hidden",
-          boxShadow: "0 8px 25px rgba(0,0,0,0.1)",
-        }}
-      >
-        <Box
-          component="img"
-          src={exxcellentPosterImage}
-          alt="Exxcellent Meal Management System project overview poster"
-          sx={{
-            width: "100%",
-            height: "auto",
-            display: "block",
-          }}
-        />
+  renderExtraSection: ({ onOpenImageModal }) => {
+    const exxcellentTestimonials = getTestimonialsByCompany("Exxcellent Solutions");
+
+    return (
+      <Box>
+        {exxcellentTestimonials.length > 0 && (
+          <TestimonialsSection testimonials={exxcellentTestimonials} />
+        )}
+        <Box component="section" sx={{ mb: 16 }}>
+          <Typography
+            variant="h3"
+            component="h2"
+            sx={{
+              mb: 4,
+              fontWeight: 700,
+              textAlign: "center",
+              fontSize: { xs: "1.9rem", md: "2.4rem" },
+            }}
+          >
+            Project Overview
+          </Typography>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <Box
+              component="button"
+              type="button"
+              onClick={() =>
+                onOpenImageModal(
+                  exxcellentPosterImage,
+                  "Exxcellent Meal Management System project overview poster",
+                )
+              }
+              onKeyDown={(event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                  event.preventDefault();
+                  onOpenImageModal(
+                    exxcellentPosterImage,
+                    "Exxcellent Meal Management System project overview poster",
+                  );
+                }
+              }}
+              aria-label="Open project overview poster in full size"
+              sx={{
+                maxWidth: { xs: "90%", md: "50%" },
+                borderRadius: 0.5,
+                overflow: "hidden",
+                boxShadow: "0 8px 25px rgba(0,0,0,0.1)",
+                cursor: "pointer",
+                border: 0,
+                padding: 0,
+                backgroundColor: "transparent",
+                transition: "transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out",
+                "&:hover": {
+                  transform: "translateY(-4px)",
+                  boxShadow: "0 12px 30px rgba(0,0,0,0.15)",
+                },
+                "&:focus-visible": {
+                  outline: "2px solid currentColor",
+                  outlineOffset: "4px",
+                },
+              }}
+            >
+              <Box
+                component="img"
+                src={exxcellentPosterImage}
+                alt="Exxcellent Meal Management System project overview poster"
+                sx={{
+                  width: "100%",
+                  height: "auto",
+                  display: "block",
+                }}
+              />
+            </Box>
+          </Box>
+        </Box>
       </Box>
-    </Box>
-  ),
+    );
+  },
   cta: {
     title: "Interested in building something similar?",
     buttonText: "Start your project",

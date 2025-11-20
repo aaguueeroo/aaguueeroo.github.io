@@ -71,12 +71,11 @@ export const HowIWorkTimeline = () => {
         align="center" 
         gutterBottom
         sx={{
-          color: theme.palette.primary.main,
           ...TypographyConstants.h2,
           marginBottom: 4
         }}
       >
-        How is the process?
+        How do I work?
       </Typography>
       <Box
         sx={{

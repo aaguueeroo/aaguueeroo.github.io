@@ -18,7 +18,7 @@ export type ProjectHeroContent = {
 
 export type ProjectDescriptionSectionContent = {
   title: string;
-  paragraphs: string[];
+  paragraphs: (string | ReactNode)[];
   bulletPoints?: string[];
 };
 
@@ -54,11 +54,16 @@ export type ProjectTechnologyDetail = {
 };
 
 export type ProjectTechnologiesSectionContent = {
-  title: string;
   technologies: ProjectTechnologyDetail[];
 };
 
-export type ProjectExtraSectionRenderer = () => ReactNode;
+export type ProjectExtraSectionRendererArgs = {
+  onOpenImageModal: (imageSrc: string, imageAlt: string) => void;
+};
+
+export type ProjectExtraSectionRenderer = (
+  args: ProjectExtraSectionRendererArgs,
+) => ReactNode;
 
 export type ProjectExtraSectionContent = {
   title: string;

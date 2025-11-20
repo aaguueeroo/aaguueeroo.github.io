@@ -47,7 +47,6 @@ export const flattoProjectContent: ProjectPageContent = {
     />
   ),
   technologies: {
-    title: "Technology Highlights",
     technologies: [
       {
         name: "Cursor AI",
@@ -73,7 +72,7 @@ export const flattoProjectContent: ProjectPageContent = {
       },
     ],
   },
-  renderExtraSection: () => (
+  renderExtraSection: ({ onOpenImageModal }) => (
     <Box component="section" sx={{ mb: 16 }}>
       <Typography
         variant="h3"

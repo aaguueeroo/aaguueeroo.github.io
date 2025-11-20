@@ -12,9 +12,9 @@ const ProjectDescriptionSection = ({
     <Box component="section" sx={{ mb: 8 }}>
       <Box sx={{ height: { xs: 24, md: 32 } }} />
       <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
-        {description.paragraphs.map((paragraph) => (
+        {description.paragraphs.map((paragraph, index) => (
           <Typography
-            key={paragraph}
+            key={index}
             variant="body1"
           >
             {paragraph}

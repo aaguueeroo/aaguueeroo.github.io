@@ -1,4 +1,5 @@
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import LaunchIcon from "@mui/icons-material/Launch";
 import {
   Box,
   Button,
@@ -140,17 +141,28 @@ const PortfolioOverviewSection = () => {
                     px: { xs: 2, md: 3 },
                   }}
                 >
-                  <Typography
-                    variant="h6"
-                    component="h3"
-                    sx={{
-                      fontWeight: 700,
-                      fontSize: "1.15rem",
-                      lineHeight: 1.3,
-                    }}
-                  >
-                    {project.title}
-                  </Typography>
+                  <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                    <Typography
+                      variant="h6"
+                      component="h3"
+                      sx={{
+                        fontWeight: 700,
+                        fontSize: "1.15rem",
+                        lineHeight: 1.3,
+                      }}
+                    >
+                      {project.title}
+                    </Typography>
+                    {project.liveUrl && !project.slug && (
+                      <LaunchIcon
+                        sx={{
+                          fontSize: "1rem",
+                          color: "text.secondary",
+                          opacity: 0.7,
+                        }}
+                      />
+                    )}
+                  </Box>
                   <Typography
                     variant="body2"
                     sx={{

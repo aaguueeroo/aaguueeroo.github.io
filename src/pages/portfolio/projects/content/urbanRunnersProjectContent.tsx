@@ -57,7 +57,6 @@ export const urbanRunnersProjectContent: ProjectPageContent = {
     />
   ),
   technologies: {
-    title: "Technology Highlights",
     technologies: [
       {
         name: "Flutter",
@@ -77,7 +76,7 @@ export const urbanRunnersProjectContent: ProjectPageContent = {
       },
     ],
   },
-  renderExtraSection: () => (
+  renderExtraSection: ({ onOpenImageModal }) => (
     <Box component="section" sx={{ mb: 16 }}>
       <Typography
         variant="h3"

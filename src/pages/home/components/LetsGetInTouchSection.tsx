@@ -13,10 +13,19 @@ const useStyles = (theme: Theme) => ({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    padding: {
-      xs: "120px 16px 140px 16px",
-      sm: "160px 64px",
-      md: "220px 120px",
+    px: {
+      xs: "16px",
+      sm: "64px",
+      md: "120px",
+    },
+    pt: {
+      xs: "50px",
+      sm: "0px",
+    },
+    pb: {
+      xs: "140px",
+      sm: "160px",
+      md: "100px",
     },
     gap: "44px",
     width: "100%",

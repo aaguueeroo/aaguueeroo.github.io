@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
@@ -27,6 +27,7 @@ const ProjectDetailsView = ({ content }: ProjectDetailsViewProps) => {
     imageSrc: "",
     imageAlt: "",
   });
+  const [showStickyButton, setShowStickyButton] = useState<boolean>(false);
 
   const handleNavigateBack = () => {
     navigate("/portfolio");
@@ -50,6 +51,25 @@ const ProjectDetailsView = ({ content }: ProjectDetailsViewProps) => {
   const handleCallToAction = (href: string) => {
     navigate(href);
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Hero section is 100vh, so show button when scrolled past viewport height
+      const scrollPosition = window.scrollY || window.pageYOffset;
+      const viewportHeight = window.innerHeight;
+      setShowStickyButton(scrollPosition > viewportHeight);
+    };
+
+    // Check initial scroll position
+    handleScroll();
+
+    // Add scroll listener
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -76,9 +96,14 @@ const ProjectDetailsView = ({ content }: ProjectDetailsViewProps) => {
               zIndex: 10,
               backgroundColor: "background.paper",
               py: 2,
-              mb: 4,
+              mb: -16,
               borderBottom: "1px solid",
               borderColor: "divider",
+              transition: "opacity 0.3s ease-in-out, transform 0.3s ease-in-out",
+              opacity: showStickyButton ? 1 : 0,
+              transform: showStickyButton ? "translateY(0)" : "translateY(-10px)",
+              visibility: showStickyButton ? "visible" : "hidden",
+              pointerEvents: showStickyButton ? "auto" : "none",
             }}
           >
             <Button
@@ -98,11 +123,13 @@ const ProjectDetailsView = ({ content }: ProjectDetailsViewProps) => {
             </Button>
           </Box>
           <ProjectDescriptionSection description={content.description} />
+          <ProjectTechnologiesSection technologies={content.technologies} />
           {content.renderFeaturesSection({
             onOpenImageModal: handleFeatureImageClick,
           })}
-          <ProjectTechnologiesSection technologies={content.technologies} />
-          {content.renderExtraSection?.()}
+          {content.renderExtraSection?.({
+            onOpenImageModal: handleFeatureImageClick,
+          })}
           <ProjectCallToActionSection
             cta={content.cta}
             onAction={handleCallToAction}

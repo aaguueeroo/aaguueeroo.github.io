@@ -24,7 +24,7 @@ const rawProjects: Project[] = [
       "OneSignal",
     ],
     category: "Mobile Development",
-    featured: true,
+    featured: false,
     githubUrl: "https://github.com/aaguueeroo/urban-runners",
     slug: "urban-runners",
   },
@@ -38,7 +38,7 @@ const rawProjects: Project[] = [
     image: app4itImage,
     technologies: ["Flutter", "Supabase", "Figma", "Jira"],
     category: "Mobile Development",
-    featured: false,
+    featured: true,
     liveUrl: "https://app4it.de/",
   },
   {
@@ -57,11 +57,11 @@ const rawProjects: Project[] = [
   },
   {
     id: "exxcellent-meal-management",
-    title: "Exxcellent Meal Management System",
+    title: "Meal Management System",
     description:
       "An internal mobile application that streamlines meal planning for company cafeterias, enabling chefs to plan meals and employees to select their preferences, reducing food waste through data-driven planning.",
     shortDescription:
-      "Internal app for employees to choose meals and chefs to plan meals, reducing food waste",
+      "Internal app for Exxcellent cafeteria to streamline meal planning and reduce food waste",
     image: exxcellentHeroImage,
     technologies: ["Flutter", "Python", "Firebase"],
     category: "Mobile Development",
@@ -79,7 +79,7 @@ const rawProjects: Project[] = [
       "https://cdn.prod.website-files.com/63f502e761dc1d6feff40718/67308af53fd2ebb2fcee82ec_appMbl.png",
     technologies: ["Flutter"],
     category: "Web Development",
-    featured: false,
+    featured: true,
     liveUrl: "https://www.hymate.com",
   },
 ];
@@ -93,7 +93,11 @@ export const getProjectBySlug = (slug: string): Project | undefined => {
 };
 
 export const getFeaturedProjects = (): Project[] => {
-  return portfolioProjects.filter((project) => project.featured);
+  const featuredIds = ["app4it", "hymate", "exxcellent-meal-management"];
+  const featuredProjects = featuredIds
+    .map((id) => portfolioProjects.find((project) => project.id === id))
+    .filter((project): project is Project => project !== undefined);
+  return featuredProjects;
 };
 
 export const getAllProjects = (): Project[] => {

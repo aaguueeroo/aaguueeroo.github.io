@@ -72,7 +72,7 @@ const projectContent: ProjectPageContent = {
       },
     ],
   },
-  renderExtraSection: () => (
+  renderExtraSection: ({ onOpenImageModal }) => (
     <ProjectExtraSection extra={mockExtraSection} />
   ),
   cta: {
