@@ -13,7 +13,7 @@ type ProjectHeroSectionProps = {
 
 const ProjectHeroSection = ({
   hero,
-  onNavigateBack,
+  onNavigateBack: _onNavigateBack,
   onPrimaryActionClick,
 }: ProjectHeroSectionProps) => {
   const [coverImage, setCoverImage] = useState(hero.coverImage);

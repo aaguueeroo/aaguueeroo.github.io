@@ -5,7 +5,6 @@ import { renderWithProviders } from "../../../../tests/renderWithProviders";
 import { ProjectTechnologiesSectionContent } from "../../projects/projectContentTypes";
 
 const technologies: ProjectTechnologiesSectionContent = {
-  title: "Technologies",
   technologies: [
     {
       name: "React",
@@ -24,7 +23,7 @@ describe("ProjectTechnologiesSection", () => {
     );
 
     expect(
-      screen.getByRole("heading", { name: technologies.title }),
+      screen.getByRole("heading", { name: "Tech Stack" }),
     ).toBeInTheDocument();
     expect(screen.getByText("React")).toBeInTheDocument();
     expect(screen.getByText("Hooks")).toBeInTheDocument();

@@ -72,7 +72,7 @@ export const flattoProjectContent: ProjectPageContent = {
       },
     ],
   },
-  renderExtraSection: ({ onOpenImageModal }) => (
+  renderExtraSection: () => (
     <Box component="section" sx={{ mb: 16 }}>
       <Typography
         variant="h3"

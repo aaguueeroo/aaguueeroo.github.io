@@ -20,7 +20,9 @@ describe("ProjectDescriptionSection", () => {
     );
 
     description.paragraphs.forEach((paragraph) => {
-      expect(screen.getByText(paragraph)).toBeInTheDocument();
+      if (typeof paragraph === "string") {
+        expect(screen.getByText(paragraph)).toBeInTheDocument();
+      }
     });
 
     description.bulletPoints?.forEach((bulletPoint) => {

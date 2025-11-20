@@ -62,7 +62,6 @@ const projectContent: ProjectPageContent = {
     />
   ),
   technologies: {
-    title: "Technologies",
     technologies: [
       {
         name: "React",
@@ -72,7 +71,7 @@ const projectContent: ProjectPageContent = {
       },
     ],
   },
-  renderExtraSection: ({ onOpenImageModal }) => (
+  renderExtraSection: () => (
     <ProjectExtraSection extra={mockExtraSection} />
   ),
   cta: {
