@@ -30,6 +30,7 @@ import postsIndex from '../content/index.json';
 import { BlogPost } from '../types';
 import { Typography as TypographyConstants } from '../../theme/constants';
 import authorImage from '../../assets/images/about-the-author.jpg';
+import { trackEvent, trackClickEvent } from '../../services/analytics';
 
 interface BlogPostProps {
   post: BlogPost | null;
@@ -85,6 +86,74 @@ declare global {
 
 const BlogPostComponent: React.FC<BlogPostProps> = ({ post, loading, error }) => {
   const navigate = useNavigate();
+  const scrollDepthTracked = useRef<Set<number>>(new Set());
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  // Track enhanced page view with blog metadata when post loads
+  useEffect(() => {
+    if (post && !loading) {
+      trackEvent('blog_post_view', {
+        post_title: post.title,
+        post_slug: post.slug,
+        post_categories: post.postCategories || [],
+        post_tags: post.tags || [],
+        post_language: post.language,
+        post_series: post.series || null,
+        read_time: post.readTime || null,
+        published_date: post.publishedDate || null,
+      });
+    }
+  }, [post, loading]);
+
+  // Scroll depth tracking
+  useEffect(() => {
+    if (!post || loading || !contentRef.current) return;
+
+    const trackScrollDepth = () => {
+      const contentElement = contentRef.current;
+      if (!contentElement) return;
+
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollPercentage = Math.round(
+        ((scrollTop + windowHeight) / documentHeight) * 100
+      );
+
+      const milestones = [25, 50, 75, 100];
+      milestones.forEach((milestone) => {
+        if (
+          scrollPercentage >= milestone &&
+          !scrollDepthTracked.current.has(milestone)
+        ) {
+          scrollDepthTracked.current.add(milestone);
+          trackEvent('blog_scroll_depth', {
+            post_title: post.title,
+            post_slug: post.slug,
+            scroll_percentage: milestone,
+          });
+        }
+      });
+    };
+
+    // Throttle scroll events
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          trackScrollDepth();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [post, loading]);
+
   if (loading) {
     return (
       <Box
@@ -166,7 +235,15 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, loading, error }) =>
         }}
       >
         <Button
-          onClick={() => navigate('/blog')}
+          onClick={() => {
+            if (post) {
+              trackClickEvent('blog_back_to_list', {
+                post_title: post.title,
+                post_slug: post.slug,
+              });
+            }
+            navigate('/blog');
+          }}
           startIcon={<ArrowBackIcon />}
           sx={{ textTransform: 'none', color: 'text.secondary', '&:hover': { color: 'primary.main', backgroundColor: 'transparent' }, px: 0 }}
         >
@@ -298,7 +375,14 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, loading, error }) =>
                 By{' '}
                 <Button
                   variant="text"
-                  onClick={() => navigate('/about')}
+                  onClick={() => {
+                    trackClickEvent('blog_author_link', {
+                      post_title: post.title,
+                      post_slug: post.slug,
+                      author_name: post.author,
+                    });
+                    navigate('/about');
+                  }}
                   sx={{
                     ...TypographyConstants.bodySmall,
                     color: 'text.secondary',
@@ -345,6 +429,7 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, loading, error }) =>
 
       {/* Content */}
       <Box
+        ref={contentRef}
         sx={{
           '& .notion-page': {
             padding: 0,
@@ -430,7 +515,41 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, loading, error }) =>
                     <span style={style}>{t.plain_text}</span>
                   );
                   return href ? (
-                    <a key={i} href={href} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
+                    <a 
+                      key={i} 
+                      href={href} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      style={{ color: 'inherit' }}
+                      onClick={() => {
+                        if (post && href) {
+                          try {
+                            // Check if link is external (not same domain)
+                            const linkUrl = new URL(href, window.location.origin);
+                            const currentHost = window.location.hostname;
+                            const isExternal = linkUrl.hostname !== currentHost && 
+                                               linkUrl.hostname !== '';
+                            
+                            if (isExternal) {
+                              trackClickEvent('blog_external_link', {
+                                post_title: post.title,
+                                post_slug: post.slug,
+                                link_url: href,
+                              });
+                            }
+                          } catch {
+                            // If URL parsing fails, treat absolute URLs as external
+                            if (href.startsWith('http://') || href.startsWith('https://')) {
+                              trackClickEvent('blog_external_link', {
+                                post_title: post.title,
+                                post_slug: post.slug,
+                                link_url: href,
+                              });
+                            }
+                          }
+                        }
+                      }}
+                    >
                       {content}
                     </a>
                   ) : (
@@ -830,6 +949,16 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, loading, error }) =>
                           href={bookmarkUrl}
                           target="_blank"
                           rel="noopener noreferrer"
+                          onClick={() => {
+                            if (post) {
+                              trackClickEvent('blog_external_link', {
+                                post_title: post.title,
+                                post_slug: post.slug,
+                                link_url: bookmarkUrl,
+                                link_type: 'bookmark',
+                              });
+                            }
+                          }}
                           sx={{
                             display: 'block',
                             textDecoration: 'none',
@@ -948,6 +1077,18 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, loading, error }) =>
                   variant="subtitle1" 
                   component="a"
                   href="/about"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (post) {
+                      trackClickEvent('blog_author_link', {
+                        post_title: post.title,
+                        post_slug: post.slug,
+                        author_name: post.author || 'Julia Agüero',
+                        location: 'author_section',
+                      });
+                    }
+                    navigate('/about');
+                  }}
                   sx={{ 
                     fontWeight: 700, 
                     mb: 0.5,
@@ -976,13 +1117,55 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, loading, error }) =>
             
             {/* Social Media Links */}
             <Box sx={{ display: 'flex' }}>
-              <IconButton href="https://github.com/aaguueeroo" target="_blank" sx={{ color: 'secondary.main', '&:hover': { color: 'primary.main' } }}>
+              <IconButton 
+                href="https://github.com/aaguueeroo" 
+                target="_blank"
+                onClick={() => {
+                  if (post) {
+                    trackClickEvent('blog_social_link', {
+                      post_title: post.title,
+                      post_slug: post.slug,
+                      platform: 'github',
+                      location: 'author_section',
+                    });
+                  }
+                }}
+                sx={{ color: 'secondary.main', '&:hover': { color: 'primary.main' } }}
+              >
                 <GitHubIcon />
               </IconButton>
-              <IconButton href="https://x.com/aaguueeroo" target="_blank" sx={{ color: 'secondary.main', '&:hover': { color: 'primary.main' } }}>
+              <IconButton 
+                href="https://x.com/aaguueeroo" 
+                target="_blank"
+                onClick={() => {
+                  if (post) {
+                    trackClickEvent('blog_social_link', {
+                      post_title: post.title,
+                      post_slug: post.slug,
+                      platform: 'twitter',
+                      location: 'author_section',
+                    });
+                  }
+                }}
+                sx={{ color: 'secondary.main', '&:hover': { color: 'primary.main' } }}
+              >
                 <TwitterIcon />
               </IconButton>
-              <IconButton href="https://www.linkedin.com/in/julia-aguero-fraguas/" target="_blank" sx={{ color: 'secondary.main', '&:hover': { color: 'primary.main' } }}>
+              <IconButton 
+                href="https://www.linkedin.com/in/julia-aguero-fraguas/" 
+                target="_blank"
+                onClick={() => {
+                  if (post) {
+                    trackClickEvent('blog_social_link', {
+                      post_title: post.title,
+                      post_slug: post.slug,
+                      platform: 'linkedin',
+                      location: 'author_section',
+                    });
+                  }
+                }}
+                sx={{ color: 'secondary.main', '&:hover': { color: 'primary.main' } }}
+              >
                 <LinkedInIcon />
               </IconButton>
             </Box>
@@ -1120,7 +1303,15 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, loading, error }) =>
                         boxShadow: '0 8px 25px rgba(0, 0, 0, 0.15)',
                       },
                     }}
-                    onClick={() => navigate(`/blog/${rp.slug}`)}
+                    onClick={() => {
+                      trackClickEvent('blog_related_post', {
+                        current_post_title: post.title,
+                        current_post_slug: post.slug,
+                        related_post_title: rp.title,
+                        related_post_slug: rp.slug,
+                      });
+                      navigate(`/blog/${rp.slug}`);
+                    }}
                   >
                     {rp.coverImage && (
                       <CardMedia
