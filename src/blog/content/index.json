@@ -46,5 +46,30 @@
     "coverImage": "/blog-images/a-new-orbit-flutter-tech-and-beyond-cover.jpg",
     "author": "Julia Agüero",
     "contentPreview": "Thanks for stopping by! This blog is meant to be a space where I write down what I learn, share my experiences, and hopefully pass along something..."
+  },
+  {
+    "id": "2b9c1b93-843e-8046-a1de-c60d0167b469",
+    "title": "How to Configure Flutter Flavors for iOS with Xcode",
+    "slug": "flutter-ios-flavors-xcode-setup",
+    "subtitle": "Learn how to configure multiple Flutter environments on iOS using Xcode schemes and build configurations—development, staging, and production",
+    "metaTitle": "Flutter iOS Flavors Setup: Step-by-Step Guide with Xcode Schemes",
+    "metaDescription": "Master Flutter iOS flavors with this step-by-step tutorial. Configure Xcode schemes, duplicate build configurations, update your Podfile, and set environment variables for development, staging, and production builds.",
+    "publishedDate": "2025-12-02",
+    "language": "English",
+    "tags": [
+      "#tutorial"
+    ],
+    "postCategories": [
+      "Flutter",
+      "Tech"
+    ],
+    "pointTo": [],
+    "pointedBy": [],
+    "readTime": 11,
+    "createdTime": "2025-11-28T11:31:00.000Z",
+    "lastEditedTime": "2025-12-02T17:27:00.000Z",
+    "coverImage": "/blog-images/flutter-ios-flavors-xcode-setup-cover.png",
+    "author": "Julia Agüero",
+    "contentPreview": "Is the setup of Flutter flavors for iOS a nightmare? Do you get lost in the Xcode schemes on your Flutter projects? Did you configure your..."
   }
 ]
