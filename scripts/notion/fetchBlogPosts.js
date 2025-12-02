@@ -109,6 +109,7 @@ async function downloadCoverImage(imageUrl, slug) {
 
 /**
  * Download images from content blocks
+ * Also ensures code blocks and columns are properly preserved
  */
 async function downloadContentImages(blocks, slug) {
   if (!blocks || !Array.isArray(blocks)) return blocks;
@@ -116,6 +117,7 @@ async function downloadContentImages(blocks, slug) {
   const processedBlocks = [];
   
   for (const block of blocks) {
+    // Preserve all block properties, including code blocks and columns
     const processedBlock = { ...block };
     
     // Handle image blocks
@@ -160,7 +162,40 @@ async function downloadContentImages(blocks, slug) {
       }
     }
     
-    // Recursively process children
+    // Ensure code blocks are fully preserved with all properties
+    if (block.type === 'code') {
+      // Code blocks should already be preserved via spread operator above
+      // But we explicitly ensure the code property structure is maintained
+      if (block.code) {
+        processedBlock.code = {
+          ...block.code,
+          rich_text: block.code.rich_text || [],
+          language: block.code.language || 'plain text',
+          caption: block.code.caption || [],
+        };
+      }
+    }
+    
+    // Ensure column_list and column blocks are fully preserved
+    if (block.type === 'column_list' || block.type === 'column') {
+      // Column blocks should already be preserved via spread operator above
+      // The children will be processed recursively below
+    }
+    
+    // Ensure bulleted_list_item blocks are fully preserved with all properties
+    if (block.type === 'bulleted_list_item') {
+      // Bulleted list items should already be preserved via spread operator above
+      // But we explicitly ensure the bulleted_list_item property structure is maintained
+      if (block.bulleted_list_item) {
+        processedBlock.bulleted_list_item = {
+          ...block.bulleted_list_item,
+          rich_text: block.bulleted_list_item.rich_text || [],
+          color: block.bulleted_list_item.color || 'default',
+        };
+      }
+    }
+    
+    // Recursively process children (important for columns and nested list items)
     if (block.children && Array.isArray(block.children)) {
       processedBlock.children = await downloadContentImages(block.children, slug);
     }
@@ -181,14 +216,40 @@ async function fetchBlocksRecursive(blockId) {
     const resp = await notion.blocks.children.list({ block_id: blockId, start_cursor: cursor });
     for (const block of resp.results) {
       let enriched = block;
+      
+      // Explicitly handle blocks with children
       if (block.has_children) {
         try {
           const children = await fetchBlocksRecursive(block.id);
           enriched = { ...block, children };
+          
+          // Log column_list and column blocks for debugging
+          if (block.type === 'column_list') {
+            console.log(`📋 Found column_list block with ${children.length} columns`);
+          }
+          if (block.type === 'column') {
+            console.log(`📋 Found column block with ${children.length} child blocks`);
+          }
         } catch (e) {
+          console.error(`⚠️  Error fetching children for ${block.type} block ${block.id}:`, e.message);
           enriched = { ...block, children: [] };
         }
       }
+      
+      // Log code blocks for debugging
+      if (block.type === 'code') {
+        const language = block.code?.language || 'plain text';
+        const codeLength = block.code?.rich_text?.length || 0;
+        console.log(`💻 Found code block (${language}) with ${codeLength} text segments`);
+      }
+      
+      // Log bulleted list items for debugging
+      if (block.type === 'bulleted_list_item') {
+        const textLength = block.bulleted_list_item?.rich_text?.length || 0;
+        const hasChildren = block.has_children || (enriched.children && enriched.children.length > 0);
+        console.log(`📝 Found bulleted_list_item with ${textLength} text segments${hasChildren ? ` and ${enriched.children?.length || 0} children` : ''}`);
+      }
+      
       all.push(enriched);
     }
     cursor = resp.has_more ? resp.next_cursor : undefined;

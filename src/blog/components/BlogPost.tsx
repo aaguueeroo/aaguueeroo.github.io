@@ -668,7 +668,7 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, loading, error }) =>
                           sx={{
                             backgroundColor: '#f5f5f5',
                             p: 2,
-                            borderRadius: 1,
+                            borderRadius: 0,
                             overflowX: 'auto',
                             fontFamily: 'Monaco, Consolas, monospace',
                             fontSize: '0.875rem',
@@ -862,6 +862,43 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, loading, error }) =>
                           </CardContent>
                         </Card>
                       </Box>
+                    );
+                  }
+                  case 'column_list': {
+                    // Column list contains column blocks as children
+                    const columns = block.children || [];
+                    if (columns.length === 0) return null;
+                    
+                    return (
+                      <Box key={key} sx={{ my: 3, display: 'flex', gap: 2, flexDirection: { xs: 'column', md: 'row' } }}>
+                        {columns.map((column: any, colIdx: number) => (
+                          <Box
+                            key={`${key}-col-${colIdx}`}
+                            sx={{
+                              flex: 1,
+                              minWidth: 0, // Prevents overflow
+                            }}
+                          >
+                            {column.children && column.children.length > 0 ? (
+                              <React.Fragment>
+                                {renderBlocks(column.children)}
+                              </React.Fragment>
+                            ) : null}
+                          </Box>
+                        ))}
+                      </Box>
+                    );
+                  }
+                  case 'column': {
+                    // Individual column blocks are handled by column_list
+                    // But if a column appears directly (shouldn't happen), render its children
+                    const children = block.children || [];
+                    if (children.length === 0) return null;
+                    
+                    return (
+                      <React.Fragment key={key}>
+                        {renderBlocks(children)}
+                      </React.Fragment>
                     );
                   }
                 default:
