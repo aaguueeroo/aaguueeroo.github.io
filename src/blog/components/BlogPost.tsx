@@ -355,12 +355,12 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, loading, error }) =>
             color: 'text.primary',
           },
           '& .notion-h1': {
-            fontSize: '2.5rem',
+            fontSize: '2rem',
             lineHeight: 1.2,
             mb: 3,
           },
           '& .notion-h2': {
-            fontSize: '2rem',
+            fontSize: '1.75rem',
             lineHeight: 1.3,
             mb: 2,
             mt: 4,
@@ -373,14 +373,14 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, loading, error }) =>
           },
           '& .notion-text': {
             fontFamily: 'Golos Text, sans-serif',
-            fontSize: '1.125rem',
+            fontSize: '1rem',
             lineHeight: 1.6,
             color: 'text.primary',
             mb: 2,
           },
           '& .notion-list': {
             fontFamily: 'Golos Text, sans-serif',
-            fontSize: '1.125rem',
+            fontSize: '1rem',
             lineHeight: 1.6,
             color: 'text.primary',
           },
@@ -460,6 +460,56 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, loading, error }) =>
                 return acc;
               };
 
+              const renderNumberedList = (listItems: any[], baseKey: string, indentLevel: number = 0): React.ReactNode => {
+                const listStyleType = indentLevel > 0 ? 'lower-alpha' : 'decimal';
+                return (
+                  <Box
+                    key={baseKey}
+                    component="ol"
+                    sx={{
+                      ml: indentLevel > 0 ? 6 : 4,
+                      mb: 2,
+                      pl: 2,
+                      counterReset: 'list-counter',
+                    }}
+                  >
+                    {listItems.map((item, idx) => {
+                      const hasChildren = item.children && Array.isArray(item.children) && item.children.length > 0;
+                      const nestedItems = hasChildren ? item.children.filter((child: any) => child.type === 'numbered_list_item') : [];
+                      
+                      return (
+                        <Box
+                          key={idx}
+                          component="li"
+                          sx={{
+                            mb: 1,
+                            display: 'list-item',
+                            listStyleType: listStyleType,
+                            listStylePosition: 'outside',
+                          }}
+                        >
+                          <Typography
+                            variant="body1"
+                            component="span"
+                            sx={{
+                              ...TypographyConstants.body,
+                              lineHeight: 1.6,
+                            }}
+                          >
+                            {renderRT(item.numbered_list_item?.rich_text || [])}
+                          </Typography>
+                          {hasChildren && nestedItems.length > 0 && (
+                            <Box sx={{ mt: 1 }}>
+                              {renderNumberedList(nestedItems, `${baseKey}-nested-${idx}`, indentLevel + 1)}
+                            </Box>
+                          )}
+                        </Box>
+                      );
+                    })}
+                  </Box>
+                );
+              };
+
               const renderBlocks = (blocks: any[]): React.ReactNode[] => {
                 const result: React.ReactNode[] = [];
                 let i = 0;
@@ -475,42 +525,7 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, loading, error }) =>
                       i++;
                     }
                     
-                    result.push(
-                      <Box
-                        key={`ol-${i}`}
-                        component="ol"
-                        sx={{
-                          ml: 4,
-                          mb: 2,
-                          pl: 2,
-                          counterReset: 'list-counter',
-                        }}
-                      >
-                        {listItems.map((item, idx) => (
-                          <Box
-                            key={idx}
-                            component="li"
-                            sx={{
-                              mb: 1,
-                              display: 'list-item',
-                              listStyleType: 'decimal',
-                              listStylePosition: 'outside',
-                            }}
-                          >
-                            <Typography
-                              variant="body1"
-                              component="span"
-                              sx={{
-                                ...TypographyConstants.body,
-                                lineHeight: 1.6,
-                              }}
-                            >
-                              {renderRT(item.numbered_list_item?.rich_text || [])}
-                            </Typography>
-                          </Box>
-                        ))}
-                      </Box>
-                    );
+                    result.push(renderNumberedList(listItems, `ol-${i}`, 0));
                     continue;
                   }
                   
@@ -628,8 +643,8 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, loading, error }) =>
                     const caption = getPlainText(block.image?.caption || []);
                     if (!src) return null;
                     return (
-                      <Box key={key} sx={{ my: 3 }}>
-                        <img src={src} alt={caption || 'Image'} style={{ width: '100%', height: 'auto', borderRadius: 4 }} />
+                      <Box key={key} sx={{ my: 3, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <img src={src} alt={caption || 'Image'} style={{ maxWidth: '100%', height: 'auto', borderRadius: 4, display: 'block' }} />
                         {caption && (
                           <Typography variant="caption" sx={{ display: 'block', textAlign: 'center', color: 'text.secondary', mt: 1 }}>
                             {caption}

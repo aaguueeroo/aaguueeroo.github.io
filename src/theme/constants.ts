@@ -34,10 +34,10 @@ export const MaxWidths = {
 export const Typography = {
     h1: {
         fontSize: {
-            xs: '2rem',
-            sm: '2.5rem',
-            md: '3rem',
-            lg: '3.5rem'
+            xs: '1.5rem',
+            sm: '1.75rem',
+            md: '2rem',
+            lg: '2.25rem'
         },
         fontWeight: 700,
         lineHeight: 1.3,
@@ -45,10 +45,10 @@ export const Typography = {
     },
     h2: {
         fontSize: {
-            xs: '1.8rem',
-            sm: '2rem',
-            md: '2.3rem',
-            lg: '2.7rem'
+            xs: '1.25rem',
+            sm: '1.5rem',
+            md: '1.75rem',
+            lg: '2rem'
         },
         fontWeight: 700,
         lineHeight: 1.3,
@@ -56,9 +56,9 @@ export const Typography = {
     },
     h3: {
         fontSize: {
-            xs: '1.5rem',
-            sm: '1.7rem',
-            md: '2rem'
+            xs: '1.125rem',
+            sm: '1.25rem',
+            md: '1.5rem'
         },
         fontWeight: 600,
         lineHeight: 1.4,
@@ -66,9 +66,9 @@ export const Typography = {
     },
     h4: {
         fontSize: {
-            xs: '1.3rem',
-            sm: '1.5rem',
-            md: '1.7rem'
+            xs: '1.0625rem',
+            sm: '1.125rem',
+            md: '1.25rem'
         },
         fontWeight: 600,
         lineHeight: 1.4,
@@ -76,9 +76,9 @@ export const Typography = {
     },
     body: {
         fontSize: {
-            xs: '1rem',
-            sm: '1.1rem',
-            md: '1.2rem'
+            xs: '0.875rem',
+            sm: '0.9375rem',
+            md: '1rem'
         },
         fontWeight: 400,
         lineHeight: 1.5,
@@ -86,9 +86,9 @@ export const Typography = {
     },
     bodySmall: {
         fontSize: {
-            xs: '0.9rem',
-            sm: '1rem',
-            md: '1.1rem'
+            xs: '0.8125rem',
+            sm: '0.875rem',
+            md: '0.9375rem'
         },
         fontWeight: 400,
         lineHeight: 1.5,
@@ -96,9 +96,9 @@ export const Typography = {
     },
     bodyExtraSmall: {
         fontSize: {
-            xs: '0.8rem',
-            sm: '0.9rem',
-            md: '1rem'
+            xs: '0.75rem',
+            sm: '0.8125rem',
+            md: '0.875rem'
         },
         fontWeight: 400,
         lineHeight: 1.5,

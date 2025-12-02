@@ -309,7 +309,7 @@ async function fetchPostContent(page) {
       content: finalBlocks || [],
       createdTime: getPropertyValue(page.properties['Created time'], 'created_time') || new Date().toISOString(),
       lastEditedTime: getPropertyValue(page.properties['Last edited time'], 'last_edited_time') || new Date().toISOString(),
-      lastUpdated: new Date().toISOString(),
+      lastUpdated: getPropertyValue(page.properties['Last edited time'], 'last_edited_time') || new Date().toISOString(),
       coverImage: coverImage,
       author: 'Julia Agüero',
     };
