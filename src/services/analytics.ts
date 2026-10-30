@@ -17,10 +17,21 @@ declare global {
 const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID;
 
 /**
+ * The Chotos pages belong to the app, whose privacy policy promises no analytics:
+ * Google Analytics is neither loaded nor told about them.
+ */
+const isUntrackedPath = (path: string): boolean =>
+  path === '/chotos' || path.startsWith('/chotos/');
+
+/**
  * Initialize Google Analytics by loading the gtag script
  */
 const initializeGA = (): void => {
-  if (typeof window === 'undefined' || !GA_MEASUREMENT_ID) {
+  if (
+    typeof window === 'undefined' ||
+    !GA_MEASUREMENT_ID ||
+    isUntrackedPath(window.location.pathname)
+  ) {
     return;
   }
 
@@ -65,6 +76,10 @@ const isGAAvailable = (): boolean => {
  * @param path - The page path to track
  */
 export const trackPageView = (path: string): void => {
+  if (isUntrackedPath(path)) {
+    return;
+  }
+
   if (!isGAAvailable()) {
     console.warn('Google Analytics is not available');
     return;

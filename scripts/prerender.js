@@ -30,6 +30,17 @@ const routes = [
     title: 'Blog - Julia Agüero Mobile App Development Insights',
     description: 'Read insights about mobile app development, UX design, and the latest trends in the industry. Tips, tutorials, and thoughts from a mobile app developer.',
     url: 'https://juliaaguero.com/blog'
+  },
+  {
+    path: '/chotos/privacidad',
+    title: 'Política de privacidad de Chotos',
+    description: 'Qué datos guarda la app Chotos, para qué, dónde, durante cuánto tiempo y cómo verlos o eliminarlos.',
+    url: 'https://juliaaguero.com/chotos/privacidad',
+    // The Chotos pages carry the app's brand, not the website's.
+    lang: 'es',
+    siteName: 'Chotos',
+    image: 'https://juliaaguero.com/chotos/icono.png',
+    icon: '/chotos/icono.svg'
   }
 ];
 
@@ -41,6 +52,27 @@ routes.forEach(route => {
   let html = baseHtml;
   
   // Replace metadata
+  if (route.lang) {
+    html = html.replace(/<html lang=".*?">/, `<html lang="${route.lang}">`);
+  }
+
+  if (route.siteName) {
+    html = html.replace(
+      /<meta property="og:site_name" content=".*?" \/>/,
+      `<meta property="og:site_name" content="${route.siteName}" />`
+    );
+  }
+
+  if (route.image) {
+    html = html.replace(/(<meta (?:property="og|name="twitter):image" content=")[^"]*/g, `$1${route.image}`);
+  }
+
+  if (route.icon) {
+    // Drops the site's favicons and manifest and puts the route's icon in their place.
+    html = html.replace(/\s*<link rel="(?:icon|apple-touch-icon|manifest)"[^>]*>/g, '');
+    html = html.replace('<meta charset="UTF-8" />', `<meta charset="UTF-8" />\n    <link rel="icon" type="image/svg+xml" href="${route.icon}" />`);
+  }
+
   html = html.replace(
     /<title>.*?<\/title>/,
     `<title>${route.title}</title>`
