@@ -164,6 +164,17 @@ This script will:
 
 See [scripts/notion/README.md](scripts/notion/README.md) for more details about the blog fetch script.
 
+### Deploy
+
+Every push to `master` builds the site and publishes it to the `gh-pages` branch, through the
+`Deploy` workflow in `.github/workflows/deploy.yml`. To publish without pushing (for example after a
+new blog post in Notion), open **Actions → Deploy → Run workflow**.
+
+The workflow reads the Notion keys from the repository's secrets (**Settings → Secrets and
+variables → Actions**): `NOTION_API_KEY`, `NOTION_BLOG_DATABASE_ID` and
+`NOTION_CATEGORIES_DATABASE_ID`. `VITE_GA_MEASUREMENT_ID` and `VITE_FORMSPREE_FORM_ID` are optional
+secrets, and `VITE_SHOW_URBAN_RUNNERS` an optional variable.
+
 ### Build for production
 
 ```bash

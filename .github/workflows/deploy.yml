@@ -1,0 +1,50 @@
+# Builds the site and publishes it to the gh-pages branch, which GitHub Pages serves.
+# Runs on every push to master, and by hand from Actions → Deploy → Run workflow.
+#
+# The Notion keys live in the repository's secrets (Settings → Secrets and variables → Actions),
+# so they are never needed on a computer to deploy.
+name: Deploy
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      # Fetches the blog from Notion, type-checks, builds and prerenders.
+      - run: npm run build
+        env:
+          NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+          NOTION_BLOG_DATABASE_ID: ${{ secrets.NOTION_BLOG_DATABASE_ID }}
+          NOTION_CATEGORIES_DATABASE_ID: ${{ secrets.NOTION_CATEGORIES_DATABASE_ID }}
+          # Optional: left empty, analytics and the quote form's Formspree endpoint stay off.
+          VITE_GA_MEASUREMENT_ID: ${{ secrets.VITE_GA_MEASUREMENT_ID }}
+          VITE_FORMSPREE_FORM_ID: ${{ secrets.VITE_FORMSPREE_FORM_ID }}
+          VITE_SHOW_URBAN_RUNNERS: ${{ vars.VITE_SHOW_URBAN_RUNNERS }}
+
+      # Replaces the gh-pages branch with dist/, which includes CNAME, so the custom domain stays.
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
+          commit_message: Deploy ${{ github.sha }}
