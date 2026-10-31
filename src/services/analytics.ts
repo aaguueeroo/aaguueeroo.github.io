@@ -17,11 +17,13 @@ declare global {
 const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID;
 
 /**
- * The Chotos pages belong to the app, whose privacy policy promises no analytics:
+ * The Chotos and Flatto pages belong to the apps, whose privacy policies promise no analytics:
  * Google Analytics is neither loaded nor told about them.
  */
+const UNTRACKED_PREFIXES = ['/chotos', '/flatto'];
+
 const isUntrackedPath = (path: string): boolean =>
-  path === '/chotos' || path.startsWith('/chotos/');
+  UNTRACKED_PREFIXES.some((prefix) => path === prefix || path.startsWith(`${prefix}/`));
 
 /**
  * Initialize Google Analytics by loading the gtag script
