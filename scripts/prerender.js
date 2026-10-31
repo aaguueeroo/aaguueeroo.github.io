@@ -41,6 +41,19 @@ const routes = [
     siteName: 'Chotos',
     image: 'https://juliaaguero.com/chotos/icono.png',
     icon: '/chotos/icono.svg'
+  },
+  {
+    path: '/flatto/privacy-policy',
+    title: 'Flatto Privacy Policy',
+    description: 'What personal data the Flatto app processes, why, where, for how long, who can see it, and how to delete your account.',
+    url: 'https://juliaaguero.com/flatto/privacy-policy',
+    lang: 'en',
+    siteName: 'Flatto',
+    image: 'https://juliaaguero.com/flatto/icon.png',
+    icon: '/flatto/icon.png',
+    iconType: 'image/png',
+    // The page serves its own fonts, so that opening it doesn't reach Google.
+    localFonts: true
   }
 ];
 
@@ -70,7 +83,11 @@ routes.forEach(route => {
   if (route.icon) {
     // Drops the site's favicons and manifest and puts the route's icon in their place.
     html = html.replace(/\s*<link rel="(?:icon|apple-touch-icon|manifest)"[^>]*>/g, '');
-    html = html.replace('<meta charset="UTF-8" />', `<meta charset="UTF-8" />\n    <link rel="icon" type="image/svg+xml" href="${route.icon}" />`);
+    html = html.replace('<meta charset="UTF-8" />', `<meta charset="UTF-8" />\n    <link rel="icon" type="${route.iconType ?? 'image/svg+xml'}" href="${route.icon}" />`);
+  }
+
+  if (route.localFonts) {
+    html = html.replace(/\s*<link href="https:\/\/fonts\.googleapis\.com[^>]*>/g, '');
   }
 
   html = html.replace(
