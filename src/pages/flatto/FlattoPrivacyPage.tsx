@@ -231,7 +231,7 @@ const KEY_INFORMATION: [string, ReactNode][] = [
   ],
   [
     "Recipients",
-    "The other members of your flat. Our processors, Supabase and Resend. Google, for sign-in, fonts, profile pictures and our mailbox. We do not sell your data.",
+    "The other members of your flat. Our processors, Supabase and Resend. Google and Apple, if you sign in with them. Google also for fonts, profile pictures and our mailbox. We do not sell your data.",
   ],
   [
     "Transfers",
@@ -352,7 +352,7 @@ const FlattoPrivacyPage = () => {
                   "Your data is stored in Ireland, in the European Union.",
                   "There are no ads, no analytics and no tracking. Your data is not sold.",
                   "What you add to a flat is visible to everyone in that flat.",
-                  "Photos are stored at unlisted web addresses. Anyone who has a photo's address can open it without signing in.",
+                  "Photos are kept in private storage and can only be opened by people signed in to Flatto. Section 5.2 has the details.",
                   <>
                     You can delete your account in the app: <strong>Me</strong>, then <strong>Account</strong>, then{" "}
                     <strong>Delete Account</strong>.
@@ -454,7 +454,10 @@ const FlattoPrivacyPage = () => {
               </P>
               <P>
                 If you choose <strong>Sign in with Google</strong>, Google gives us your email address, your name and the
-                address of your Google profile picture. We never receive your Google password.
+                address of your Google profile picture. If you choose <strong>Sign in with Apple</strong>, available on
+                iPhone and iPad, Apple gives us your name, the first time only, and your email address, or a private relay
+                address if you choose to hide it. In both cases we also keep an identifier for that sign-in account. We
+                never receive your Google or Apple password.
               </P>
 
               <SubHeading>3.2 Your flat</SubHeading>
@@ -487,8 +490,8 @@ const FlattoPrivacyPage = () => {
               <SubHeading>3.5 Feedback</SubHeading>
               <P>
                 If you use <strong>Send feedback</strong>, we receive the type of report, your text and any screenshots.
-                Your name and email are not attached to the report. A screenshot's file address contains your account ID,
-                so it can be linked to you.
+                The report is linked to your account, and only you and we can see it. When you delete your account that
+                link is removed, but a screenshot's file address still contains your account ID.
               </P>
 
               <SubHeading>3.6 Technical data</SubHeading>
@@ -509,8 +512,8 @@ const FlattoPrivacyPage = () => {
 
               <SubHeading>3.9 What is required</SubHeading>
               <P>
-                To create an account you need an email address, a name and a password, or a Google account. Without them
-                we cannot create your account. No law requires you to give us any of this data. Everything else is
+                To create an account you need an email address, a name and a password, or a Google or Apple account.
+                Without them we cannot create your account. No law requires you to give us any of this data. Everything else is
                 optional, although the shared features only work once you are in a flat.
               </P>
 
@@ -544,8 +547,8 @@ const FlattoPrivacyPage = () => {
                     "This is what the app does.",
                   ],
                   [
-                    "Sign you in with Google",
-                    "Email, name and picture address",
+                    "Sign you in with Google or Apple",
+                    "Email, name, sign-in identifier and, for Google, the picture address",
                     "Contract (art. 6.1.b GDPR)",
                     "Only if you choose it. You can use an email and password instead.",
                   ],
@@ -626,16 +629,19 @@ const FlattoPrivacyPage = () => {
                 what you added stays there.
               </P>
 
-              <SubHeading>5.2 Photos and their web addresses</SubHeading>
+              <SubHeading>5.2 Photos</SubHeading>
               <P>
-                Profile, flat, room and feedback photos are kept in storage that is set to public. In the app, only the
-                people described above see them. But each file has a web address, and anyone who has that address can open
-                the photo without signing in.
+                Profile, flat, room and feedback photos are kept in private storage. The app loads them with your signed-in
+                session, so someone who isn't signed in to Flatto can't open them.
               </P>
               <P>
-                These addresses are long and contain your account ID and a timestamp. We don't publish or list them. Treat
-                them like an unlisted link, and avoid photos that show documents or anything sensitive.
+                In the app, only the people described above see them. The storage rules are wider than that: any signed-in
+                user who belongs to a flat can open a flat or room photo if they have its exact file address, and any
+                signed-in user can open a profile photo the same way. These addresses are long and contain the uploader's
+                account ID and a timestamp, and we don't publish or list them. Even so, avoid photos that show documents or
+                anything sensitive.
               </P>
+              <P>Feedback screenshots can only be opened by you and by us.</P>
 
               <SubHeading>5.3 Our processors</SubHeading>
               <P>These companies handle data on our behalf, under a data processing agreement (art. 28 GDPR):</P>
@@ -657,17 +663,23 @@ const FlattoPrivacyPage = () => {
                 ]}
               />
 
-              <SubHeading>5.4 Google</SubHeading>
+              <SubHeading>5.4 Google and Apple</SubHeading>
               <P>
-                Google (Google Ireland Limited in the EEA, with Google LLC in the United States) is not our processor in
-                these cases. It handles this data under its own{" "}
-                <External href="https://policies.google.com/privacy">privacy policy</External>:
+                These companies are not our processors in the cases below. They handle this data under their own privacy
+                policies: Google (Google Ireland Limited in the EEA, with Google LLC in the United States) under{" "}
+                <External href="https://policies.google.com/privacy">its privacy policy</External>, and Apple (Apple
+                Distribution International Limited in the EEA, with Apple Inc. in the United States) under{" "}
+                <External href="https://www.apple.com/legal/privacy/">its privacy policy</External>.
               </P>
               <List
                 items={[
                   <>
                     <strong>Sign in with Google:</strong> only if you use it. Google runs the sign-in and knows you used
                     it for Flatto.
+                  </>,
+                  <>
+                    <strong>Sign in with Apple:</strong> only if you use it. Apple runs the sign-in and knows you used it
+                    for Flatto.
                   </>,
                   <>
                     <strong>Google Fonts:</strong> the app downloads its fonts from Google's servers the first time it
@@ -722,7 +734,8 @@ const FlattoPrivacyPage = () => {
                 ]}
               />
               <P>
-                To get a copy of these safeguards, write to <Email />.
+                Apple handles Sign in with Apple under its own policy, as section 5.4 explains. To get a copy of the
+                safeguards above, write to <Email />.
               </P>
             </Section>
 
@@ -843,7 +856,7 @@ const FlattoPrivacyPage = () => {
               <SubHeading>9.3 What is deleted</SubHeading>
               <List
                 items={[
-                  "Your account, your sign-in details and any link to your Google account.",
+                  "Your account, your sign-in details and any link to your Google or Apple account.",
                   "Your profile and your current profile photo.",
                   "The flat and room photos you uploaded.",
                   "The shopping items you added.",
@@ -852,6 +865,10 @@ const FlattoPrivacyPage = () => {
                   "Any flat where you were the owner and the only member, with everything in it.",
                 ]}
               />
+              <P>
+                This doesn't change your Google or Apple account. To remove Flatto from the apps connected to that account,
+                use its security settings.
+              </P>
 
               <SubHeading>9.4 What can remain</SubHeading>
               <List
@@ -859,9 +876,9 @@ const FlattoPrivacyPage = () => {
                   "Messages you wrote in a flat that still has other members. They lose the link to your account, but the text stays. You can delete them yourself first.",
                   "Automatic feed messages that name you, and your name as the buyer of shopping items that someone else added. These stay in the flat as part of its history.",
                   "What your flatmates wrote about you.",
-                  "Feedback you sent, including any screenshots.",
+                  "Feedback you sent, including any screenshots. The link to your account is removed, but a screenshot's file address still contains your account ID.",
                   "Your entries in the security log of account events.",
-                  "Photo files the app no longer uses, such as earlier profile photos or room photos from a deleted flat. The app doesn't show them, but they can still be opened by anyone who has their address.",
+                  "Photo files the app no longer uses, such as earlier profile photos or room photos from a deleted flat. The app doesn't show them, but they stay in storage.",
                   "Copies in backups, until they are overwritten.",
                   "Data blocked for legal reasons, as described in section 7.",
                 ]}
@@ -900,8 +917,8 @@ const FlattoPrivacyPage = () => {
                 the data of their own flat, according to their role.
               </P>
               <P>
-                No system is completely secure, and we can't guarantee absolute security. Section 5.2 explains the limit
-                that matters most: photos can be opened by anyone who has their web address.
+                No system is completely secure, and we can't guarantee absolute security. Section 5.2 explains the limits
+                of the rules that protect photos.
               </P>
               <P>
                 If a personal data breach puts you at risk, we'll tell the AEPD and, where the law requires, tell you
