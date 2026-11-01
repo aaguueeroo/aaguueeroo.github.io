@@ -1,0 +1,276 @@
+/* Pieces used by more than one section. */
+@layer components {
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-family: var(--font-display);
+    font-size: 1.375rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
+  .logo__mark {
+    width: 34px;
+    height: 34px;
+  }
+
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    border-radius: var(--radius-pill);
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+    transition:
+      background-color 0.15s ease,
+      translate 0.15s ease;
+  }
+
+  .button--large {
+    min-height: 56px;
+    padding: 0.75rem 1.75rem;
+    font-size: 1.0625rem;
+  }
+
+  .button--small {
+    min-height: 44px;
+    padding: 0.5rem 1.125rem;
+    font-size: 0.9375rem;
+  }
+
+  /* Plain tangerine on white only reaches 3.05:1, so filled buttons use the deep tone (4.54:1). */
+  .button--primary {
+    background: var(--color-tangerine-deep);
+    color: var(--color-white);
+  }
+
+  .button--bright {
+    background: var(--color-tangerine);
+    color: var(--color-ink-deep);
+  }
+
+  .button--ghost {
+    border: 1.5px solid rgb(251 246 239 / 0.45);
+    color: var(--color-cream);
+  }
+
+  @media (hover: hover) {
+    .button:hover {
+      translate: 0 -1px;
+    }
+
+    .button--primary:hover {
+      background: var(--color-tangerine-deeper);
+    }
+
+    .button--bright:hover {
+      background: var(--color-sun);
+    }
+
+    .button--ghost:hover {
+      background: rgb(251 246 239 / 0.1);
+    }
+  }
+
+  .text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    min-height: 44px;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.3em;
+  }
+
+  /* Small text, so it needs the deeper tone to reach 4.5:1 on both cream and sand. */
+  .eyebrow {
+    margin-bottom: var(--space-3);
+    color: var(--color-tangerine-deeper);
+    font-size: var(--text-small);
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .section-title {
+    font-size: var(--text-section);
+  }
+
+  .section-lead {
+    margin-top: var(--space-3);
+    color: var(--color-ink-soft);
+    font-size: var(--text-lead);
+    line-height: 1.5;
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 0.4rem 0.875rem;
+    border: 1px solid var(--color-line-strong);
+    border-radius: var(--radius-pill);
+    background: var(--color-white);
+    font-size: var(--text-small);
+    font-weight: 700;
+  }
+
+  .pill__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-tangerine);
+  }
+
+  .phone {
+    position: relative;
+    flex: none;
+    width: var(--phone-width);
+    overflow: hidden;
+    border: 7px solid var(--color-ink-deep);
+    border-radius: 46px;
+    background: var(--color-cream);
+    box-shadow: var(--shadow-lift);
+  }
+
+  .phone--tilted {
+    rotate: 3deg;
+  }
+
+  .phone__island {
+    position: absolute;
+    top: 3%;
+    left: 50%;
+    z-index: 1;
+    width: 30%;
+    height: 3.2%;
+    border-radius: var(--radius-pill);
+    background: var(--color-ink-deep);
+    translate: -50% -50%;
+  }
+
+  .phone__screen {
+    display: block;
+    width: 100%;
+  }
+
+  .points {
+    display: grid;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+  }
+
+  .points li {
+    position: relative;
+    padding-left: 1.5rem;
+    line-height: 1.5;
+  }
+
+  .points li::before {
+    content: "";
+    position: absolute;
+    top: 0.55em;
+    left: 2px;
+    width: 9px;
+    height: 9px;
+    border-radius: 3px;
+    background: var(--panel-accent, var(--color-ink));
+    rotate: 45deg;
+  }
+
+  .note {
+    --note-colour: var(--color-sun-soft);
+    --magnet: var(--color-tangerine);
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 1.75rem 1rem 1.25rem;
+    border-radius: 4px 4px 18px 4px;
+    background: var(--note-colour);
+    box-shadow: 0 14px 18px -14px rgb(23 63 74 / 0.45);
+    font-family: var(--font-display);
+    font-size: clamp(1rem, 0.94rem + 0.3vw, 1.1875rem);
+    font-weight: 600;
+    line-height: 1.22;
+    letter-spacing: -0.01em;
+    rotate: var(--tilt, 0deg);
+  }
+
+  .note::before {
+    content: "";
+    position: absolute;
+    top: 9px;
+    left: 50%;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: var(--magnet);
+    box-shadow:
+      inset -1px -2px 2px rgb(0 0 0 / 0.18),
+      0 2px 2px rgb(23 63 74 / 0.25);
+    translate: -50% 0;
+  }
+
+  .note--tangerine {
+    --note-colour: var(--color-tangerine-soft);
+    --magnet: var(--color-teal);
+  }
+
+  .note--teal {
+    --note-colour: var(--color-teal-soft);
+    --magnet: var(--color-sun);
+  }
+
+  .bubble {
+    padding: 0.625rem 0.875rem;
+    border: 1px solid var(--color-line);
+    border-radius: 18px;
+    background: var(--color-white);
+    font-size: 0.9375rem;
+    line-height: 1.4;
+  }
+
+  .bubble--heads-up {
+    border-color: var(--color-sun);
+    background: var(--color-sun-soft);
+  }
+
+  .bubble--own {
+    border-color: var(--color-tangerine-deep);
+    background: var(--color-tangerine-deep);
+    color: var(--color-white);
+  }
+
+  .bubble__tag {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    margin-bottom: var(--space-1);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .avatar {
+    display: grid;
+    flex: none;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--color-teal-deep);
+    color: var(--color-white);
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+
+  .avatar--sky {
+    background: #2f68b8;
+  }
+}

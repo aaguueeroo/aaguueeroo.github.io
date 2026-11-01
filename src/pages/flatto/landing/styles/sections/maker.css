@@ -1,0 +1,71 @@
+@layer sections {
+  .maker {
+    padding-block: var(--space-section);
+    background: var(--color-sand);
+  }
+
+  .maker__inner {
+    display: grid;
+    justify-items: center;
+  }
+
+  .maker__note {
+    position: relative;
+    max-width: 40rem;
+    padding: var(--space-6) var(--space-4) var(--space-5);
+    border-radius: 4px 4px 28px 4px;
+    background: var(--color-sun-soft);
+    box-shadow: 0 22px 28px -22px rgb(23 63 74 / 0.45);
+    font-size: var(--text-lead);
+    line-height: 1.5;
+    rotate: -0.75deg;
+  }
+
+  .maker__note::before {
+    content: "";
+    position: absolute;
+    top: var(--space-3);
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--color-tangerine);
+    box-shadow:
+      inset -1px -2px 2px rgb(0 0 0 / 0.18),
+      0 2px 2px rgb(23 63 74 / 0.25);
+    translate: -50% 0;
+  }
+
+  .maker__note p + p {
+    margin-top: var(--space-3);
+  }
+
+  .maker__signature {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: var(--space-4);
+    font-size: var(--text-small);
+  }
+
+  .maker__signature strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    line-height: 1.2;
+  }
+
+  .maker__photo {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 60% 30%;
+  }
+
+  @media (min-width: 640px) {
+    .maker__note {
+      padding: var(--space-6);
+    }
+  }
+}

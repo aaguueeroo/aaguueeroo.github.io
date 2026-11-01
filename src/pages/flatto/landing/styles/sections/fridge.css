@@ -1,0 +1,109 @@
+@layer sections {
+  .fridge {
+    padding-top: var(--space-section);
+    background: var(--color-sand);
+  }
+
+  .fridge__grid {
+    display: grid;
+    gap: var(--space-6);
+  }
+
+  .fridge__door {
+    position: relative;
+    padding: var(--space-5) var(--space-3);
+    border: 1px solid var(--color-line-strong);
+    border-radius: var(--radius-xl);
+    background: linear-gradient(180deg, var(--color-white), #f8f3eb);
+    box-shadow: var(--shadow-soft);
+  }
+
+  /* The line where the freezer door meets the fridge door. */
+  .fridge__door::before {
+    content: "";
+    position: absolute;
+    inset: 22% 0 auto;
+    height: 2px;
+    background: var(--color-line-strong);
+  }
+
+  .fridge__handle {
+    position: absolute;
+    top: calc(22% + var(--space-3));
+    left: 7px;
+    width: 5px;
+    height: 88px;
+    border-radius: var(--radius-pill);
+    background: var(--color-line-strong);
+  }
+
+  .fridge__notes {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-3) 0.75rem;
+  }
+
+  .note:nth-child(1) {
+    --tilt: -2.5deg;
+  }
+
+  .note:nth-child(2) {
+    --tilt: 2deg;
+  }
+
+  .note:nth-child(3) {
+    --tilt: 1.5deg;
+  }
+
+  .note:nth-child(4) {
+    --tilt: -2deg;
+  }
+
+  .note:nth-child(5) {
+    --tilt: -1deg;
+  }
+
+  .note:nth-child(6) {
+    --tilt: 2.5deg;
+  }
+
+  .statement {
+    padding-block: var(--space-section);
+    font-family: var(--font-display);
+    font-size: var(--text-statement);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  .statement em {
+    display: block;
+    color: var(--color-tangerine-deep);
+  }
+
+  @media (min-width: 640px) {
+    .fridge__door {
+      padding: var(--space-6) var(--space-5);
+    }
+
+    .fridge__notes {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--space-4) var(--space-3);
+    }
+
+    .note {
+      min-height: 168px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .fridge__grid {
+      grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+      gap: var(--space-7);
+      align-items: center;
+    }
+  }
+}

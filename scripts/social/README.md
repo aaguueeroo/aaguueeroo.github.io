@@ -1,4 +1,15 @@
-# Chotos social link previews
+# Social link previews
+
+## Flatto
+
+`public/flatto/images/flatto-share-v1.jpg` is the 1200 × 630 card for `/flatto/`. The same image
+serves X, unlike Chotos. Its editable source is `scripts/social/flatto-share.html`, which uses
+relative paths, so it opens straight from disk. Capture it at exactly 1200 × 630 with
+`--allow-file-access-from-files` so its local fonts load, export a JPEG and use a new versioned
+filename for any future change, then update `meta.shareImage` in
+`src/pages/flatto/landing/content/landingContent.ts`.
+
+## Chotos
 
 The landing page uses a dedicated composition rather than its app icon or a full hero screenshot.
 The brand, three-line headline and a labelled app mockup stay recognizable at chat-card sizes.

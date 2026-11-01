@@ -1,0 +1,101 @@
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("/flatto/fonts/bricolage-grotesque.woff2") format("woff2-variations");
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/flatto/fonts/plus-jakarta-sans.woff2") format("woff2-variations");
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    scroll-padding-top: calc(var(--header-height) + var(--space-3));
+  }
+
+  body {
+    margin: 0;
+    overflow-x: clip;
+    background: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  p,
+  ul,
+  ol {
+    margin: 0;
+  }
+
+  ul,
+  ol {
+    padding: 0;
+    list-style: none;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+  }
+
+  em {
+    font-style: normal;
+  }
+
+  img,
+  svg {
+    display: block;
+    flex: none;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  a {
+    color: inherit;
+    text-underline-offset: 0.2em;
+  }
+
+  button {
+    font: inherit;
+    color: inherit;
+    border: 0;
+    background: none;
+    cursor: pointer;
+  }
+
+  [hidden] {
+    display: none !important;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-teal-deep);
+    outline-offset: 3px;
+    border-radius: var(--radius-sm);
+  }
+}
