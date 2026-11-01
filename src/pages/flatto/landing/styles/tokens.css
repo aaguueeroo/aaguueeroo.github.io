@@ -1,0 +1,78 @@
+/* The Flatto design system, from flatto/lib/core/theme/app_colors.dart. Change them together.
+   Breakpoints can't be tokens, because media queries can't read them. The page uses 640px and 1024px. */
+@layer tokens {
+  :root {
+    color-scheme: light;
+
+    --color-cream: #fbf6ef;
+    --color-sand: #f4ece1;
+    --color-white: #ffffff;
+    --color-line: #ede4d8;
+    --color-line-strong: #dccfbf;
+
+    --color-ink: #173f4a;
+    --color-ink-soft: #4f6b73;
+    --color-ink-deep: #0f2c34;
+
+    --color-tangerine: #eb6f3d;
+    --color-tangerine-deep: #c4532a;
+    --color-tangerine-deeper: #a9431f;
+    --color-tangerine-soft: #ffe6d9;
+
+    --color-teal: #2a9d93;
+    --color-teal-deep: #1c6e68;
+    --color-teal-soft: #d5f0ec;
+
+    --color-mint: #3fa37d;
+    --color-mint-soft: #daf2e6;
+
+    --color-sun: #f4b942;
+    --color-sun-soft: #fff0cc;
+
+    --color-sky: #3f7fd8;
+
+    --font-display: "Bricolage Grotesque", "Plus Jakarta Sans", system-ui, sans-serif;
+    --font-body: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+    --text-small: 0.875rem;
+    --text-body: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+    --text-lead: clamp(1.125rem, 1.05rem + 0.4vw, 1.3125rem);
+    --text-title: clamp(1.75rem, 1.45rem + 1.5vw, 2.625rem);
+    --text-section: clamp(2rem, 1.55rem + 2.25vw, 3.25rem);
+    --text-statement: clamp(2.125rem, 1.45rem + 3.4vw, 4rem);
+    --text-hero: clamp(2.75rem, 1.85rem + 4.5vw, 5.5rem);
+
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 1rem;
+    --space-4: 1.5rem;
+    --space-5: 2rem;
+    --space-6: 3rem;
+    --space-7: 4rem;
+    --space-8: 6rem;
+    --space-section: clamp(4.5rem, 3rem + 7.5vw, 8.5rem);
+
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-xl: 32px;
+    --radius-2xl: 40px;
+    --radius-pill: 999px;
+
+    --shadow-soft: 0 1px 2px rgb(23 63 74 / 0.05), 0 10px 24px -14px rgb(23 63 74 / 0.22);
+    --shadow-lift: 0 2px 6px rgb(23 63 74 / 0.08), 0 28px 48px -22px rgb(23 63 74 / 0.42);
+
+    --page-gutter: clamp(1.25rem, 4vw, 2.5rem);
+    --page-width: 1200px;
+    --header-height: 72px;
+    --phone-width: 260px;
+
+    --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+
+  @media (min-width: 1024px) {
+    :root {
+      --phone-width: 300px;
+    }
+  }
+}

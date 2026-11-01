@@ -1,0 +1,201 @@
+@layer sections {
+  .hero {
+    overflow: hidden;
+    padding-top: var(--space-4);
+  }
+
+  .hero__grid {
+    display: grid;
+    gap: var(--space-6);
+  }
+
+  .hero__title {
+    margin-top: var(--space-4);
+    font-size: var(--text-hero);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.035em;
+  }
+
+  .hero__title em {
+    display: block;
+    color: var(--color-tangerine-deep);
+  }
+
+  .hero__lead {
+    max-width: 36rem;
+    margin-top: var(--space-4);
+    color: var(--color-ink-soft);
+    font-size: var(--text-lead);
+    line-height: 1.5;
+  }
+
+  .hero__actions {
+    display: grid;
+    gap: var(--space-3);
+    justify-items: stretch;
+    margin-top: var(--space-5);
+  }
+
+  .hero__helper {
+    color: var(--color-ink-soft);
+    font-size: var(--text-small);
+    font-weight: 600;
+    text-align: center;
+  }
+
+  /* On phones the frame cuts the phone off, so its top half invites the scroll. */
+  .hero__visual {
+    --phone-width: 270px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 440px;
+    padding-top: var(--space-5);
+  }
+
+  .hero__arch {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: min(380px, 100%);
+    height: 110%;
+    border-radius: var(--radius-pill) var(--radius-pill) 0 0;
+    background: var(--color-tangerine-soft);
+    translate: -50% 0;
+  }
+
+  .hero__caption {
+    position: absolute;
+    top: var(--space-2);
+    right: 0;
+    z-index: 3;
+    padding: 0.2rem 0.625rem;
+    border-radius: var(--radius-pill);
+    background: var(--color-ink);
+    color: var(--color-white);
+    font-size: 0.75rem;
+    font-weight: 700;
+    rotate: 4deg;
+  }
+
+  .glance {
+    position: absolute;
+    z-index: 2;
+    display: grid;
+    width: 158px;
+    padding: 0.75rem 0.875rem;
+    border-radius: var(--radius-md);
+    background: var(--glance-colour);
+    box-shadow: var(--shadow-lift);
+  }
+
+  .glance--teal {
+    --glance-colour: var(--color-teal-soft);
+    top: 44%;
+    left: 0;
+    rotate: -3deg;
+  }
+
+  .glance--tangerine {
+    --glance-colour: var(--color-tangerine-soft);
+    top: 66%;
+    right: 0;
+    rotate: 2deg;
+  }
+
+  .glance__label {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-size: 0.6875rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .glance__title {
+    margin-top: var(--space-1);
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .glance__detail {
+    color: var(--color-ink-soft);
+    font-size: 0.8125rem;
+  }
+
+  @media (min-width: 640px) {
+    .hero__actions {
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: var(--space-4);
+    }
+
+    .hero__helper {
+      text-align: left;
+    }
+
+    .hero__visual {
+      --phone-width: 300px;
+      height: 520px;
+    }
+
+    .glance--teal {
+      left: 8%;
+    }
+
+    .glance--tangerine {
+      right: 8%;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero {
+      padding-top: var(--space-5);
+    }
+
+    .hero__grid {
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+      gap: var(--space-5);
+      align-items: center;
+    }
+
+    .hero__copy {
+      padding-bottom: var(--space-7);
+    }
+
+    /* Keeps the button above the fold on short laptop screens. */
+    .hero__title {
+      font-size: min(var(--text-hero), 10vh);
+    }
+
+    .hero__visual {
+      --phone-width: 320px;
+      height: clamp(560px, calc(100vh - var(--header-height) - var(--space-5)), 720px);
+      padding-top: var(--space-5);
+    }
+
+    .glance {
+      width: 186px;
+      padding: 1rem;
+    }
+
+    .glance--teal {
+      top: 30%;
+      left: -9%;
+    }
+
+    .glance--tangerine {
+      top: 58%;
+      right: -7%;
+    }
+
+    .hero__caption {
+      top: var(--space-3);
+      right: 2%;
+    }
+  }
+}

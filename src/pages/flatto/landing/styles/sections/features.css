@@ -1,0 +1,414 @@
+@layer sections {
+  .features {
+    padding-block: var(--space-section) 0;
+  }
+
+  .meet {
+    max-width: calc(52rem + 2 * var(--page-gutter));
+    text-align: center;
+  }
+
+  .meet__title {
+    font-size: var(--text-statement);
+    letter-spacing: -0.03em;
+  }
+
+  .panels {
+    display: grid;
+    gap: var(--space-3);
+    margin-top: var(--space-6);
+  }
+
+  .panel {
+    --panel-colour: var(--color-teal-soft);
+    --panel-accent: var(--color-teal-deep);
+    display: grid;
+    overflow: hidden;
+    border-radius: var(--radius-xl);
+    background: var(--panel-colour);
+  }
+
+  .panel--tangerine {
+    --panel-colour: var(--color-tangerine-soft);
+    --panel-accent: var(--color-tangerine-deep);
+  }
+
+  .panel--sun {
+    --panel-colour: var(--color-sun-soft);
+    --panel-accent: #8a5e05;
+  }
+
+  .panel--mint {
+    --panel-colour: var(--color-mint-soft);
+    --panel-accent: #24724f;
+  }
+
+  .panel__copy {
+    padding: var(--space-5) var(--space-4) var(--space-4);
+  }
+
+  .panel__label {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: 0.3rem 0.75rem 0.3rem 0.5rem;
+    border-radius: var(--radius-pill);
+    background: var(--color-white);
+    font-size: var(--text-small);
+    font-weight: 700;
+  }
+
+  .panel__label svg {
+    color: var(--panel-accent);
+  }
+
+  .panel__title {
+    margin-top: var(--space-3);
+    font-size: var(--text-title);
+  }
+
+  .panel__body {
+    margin-top: var(--space-3);
+  }
+
+  .panel .text-link {
+    margin-top: var(--space-3);
+  }
+
+  /* The phone runs off the panel's bottom edge, which crops it without cropping the image file. */
+  .panel__visual {
+    position: relative;
+    display: grid;
+    gap: var(--space-5);
+    justify-items: center;
+    padding-inline: var(--space-3);
+  }
+
+  .panel__visual .phone {
+    margin-bottom: -280px;
+    border-bottom: 0;
+  }
+
+  .panel--chat .panel__visual {
+    padding-bottom: var(--space-4);
+  }
+
+  /* The chore demo: the app's "Your turn" card, working. */
+  .chore-demo {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    gap: 0.625rem;
+    width: min(100%, 320px);
+  }
+
+  .chore-demo__prompt {
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    font-weight: 700;
+  }
+
+  .chore-card {
+    display: grid;
+    gap: 0.625rem;
+    padding: 1.125rem;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, var(--color-teal-deep), #165a55);
+    box-shadow: var(--shadow-lift);
+    color: var(--color-white);
+  }
+
+  .chore-card__label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .chore-card__name {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .chore-card__name strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.375rem;
+    line-height: 1.15;
+  }
+
+  .chore-card__icon {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-md);
+    background: rgb(255 255 255 / 0.18);
+  }
+
+  .chore-card__due {
+    font-size: var(--text-small);
+  }
+
+  .chore-card__tasks {
+    font-size: var(--text-small);
+  }
+
+  .chore-card__action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    width: 100%;
+    min-height: 48px;
+    border-radius: var(--radius-pill);
+    background: var(--color-white);
+    color: var(--color-teal-deep);
+    font-weight: 700;
+  }
+
+  .chore-card__undo {
+    justify-self: start;
+    min-height: 44px;
+    color: var(--color-white);
+    font-size: var(--text-small);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  .chore-card :focus-visible {
+    outline-color: var(--color-white);
+  }
+
+  .chore-demo[data-state="done"] .chore-card__name strong {
+    text-decoration: line-through;
+  }
+
+  .chore-week {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.375rem;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-md);
+    background: var(--color-white);
+    font-size: var(--text-small);
+    font-weight: 700;
+  }
+
+  .chore-week__count--done,
+  .chore-demo[data-state="done"] .chore-week__count--pending {
+    display: none;
+  }
+
+  .chore-demo[data-state="done"] .chore-week__count--done {
+    display: inline;
+  }
+
+  .chore-week__bar {
+    grid-column: 1 / -1;
+    height: 8px;
+    overflow: hidden;
+    border-radius: var(--radius-pill);
+    background: var(--color-mint-soft);
+  }
+
+  .chore-week__fill {
+    display: block;
+    width: 80%;
+    height: 100%;
+    border-radius: inherit;
+    background: var(--color-mint);
+  }
+
+  .chore-demo[data-state="done"] .chore-week__fill {
+    width: 100%;
+  }
+
+  .chore-result {
+    display: grid;
+    gap: var(--space-1);
+    font-size: var(--text-small);
+  }
+
+  .chore-result:has(> :not([hidden])) {
+    padding: 0.625rem 0.875rem;
+    border-radius: var(--radius-md);
+    background: var(--color-white);
+  }
+
+  .chore-result__event {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .chore-result__payoff {
+    font-weight: 700;
+  }
+
+  /* The flat chat, written out. */
+  .chat {
+    display: grid;
+    gap: 0.75rem;
+    width: min(100%, 460px);
+  }
+
+  .chat__event {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: 0.5rem 0.75rem;
+    border: 1px solid rgb(23 63 74 / 0.14);
+    border-radius: var(--radius-md);
+    background: rgb(255 255 255 / 0.6);
+    color: var(--color-ink-soft);
+    font-size: 0.8125rem;
+    line-height: 1.35;
+  }
+
+  .chat__message {
+    display: flex;
+    align-items: flex-end;
+    gap: var(--space-2);
+    padding-right: var(--space-5);
+  }
+
+  .chat__author {
+    margin: 0 0 0.125rem 0.25rem;
+    font-size: 0.8125rem;
+    font-weight: 700;
+  }
+
+  .chat__author--teal {
+    color: var(--color-teal-deep);
+  }
+
+  .chat__author--sky {
+    color: #2f68b8;
+  }
+
+  .chat__time {
+    display: block;
+    margin: 0.125rem 0.25rem 0;
+    color: var(--color-ink-soft);
+    font-size: 0.75rem;
+  }
+
+  .chat__own {
+    display: grid;
+    justify-items: end;
+    padding-left: var(--space-6);
+  }
+
+  .cost {
+    position: absolute;
+    top: var(--space-5);
+    left: 50%;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0 var(--space-3);
+    width: 214px;
+    margin-left: -192px;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-md);
+    background: var(--color-white);
+    box-shadow: var(--shadow-lift);
+    font-size: var(--text-small);
+    rotate: -2deg;
+  }
+
+  .cost__label {
+    grid-column: 1 / -1;
+    color: var(--color-ink-soft);
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+
+  .cost__total {
+    grid-row: span 2;
+    color: var(--color-tangerine-deep);
+    font-family: var(--font-display);
+    font-size: 1.625rem;
+    font-weight: 800;
+    line-height: 1.5;
+  }
+
+  .cost__line {
+    color: var(--color-ink-soft);
+    text-align: right;
+  }
+
+  .cost__line strong {
+    color: var(--color-ink);
+  }
+
+  @media (max-width: 639px) {
+    .cost {
+      left: var(--space-2);
+      margin-left: 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .panels {
+      gap: var(--space-4);
+    }
+
+    .panel {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: var(--space-5);
+      min-height: 620px;
+    }
+
+    .panel__copy {
+      align-self: center;
+      padding: var(--space-6) 0 var(--space-6) var(--space-6);
+    }
+
+    .panel__visual {
+      display: block;
+      padding: 0;
+    }
+
+    .panel__visual .phone {
+      position: absolute;
+      top: var(--space-6);
+      right: var(--space-6);
+      margin-bottom: 0;
+    }
+
+    .panel--chores .chore-demo {
+      position: absolute;
+      top: var(--space-7);
+      left: -4%;
+      width: 290px;
+    }
+
+    .panel--chat .panel__visual {
+      display: grid;
+      align-content: center;
+      justify-items: center;
+      padding: var(--space-6) var(--space-6) var(--space-6) 0;
+    }
+
+    .cost {
+      top: 32%;
+      left: 6%;
+      margin-left: 0;
+    }
+  }
+
+  /* Tall enough to fit a whole panel on screen, so each one can slide over the last. */
+  @media (min-width: 1024px) and (min-height: 800px) {
+    .panel {
+      position: sticky;
+      top: calc(var(--header-height) + var(--space-3));
+      height: min(660px, calc(100vh - var(--header-height) - var(--space-6)));
+      min-height: 0;
+    }
+  }
+}

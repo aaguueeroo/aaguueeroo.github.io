@@ -1,0 +1,139 @@
+@layer sections {
+  .join {
+    padding-bottom: var(--space-7);
+  }
+
+  .join__panel {
+    padding: var(--space-6) var(--space-4);
+    border-radius: var(--radius-xl);
+    background: var(--color-ink);
+    color: var(--color-cream);
+    text-align: center;
+  }
+
+  .join .eyebrow {
+    color: var(--color-sun);
+  }
+
+  .join :focus-visible {
+    outline-color: var(--color-sun);
+  }
+
+  /* Sized by the screen on phones, so each bubble stays on one line like a real message. */
+  .join__title {
+    display: grid;
+    gap: var(--space-3);
+    justify-items: center;
+    font-size: max(1.5rem, 7.2vw);
+  }
+
+  .join__line {
+    display: grid;
+    justify-items: center;
+    gap: 0.25em;
+  }
+
+  .join__bubble {
+    padding: 0.1em 0.45em 0.16em;
+    border-radius: 0.55em 0.55em 0.55em 0.12em;
+    background: rgb(251 246 239 / 0.14);
+  }
+
+  .join__bubble--bright {
+    border-radius: 0.55em 0.55em 0.12em 0.55em;
+    background: var(--color-tangerine);
+    color: var(--color-ink-deep);
+  }
+
+  .join__lead {
+    max-width: 36rem;
+    margin: var(--space-4) auto 0;
+    font-size: var(--text-lead);
+    line-height: 1.5;
+  }
+
+  .join__question {
+    margin-top: var(--space-5);
+    font-weight: 700;
+  }
+
+  .join__buttons {
+    display: grid;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+  }
+
+  .join__helper {
+    max-width: 30rem;
+    margin: var(--space-3) auto 0;
+    font-size: var(--text-small);
+  }
+
+  .join__fallback {
+    margin-top: var(--space-4);
+    font-size: var(--text-small);
+    overflow-wrap: anywhere;
+  }
+
+  .join__fallback-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0 var(--space-3);
+  }
+
+  .join__fallback-action {
+    min-height: 44px;
+    padding-inline: var(--space-2);
+    color: inherit;
+    font-size: var(--text-small);
+    font-weight: 700;
+    line-height: 44px;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  .join__share {
+    display: grid;
+    gap: 0.75rem;
+    justify-items: center;
+    margin-top: var(--space-4);
+    padding-top: var(--space-4);
+    border-top: 1px solid rgb(251 246 239 / 0.18);
+  }
+
+  @media (min-width: 640px) {
+    .join__panel {
+      padding: var(--space-7) var(--space-5);
+      border-radius: var(--radius-2xl);
+    }
+
+    .join__title {
+      gap: var(--space-2);
+      font-size: var(--text-statement);
+    }
+
+    .join__line {
+      display: flex;
+      align-items: center;
+      gap: 0.3em;
+    }
+
+    .join__buttons {
+      grid-template-columns: repeat(2, minmax(0, 15rem));
+      justify-content: center;
+    }
+
+    .join__share {
+      grid-auto-flow: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .join__panel {
+      padding-block: var(--space-8) var(--space-7);
+    }
+  }
+}

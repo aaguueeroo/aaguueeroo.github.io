@@ -223,6 +223,15 @@ See [scripts/notion/README.md](scripts/notion/README.md) for detailed troublesho
 
 MIT
 
+## Flatto landing page
+
+`/flatto/` is the landing page of the Flatto app, in English, for people sharing a flat. It's written
+in React and TypeScript but ships as static HTML with about 2 KB of JavaScript and no React. It has
+its own Vite entry (`flatto/index.html`), and `scripts/prerenderLanding.ts` renders its components
+at build time. Its layers are described in `src/pages/flatto/landing/README.md`. Testers join by
+sending a prepared email to `flatto@juliaaguero.com`; there's no signup database. The Flatto privacy
+policy continues to be served by the app at `/flatto/privacy-policy`.
+
 ## Chotos landing page
 
 `/chotos/` is a standalone Spanish landing page for cattle farmers. Its semantic copy is in
