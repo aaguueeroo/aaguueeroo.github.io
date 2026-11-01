@@ -5,6 +5,17 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// The Flatto pages carry the app's brand, not the website's.
+const flattoPage = {
+  lang: 'en',
+  siteName: 'Flatto',
+  image: 'https://juliaaguero.com/flatto/icon.png',
+  icon: '/flatto/icon.png',
+  iconType: 'image/png',
+  // These pages serve their own fonts, so that opening them doesn't reach Google.
+  localFonts: true
+};
+
 // Define metadata for each route
 const routes = [
   {
@@ -47,13 +58,21 @@ const routes = [
     title: 'Flatto Privacy Policy',
     description: 'What personal data the Flatto app processes, why, where, for how long, who can see it, and how to delete your account.',
     url: 'https://juliaaguero.com/flatto/privacy-policy',
-    lang: 'en',
-    siteName: 'Flatto',
-    image: 'https://juliaaguero.com/flatto/icon.png',
-    icon: '/flatto/icon.png',
-    iconType: 'image/png',
-    // The page serves its own fonts, so that opening it doesn't reach Google.
-    localFonts: true
+    ...flattoPage
+  },
+  {
+    path: '/flatto/terms',
+    title: 'Flatto Terms of Use',
+    description: 'The terms for using the Flatto app: your account, your content, acceptable use and how to leave.',
+    url: 'https://juliaaguero.com/flatto/terms',
+    ...flattoPage
+  },
+  {
+    path: '/flatto/support',
+    title: 'Flatto Support',
+    description: 'How to get help with the Flatto app, report a user or inappropriate content, or delete your account.',
+    url: 'https://juliaaguero.com/flatto/support',
+    ...flattoPage
   }
 ];
 
