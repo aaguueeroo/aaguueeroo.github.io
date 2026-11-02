@@ -1,7 +1,7 @@
 import { Project } from "../types/portfolio";
 import urbanRunnersImage from "../assets/images/portfolio/urban-runners-1.png";
 import app4itImage from "../assets/images/portfolio/app4it-thumbnail.png";
-import flattoImage from "../assets/images/portfolio/flatto-hero.png";
+import flattoImage from "../assets/images/portfolio/flatto-thumbnail.jpg";
 import exxcellentHeroImage from "../assets/images/portfolio/exxcellent/hero.png";
 
 const showUrbanRunners = import.meta.env.VITE_SHOW_URBAN_RUNNERS === "true";
@@ -47,13 +47,13 @@ const rawProjects: Project[] = [
     description:
       "A mobile app that helps flatmates organize their household life, reduce friction, and keep everyone on the same page. Features include shared shopping lists, cleaning schedules, real-time feed, and apartment management.",
     shortDescription:
-      "Mobile app for shared living - shopping, cleaning, and communication",
+      "Flatmates fight over chores. I designed and built the fix, solo, for iOS and Android.",
     image: flattoImage,
     technologies: ["Flutter", "Supabase", "SQL", "Cursor AI"],
     category: "Mobile Development",
     featured: false,
-    slug: "flatto",
-    imageObjectPosition: "60% 70%",
+    // A static page outside the React app, so the card opens it as a URL and not a route.
+    liveUrl: "/flatto/",
   },
   {
     id: "exxcellent-meal-management",

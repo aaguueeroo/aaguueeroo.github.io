@@ -9,6 +9,14 @@ relative paths, so it opens straight from disk. Capture it at exactly 1200 × 63
 filename for any future change, then update `meta.shareImage` in
 `src/pages/flatto/landing/content/landingContent.ts`.
 
+`src/assets/images/portfolio/flatto-thumbnail.jpg` is the 1200 × 770 thumbnail for the Flatto card
+on `/portfolio`, which shows it at 312 × 200 on desktop. Its editable source is
+`scripts/social/flatto-portfolio-thumbnail.html`, built from the landing page's screens, so refresh
+it when they change. The card crops it with `object-fit: cover` at other widths, so keep the main
+phone in the centre and tangerine around the phones: the screens are cream and the card is white.
+Leave text out, because the card's title and description sit right below it. Capture it the same
+way, then export a JPEG at quality 80. Vite hashes the filename, so it doesn't need a version.
+
 ## Chotos
 
 The landing page uses a dedicated composition rather than its app icon or a full hero screenshot.
