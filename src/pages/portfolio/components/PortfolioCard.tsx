@@ -57,9 +57,8 @@ const PortfolioCard = ({ project }: PortfolioCardProps) => {
         image={project.image}
         alt={project.title}
         sx={{ 
-          objectFit: "cover", 
-          borderRadius: 0.3,
-          objectPosition: project.imageObjectPosition ?? "center"
+          objectFit: "cover",
+          borderRadius: 0.3
         }}
       />
       <CardContent sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>

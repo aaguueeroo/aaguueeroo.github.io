@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Flatto — portfolio thumbnail source</title>
+<style>
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 1200px; height: 770px; overflow: hidden; }
+body { position: relative; background: #eb6f3d; }
+.phone { position: absolute; overflow: hidden; border: 8px solid #0f2c34; border-radius: 50px; background: #fbf6ef; box-shadow: 0 32px 48px -20px rgb(15 44 52 / 0.5); }
+.phone img { display: block; width: 100%; height: auto; }
+.phone::before { content: ""; position: absolute; left: 50%; top: 12px; width: 30%; height: 24px; margin-left: -15%; border-radius: 999px; background: #0f2c34; }
+.phone--main { left: 420px; top: 96px; width: 360px; z-index: 2; }
+.phone--left { left: 146px; top: 216px; width: 310px; rotate: -8deg; }
+.phone--right { left: 744px; top: 216px; width: 310px; rotate: 8deg; }
+</style>
+</head>
+<body>
+<div class="phone phone--left"><img src="../../public/flatto/images/rota-760.jpg" alt=""></div>
+<div class="phone phone--right"><img src="../../public/flatto/images/shopping-760.jpg" alt=""></div>
+<div class="phone phone--main"><img src="../../public/flatto/images/home-760.jpg" alt=""></div>
+</body>
+</html>
