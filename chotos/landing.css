@@ -143,6 +143,22 @@ p {
   padding:10px 18px;
   gap:16px
 }
+.stores {
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px
+}
+.stores.center {
+  justify-content:center
+}
+.store {
+  display:inline-flex;
+  border-radius:8px
+}
+.store img {
+  height:56px;
+  width:auto
+}
 .hero {
   display:grid;
   grid-template-columns:1.1fr 1fr;
@@ -575,8 +591,17 @@ details p {
     margin-block:22px 26px;
     max-width:520px
   }
-  .hero-copy>.button {
-    width:100%
+  .stores {
+    flex-direction:column
+  }
+  .stores {
+    align-items:flex-start
+  }
+  .stores.center {
+    align-items:center
+  }
+  .store img {
+    height:60px
   }
   .hero-copy .helper {
     font-size:15px
