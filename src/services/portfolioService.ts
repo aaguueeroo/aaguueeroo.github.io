@@ -2,11 +2,25 @@ import { Project } from "../types/portfolio";
 import urbanRunnersImage from "../assets/images/portfolio/urban-runners-1.png";
 import app4itImage from "../assets/images/portfolio/app4it-thumbnail.png";
 import flattoImage from "../assets/images/portfolio/flatto-thumbnail.jpg";
+import chotosImage from "../assets/images/portfolio/chotos-thumbnail.jpg";
 import exxcellentHeroImage from "../assets/images/portfolio/exxcellent/hero.png";
 
 const showUrbanRunners = import.meta.env.VITE_SHOW_URBAN_RUNNERS === "true";
 
 const rawProjects: Project[] = [
+  {
+    id: "chotos",
+    title: "Chotos",
+    description:
+      "A mobile app that helps ranchers keep cattle records, track breeding and expected calving dates, and record births, purchases, sales, and deaths. Families and workers can share a farm and manage the same herd together.",
+    shortDescription:
+      "A cattle management app for ranchers, with animal records, breeding history, and expected calving dates.",
+    image: chotosImage,
+    technologies: ["Flutter", "Supabase", "Claude", "Codex", "SQL"],
+    category: "Mobile Development",
+    featured: true,
+    liveUrl: "/chotos/",
+  },
   {
     id: "urban-runners",
     title: "Urban Runners",
@@ -65,7 +79,7 @@ const rawProjects: Project[] = [
     image: exxcellentHeroImage,
     technologies: ["Flutter", "Python", "Firebase"],
     category: "Mobile Development",
-    featured: true,
+    featured: false,
     slug: "exxcellent-meal-management",
   },
   {
@@ -93,7 +107,7 @@ export const getProjectBySlug = (slug: string): Project | undefined => {
 };
 
 export const getFeaturedProjects = (): Project[] => {
-  const featuredIds = ["app4it", "hymate", "exxcellent-meal-management"];
+  const featuredIds = ["chotos", "app4it", "hymate"];
   const featuredProjects = featuredIds
     .map((id) => portfolioProjects.find((project) => project.id === id))
     .filter((project): project is Project => project !== undefined);
