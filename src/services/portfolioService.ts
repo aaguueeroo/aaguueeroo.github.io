@@ -1,6 +1,7 @@
 import { Project } from "../types/portfolio";
 import urbanRunnersImage from "../assets/images/portfolio/urban-runners-1.png";
 import app4itImage from "../assets/images/portfolio/app4it-thumbnail.png";
+import superlistImage from "../assets/images/portfolio/superlist-thumbnail.jpg";
 import flattoImage from "../assets/images/portfolio/flatto-thumbnail.jpg";
 import chotosImage from "../assets/images/portfolio/chotos-thumbnail.jpg";
 import exxcellentHeroImage from "../assets/images/portfolio/exxcellent/hero.png";
@@ -43,6 +44,19 @@ const rawProjects: Project[] = [
     slug: "urban-runners",
   },
   {
+    id: "superlist",
+    title: "Superlist",
+    description:
+      "A task and notes app that brings daily plans, work projects, and shared lists into one place. Organize tasks, add notes, set reminders, and collaborate with others across mobile, desktop, and web.",
+    shortDescription:
+      "A task and notes app for organizing your day, managing projects, and sharing lists with others.",
+    image: superlistImage,
+    technologies: ["Flutter", "Claude"],
+    category: "Mobile Development",
+    featured: true,
+    liveUrl: "https://www.superlist.com/es/",
+  },
+  {
     id: "app4it",
     title: "App4it",
     description:
@@ -52,7 +66,7 @@ const rawProjects: Project[] = [
     image: app4itImage,
     technologies: ["Flutter", "Supabase", "Figma", "Jira"],
     category: "Mobile Development",
-    featured: true,
+    featured: false,
     liveUrl: "https://app4it.de/",
   },
   {
@@ -107,7 +121,7 @@ export const getProjectBySlug = (slug: string): Project | undefined => {
 };
 
 export const getFeaturedProjects = (): Project[] => {
-  const featuredIds = ["chotos", "app4it", "hymate"];
+  const featuredIds = ["chotos", "superlist", "hymate"];
   const featuredProjects = featuredIds
     .map((id) => portfolioProjects.find((project) => project.id === id))
     .filter((project): project is Project => project !== undefined);
