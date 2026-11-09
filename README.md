@@ -236,7 +236,7 @@ policy continues to be served by the app at `/flatto/privacy-policy`.
 
 `/chotos/` is a standalone Spanish landing page for cattle farmers. Its semantic copy is in
 `public/chotos/index.html`, its responsive styles in `public/chotos/landing.css`, and its local
-fonts and labelled app design previews in the adjacent folders. It works without JavaScript.
+fonts and real app screenshots with demo data in the adjacent folders. It works without JavaScript.
 The main invitation opens an email to `chotos@juliaaguero.com`; visitors must send it to request
 participation in testing. There is no signup database. The existing `/chotos/privacidad` route
 continues to serve the app privacy policy. Vite copies the landing page unchanged to `dist/chotos/`.
