@@ -52,7 +52,7 @@ const rawProjects: Project[] = [
       "A task and notes app for organizing your day, managing projects, and sharing lists with others.",
     image: superlistImage,
     technologies: ["Flutter", "Claude"],
-    category: "Mobile Development",
+    category: "Desktop, Mobile & Web Development",
     featured: true,
     liveUrl: "https://www.superlist.com/es/",
   },
