@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { applyRoute, blogPostRoute, absoluteUrl, imageSize } from './shareTags.js';
+import { makeShareImage } from './shareImage.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -81,13 +82,25 @@ const routes = [
 // The posts' index is written by `npm run fetch-blog` before the build.
 const postsIndexPath = path.join(__dirname, '../src/blog/content/index.json');
 const posts = fs.existsSync(postsIndexPath) ? JSON.parse(fs.readFileSync(postsIndexPath, 'utf8')) : [];
-posts.forEach(post => {
+for (const post of posts) {
   const cover = post.coverImage;
   const localCover = cover && cover.startsWith('/') ? path.join(__dirname, '../dist', cover) : null;
-  const size = localCover ? imageSize(localCover) : null;
-  const image = cover ? { url: absoluteUrl(cover), width: size?.width, height: size?.height } : null;
+  let image = cover ? { url: absoluteUrl(cover) } : null;
+  if (localCover && fs.existsSync(localCover)) {
+    const shareFile = `/blog-images/${post.slug}-share.jpg`;
+    try {
+      const { width, height, bytes } = await makeShareImage(localCover, path.join(__dirname, '../dist', shareFile));
+      image = { url: absoluteUrl(shareFile), width, height };
+      console.log(`Share image: ${shareFile} (${width}x${height}, ${Math.round(bytes / 1024)} KB)`);
+    } catch (error) {
+      // The preview then uses the original cover, which works everywhere except, if it's heavy, WhatsApp.
+      console.warn(`⚠️  Could not make a share image for "${post.slug}": ${error.message}`);
+      const size = imageSize(localCover);
+      image = { url: absoluteUrl(cover), width: size?.width, height: size?.height };
+    }
+  }
   routes.push(blogPostRoute(post, image));
-});
+}
 
 // Read the base index.html
 const baseHtml = fs.readFileSync(path.join(__dirname, '../dist/index.html'), 'utf8');
