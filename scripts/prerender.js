@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { applyRoute, blogPostRoute, absoluteUrl, imageSize } from './shareTags.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -76,86 +77,32 @@ const routes = [
   }
 ];
 
+// Each blog post gets its own page, so a shared link shows the post's title, description and cover.
+// The posts' index is written by `npm run fetch-blog` before the build.
+const postsIndexPath = path.join(__dirname, '../src/blog/content/index.json');
+const posts = fs.existsSync(postsIndexPath) ? JSON.parse(fs.readFileSync(postsIndexPath, 'utf8')) : [];
+posts.forEach(post => {
+  const cover = post.coverImage;
+  const localCover = cover && cover.startsWith('/') ? path.join(__dirname, '../dist', cover) : null;
+  const size = localCover ? imageSize(localCover) : null;
+  const image = cover ? { url: absoluteUrl(cover), width: size?.width, height: size?.height } : null;
+  routes.push(blogPostRoute(post, image));
+});
+
 // Read the base index.html
 const baseHtml = fs.readFileSync(path.join(__dirname, '../dist/index.html'), 'utf8');
 
 // Generate HTML for each route
 routes.forEach(route => {
-  let html = baseHtml;
-  
-  // Replace metadata
-  if (route.lang) {
-    html = html.replace(/<html lang=".*?">/, `<html lang="${route.lang}">`);
-  }
+  const html = applyRoute(baseHtml, route);
 
-  if (route.siteName) {
-    html = html.replace(
-      /<meta property="og:site_name" content=".*?" \/>/,
-      `<meta property="og:site_name" content="${route.siteName}" />`
-    );
-  }
-
-  if (route.image) {
-    html = html.replace(/(<meta (?:property="og|name="twitter):image" content=")[^"]*/g, `$1${route.image}`);
-  }
-
-  if (route.icon) {
-    // Drops the site's favicons and manifest and puts the route's icon in their place.
-    html = html.replace(/\s*<link rel="(?:icon|apple-touch-icon|manifest)"[^>]*>/g, '');
-    html = html.replace('<meta charset="UTF-8" />', `<meta charset="UTF-8" />\n    <link rel="icon" type="${route.iconType ?? 'image/svg+xml'}" href="${route.icon}" />`);
-  }
-
-  if (route.localFonts) {
-    html = html.replace(/\s*<link href="https:\/\/fonts\.googleapis\.com[^>]*>/g, '');
-  }
-
-  html = html.replace(
-    /<title>.*?<\/title>/,
-    `<title>${route.title}</title>`
-  );
-  
-  html = html.replace(
-    /<meta name="description" content=".*?" \/>/,
-    `<meta name="description" content="${route.description}" />`
-  );
-  
-  html = html.replace(
-    /<meta property="og:title" content=".*?" \/>/,
-    `<meta property="og:title" content="${route.title}" />`
-  );
-  
-  html = html.replace(
-    /<meta property="og:description" content=".*?" \/>/,
-    `<meta property="og:description" content="${route.description}" />`
-  );
-  
-  html = html.replace(
-    /<meta property="og:url" content=".*?" \/>/,
-    `<meta property="og:url" content="${route.url}" />`
-  );
-  
-  html = html.replace(
-    /<meta name="twitter:title" content=".*?" \/>/,
-    `<meta name="twitter:title" content="${route.title}" />`
-  );
-  
-  html = html.replace(
-    /<meta name="twitter:description" content=".*?" \/>/,
-    `<meta name="twitter:description" content="${route.description}" />`
-  );
-  
-  // Create directory if it doesn't exist
-  const routePath = route.path === '/' ? '' : route.path;
-  const dirPath = path.join(__dirname, '../dist', routePath);
-  if (!fs.existsSync(dirPath)) {
-    fs.mkdirSync(dirPath, { recursive: true });
-  }
-  
-  // Write the HTML file
-  const filePath = path.join(dirPath, 'index.html');
+  // A route without its own file name is written as <path>/index.html.
+  const relativeFile = route.file ?? path.join(route.path === '/' ? '' : route.path, 'index.html');
+  const filePath = path.join(__dirname, '../dist', relativeFile);
+  fs.mkdirSync(path.dirname(filePath), { recursive: true });
   fs.writeFileSync(filePath, html);
-  
+
   console.log(`Generated: ${filePath}`);
 });
 
-console.log('Prerendering complete!'); 
+console.log('Prerendering complete!');

@@ -15,7 +15,7 @@ export const SEO: React.FC<SEOProps> = ({
   title,
   description,
   url = "https://juliaaguero.com",
-  image = "https://juliaaguero.com/meta-image.png",
+  image = "https://juliaaguero.com/meta-image.jpg",
   type = "website",
   author,
   publishedDate,

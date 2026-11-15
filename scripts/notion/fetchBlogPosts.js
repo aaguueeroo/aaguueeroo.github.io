@@ -419,10 +419,11 @@ function getPropertyValue(property, type) {
   if (!property || !property[type]) return null;
   
   switch (type) {
+    // A text with bold or italic parts comes in several pieces: join them all, not just the first.
     case 'title':
-      return property.title[0]?.plain_text || '';
+      return property.title.map(t => t.plain_text).join('');
     case 'rich_text':
-      return property.rich_text[0]?.plain_text || '';
+      return property.rich_text.map(t => t.plain_text).join('');
     case 'date':
       return property.date?.start || '';
     case 'select':
