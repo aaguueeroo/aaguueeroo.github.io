@@ -1111,14 +1111,35 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, loading, error }) =>
                   Julia Agüero
                 </Typography>
                 <Typography variant="body2" sx={{ color: 'text.secondary', fontWeight: 600}}  >
-                  Freelance Developer
+                  Freelance developer and founder
                 </Typography>
               </Box>
             </Box>
 
             {/* Bottom Row: Description */}
             <Typography variant="body2" sx={{ color: 'text.secondary', mb: 2 }}>
-          Passionate about creating beautiful, functional mobile applications. I share insights about Tech, Flutter, design, and more.
+              Freelance developer who builds apps for phones, desktop and the web, and the founder of{' '}
+              <a
+                href="https://aaguueeroo.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: 'inherit' }}
+                onClick={() => {
+                  if (post) {
+                    trackClickEvent('blog_external_link', {
+                      post_title: post.title,
+                      post_slug: post.slug,
+                      link_url: 'https://aaguueeroo.com',
+                      location: 'author_section',
+                    });
+                  }
+                }}
+              >
+                Janus
+              </a>
+              , where I help non-technical founders turn their ideas into real products. I came to software through
+              Criminology, and curiosity has kept me moving between fields ever since: tech, Flutter, design, science
+              and AI. This blog is where I write about all of them.
             </Typography>
             
             {/* Social Media Links */}
