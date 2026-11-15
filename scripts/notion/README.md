@@ -25,6 +25,14 @@ Notion image URLs are temporary and include expiring AWS S3 tokens. When these U
 - Names them: `{slug}-image-{number}.{extension}`
 - Updates block references with local paths
 
+### Alt Text of Content Images
+- Notion's API doesn't return the "Alt text" set in Notion's image menu, so it never reaches the website
+- Write each image's alt text as its **caption** in Notion instead: the website uses it as the image's `alt` and doesn't show it under the image
+- An image without a caption gets an empty `alt` (treated as decorative), and the fetch prints a warning naming the post
+
+### Dividers
+- A divider in Notion (`---`) shows as a thin horizontal line in the post
+
 ### Smart Caching
 - Checks if image already exists before downloading
 - Skips re-downloading if file is present

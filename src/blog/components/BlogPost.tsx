@@ -759,19 +759,25 @@ const BlogPostComponent: React.FC<BlogPostProps> = ({ post, loading, error }) =>
                   }
                   case 'image': {
                     const src = block.image?.type === 'external' ? block.image.external?.url : block.image?.file?.url;
-                    const caption = getPlainText(block.image?.caption || []);
                     if (!src) return null;
+                    // Notion's API has no alt text field, so the image's caption in Notion is its alt text.
+                    // It isn't shown under the image. Without a caption, the image is treated as decorative.
+                    const caption: { plain_text: string }[] = block.image?.caption || [];
+                    const altText = caption.map((t) => t.plain_text).join('').trim();
                     return (
-                      <Box key={key} sx={{ my: 3, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                        <img src={src} alt={caption || 'Image'} style={{ maxWidth: '100%', height: 'auto', borderRadius: 4, display: 'block' }} />
-                        {caption && (
-                          <Typography variant="caption" sx={{ display: 'block', textAlign: 'center', color: 'text.secondary', mt: 1 }}>
-                            {caption}
-                          </Typography>
-                        )}
+                      <Box key={key} sx={{ my: 3, display: 'flex', justifyContent: 'center' }}>
+                        <img
+                          src={src}
+                          alt={altText}
+                          loading="lazy"
+                          decoding="async"
+                          style={{ maxWidth: '100%', height: 'auto', borderRadius: 4, display: 'block' }}
+                        />
                       </Box>
                     );
                   }
+                  case 'divider':
+                    return <Divider key={key} sx={{ my: 4 }} />;
                   case 'code': {
                     const codeText = (block.code?.rich_text || []).map((t: any) => t.plain_text).join('');
                     const language = block.code?.language || '';

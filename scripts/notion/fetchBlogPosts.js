@@ -123,6 +123,12 @@ async function downloadContentImages(blocks, slug) {
     // Handle image blocks
     if (block.type === 'image') {
       const imageUrl = block.image?.file?.url || block.image?.external?.url;
+
+      // The website uses the image's caption as its alt text (Notion's API doesn't return alt text).
+      const altText = (block.image?.caption || []).map((t) => t.plain_text).join('').trim();
+      if (!altText) {
+        console.warn(`⚠️  Image without alt text in "${slug}" (block ${block.id}): write its alt text as the image's caption in Notion.`);
+      }
       
       if (imageUrl && (imageUrl.includes('amazonaws.com') || imageUrl.includes('notion.so'))) {
         try {
