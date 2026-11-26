@@ -26,10 +26,44 @@ if (!NOTION_API_KEY || !NOTION_BLOG_DATABASE_ID || !NOTION_CATEGORIES_DATABASE_I
 const notion = new Client({ auth: NOTION_API_KEY });
 
 /**
+ * Validate that a URL is from a trusted image source
+ */
+function isValidImageUrl(url) {
+  if (!url || typeof url !== 'string') {
+    return false;
+  }
+  
+  try {
+    const parsedUrl = new URL(url);
+    const hostname = parsedUrl.hostname.toLowerCase();
+    
+    // List of trusted image sources
+    const trustedDomains = [
+      'amazonaws.com',         // AWS S3
+      'notion.so',             // Notion
+      'unsplash.com',          // Unsplash
+      'images.unsplash.com',   // Unsplash images
+      'picsum.photos',         // Lorem Picsum
+    ];
+    
+    // Check if the URL is from a trusted domain
+    return trustedDomains.some(domain => hostname.endsWith(domain));
+  } catch (error) {
+    return false;
+  }
+}
+
+/**
  * Download an image from a URL and save it locally
  */
 async function downloadImage(url, filepath) {
   return new Promise((resolve, reject) => {
+    // Validate URL before downloading
+    if (!isValidImageUrl(url)) {
+      reject(new Error(`Invalid or untrusted image URL: ${url}`));
+      return;
+    }
+    
     const protocol = url.startsWith('https') ? https : http;
     
     protocol.get(url, (response) => {
@@ -52,8 +86,13 @@ async function downloadImage(url, filepath) {
           reject(err);
         });
       } else if (response.statusCode === 301 || response.statusCode === 302) {
-        // Handle redirects
-        downloadImage(response.headers.location, filepath)
+        // Handle redirects - validate the redirect URL
+        const redirectUrl = response.headers.location;
+        if (!isValidImageUrl(redirectUrl)) {
+          reject(new Error(`Redirect to untrusted URL blocked: ${redirectUrl}`));
+          return;
+        }
+        downloadImage(redirectUrl, filepath)
           .then(resolve)
           .catch(reject);
       } else {
