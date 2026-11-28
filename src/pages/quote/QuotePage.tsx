@@ -224,19 +224,23 @@ const QuotePage: React.FC = () => {
         <Footer />
       </Box>
 
-      {/* Error Snackbar */}
+      {/* Error Snackbar, centered in the screen on every size */}
       <Snackbar
         open={showError}
         autoHideDuration={4000}
         onClose={() => setShowError(false)}
         anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
         sx={{
-          top: { xs: '50%', sm: '50%' },
-          transform: { xs: 'translate(-50%, -50%)', sm: 'translate(-50%, -50%)' },
-          width: { xs: '90%', sm: 'auto' },
-          maxWidth: { xs: '90%', sm: '600px' },
-          left: { xs: '50%', sm: 'auto' },
-          right: { xs: 'auto', sm: 'auto' },
+          // `&&` outranks the position MUI gives a top-center snackbar on wider screens.
+          '&&': {
+            top: '50%',
+            bottom: 'auto',
+            left: '50%',
+            right: 'auto',
+            transform: 'translate(-50%, -50%)',
+          },
+          width: { xs: 'calc(100% - 32px)', sm: 'auto' },
+          maxWidth: 600,
         }}
       >
         <Alert 

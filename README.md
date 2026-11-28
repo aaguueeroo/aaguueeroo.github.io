@@ -172,8 +172,9 @@ new blog post in Notion), open **Actions → Deploy → Run workflow**.
 
 The workflow reads the Notion keys from the repository's secrets (**Settings → Secrets and
 variables → Actions**): `NOTION_API_KEY`, `NOTION_BLOG_DATABASE_ID` and
-`NOTION_CATEGORIES_DATABASE_ID`. `VITE_GA_MEASUREMENT_ID` and `VITE_FORMSPREE_FORM_ID` are optional
-secrets, and `VITE_SHOW_URBAN_RUNNERS` an optional variable.
+`NOTION_CATEGORIES_DATABASE_ID`. `VITE_GA_MEASUREMENT_ID` is an optional secret, and
+`VITE_SHOW_URBAN_RUNNERS` an optional variable. The quote form's Formspree ID is not a secret: it
+lives in `.env.production`, which every production build reads.
 
 ### Build for production
 
