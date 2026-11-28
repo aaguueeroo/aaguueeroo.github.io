@@ -2,24 +2,10 @@ import { Box, Card, Typography } from "@mui/material";
 import whatDoIOfferTopImage from "../../../assets/images/what_do_i_offer_top.png";
 import whatDoIOfferLeftImage from "../../../assets/images/what_do_i_offer_left.png";
 import whatDoIOfferRightImage from "../../../assets/images/what_do_i_offer_right.png";
-import {
-  MaxWidths,
-  Typography as TypographyConstants,
-} from "../../../theme/constants";
+import { Typography as TypographyConstants } from "../../../theme/constants";
+import { HomeSection } from "./HomeSection";
 
 const useStyles = () => ({
-  section: {
-    padding: {
-      xs: "0px 16px",
-      sm: "96px 32px",
-      md: "0px 96px",
-    },
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: "24px",
-  },
   mainCardContainer: {
     display: "flex",
     flexDirection: "column",
@@ -145,29 +131,12 @@ export function WhatDoIOfferSection() {
   const classes = useStyles();
 
   return (
-    <Box
+    <HomeSection
       sx={{
-        width: "100%",
-        maxWidth: MaxWidths.content,
-        mx: "auto",
-        boxSizing: "border-box",
-        padding: {
-          xs: "0px 16px",
-          sm: "96px 32px",
-          md: "0px 96px",
-        },
-        mt: {
-          xs: 10,
-          sm: 0,
-          md: 15,
-          lg: 15,
-        },
-        mb: {
-          xs: 5,
-          sm: 5,
-          md: 5,
-          lg: 5,
-        },
+        // 96px on tablets keeps the gap below the hero that the sections' old tablet-only
+        // vertical padding used to add here.
+        pt: { xs: 10, sm: 24, md: 15 },
+        pb: 5,
       }}
     >
       <Box
@@ -284,6 +253,6 @@ export function WhatDoIOfferSection() {
           </Box>
         </Box>
       </Box>
-    </Box>
+    </HomeSection>
   );
 }

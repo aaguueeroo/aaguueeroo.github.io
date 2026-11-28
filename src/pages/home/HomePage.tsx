@@ -3,6 +3,7 @@ import { WhatDoIOfferSection } from "./components/WhatDoIOfferSection";
 import PortfolioOverviewSection from "./components/PortfolioOverviewSection";
 import { HowIWorkTimeline } from "../about/components/HowIWorkTimeline";
 import { LetsGetInTouchSection } from "./components/LetsGetInTouchSection";
+import { HomeSection } from "./components/HomeSection";
 import Navbar from "../../components/Navbar";
 import { Footer } from "../../components/Footer";
 import { SEO } from "../../components/SEO";
@@ -53,55 +54,13 @@ const HomePage = () => {
             <HeroSection />
           </Box>
           <WhatDoIOfferSection />
-          <Box
-            sx={{
-              width: "100%",
-              px: { xs: 2, md: 4 },
-              pt: { xs: 8, md: 12 },
-              pb: { xs: 8, md: 12 },
-            }}
-          >
-            <Box
-              sx={{
-                maxWidth: MaxWidths.content,
-                mx: "auto",
-                width: "100%",
-                boxSizing: "border-box",
-                padding: {
-                  xs: "0px 16px",
-                  sm: "96px 32px",
-                  md: "0px 96px",
-                },
-              }}
-            >
-              <HowIWorkTimeline />
-            </Box>
-          </Box>
+          <HomeSection sx={{ py: { xs: 8, md: 12 } }}>
+            <HowIWorkTimeline />
+          </HomeSection>
           <PortfolioOverviewSection />
-          <Box
-            sx={{
-              width: "100%",
-              px: { xs: 2, md: 4 },
-              pt: { xs: 8, md: 12 },
-              pb: { xs: 8, md: 12 },
-            }}
-          >
-            <Box
-              sx={{
-                maxWidth: MaxWidths.content,
-                mx: "auto",
-                width: "100%",
-                boxSizing: "border-box",
-                padding: {
-                  xs: "0px 16px",
-                  sm: "96px 32px",
-                  md: "0px 96px",
-                },
-              }}
-            >
-              <TestimonialsCarousel testimonials={testimonials} />
-            </Box>
-          </Box>
+          <HomeSection sx={{ py: { xs: 8, md: 12 } }}>
+            <TestimonialsCarousel testimonials={testimonials} />
+          </HomeSection>
           <LetsGetInTouchSection />
           <Footer />
         </Box>

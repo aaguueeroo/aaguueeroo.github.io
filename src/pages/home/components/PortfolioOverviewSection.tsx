@@ -11,8 +11,8 @@ import {
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { getFeaturedProjects } from "../../../services/portfolioService";
+import { HomeSection } from "./HomeSection";
 import {
-  MaxWidths,
   Typography as TypographyConstants,
 } from "../../../theme/constants";
 
@@ -41,31 +41,19 @@ const PortfolioOverviewSection = () => {
   };
 
   return (
-    <Box
+    <HomeSection
       sx={{
-        width: "100%",
-        px: { xs: 2, md: 4 },
         pt: { xs: 14, md: 36 },
         pb: { xs: 8, md: 12 },
         background:
           "linear-gradient(180deg, rgba(239, 246, 250, 0) 0%, rgba(239, 246, 250, 0.7) 40%, rgba(239, 246, 250, 0.7) 60%, rgba(239, 246, 250, 0.2) 100%)",
       }}
+      contentSx={{
+        display: "flex",
+        flexDirection: "column",
+        gap: { xs: 4, md: 6 },
+      }}
     >
-      <Box
-        sx={{
-          maxWidth: MaxWidths.content,
-          mx: "auto",
-          display: "flex",
-          flexDirection: "column",
-          gap: { xs: 4, md: 6 },
-          boxSizing: "border-box",
-          padding: {
-            xs: "0px 16px",
-            sm: "96px 32px",
-            md: "0px 96px",
-          },
-        }}
-      >
         <Box
           sx={{
             display: "flex",
@@ -223,8 +211,7 @@ const PortfolioOverviewSection = () => {
             Explore more projects
           </Button>
         </Box>
-      </Box>
-    </Box>
+    </HomeSection>
   );
 };
 
