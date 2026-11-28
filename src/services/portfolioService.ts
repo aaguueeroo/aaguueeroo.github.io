@@ -51,6 +51,7 @@ const rawProjects: Project[] = [
     shortDescription:
       "A task and notes app for organizing your day, managing projects, and sharing lists with others.",
     image: superlistImage,
+    imagePosition: "left center",
     technologies: ["Flutter", "Claude"],
     category: "Desktop, Mobile & Web Development",
     featured: true,
@@ -105,6 +106,7 @@ const rawProjects: Project[] = [
       "Software platform for planning and managing complex industrial energy systems.",
     image:
       "https://cdn.prod.website-files.com/63f502e761dc1d6feff40718/67308af53fd2ebb2fcee82ec_appMbl.png",
+    imagePosition: "left center",
     technologies: ["Flutter"],
     category: "Web Development",
     featured: true,

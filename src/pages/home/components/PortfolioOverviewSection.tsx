@@ -16,7 +16,22 @@ import {
   Typography as TypographyConstants,
 } from "../../../theme/constants";
 
-const CARD_IMAGE_WIDTH = 120;
+// On phones and in the three-across row, each card shows its image above the text. In between,
+// a third of the row is too narrow for that, so each card takes a full row with the image beside
+// the text.
+const IMAGE_BESIDE_FROM = "sm";
+const THREE_ACROSS_FROM = "lg";
+
+// The project thumbnails are 3:2 screenshots.
+const IMAGE_ASPECT_RATIO = 3 / 2;
+const IMAGE_BESIDE_WIDTH = 220;
+
+/** A responsive value that switches with the card layout described above. */
+const byCardLayout = <T,>(imageAbove: T, imageBeside: T) => ({
+  xs: imageAbove,
+  [IMAGE_BESIDE_FROM]: imageBeside,
+  [THREE_ACROSS_FROM]: imageAbove,
+});
 
 const PortfolioOverviewSection = () => {
   const navigate = useNavigate();
@@ -76,7 +91,7 @@ const PortfolioOverviewSection = () => {
         <Box
           sx={{
             display: "flex",
-            flexDirection: { xs: "column", md: "row" },
+            flexDirection: { xs: "column", [THREE_ACROSS_FROM]: "row" },
             gap: { xs: 3, md: 4 },
           }}
         >
@@ -96,37 +111,68 @@ const PortfolioOverviewSection = () => {
                 },
               }}
             >
+              {/*
+                A div, not a <button>: Safari wraps a button's children in an inner box that
+                ignores this flex layout, so the cards first render cut to the shorter texts.
+                MUI still makes it focusable and opens it with Enter or Space.
+              */}
               <CardActionArea
+                component="div"
                 onClick={() =>
                   handleCardClick(project.slug, project.liveUrl)
                 }
                 sx={{
                   display: "flex",
+                  flexDirection: byCardLayout("column", "row"),
                   alignItems: "stretch",
+                  justifyContent: "flex-start",
                   textAlign: "left",
                   "& .MuiCardActionArea-focusHighlight": {
                     opacity: "0 !important",
                   },
                 }}
               >
-                <CardMedia
-                  component="img"
-                  image={project.image}
-                  alt={project.title}
+                {/*
+                  Never a percentage height for the image (Safari first renders it cut off).
+                  Above the text its aspect ratio sets its height; beside the text the text
+                  sets the height, with a 3:2 image as the minimum, and the image fills it.
+                */}
+                <Box
                   sx={{
-                    width: { xs: CARD_IMAGE_WIDTH, md: CARD_IMAGE_WIDTH + 20 },
-                    height: "100%",
-                    objectFit: "cover",
-                    borderRadius: 0.2,
+                    position: "relative",
+                    flexShrink: 0,
+                    width: byCardLayout<number | string>("100%", IMAGE_BESIDE_WIDTH),
+                    aspectRatio: byCardLayout(String(IMAGE_ASPECT_RATIO), "auto"),
+                    minHeight: byCardLayout(
+                      0,
+                      Math.round(IMAGE_BESIDE_WIDTH / IMAGE_ASPECT_RATIO)
+                    ),
                   }}
-                />
+                >
+                  <CardMedia
+                    component="img"
+                    image={project.image}
+                    alt={project.title}
+                    sx={{
+                      position: "absolute",
+                      inset: 0,
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      objectPosition: project.imagePosition ?? "center",
+                      borderRadius: 0.2,
+                    }}
+                  />
+                </Box>
                 <CardContent
                   sx={{
+                    flex: 1,
                     display: "flex",
                     flexDirection: "column",
                     gap: 1.5,
-                    py: { xs: 2.5, md: 3 },
-                    px: { xs: 2, md: 3 },
+                    p: 0,
+                    pt: byCardLayout(5, 0),
+                    pl: byCardLayout(0, 6),
                   }}
                 >
                   <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
